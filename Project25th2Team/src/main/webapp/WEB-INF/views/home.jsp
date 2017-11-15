@@ -12,30 +12,10 @@
 <c:import url="/WEB-INF/views/layout/Head.jsp">
 </c:import>
 </div>
-<br>
-<br>
-<br>
-<br>
-<h1>
-   Project 25Th 2Team  확인 작업중!!!
-</h1>
-<h2>
-   Team Member : 전은경 진세은 조은희 서미나 한소연
-   될까요?
-   이유를 알려주세요~!! 
-   왜 되다 안되다 하나요!?
-   
-</h2>
-
-<P>  The time on the server is ${serverTime}. </P>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+<div>
+<c:import url="/WEB-INF/views/layout/Main.jsp">
+</c:import>
+</div>
 <div>
 <c:import url="/WEB-INF/views/layout/Hadan.jsp">
 </c:import>

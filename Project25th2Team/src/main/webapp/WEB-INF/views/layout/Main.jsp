@@ -24,14 +24,33 @@
 
   <body>
   
-  
-    <!-- Footer -->
-    <footer class="py-5 bg-dark">
-      <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2017</p>
+
+    <header class="masthead">
+      <div class="overlay">
+        <div class="container">
+          <h1 class="display-1 text-white">Wellcome!</h1>
+          <h2 class="display-4 text-white">Consulting for you.</h2>
+        </div>
       </div>
-      <!-- /.container -->
-    </footer>
+    </header>
+
+    <section>
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6 order-2">
+            <div class="p-5">
+              <img class="img-fluid rounded-circle" src="${pageContext.request.contextPath}/resources/image/Consulting_01.jpg" alt="">
+            </div>
+          </div>
+          <div class="col-md-6 order-1">
+            <div class="p-5">
+              <h2 class="display-4">당신의 컨설팅</h2>
+              <p>경력,자격증,어학 을 비롯하여 당신의 미래를 위한 전문가가 당신을 적극적으로 도와드립니다.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   
     <!-- Bootstrap core JavaScript -->
     
