@@ -19,7 +19,7 @@ home.jsp
 </c:import>
 
 <h1>
-   Project 25Th 2Team  
+   Project 25Th 2Team  eunhee check!!!!!
 </h1>
 <h2>
    Team Member : 전은경 진세은 조은희 서미나 한소연
