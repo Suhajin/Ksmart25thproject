@@ -19,7 +19,7 @@ home.jsp
 </c:import>
 
 <h1>
-   Project 25Th 2Team  소여니짱
+   Project 25Th 2Team  소여니짱2
 </h1>
 <h2>
    Team Member : 전은경 진세은 조은희 서미나 한소연
