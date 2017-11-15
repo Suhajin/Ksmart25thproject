@@ -20,8 +20,7 @@
    Project 25Th 2Team 
 </h1>
 <h2>
-
-   나도 되고 싶다
+미나짱아하
 </h2>
 
 <P>  The time on the server is ${serverTime}. </P>
