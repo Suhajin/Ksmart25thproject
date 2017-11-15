@@ -28,7 +28,7 @@
     <header class="masthead">
       <div class="overlay">
         <div class="container">
-          <h1 class="display-1 text-white">Wellcome!</h1>
+          <h1 class="display-1 text-white">Welcome!</h1>
           <h2 class="display-4 text-white">Consulting for you.</h2>
         </div>
       </div>
