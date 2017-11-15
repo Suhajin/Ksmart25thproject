@@ -24,6 +24,9 @@ home.jsp
 <h2>
    Team Member : 전은경 진세은 조은희 서미나 한소연
    될까요?
+   이유를 알려주세요~!! 
+   왜 되다 안되다 하나요!?
+   
 </h2>
 
 <P>  The time on the server is ${serverTime}. </P>
