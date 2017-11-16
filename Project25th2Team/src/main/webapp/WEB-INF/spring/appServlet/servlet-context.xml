@@ -19,12 +19,12 @@
 		<property name="prefix" value="/WEB-INF/views/" />
 		<property name="suffix" value=".jsp" />
 	</bean>
-	<context:component-scan base-package="cam.cafe24.suhajin07" />
+	<context:component-scan base-package="com.cafe24.suhajin07" />
 	<!-- 커넥션풀 생성 -->
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
 		<property name="url"
-			value="jdbc:mysql://127.0.0.1:3306/suhajin07" />
+			value="jdbc:mysql://suhajin07.cafe24.com:3306/suhajin07" />
 		<property name="username" value="suhajin07" />
 		<property name="password" value="vmfhwprxm25rl2" />
 	</bean>
