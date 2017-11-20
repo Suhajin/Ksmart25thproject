@@ -14,9 +14,9 @@
 </div>
 
 <div>
-
 <c:import url="/WEB-INF/views/layout/Career.jsp">
 </c:import>
+</div>
 
 <div>
 <c:import url="/WEB-INF/views/layout/Hadan.jsp">
