@@ -14,13 +14,9 @@
 </div>
 
 <div>
-<<<<<<< HEAD
+
 <c:import url="/WEB-INF/views/layout/Career.jsp">
-=======
-<c:import url="/WEB-INF/views/layout/CareerInsert.jsp">
->>>>>>> refs/remotes/origin/master
 </c:import>
-</div>
 
 <div>
 <c:import url="/WEB-INF/views/layout/Hadan.jsp">
