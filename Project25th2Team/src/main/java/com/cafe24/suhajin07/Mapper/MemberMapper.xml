@@ -18,4 +18,8 @@
 		VALUES ( #{memberCode} ,#{memberId} ,#{memberPw} ,#{memberName}
 		,#{memberPhone} ,#{memberEmail} ,#{memberAddress} ,now())
 	</insert>
+	
+	<insert id="insertMemberCode" parameterType="com.cafe24.suhajin07.Dto.Member">
+	select max(CAST(substring(memberCode,4) AS DECIMAL))  from member
+	</insert>
 </mapper>
