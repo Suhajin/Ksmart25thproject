@@ -8,8 +8,8 @@ INSERT INTO
 			career(memberCode ,careerName ,careerAddress ,careerEntrance
 					,careerQuit,careerWorking ,careerPeriod ,careerPosition,careerApproval,careerDate) 
 		VALUES 
-		(#{careerName}, #{careerAddress}, #{careerEntrance}, #{careerQuit},
-		#{careerWorking}, #{careerPeriod}, #{careerPosition}, #{careerApproval}, #{careerDate},now()) 
+		(#{memberCode}, #{careerName}, #{careerAddress}, #{careerEntrance}, #{careerQuit},
+		#{careerWorking}, #{careerPeriod}, #{careerPosition}, #{careerApproval}, now()) 
 </insert>
 
 

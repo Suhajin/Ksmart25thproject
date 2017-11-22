@@ -138,8 +138,8 @@
 				<a href="javascript:printCareer('workCareer')" class="btn_type02">근무경력확인서출력</a>
 				<!-- 우측버튼 -->
 				<div class="sec_top_btn">
-					<a href="javascript:addCareer('#')" class="btn_add">추가</a> <a
-						href="javascript:removeCareer('#')" class="btn_del">삭제</a>
+					<a href="/CareerInsert" class="btn_add">추가</a> <a
+						href="/CareerList" class="btn_del">전체 리스트</a>
 				</div>
 			</div>
 			<table class="list_tbl_01 mb70" summary="경력 추가">

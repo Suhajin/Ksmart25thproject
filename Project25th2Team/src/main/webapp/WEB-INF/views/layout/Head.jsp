@@ -50,19 +50,9 @@
             <li class="nav-item">
               <a class="nav-link" href="/member">회원가입</a>
             </li>
-            
-            <li class="dropdown">
-          <a class="nav-link" data-toggle="dropdown" href="#">등록
-          <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">최종학력</a></li>
-            <li><a href="/CareerInsert">경력등록</a></li>
-            <li><a href="#">등록(자격증)</a></li> 
-            <li><a href="#">등록(어학)</a></li>
-            <li><a href="#">등록(수료)</a></li>
-            <li><a href="#">등록(해외/봉사)</a></li>
-          </ul>
-        </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/Insert">등록</a>
+            </li>
           </ul>
         </div>
       </div>

@@ -36,6 +36,7 @@
 		<property name="mapperLocations">
 			<list>
 				<value>classpath:com/cafe24/suhajin07/Mapper/MemberMapper.xml</value>
+				<value>classpath:com/cafe24/suhajin07/Mapper/CareerMapper.xml</value>
 			</list>
 		</property>
 	</bean>

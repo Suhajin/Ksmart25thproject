@@ -27,7 +27,7 @@
 			<table align="center" border="1">
  				<tr>
 					<td>ID</td>
-					<td><input type="text" name="memberId"></td>
+					<td><input type="text" name="memberCode"></td>
 				</tr>
 				<tr>
 					<td>회사명</td>
