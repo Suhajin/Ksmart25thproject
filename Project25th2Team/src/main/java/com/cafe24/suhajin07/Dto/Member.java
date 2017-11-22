@@ -1,8 +1,7 @@
 package com.cafe24.suhajin07.Dto;
 
 public class Member {
-	
-	
+
 	private String memberCode;
 	private String memberId;
 	private String memberPw;
@@ -54,12 +53,9 @@ public class Member {
 	}
 	@Override
 	public String toString() {
-		return "MemberDto [memberCode=" + memberCode + ", memberId=" + memberId + ", memberPw=" + memberPw
+		return "Member [memberCode=" + memberCode + ", memberId=" + memberId + ", memberPw=" + memberPw
 				+ ", memberName=" + memberName + ", memberPhone=" + memberPhone + ", memberEmail=" + memberEmail
 				+ ", memberAddress=" + memberAddress + "]";
 	}
 	
-	
-	
-
 }

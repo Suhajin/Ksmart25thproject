@@ -23,7 +23,7 @@
 		</div>
 		</header>
 		<h4 align="center">Login</h4>
-		<form align="center" action="./actionLogin" method="post">
+		<form align="center" action="/LoginAction" method="post">
 			<table align="center" border="1">
 				<tr>
 					<td>memberId</td>

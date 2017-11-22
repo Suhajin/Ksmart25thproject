@@ -1,5 +1,6 @@
 package com.cafe24.suhajin07.Dao;
 
+
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -13,10 +14,18 @@ public class MemberDao {
 	
 	private final String NS = "com.cafe24.suhajin07.Mapper.MemberMapper.";
 	
-	public int insertMember(Member member) {
-		System.out.println("DB연결성공");
-		System.out.println("Dao member 확인 : " + member);
-		
-		return sqlSessionTemplate.insert(NS+"insertMember",member);
+	public void insertMember(Member member) {
+		System.out.println("Dao 성공");
+		System.out.println(member);
+		sqlSessionTemplate.insert(NS+"insertMember",member);
 	}
+
+	
+	 public String loginCheck(Member member) {
+		 	System.out.println("Dao 성공");
+			System.out.println(member);
+	        String name = sqlSessionTemplate.selectOne(NS+"login", member);
+	        System.out.println(name);
+	        return name;
+	    }
 }
