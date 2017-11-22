@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cafe24.suhajin07.Mapper.CareerMapper">
+
+<insert parameterType="com.cafe24.suhajin07.Dto.Career" id="insertCareer">
+
+INSERT INTO 
+			career(memberCode ,careerName ,careerAddress ,careerEntrance
+					,careerQuit,careerWorking ,careerPeriod ,careerPosition,careerApproval,careerDate) 
+		VALUES 
+		(#{careerName}, #{careerAddress}, #{careerEntrance}, #{careerQuit},
+		#{careerWorking}, #{careerPeriod}, #{careerPosition}, #{careerApproval}, #{careerDate},now()) 
+</insert>
+
+
+</mapper>

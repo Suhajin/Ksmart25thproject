@@ -56,7 +56,7 @@
           <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="#">최종학력</a></li>
-            <li><a href="#">경력등록</a></li>
+            <li><a href="/CareerInsert">경력등록</a></li>
             <li><a href="#">등록(자격증)</a></li> 
             <li><a href="#">등록(어학)</a></li>
             <li><a href="#">등록(수료)</a></li>
