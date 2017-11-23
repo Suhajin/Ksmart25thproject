@@ -39,6 +39,7 @@
 							<p>경력,자격증,어학 을 비롯하여 당신의 미래를 위한 전문가가 당신을 적극적으로 도와드립니다.</p>
 							<h3>${Member.memberId}(${Member.memberName})님환영합니다.</h3>
 							<a href="${path}/MyCareer">기술자등록</a>
+							<a href="${path}/Logout">로그아웃</a>
 						</div>
 					</div>
 				</div>
