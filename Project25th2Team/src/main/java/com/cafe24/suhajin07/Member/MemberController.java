@@ -37,13 +37,13 @@ public class MemberController {
 		return "home";
 	}
 	
-	@RequestMapping(value = "/MyPage", method = RequestMethod.GET)
+	@RequestMapping(value = "/MyCareer", method = RequestMethod.GET)
 	public String MyPage(HttpSession session) {
 		
 		System.out.println(session);
 		
-		System.out.println("MyPage 폼 요청");
-		return "Member/MyPage";
+		System.out.println("MyCareer 폼 요청");
+		return "layout/Career";
 		}
 }
 

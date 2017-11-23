@@ -1,8 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@page import="java.sql.Connection"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page session="false"%>
+<%@ page session="true"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -60,10 +59,12 @@
 </head>
 
 <div>
-<c:import url="/WEB-INF/views/layout/Head.jsp">
-</c:import>
+	<c:import url="/WEB-INF/views/layout/Head.jsp">
+	</c:import>
 </div>
-<br><br><br>
+<br>
+<br>
+<br>
 <body>
 	<div class="content" id="content">
 
@@ -81,19 +82,15 @@
 			<img src="/images/common/pic_sample.gif" alt="증명사진" />
 			<div class="info_area">
 				<p>
-					&#51204;&#51008;&#44221;<span>1983.08.28</span><a
-						href="/personal/mem/per_modify.jsp" class="btn_type01">프로필수정</a>
+					${Member.memberName}<span>(${Member.memberId})</span>
+					<a href="/personal/mem/per_modify.jsp" class="btn_type01">프로필수정</a>
 				</p>
-				<span><strong>전화번호</strong> : 010-2684-6719</span> <span><strong>핸드폰번호</strong>
-					: 010-2684-6719</span> <span><strong>이메일</strong> :
-					jullu07@naver.com</span> <span class="address"><strong>주소</strong>
-					: (54898) &#51204;&#46972;&#48513;&#46020; &#51204;&#51452;&#49884;
-					&#45909;&#51652;&#44396; &#44592;&#47536;&#45824;&#47196; 442
-					&#44032;&#46041; 502&#54840; (&#44552;&#50516;&#46041;,
-					&#44552;&#50516;&#49464;&#50896;&#50500;&#54028;&#53944;)</span> <span
-					class="office"> <strong>현근무처</strong> : <a
-					href="javascript:updateCurrWorkStatus()"
-					class="btn_type01 w90 ml10">재직여부변경</a>
+				<span><strong>전화번호</strong> : ${Member.memberPhone}</span> 
+				<span><strong>핸드폰번호</strong> : ${Member.memberPhone}</span> 
+				<span><strong>이메일</strong> : ${Member.memberEmail}</span> 
+				<span class="address"><strong>주소</strong> : ${Member.memberAddress}</span> 
+				<span class="office"> <strong>현근무처</strong> 
+				: <a href="javascript:updateCurrWorkStatus()" class="btn_type01 w90 ml10">재직여부변경</a>
 				</span>
 			</div>
 		</div>
@@ -105,8 +102,8 @@
 			<input type="hidden" name="memberNo" value="">
 		</form>
 		<form id="writeForm" name="writeForm" method="post" action="">
-			<input type="hidden" name="callback" value="" /> <input type="hidden"
-				name="key" value="142995715" />
+			<input type="hidden" name="callback" value="" /> <input
+				type="hidden" name="key" value="142995715" />
 			<!-- 최종학력 등록 -->
 			<div class="section_top_area">
 				<h4>최종학력 등록</h4>
@@ -295,12 +292,14 @@
 			<!--// 연수/봉사 -->
 		</form>
 	</div>
-	<br><br><br>
-	
-<div>
-<c:import url="/WEB-INF/views/layout/Hadan.jsp">
-</c:import>
-</div>
-	
+	<br>
+	<br>
+	<br>
+
+	<div>
+		<c:import url="/WEB-INF/views/layout/Hadan.jsp">
+		</c:import>
+	</div>
+
 </body>
 </html>

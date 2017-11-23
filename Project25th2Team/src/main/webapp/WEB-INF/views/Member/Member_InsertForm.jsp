@@ -23,7 +23,7 @@
 		</div>
 		</header>
 		<h4 align="center">안녕하세요 회원가입을 해주세요!</h4>
-		<form align="center" action="./addMember" method="post">
+		<form align="center" action="/addMember" method="post">
 			<table align="center" border="1">
 				<tr>
 					<td>memberCode</td>
