@@ -58,6 +58,12 @@
 }
 </style>
 </head>
+
+<div>
+<c:import url="/WEB-INF/views/layout/Head.jsp">
+</c:import>
+</div>
+<br><br><br>
 <body>
 	<div class="content" id="content">
 
@@ -107,7 +113,7 @@
 				<!-- <a href="javascript:printCareer('workCareer')" class="btn_type02">근무경력확인서출력</a>  -->
 				<!-- 우측버튼 -->
 				<div class="sec_top_btn">
-					<a href="#" class="btn_add">추가</a> <a href="#" class="btn_del">삭제</a>
+					<a href="/edu" class="btn_add">추가</a> <a href="#" class="btn_del">삭제</a>
 				</div>
 			</div>
 			<table class="list_tbl_01 mb70" summary="학력 추가">
@@ -289,5 +295,12 @@
 			<!--// 연수/봉사 -->
 		</form>
 	</div>
+	<br><br><br>
+	
+<div>
+<c:import url="/WEB-INF/views/layout/Hadan.jsp">
+</c:import>
+</div>
+	
 </body>
 </html>

@@ -37,6 +37,7 @@
 			<list>
 				<value>classpath:com/cafe24/suhajin07/Member/MemberMapper.xml</value>
 				<value>classpath:com/cafe24/suhajin07/Career/CareerMapper.xml</value>
+				<value>classpath:com/cafe24/suhajin07/Edu/EduMapper.xml</value>
 			</list>
 		</property>
 	</bean>
