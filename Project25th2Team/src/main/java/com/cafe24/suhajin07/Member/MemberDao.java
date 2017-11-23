@@ -1,11 +1,11 @@
-package com.cafe24.suhajin07.Dao;
+package com.cafe24.suhajin07.Member;
 
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.cafe24.suhajin07.Dto.Member;
+
 
 @Repository
 public class MemberDao {

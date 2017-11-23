@@ -1,12 +1,14 @@
-package com.cafe24.suhajin07.Controller;
+package com.cafe24.suhajin07.Login;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.cafe24.suhajin07.Dto.Member;
-import com.cafe24.suhajin07.Service.MemberService;
+import com.cafe24.suhajin07.Member.Member;
+import com.cafe24.suhajin07.Member.MemberService;
+
+
 
 @Controller
 public class LoginController {

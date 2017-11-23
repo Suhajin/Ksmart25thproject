@@ -13,7 +13,7 @@
 		<result column="memberDate" property="memberDate" />
 	</resultMap> -->
 
-	<insert parameterType="com.cafe24.suhajin07.Dto.Member" id="insertMember">
+	<insert parameterType="com.cafe24.suhajin07.Member.Member" id="insertMember">
 		INSERT INTO 
 			member(memberCode ,memberId ,memberPw ,memberName
 					,memberPhone,memberEmail ,memberAddress ,memberDate) 
@@ -22,7 +22,7 @@
 		#{memberPhone}, #{memberEmail}, #{memberAddress} ,now()) 
 	</insert>
 
-	<select parameterType="com.cafe24.suhajin07.Dto.Member" id="login" resultType="String"> 
+	<select parameterType="com.cafe24.suhajin07.Member.Member" id="login" resultType="String"> 
 		SELECT 
 			memberName 
 		FROM 

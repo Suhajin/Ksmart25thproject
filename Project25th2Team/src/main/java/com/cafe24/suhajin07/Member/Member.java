@@ -1,4 +1,4 @@
-package com.cafe24.suhajin07.Dto;
+package com.cafe24.suhajin07.Member;
 
 public class Member {
 

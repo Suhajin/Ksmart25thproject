@@ -1,11 +1,10 @@
-package com.cafe24.suhajin07.Service;
+package com.cafe24.suhajin07.Member;
 
 import org.springframework.beans.factory.annotation.Autowired;
 /*import org.springframework.beans.factory.annotation.Autowired;*/
 import org.springframework.stereotype.Service;
 
-import com.cafe24.suhajin07.Dao.MemberDao;
-import com.cafe24.suhajin07.Dto.Member;
+
 
 @Service
 public class MemberService {

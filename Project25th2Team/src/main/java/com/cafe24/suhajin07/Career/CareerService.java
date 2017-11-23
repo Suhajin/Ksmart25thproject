@@ -1,10 +1,9 @@
-package com.cafe24.suhajin07.Service;
+package com.cafe24.suhajin07.Career;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.cafe24.suhajin07.Dao.CareerDao;
-import com.cafe24.suhajin07.Dto.Career;
+
 
 @Service
 public class CareerService {
