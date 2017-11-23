@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page session="false"%>
+<%@ page session="true"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -22,45 +22,41 @@
 			</div>
 		</div>
 		</header>
-		<h4 align="center">안녕하세요 회원가입을 해주세요!</h4>
-		<form align="center" action="./addMember" method="post">
+		<h4 align="center">${Member.memberId}(${Member.memberName})님의 MyPage 입니다.</h4>
 			<table align="center" border="1">
 				<tr>
 					<td>memberCode</td>
-					<td><input type="text" name="memberCode"></td>
+					<td><input type="text" value="${Member.memberCode}" readonly="readonly"></td>
 				</tr>
 				<tr>
 					<td>memberId</td>
-					<td><input type="text" name="memberId"></td>
+					<td><input type="text" value="${Member.memberId}" readonly="readonly"></td>
 				</tr>
 				<tr>
 					<td>memberPw</td>
-					<td><input type="text" name="memberPw"></td>
+					<td><input type="text" value="${Member.memberPw}" readonly="readonly"></td>
 				</tr>
 				<tr>
 					<td>memberName</td>
-					<td><input type="text" name="memberName"></td>
+					<td><input type="text" value="${Member.memberName}" readonly="readonly"></td>
 				</tr>
 				<tr>
 					<td>memberPhone</td>
-					<td><input type="text" name="memberPhone"></td>
+					<td><input type="text" value="${Member.memberPhone}" readonly="readonly"></td>
 				</tr>
 				<tr>
 					<td>memberEmail</td>
-					<td><input type="text" name="memberEmail"></td>
+					<td><input type="text" value="${Member.memberEmail}" readonly="readonly"></td>
 				</tr>
 				<tr>
 					<td>memberAddress</td>
-					<td><input type="text" name="memberAddress"></td>
+					<td><input type="text" value="${Member.memberAddress}" readonly="readonly"></td>
 				</tr>
 				<tr>
 					<td>memberGrade</td>
-					<td><input type="text" name="memberGrade"></td>
+					<td><input type="text" value="${Member.memberGrade}" readonly="readonly"></td>
 				</tr>
 			</table>
-
-			<input type="submit" value="addMember">
-		</form>
 	</div>
 	<div>
 		<c:import url="/WEB-INF/views/layout/Hadan.jsp">

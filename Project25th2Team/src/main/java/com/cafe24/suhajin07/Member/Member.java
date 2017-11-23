@@ -9,6 +9,8 @@ public class Member {
 	private String memberPhone;
 	private String memberEmail;
 	private String memberAddress;
+	private String memberGrade;
+	
 	public String getMemberCode() {
 		return memberCode;
 	}
@@ -51,11 +53,18 @@ public class Member {
 	public void setMemberAddress(String memberAddress) {
 		this.memberAddress = memberAddress;
 	}
+	public String getMemberGrade() {
+		return memberGrade;
+	}
+	public void setMemberGrade(String memberGrade) {
+		this.memberGrade = memberGrade;
+	}
+	
 	@Override
 	public String toString() {
 		return "Member [memberCode=" + memberCode + ", memberId=" + memberId + ", memberPw=" + memberPw
 				+ ", memberName=" + memberName + ", memberPhone=" + memberPhone + ", memberEmail=" + memberEmail
-				+ ", memberAddress=" + memberAddress + "]";
+				+ ", memberAddress=" + memberAddress + ", memberGrade=" + memberGrade + "]";
 	}
-	
 }
+	

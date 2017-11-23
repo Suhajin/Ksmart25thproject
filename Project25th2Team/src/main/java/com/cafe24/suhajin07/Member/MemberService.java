@@ -1,8 +1,10 @@
 package com.cafe24.suhajin07.Member;
 
 import org.springframework.beans.factory.annotation.Autowired;
-/*import org.springframework.beans.factory.annotation.Autowired;*/
 import org.springframework.stereotype.Service;
+
+import com.cafe24.suhajin07.Member.MemberDao;
+import com.cafe24.suhajin07.Member.Member;
 
 
 
@@ -10,7 +12,6 @@ import org.springframework.stereotype.Service;
 public class MemberService {
 	@Autowired
 	MemberDao memberDao;
-	
 
 	public void addMember(Member member) {
 
@@ -18,10 +19,15 @@ public class MemberService {
 		memberDao.insertMember(member);
 	}
 	
-    public String LoginAction(Member member) {
-        String name = memberDao.loginCheck(member);
-        System.out.println(name);
+    public Member LoginAction(Member member) {
+        
+        System.out.println(member);
    
-        return name;
+        member = memberDao.loginCheck(member);
+        System.out.println(member);
+        
+        return member;
+
     }
+
 }

@@ -1,9 +1,14 @@
 package com.cafe24.suhajin07.Member;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.cafe24.suhajin07.Member.Member;
+import com.cafe24.suhajin07.Member.MemberService;
 
 
 
@@ -30,7 +35,16 @@ public class MemberController {
 		memberservice.addMember(member);
 		
 		return "home";
-	}		
+	}
+	
+	@RequestMapping(value = "/MyPage", method = RequestMethod.GET)
+	public String MyPage(HttpSession session) {
+		
+		System.out.println(session);
+		
+		System.out.println("MyPage 폼 요청");
+		return "Member/MyPage";
+		}
 }
 
 
