@@ -82,16 +82,14 @@
 			<img src="/images/common/pic_sample.gif" alt="증명사진" />
 			<div class="info_area">
 				<p>
-					${Member.memberName}<span>(${Member.memberId})</span>
+					&nbsp;&nbsp;${Member.memberName}<span>(${Member.memberId})</span>
 					<a href="/personal/mem/per_modify.jsp" class="btn_type01">프로필수정</a>
 				</p>
 				<span><strong>전화번호</strong> : ${Member.memberPhone}</span> 
 				<span><strong>핸드폰번호</strong> : ${Member.memberPhone}</span> 
 				<span><strong>이메일</strong> : ${Member.memberEmail}</span> 
 				<span class="address"><strong>주소</strong> : ${Member.memberAddress}</span> 
-				<span class="office"> <strong>현근무처</strong> 
-				: <a href="javascript:updateCurrWorkStatus()" class="btn_type01 w90 ml10">재직여부변경</a>
-				</span>
+
 			</div>
 		</div>
 		<!--// 기본정보 -->
