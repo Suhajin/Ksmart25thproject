@@ -40,6 +40,13 @@ public class LoginController {
 		}
 	}
 	
+	@RequestMapping(value = "/Logout", method = RequestMethod.GET)
+	public String logout(HttpSession session) {
+		System.out.println("Logout");
+		session.invalidate();
+		return "home";
+		}	
+	
 
 }
 
