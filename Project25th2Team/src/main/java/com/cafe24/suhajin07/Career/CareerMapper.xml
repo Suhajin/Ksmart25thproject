@@ -1,16 +1,84 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.cafe24.suhajin07.Career.CareerMapper">
+	<resultMap type="com.cafe24.suhajin07.Member.Member" id="resultMember">
+		<result property="memberID" column="memberID" />
+		<result property="memberName" column="memberName" />
+	</resultMap>
+	<resultMap type="com.cafe24.suhajin07.Career.Career" id="resultCareer">
+		<result property="memberCode" column="memberCode" />
+		<result property="careerName" column="careerName" />
+		<result property="careerAddress" column="careerAddress" />
+		<result property="careerEntrance" column="careerEntrance" />
+		<result property="careerQuit" column="careerQuit" />
+		<result property="careerWorking" column="careerWorking" />
+		<result property="careerPeriod" column="careerPeriod" />
+		<result property="careerPosition" column="careerPosition" />
+		<result property="careerApproval" column="careerApproval" />
+		<result property="careerDate" column="careerDate" />
+	</resultMap>
 
 	<insert id="insertCareer" parameterType="com.cafe24.suhajin07.Career.Career">
 
 		INSERT INTO
-			career(memberCode ,careerName ,careerAddress ,careerEntrance ,careerQuit 
-					,careerWorking ,careerPeriod ,careerPosition,careerApproval,careerDate)
+		career(memberCode ,careerName ,careerAddress ,careerEntrance
+		,careerQuit
+		,careerWorking ,careerPeriod
+		,careerPosition,careerApproval,careerDate)
 		VALUES
-			(#{memberCode}, #{careerName}, #{careerAddress}, #{careerEntrance}, #{careerQuit},
-			#{careerWorking}, #{careerPeriod}, #{careerPosition},
-			#{careerApproval}, now())
-	</insert>	
+		(#{memberCode},
+		#{careerName}, #{careerAddress}, #{careerEntrance},
+		#{careerQuit},
+		#{careerWorking}, #{careerPeriod}, #{careerPosition},
+		#{careerApproval}, now())
+	</insert>
+
+
+	<select id="CareerList" parameterType="com.cafe24.suhajin07.Career.Career"
+		resultMap="resultCareer">
+		SELECT memberId, memberName, careerCode, careerName,
+		careerAddress,
+		careerEntrance, careerQuit, careerWorking, careerPeriod,
+		careerPosition,careerApproval
+		from career join member
+		on
+		career.memberCode = member.memberCode
+	</select>
+	<select id="CareerListOne" parameterType="com.cafe24.suhajin07.Career.Career" resultMap="resultCareer">
+		SELECT memberId, memberName, careerCode, careerName,
+		careerAddress,
+		careerEntrance, careerQuit, careerWorking, careerPeriod,
+		careerPosition,careerApproval
+		from career join member
+		on
+		career.memberCode = member.memberCode
+		where memberId = #{memberId}
+
+	</select>
+
+	<select id="CareerOneList" resultMap="resultCareer">
+		select * from career where
+		careerCode = #{careerCode}
+	</select>
+
+	<update id="CareerUpdate" parameterType="com.cafe24.suhajin07.Career.Career">
+		UPDATE career set
+		memberCode = #{memberCode}, careerName = #{careerName},
+		careerAddress =
+		#{careerAddress}, careerEntrance = #{careerEntrance},
+		careerQuit =
+		#{careerQuit}, careerWorking = #{careerWorking},
+		careerPeriod =
+		#{careerPeriod}, careerPosition = #{careerPosition},
+		careerApproval =
+		#{careerApproval}, careerDate = #{careerDate}
+		where
+		careerCode =
+		#{careerCode}
+	</update>
+
+	<delete id="CareerDelete">
+		DELETE from career where careerCode = #{careerCode}
+	</delete>
 
 </mapper>

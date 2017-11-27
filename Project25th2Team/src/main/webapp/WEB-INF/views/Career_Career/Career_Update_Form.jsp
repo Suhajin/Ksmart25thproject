@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page session="true"%>
+<%@ page session="false"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -23,44 +23,47 @@
 		</div>
 		</header>
 		<h4 align="center">경력등록</h4>
-		<form align="center" action="./addCareer" method="post">
+		<form align="center" action="./UpdateCareer" method="post">
+		<input type="hidden" name="careerCode" value="${listone.careerCode}">
+		<input type="hidden" name="careerApproval" value="${listone.careerApproval}">
+		<input type="hidden" name="careerDate" value="${listone.careerDate}">
 			<table align="center" border="1">
  				<tr>
 					<td>ID</td>
-					<td><input type="text" name="memberCode" readonly="readonly" value=${Member.memberCode}></td>
+					<td><input type="text" name="memberCode" readonly="readonly" value="${listone.memberCode}"></td>
 				</tr>
 				<tr>
 					<td>회사명</td>
-					<td><input type="text" name="careerName"></td>
+					<td><input type="text" name="careerName" value="${listone.careerName}"></td>
 				</tr>
 				<tr>
 					<td>회사주소</td>
-					<td><input type="text" name="careerAddress"></td>
+					<td><input type="text" name="careerAddress" value="${listone.careerAddress}"></td>
 				</tr>
 				<tr>
 					<td>입사일</td>
-					<td><input type="date" name="careerEntrance"></td>
+					<td><input type="date" name="careerEntrance" value="${listone.careerEntrance}"></td>
 				</tr>
 				<tr>
 					<td>퇴사일</td>
-					<td><input type="date" name="careerQuit"></td>
+					<td><input type="date" name="careerQuit" value="${listone.careerQuit}"></td>
 				</tr>
 				<tr>
 					<td>재직여부</td>
-					<td><input type="text" name="careerWorking"></td>
+					<td><input type="text" name="careerWorking" value="${listone.careerWorking}"></td>
 				</tr>
 				<tr>
 					<td>경력기간</td>
-					<td><input type="text" name="careerPeriod"></td>
+					<td><input type="text" name="careerPeriod" value="${listone.careerPeriod}"></td>
 				</tr>
 				<tr>
 					<td>직위</td>
-					<td><input type="text" name="careerPosition"></td>
+					<td><input type="text" name="careerPosition" value="${listone.careerPosition}"></td>
 				</tr>
 				
 			</table>
 
-			<input type="submit" value="addCareer">
+			<input type="submit" value="수정">
 		</form>
 	</div>
 	<div>
