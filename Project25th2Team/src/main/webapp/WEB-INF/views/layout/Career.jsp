@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@page import="java.sql.Connection"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page session="true"%>
@@ -43,6 +44,7 @@
 }
 </style>
 <style type="text/css" media="print">
+
 #wrap {
 	background: url(none) repeat-x 0 0 !important;
 }
@@ -54,6 +56,7 @@
 
 .noprint {
 	display: none;
+	
 }
 </style>
 </head>
@@ -82,13 +85,13 @@
 			<img src="/images/common/pic_sample.gif" alt="증명사진" />
 			<div class="info_area">
 				<p>
-					&nbsp;&nbsp;${Member.memberName}<span>(${Member.memberId})</span>
-					<a href="/personal/mem/per_modify.jsp" class="btn_type01">프로필수정</a>
+					&nbsp;&nbsp;${Member.memberName}<span>(${Member.memberId})</span> <a
+						href="/personal/mem/per_modify.jsp" class="btn_type01">프로필수정</a>
 				</p>
-				<span><strong>전화번호</strong> : ${Member.memberPhone}</span> 
-				<span><strong>핸드폰번호</strong> : ${Member.memberPhone}</span> 
-				<span><strong>이메일</strong> : ${Member.memberEmail}</span> 
-				<span class="address"><strong>주소</strong> : ${Member.memberAddress}</span> 
+				<span><strong>전화번호</strong> : ${Member.memberPhone}</span> <span><strong>핸드폰번호</strong>
+					: ${Member.memberPhone}</span> <span><strong>이메일</strong> :
+					${Member.memberEmail}</span> <span class="address"><strong>주소</strong>
+					: ${Member.memberAddress}</span>
 
 			</div>
 		</div>
@@ -146,9 +149,21 @@
 			<table class="list_tbl_01 mb70" summary="경력 추가">
 				<caption>경력 등록</caption>
 				<colgroup>
+					<!-- 체크박스 -->
+					<col style="width: 2%" />
+					<!-- 회사명 -->
+					<col style="width: 14%" />
+					<!-- 회사주소 -->
+					<col style="width: 14%" />
+					<!-- 입사일 -->
+					<col style="width: 14%" />
+					<!-- 퇴사일 -->
+					<col style="width: 14%" />
+					<!-- 재직여부 -->
+					<col style="width: 9%" />
+					<!-- 직급 -->
 					<col style="width: 10%" />
-					<col style="width: 65%" />
-					<col style="width: 15%" />
+					<!-- 증빙여부 -->
 					<col style="width: 10%" />
 				</colgroup>
 				<thead>
@@ -156,12 +171,30 @@
 						<th scope="col"><input type="checkbox"
 							name="checkAll4skillCareer" id="checkAll4skillCareer"
 							onclick="onCheckAll4skillCareer()" /></th>
-						<th scope="col">회사명/근무기간/담당업무</th>
+						<th scope="col">회사명</th>
+						<th scope="col">회사주소</th>
+						<th scope="col">입사일</th>
+						<th scope="col">퇴사일</th>
+						<th scope="col">재직여부</th>
+						<th scope="col">직급</th>
 						<th scope="col">증빙방법</th>
-						<th scope="col">진행상태</th>
 					</tr>
 				</thead>
 				<tbody id="skillCareerLayer">
+				<c:forEach var="career" items="${listmember}">
+					<tr>
+						<td scope="col"><input type="checkbox"
+							name="scholarNo" id="checkAll4skillCareer"
+							onclick="onCheckAll4skillCareer()" /></td>
+						<td>${career.careerName}</td>
+						<td>${career.careerAddress}</td>
+						<td>${career.careerEntrance}</td>
+						<td>${career.careerQuit}</td>
+						<td>${career.careerWorking} </td>
+						<td>${career.careerPosition} </td>
+						<td>${career.careerApproval} </td>
+					</tr>
+					</c:forEach>
 				</tbody>
 			</table>
 			<!--// 경력 등록 -->

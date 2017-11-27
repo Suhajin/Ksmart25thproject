@@ -52,7 +52,7 @@
 							<li class="nav-item"><a class="nav-link" href="#">회사안내</a></li>
 							<li class="nav-item"><a class="nav-link" href="#">공지사항</a></li>
 							<li class="nav-item"><a class="nav-link" href="/Logout">로그아웃</a></li>
-							<li class="nav-item"><a class="nav-link" href="/Insert">등록</a></li>
+							<li class="nav-item"><a class="nav-link" href="/Insert?memberId=${Member.memberId}">등록</a></li>
 						</c:when>
 						<c:when test="${Member.memberGrade eq 'manager'}">
 							<li class="nav-item active"><a class="nav-link" href="#">Home<span

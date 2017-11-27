@@ -27,6 +27,12 @@ public class CareerDao {
 			System.out.println("Creer List 성공");
 			return sql.selectList(NS+"CareerList");
 		}
+		
+		// 1사람에 대한 리스트
+		public List<Career> OneCareerList(String memberId){
+			System.out.println("One CareerList성공");
+			return sql.selectList(NS+"CareerListOne", memberId);
+		}
 		// 수정폼열기(객체1개)
 		public Career careerselectone(int careerCode) {
 			System.out.println("career onelist 성공");

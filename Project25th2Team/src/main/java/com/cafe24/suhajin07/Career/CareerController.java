@@ -24,8 +24,9 @@ public class CareerController {
 	
 	// 메인(head)에서 등록버튼 누르면 넘어가기.
 	@RequestMapping(value="/Insert", method=RequestMethod.GET)
-	public String CareerInsert() {
+	public String CareerInsert(Model model,@RequestParam ("memberId") String memberId) {
 		System.out.println("경력등록 Form 요청");
+		model.addAttribute("listmember", careerdao.OneCareerList(memberId));
 		return "layout/Career";
 	}
 	
@@ -58,7 +59,7 @@ public class CareerController {
 		public String CareerUpdate(Model model, @RequestParam ("careerCode") int careerCode) {
 			System.out.println("경력 수정화면 Controller");
 			model.addAttribute("listone", careerdao.careerselectone(careerCode));
-			return "Career_Career/Career_Update_Form";
+			return "Career_Career/Career_Update_Form";  //Career_Career/Career_Update_Form.jsp 로 이동 
 		}
 		
 		// 수정처리하기
@@ -67,7 +68,7 @@ public class CareerController {
 		public String UpdateCareer(Career career) {
 			System.out.println("UpdateCareer Controller");
 			careerservice.UpdateCareer(career);
-			return "redirect:/CareerList";
+			return "redirect:/CareerList"; // /CareerList 의 서블렛이 실행
 		}
 		
 		// 삭제처리하기

@@ -44,7 +44,17 @@
 		on
 		career.memberCode = member.memberCode
 	</select>
+	<select id="CareerListOne" parameterType="com.cafe24.suhajin07.Career.Career" resultMap="resultCareer">
+		SELECT memberId, memberName, careerCode, careerName,
+		careerAddress,
+		careerEntrance, careerQuit, careerWorking, careerPeriod,
+		careerPosition,careerApproval
+		from career join member
+		on
+		career.memberCode = member.memberCode
+		where memberId = #{memberId}
 
+	</select>
 
 	<select id="CareerOneList" resultMap="resultCareer">
 		select * from career where
