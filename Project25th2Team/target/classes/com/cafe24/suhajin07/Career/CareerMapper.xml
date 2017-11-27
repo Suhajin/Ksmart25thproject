@@ -36,11 +36,39 @@
 
 	<select id="CareerList" parameterType="com.cafe24.suhajin07.Career.Career"
 		resultMap="resultCareer">
-		SELECT memberId, memberName, careerName, careerAddress,
+		SELECT memberId, memberName, careerCode, careerName,
+		careerAddress,
 		careerEntrance, careerQuit, careerWorking, careerPeriod,
 		careerPosition,careerApproval
 		from career join member
 		on
 		career.memberCode = member.memberCode
 	</select>
+
+
+	<select id="CareerOneList" resultMap="resultCareer">
+		select * from career where
+		careerCode = #{careerCode}
+	</select>
+
+	<update id="CareerUpdate" parameterType="com.cafe24.suhajin07.Career.Career">
+		UPDATE career set
+		memberCode = #{memberCode}, careerName = #{careerName},
+		careerAddress =
+		#{careerAddress}, careerEntrance = #{careerEntrance},
+		careerQuit =
+		#{careerQuit}, careerWorking = #{careerWorking},
+		careerPeriod =
+		#{careerPeriod}, careerPosition = #{careerPosition},
+		careerApproval =
+		#{careerApproval}, careerDate = #{careerDate}
+		where
+		careerCode =
+		#{careerCode}
+	</update>
+
+	<delete id="CareerDelete">
+		DELETE from career where careerCode = #{careerCode}
+	</delete>
+
 </mapper>

@@ -2,6 +2,7 @@ package com.cafe24.suhajin07.Career;
 
 public class Career {
 
+	private int careerCode;
 	private String memberId;
 	private String memberName;
 	private String memberCode;
@@ -14,6 +15,12 @@ public class Career {
 	private String careerPosition;
 	private String careerApproval;
 	private String careerDate;
+	public int getCareerCode() {
+		return careerCode;
+	}
+	public void setCareerCode(int careerCode) {
+		this.careerCode = careerCode;
+	}
 	public String getMemberId() {
 		return memberId;
 	}
@@ -88,12 +95,13 @@ public class Career {
 	}
 	@Override
 	public String toString() {
-		return "Career [memberId=" + memberId + ", memberName=" + memberName + ", memberCode=" + memberCode
-				+ ", careerName=" + careerName + ", careerAddress=" + careerAddress + ", careerEntrance="
-				+ careerEntrance + ", careerQuit=" + careerQuit + ", careerWorking=" + careerWorking + ", careerPeriod="
-				+ careerPeriod + ", careerPosition=" + careerPosition + ", careerApproval=" + careerApproval
-				+ ", careerDate=" + careerDate + "]";
+		return "Career [careerCode=" + careerCode + ", memberId=" + memberId + ", memberName=" + memberName
+				+ ", memberCode=" + memberCode + ", careerName=" + careerName + ", careerAddress=" + careerAddress
+				+ ", careerEntrance=" + careerEntrance + ", careerQuit=" + careerQuit + ", careerWorking="
+				+ careerWorking + ", careerPeriod=" + careerPeriod + ", careerPosition=" + careerPosition
+				+ ", careerApproval=" + careerApproval + ", careerDate=" + careerDate + "]";
 	}
+	
 	
 	
 	
