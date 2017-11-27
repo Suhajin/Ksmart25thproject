@@ -52,12 +52,9 @@
 							<li class="nav-item"><a class="nav-link" href="/Information">회사안내</a></li>
 							<li class="nav-item"><a class="nav-link" href="/Notice">공지사항</a></li>
 							<li class="nav-item"><a class="nav-link" href="/Logout">로그아웃</a></li>
-<<<<<<< HEAD
-							<li class="nav-item"><a class="nav-link" href="/Insert">기술등록</a></li>
 							<li class="nav-item"><a class="nav-link" href="/Scheduler">스케줄러등록</a></li>
-=======
 							<li class="nav-item"><a class="nav-link" href="/Insert?memberId=${Member.memberId}">등록</a></li>
->>>>>>> refs/remotes/origin/master
+
 						</c:when>
 						<c:when test="${Member.memberGrade eq 'manager'}">
 							<li class="nav-item active"><a class="nav-link" href="/">Home<span
