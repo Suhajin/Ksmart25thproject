@@ -34,7 +34,7 @@
 	<!-- Navigation -->
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
 		<div class="container">
-			<a class="navbar-brand" href="#">Start Bootstrap</a>
+			<a class="navbar-brand" href="/">Home</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse"
 				data-target="#navbarResponsive" aria-controls="navbarResponsive"
 				aria-expanded="false" aria-label="Toggle navigation">
@@ -46,37 +46,38 @@
 					<c:choose>
 						
 						<c:when test="${Member.memberGrade eq 'member'}">
-							<li class="nav-item active"><a class="nav-link" href="#">Home<span
+							<li class="nav-item active"><a class="nav-link" href="/">Home<span
 									class="sr-only">(current)</span>
 							</a></li>
-							<li class="nav-item"><a class="nav-link" href="#">회사안내</a></li>
-							<li class="nav-item"><a class="nav-link" href="#">공지사항</a></li>
+							<li class="nav-item"><a class="nav-link" href="/Information">회사안내</a></li>
+							<li class="nav-item"><a class="nav-link" href="/Notice">공지사항</a></li>
 							<li class="nav-item"><a class="nav-link" href="/Logout">로그아웃</a></li>
-							<li class="nav-item"><a class="nav-link" href="/Insert">등록</a></li>
+							<li class="nav-item"><a class="nav-link" href="/Insert">기술등록</a></li>
+							<li class="nav-item"><a class="nav-link" href="/Scheduler">스케줄러등록</a></li>
 						</c:when>
 						<c:when test="${Member.memberGrade eq 'manager'}">
-							<li class="nav-item active"><a class="nav-link" href="#">Home<span
+							<li class="nav-item active"><a class="nav-link" href="/">Home<span
 									class="sr-only">(current)</span>
 							</a></li>
-							<li class="nav-item"><a class="nav-link" href="#">회사안내</a></li>
-							<li class="nav-item"><a class="nav-link" href="#">공지사항</a></li>
+							<li class="nav-item"><a class="nav-link" href="/Information">회사안내</a></li>
+							<li class="nav-item"><a class="nav-link" href="/Notice">공지사항</a></li>
 							<li class="nav-item"><a class="nav-link" href="/Logout">로그아웃</a></li>
-							<li class="nav-item"><a class="nav-link" href="/Insert">등록</a></li>
+							<li class="nav-item"><a class="nav-link" href="#">회원관리</a></li>
 						</c:when>
 						<c:when test="${Member.memberGrade eq 'master'}">
-							<li class="nav-item active"><a class="nav-link" href="#">Home<span
+							<li class="nav-item active"><a class="nav-link" href="/">Home<span
 									class="sr-only">(current)</span>
 							</a></li>
-							<li class="nav-item"><a class="nav-link" href="#">회사안내</a></li>
-							<li class="nav-item"><a class="nav-link" href="#">공지사항</a></li>
+							<li class="nav-item"><a class="nav-link" href="/Information">회사안내</a></li>
+							<li class="nav-item"><a class="nav-link" href="/Notice">공지사항</a></li>
 							<li class="nav-item"><a class="nav-link" href="/Logout">로그아웃</a></li>
-							<li class="nav-item"><a class="nav-link" href="/Insert">등록</a></li>
+							<li class="nav-item"><a class="nav-link" href="#">매니저등록</a></li>
+							<li class="nav-item"><a class="nav-link" href="#">매니저관리</a></li>
 						</c:when>
 						<c:otherwise>
-							<li class="nav-item active"><a class="nav-link" href="#">Home<span
-									class="sr-only">(current)</span></a></li>
-							<li class="nav-item"><a class="nav-link" href="#">회사안내</a></li>
-							<li class="nav-item"><a class="nav-link" href="#">공지사항</a></li>
+							<li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+							<li class="nav-item"><a class="nav-link" href="/Information">회사안내</a></li>
+							<li class="nav-item"><a class="nav-link" href="/Notice">공지사항</a></li>
 							<li class="nav-item"><a class="nav-link" href="/login">로그인</a>
 							</li>
 							<li class="nav-item"><a class="nav-link" href="/member">회원가입</a>
