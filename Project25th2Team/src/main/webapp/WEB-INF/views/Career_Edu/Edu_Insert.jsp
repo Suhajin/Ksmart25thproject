@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page session="false"%>
+<%@ page session="true"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -23,18 +23,14 @@
 		</div>
 		</header>
 		<h4 align="center">최종학력등록</h4>
-	<form action="/addEdu" method="post" align="center">
+	<form action="/edu" method="post" align="center">
 		<table align="center" border="1">
 			<tr>
-				<td>eduCode</td>
-				<td><input type="text" name="eduCode"></td>
-			</tr>
-			<tr>
 				<td>memberCode</td>
-				<td><input type="text" name="memberCode"></td>
+				<td><input type="text" name="memberCode" readonly="readonly" value=${Member.memberCode}></td>
 			</tr>
 			<tr>
-				<td>eduHighestLevel</td>
+				<td>최종학력</td>
 				<td>
 					<select name="eduHighestLevel">
 						<option>선택</option>
@@ -50,23 +46,23 @@
 				</td>
 			</tr>
 			<tr>
-				<td>eduName</td>
+				<td>학교명</td>
 				<td><input type="text" name="eduName"></td>
 			</tr>
 			<tr>
-				<td>eduMajor</td>
+				<td>전공</td>
 				<td><input type="text" name="eduMajor"></td>
 			</tr>
 			<tr>
-				<td>eduMinor</td>
+				<td>부전공</td>
 				<td><input type="text" name="eduMinor"></td>
 			</tr>
 			<tr>	
-				<td>eduDual</td>
+				<td>복수전공</td>
 				<td><input type="text" name="eduDual"></td>
 			</tr>
 			<tr>
-				<td>eduGraduation</td>
+				<td>졸업여부</td>
 				<td>
 					<select name="eduGraduation">
 						<option>선택</option>
@@ -77,19 +73,19 @@
 				</td>
 			</tr>
 			<tr>	
-				<td>eduEntrance</td>
+				<td>입학일</td>
 				<td><input type="date" name="eduEntrance"></td>
 			</tr>
 			<tr>	
-				<td>eduFinish</td>
+				<td>종업일</td>
 				<td><input type="date" name="eduFinish"></td>
 			</tr>
 			<tr>
-				<td>eduBefore</td>
+				<td>전적대(편)</td>
 				<td><input type="text" name="eduBefore"></td>
 			</tr>
 			<tr>
-				<td>eduBeforeMajor</td>
+				<td>전적전공(편)</td>
 				<td><input type="text" name="eduBeforeMajor"></td>
 			</tr>
 		</table>

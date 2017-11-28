@@ -19,13 +19,18 @@ public class EduController {
 		return "Career_Edu/Edu_Insert";
 	}
 	
-	@RequestMapping(value = "/addEdu", method = RequestMethod.POST)
+	@RequestMapping(value = "/edu", method = RequestMethod.POST)
 	public String addEdu(Edu edu) {
-		System.out.println(edu + "CareerController addEdu");
+		System.out.println(edu + "addEdu <-- EduController.java");
 		
 		eduService.addEdu(edu);
 		
-		return "home";
+		return "layout/Career";
+	}
+	
+	@RequestMapping(value="/Career", method = RequestMethod.GET)
+	public void listAll(Edu edu) {
+		System.out.println(edu + "listAll <-- EduController.java");
 	}
 	
 }
