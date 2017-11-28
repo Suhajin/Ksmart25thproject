@@ -44,16 +44,17 @@
 				<ul class="navbar-nav ml-auto">
 
 					<c:choose>
-						
+
 						<c:when test="${Member.memberGrade eq 'member'}">
 							<li class="nav-item active"><a class="nav-link" href="/">Home<span
 									class="sr-only">(current)</span>
 							</a></li>
 							<li class="nav-item"><a class="nav-link" href="/Information">회사안내</a></li>
 							<li class="nav-item"><a class="nav-link" href="/Notice">공지사항</a></li>
-							<li class="nav-item"><a class="nav-link" href="/Logout">로그아웃</a></li>
 							<li class="nav-item"><a class="nav-link" href="/Scheduler">스케줄러등록</a></li>
-							<li class="nav-item"><a class="nav-link" href="/Insert?memberId=${Member.memberId}">등록</a></li>
+							<li class="nav-item"><a class="nav-link"
+								href="/Insert?memberId=${Member.memberId}">마이페이지</a></li>
+							<li class="nav-item"><a class="nav-link" href="/Logout">로그아웃</a></li>
 
 						</c:when>
 						<c:when test="${Member.memberGrade eq 'manager'}">
@@ -62,8 +63,17 @@
 							</a></li>
 							<li class="nav-item"><a class="nav-link" href="/Information">회사안내</a></li>
 							<li class="nav-item"><a class="nav-link" href="/Notice">공지사항</a></li>
-							<li class="nav-item"><a class="nav-link" href="/Logout">로그아웃</a></li>
 							<li class="nav-item"><a class="nav-link" href="#">회원관리</a></li>
+							<li class="nav-item"><a class="nav-link" href="#">스케줄관리</a></li>
+							<li class="dropdown"><a class="nav-link"
+								data-toggle="dropdown" href="#">개인관리 <span class="caret"></span></a>
+								<ul class="dropdown-menu">
+									<li><a href="#">개인정보</a></li>
+									<li><a href="#">실적내역</a></li>
+									<li><a href="#">상벌내역</a></li>
+									<li><a href="#">급여내역</a></li>
+								</ul></li>
+							<li class="nav-item"><a class="nav-link" href="/Logout">로그아웃</a></li>
 						</c:when>
 						<c:when test="${Member.memberGrade eq 'master'}">
 							<li class="nav-item active"><a class="nav-link" href="/">Home<span
@@ -71,17 +81,29 @@
 							</a></li>
 							<li class="nav-item"><a class="nav-link" href="/Information">회사안내</a></li>
 							<li class="nav-item"><a class="nav-link" href="/Notice">공지사항</a></li>
+							<li class="dropdown"><a class="nav-link"
+								data-toggle="dropdown" href="#">매니저 <span class="caret"></span></a>
+								<ul class="dropdown-menu">
+									<li><a href="#">매니저등록</a></li>
+									<li><a href="#">매니저관리</a></li>
+									<li><a href="#">매니저실적관리</a></li>
+									<li><a href="#">급여관리</a></li>
+								</ul></li>
+							<li class="dropdown"><a class="nav-link"
+								data-toggle="dropdown" href="#">회원관리 <span class="caret"></span></a>
+								<ul class="dropdown-menu">
+									<li><a href="#">회원리스트</a></li>
+									<li><a href="#">회원경력리스트</a></li>
+									<li><a href="#">회원컨설리스트</a></li>
+								</ul></li>
 							<li class="nav-item"><a class="nav-link" href="/Logout">로그아웃</a></li>
-							<li class="nav-item"><a class="nav-link" href="#">매니저등록</a></li>
-							<li class="nav-item"><a class="nav-link" href="#">매니저관리</a></li>
 						</c:when>
 						<c:otherwise>
 							<li class="nav-item"><a class="nav-link" href="/">Home</a></li>
 							<li class="nav-item"><a class="nav-link" href="/Information">회사안내</a></li>
 							<li class="nav-item"><a class="nav-link" href="/Notice">공지사항</a></li>
-							<li class="nav-item"><a class="nav-link" href="/login">로그인</a>
-							</li>
-							<li class="nav-item"><a class="nav-link" href="/member">회원가입</a>
+							<li class="nav-item"><a class="nav-link" href="/member">회원가입</a></li>
+							<li class="nav-item"><a class="nav-link" href="/login">로그인</a></li>
 						</c:otherwise>
 					</c:choose>
 

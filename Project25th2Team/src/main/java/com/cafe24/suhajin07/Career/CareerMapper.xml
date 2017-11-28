@@ -56,7 +56,7 @@
 
 	</select>
 
-	<select id="CareerOneList" resultMap="resultCareer">
+	<select id="CareerSelectOne" resultMap="resultCareer">
 		select * from career where
 		careerCode = #{careerCode}
 	</select>

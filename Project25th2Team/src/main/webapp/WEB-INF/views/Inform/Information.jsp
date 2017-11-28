@@ -35,7 +35,7 @@
 	<div id="map" style="width: 100%; height: 400px;"></div>
 	<script>
 		var mapOptions = {
-			center : new naver.maps.LatLng(37.3595704, 127.105399),
+			center : new naver.maps.LatLng(35.8406421, 127.1291779),
 			zoom : 10
 		};
 

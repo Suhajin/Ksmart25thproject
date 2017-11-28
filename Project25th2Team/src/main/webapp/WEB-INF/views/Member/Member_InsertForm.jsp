@@ -5,19 +5,19 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <style>
-	input[type=text], select {
-		width: 100%;
-		padding: 12px 20px;
-		margin: 8px 0;
-		display: inline-block;
-		border: 1px solid #ccc;
-		border-radius: 4px;
-		box-sizing: border-box;
-	}
-	
-	table {
-		width: 50%;
-	}
+input[type=text], select {
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
+table {
+	width: 40%;
+}
 </style>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
@@ -37,43 +37,42 @@
 			</div>
 		</div>
 		</header>
+		<br><br>
 		<h4 align="center">안녕하세요 회원가입을 해주세요!</h4>
+		<br>
+		<br>
 		<form align="center" action="/addMember" method="post">
 			<table align="center" border="1">
 				<tr>
-					<td>memberCode</td>
-					<td><input type="text" name="memberCode"
-						placeholder="회원가입을 위한 memberCode를 입력하세요"></td>
-				</tr>
-				<tr>
-					<td>memberId</td>
+					<td>아이디</td>
 					<td><input type="text" name="memberId"
 						placeholder="회원가입을 위한 memberId를 입력하세요"></td>
 				</tr>
 				<tr>
-					<td>memberPw</td>
+					<td>비밀번호</td>
 					<td><input type="text" name="memberPw"
 						placeholder="회원가입을 위한 memberPw를 입력하세요"></td>
 				</tr>
 				<tr>
-					<td>memberName</td>
+					<td>이름</td>
 					<td><input type="text" name="memberName"
 						placeholder="회원가입을 위한 memberName를 입력하세요"></td>
 				</tr>
 				<tr>
-					<td>memberPhone</td>
+					<td>휴대폰</td>
 					<td><input type="text" name="memberPhone"
 						placeholder="회원가입을 위한 memberPhone를 입력하세요"></td>
 				</tr>
 				<tr>
-					<td>memberEmail</td>
+					<td>Email</td>
 					<td><input type="text" name="memberEmail"
 						placeholder="회원가입을 위한 memberEmail를 입력하세요"></td>
 				</tr>
 				<tr>
-					<td>memberAddress</td>
-					<td><input type="text" id="sample3_postcode" name="memberPostNum" placeholder="우편번호"> 
-					<input type="button" onclick="sample3_execDaumPostcode()" value="우편번호 찾기"><br>
+					<td>회원 주소</td>
+					<td><input type="text" id="sample3_postcode"
+						name="memberPostNum" placeholder="우편번호"> <input
+						type="button" onclick="sample3_execDaumPostcode()" value="우편번호 찾기"><br>
 						<div id="wrap"
 							style="display: none; border: 1px solid; width: 500px; height: 300px; margin: 5px 0; position: relative">
 							<img
@@ -83,12 +82,13 @@
 								onclick="foldDaumPostcode()" alt="접기 버튼">
 						</div>
 						<div>
-							<input type="text" id="sample3_address" class="d_form large" name="memberAddress" placeholder="주소">
+							<input type="text" id="sample3_address" class="d_form large"
+								name="memberAddress" placeholder="주소">
 						</div>
 						<div>
-							<input type="text" id="sample3_address" class="d_form large" name="memberDetailAddress" placeholder="상세주소">
-						</div> 
-						<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
+							<input type="text" id="sample3_address" class="d_form large"
+								name="memberDetailAddress" placeholder="상세주소">
+						</div> <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 						<script>
 							// 우편번호 찾기 찾기 화면을 넣을 element
 							var element_wrap = document.getElementById('wrap');
@@ -157,16 +157,13 @@
 								element_wrap.style.display = 'block';
 							}
 						</script></td>
-				</tr>
-				<tr>
-					<td>memberGrade</td>
-					<td><input type="text" name="memberGrade" value="member"
-						readonly="readonly"></td>
-				</tr>
 			</table>
-			<input type="submit" value="회원가입">
+			<input type="hidden" name="memberGrade" value="member"
+				readonly="readonly"> <br>
+			<br><input type="submit" value="회원가입">
 		</form>
 	</div>
+	<br><br>
 	<div>
 		<c:import url="/WEB-INF/views/layout/Hadan.jsp">
 		</c:import>

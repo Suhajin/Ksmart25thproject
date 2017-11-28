@@ -1,8 +1,10 @@
-package com.cafe24.suhajin07.Member;
+package com.cafe24.suhajin07.Master;
 
-public class Member {
-
-	private int memberCode;
+public class Master {
+	
+	
+	private int managerCode;
+	private String memberCode;
 	private String memberId;
 	private String memberPw;
 	private String memberName;
@@ -12,10 +14,22 @@ public class Member {
 	private String memberAddress;
 	private String memberDetailAddress;
 	private String memberGrade;
-	public int getMemberCode() {
+	private String managerGradeCode;
+	private String managerName;
+	private String managerDepartment;
+	
+	
+	
+	public int getManagerCode() {
+		return managerCode;
+	}
+	public void setManagerCode(int managerCode) {
+		this.managerCode = managerCode;
+	}
+	public String getMemberCode() {
 		return memberCode;
 	}
-	public void setMemberCode(int memberCode) {
+	public void setMemberCode(String memberCode) {
 		this.memberCode = memberCode;
 	}
 	public String getMemberId() {
@@ -72,14 +86,35 @@ public class Member {
 	public void setMemberGrade(String memberGrade) {
 		this.memberGrade = memberGrade;
 	}
+	public String getManagerGradeCode() {
+		return managerGradeCode;
+	}
+	public void setManagerGradeCode(String managerGradeCode) {
+		this.managerGradeCode = managerGradeCode;
+	}
+	public String getManagerName() {
+		return managerName;
+	}
+	public void setManagerName(String managerName) {
+		this.managerName = managerName;
+	}
+	public String getManagerDepartment() {
+		return managerDepartment;
+	}
+	public void setManagerDepartment(String managerDepartment) {
+		this.managerDepartment = managerDepartment;
+	}
 	@Override
 	public String toString() {
-		return "Member [memberCode=" + memberCode + ", memberId=" + memberId + ", memberPw=" + memberPw
-				+ ", memberName=" + memberName + ", memberPhone=" + memberPhone + ", memberEmail=" + memberEmail
-				+ ", memberPostNum=" + memberPostNum + ", memberAddress=" + memberAddress + ", memberDetailAddress="
-				+ memberDetailAddress + ", memberGrade=" + memberGrade + "]";
+		return "Master [managerCode=" + managerCode + ", memberCode=" + memberCode + ", memberId=" + memberId
+				+ ", memberPw=" + memberPw + ", memberName=" + memberName + ", memberPhone=" + memberPhone
+				+ ", memberEmail=" + memberEmail + ", memberPostNum=" + memberPostNum + ", memberAddress="
+				+ memberAddress + ", memberDetailAddress=" + memberDetailAddress + ", memberGrade=" + memberGrade
+				+ ", managerGradeCode=" + managerGradeCode + ", managerName=" + managerName + ", managerDepartment="
+				+ managerDepartment + "]";
 	}
 	
 	
 	
+
 }

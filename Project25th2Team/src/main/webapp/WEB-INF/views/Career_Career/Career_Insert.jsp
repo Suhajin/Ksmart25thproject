@@ -24,11 +24,8 @@
 		</header>
 		<h4 align="center">경력등록</h4>
 		<form align="center" action="./addCareer" method="post">
+		<input type="text" name="memberCode" value=${Member.memberCode}>
 			<table align="center" border="1">
- 				<tr>
-					<td>ID</td>
-					<td><input type="text" name="memberCode" readonly="readonly" value=${Member.memberCode}></td>
-				</tr>
 				<tr>
 					<td>회사명</td>
 					<td><input type="text" name="careerName"></td>

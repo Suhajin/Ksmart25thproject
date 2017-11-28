@@ -37,7 +37,7 @@ public class CareerDao {
 		public Career careerselectone(int careerCode) {
 			System.out.println("career onelist 성공");
 			System.out.println(careerCode);
-			return sql.selectOne(NS+"CareerOneList", careerCode);
+			return sql.selectOne(NS+"CareerSelectOne", careerCode);
 		}
 		
 		// 수정처리
