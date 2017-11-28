@@ -133,6 +133,16 @@
 					</tr>
 				</thead>
 				<tbody id="workCareerLayer">
+					<c:forEach var="edu" items="${memberEduList}">
+					<tr>
+						<td scope="col"><input type="checkbox"
+							name="scholarNo" id="checkAll4skillCareer"
+							onclick="onCheckAll4skillCareer()" /></td>
+						<td>${edu.eduName}</td>
+						<td>${edu.eduMajor}</td>
+						<td>${edu.eduGraduation}</td>
+					</tr>
+					</c:forEach>
 				</tbody>
 			</table>
 			<!--// 근무경력 -->

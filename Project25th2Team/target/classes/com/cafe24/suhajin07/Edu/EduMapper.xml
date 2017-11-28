@@ -60,4 +60,8 @@
 		FROM edu
 		WHERE memberCode = #{memberCode} 
 	</select>
+	
+	<!--  -->
+	<select id="eduOneList" resultType="com.cafe24.suhajin07.Edu.Edu">
+	</select>
 </mapper>

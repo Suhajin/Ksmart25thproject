@@ -26,9 +26,9 @@ public class EduDao {
 	}
 	
 	//등록한 학력 list로 출력
-	public List<Edu> listAll() {
+	public Edu listAll(String memberId) {
 		System.out.println("selectEdu <--EduDao.java");
-		return sst.selectList(NS+"eduList");
+		return sst.selectOne(NS+"eduList", memberId);
 	}
 	
 	
