@@ -17,6 +17,13 @@ public class MemberDao {
 	
 	private final String NS = "com.cafe24.suhajin07.Member.MemberMapper.";
 	
+	public void UpdateMember(Member member) {
+		System.out.println("Dao 성공");
+		System.out.println(member);
+		sqlSessionTemplate.insert(NS+"updateMember",member);
+	}
+
+	
 	public void insertMember(Member member) {
 		System.out.println("Dao 성공");
 		System.out.println(member);

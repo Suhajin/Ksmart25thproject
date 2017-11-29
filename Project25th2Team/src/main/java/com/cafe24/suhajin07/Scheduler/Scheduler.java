@@ -1,4 +1,4 @@
-package com.cafe24.suhajin07.Login;
+package com.cafe24.suhajin07.Scheduler;
 
 
 import java.text.SimpleDateFormat;
@@ -7,7 +7,7 @@ import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
-public class DateData {
+public class Scheduler {
 
 		String year = "";
 		String month = "";
@@ -70,7 +70,7 @@ public class DateData {
 		}
 
 		// 날짜에 관련된 달력정보를 가지는 메서드
-		public Map<String, Integer> today_info(DateData dateData) {
+		public Map<String, Integer> today_info(Scheduler dateData) {
 			// 날짜 캘린더 함수에 삽입.
 			Map<String, Integer> today_Data = new HashMap<String, Integer>();
 			Calendar cal = Calendar.getInstance();
@@ -143,7 +143,7 @@ public class DateData {
 		}
 		
 		// 스케줄 사용시 사용될 생성자
-		public DateData(String year, String month, String date, String value, String schedule, String schedule_detail) {
+		public Scheduler(String year, String month, String date, String value, String schedule, String schedule_detail) {
 
 			this.year = year;
 			this.month = month;
@@ -155,7 +155,7 @@ public class DateData {
 		}
 
 		// 달력만 사용시 사용될 생성자
-		public DateData(String year, String month, String date, String value) {
+		public Scheduler(String year, String month, String date, String value) {
 			if ((month != null && month != "") && (date != null && date != "")) {
 				this.year = year;
 				this.month = month;
@@ -164,7 +164,7 @@ public class DateData {
 			}
 		}
 
-		public DateData() {
+		public Scheduler() {
 		}
 
 		@Override

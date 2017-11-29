@@ -54,6 +54,7 @@
 							<li class="nav-item"><a class="nav-link" href="/Logout">로그아웃</a></li>
 							<li class="nav-item"><a class="nav-link" href="/Scheduler">스케줄러등록</a></li>
 							<li class="nav-item"><a class="nav-link" href="/Insert?memberId=${Member.memberId}">등록</a></li>
+							<li class="nav-item"><a class="nav-link" href="/Goal?memberId=${Member.memberId}">목표설정</a></li>
 
 						</c:when>
 						<c:when test="${Member.memberGrade eq 'manager'}">
@@ -72,7 +73,7 @@
 							<li class="nav-item"><a class="nav-link" href="/Information">회사안내</a></li>
 							<li class="nav-item"><a class="nav-link" href="/Notice">공지사항</a></li>
 							<li class="nav-item"><a class="nav-link" href="/Logout">로그아웃</a></li>
-							<li class="nav-item"><a class="nav-link" href="#">매니저등록</a></li>
+							<li class="nav-item"><a class="nav-link" href="/manager">매니저등록</a></li>
 							<li class="nav-item"><a class="nav-link" href="#">매니저관리</a></li>
 						</c:when>
 						<c:otherwise>

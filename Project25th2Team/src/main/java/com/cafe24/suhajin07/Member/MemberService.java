@@ -1,5 +1,6 @@
 package com.cafe24.suhajin07.Member;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,6 +18,13 @@ public class MemberService {
 
 		System.out.println(member);
 		memberDao.insertMember(member);
+	}
+	
+	public void UpdateMember(Member member) {
+
+		System.out.println(member);
+		memberDao.UpdateMember(member);
+		
 	}
 	
     public Member LoginAction(Member member) {

@@ -37,6 +37,24 @@ public class MemberController {
 		return "home";
 	}
 	
+	@RequestMapping(value = "/Update", method = RequestMethod.GET)
+	public String Update() {
+		
+		System.out.println("Member_UpdateForm 폼 요청");
+		return "Member/Member_UpdateForm";
+
+	}
+	
+	@RequestMapping(value = "/memberUpdate", method = RequestMethod.POST)
+	public String memberUpdate(Member member, HttpSession session) {
+		System.out.println("memberUpdate");
+		System.out.println(member);
+		System.out.println(session);
+		memberservice.UpdateMember(member);
+		return "layout/Goal";
+
+	}
+	
 	@RequestMapping(value = "/MyCareer", method = RequestMethod.GET)
 	public String MyPage(HttpSession session) {
 		

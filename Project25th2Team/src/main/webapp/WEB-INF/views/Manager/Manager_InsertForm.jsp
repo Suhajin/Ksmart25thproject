@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page session="false"%>
+<%@ page session="true"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <style>
@@ -10,7 +10,7 @@
 		padding: 12px 20px;
 		margin: 8px 0;
 		display: inline-block;
-		border: 1px solid #ccc;
+		border: 1px solisd #ccc;
 		border-radius: 4px;
 		box-sizing: border-box;
 	}
@@ -21,57 +21,48 @@
 </style>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>회원가입</title>
+<title>매니저등록</title>
 </head>
 <body>
 	<div>
 		<c:import url="/WEB-INF/views/layout/Head.jsp">
 		</c:import>
 	</div>
-	<div>
-		<header class="masthead">
-		<div class="overlay">
-			<div class="container">
-				<h1 class="display-1 text-white">Welcome!</h1>
-				<h2 class="display-4 text-white">Consulting for you.</h2>
-			</div>
-		</div>
-		</header>
-		<h4 align="center">안녕하세요 회원가입을 해주세요!</h4>
+		<h4 align="center">매니저 등록</h4>
 		<form align="center" action="/addMember" method="post">
 			<table align="center" border="1">
 				<tr>
-					<td>memberCode</td>
+					<td>manegerCode</td>
 					<td><input type="text" name="memberCode"
-						placeholder="회원가입을 위한 memberCode를 입력하세요"></td>
+						placeholder="매니저등록을 위한 manegerCode를 입력하세요"></td>
 				</tr>
 				<tr>
-					<td>memberId</td>
+					<td>manegerId</td>
 					<td><input type="text" name="memberId"
-						placeholder="회원가입을 위한 memberId를 입력하세요"></td>
+						placeholder="매니저등록을 위한 manegerId를 입력하세요"></td>
 				</tr>
 				<tr>
-					<td>memberPw</td>
+					<td>manegerPw</td>
 					<td><input type="text" name="memberPw"
-						placeholder="회원가입을 위한 memberPw를 입력하세요"></td>
+						placeholder="매니저등록을 위한 manegerPw를 입력하세요"></td>
 				</tr>
 				<tr>
-					<td>memberName</td>
+					<td>manegerName</td>
 					<td><input type="text" name="memberName"
-						placeholder="회원가입을 위한 memberName를 입력하세요"></td>
+						placeholder="매니저등록을 위한 manegerName를 입력하세요"></td>
 				</tr>
 				<tr>
-					<td>memberPhone</td>
+					<td>manegerPhone</td>
 					<td><input type="text" name="memberPhone"
-						placeholder="회원가입을 위한 memberPhone를 입력하세요"></td>
+						placeholder="매니저등록을 위한 manegerPhone를 입력하세요"></td>
 				</tr>
 				<tr>
-					<td>memberEmail</td>
+					<td>manegerEmail</td>
 					<td><input type="text" name="memberEmail"
-						placeholder="회원가입을 위한 memberEmail를 입력하세요"></td>
+						placeholder="매니저등록을 위한 manegerEmail를 입력하세요"></td>
 				</tr>
 				<tr>
-					<td>memberAddress</td>
+					<td>manegerAddress</td>
 					<td><input type="text" id="sample3_postcode" name="memberPostNum" placeholder="우편번호"> 
 					<input type="button" onclick="sample3_execDaumPostcode()" value="우편번호 찾기"><br>
 						<div id="wrap"
@@ -159,12 +150,12 @@
 						</script></td>
 				</tr>
 				<tr>
-					<td>memberGrade</td>
-					<td><input type="text" name="memberGrade" value="member"
+					<td>manegerGrade</td>
+					<td><input type="text" name="memberGrade" value="manager"
 						readonly="readonly"></td>
 				</tr>
 			</table>
-			<input type="submit" value="회원가입">
+			<input type="submit" value="매니저등록">
 		</form>
 	</div>
 	<div>
@@ -173,3 +164,4 @@
 	</div>
 </body>
 </html>
+

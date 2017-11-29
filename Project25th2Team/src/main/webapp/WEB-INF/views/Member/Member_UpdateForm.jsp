@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page session="false"%>
+<%@ page session="true"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <style>
@@ -21,10 +21,10 @@
 </style>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>회원가입</title>
+<title>회원정보수정</title>
 </head>
 <body>
-	<div>
+<div>
 		<c:import url="/WEB-INF/views/layout/Head.jsp">
 		</c:import>
 	</div>
@@ -37,42 +37,42 @@
 			</div>
 		</div>
 		</header>
-		<h4 align="center">안녕하세요 회원가입을 해주세요!</h4>
-		<form align="center" action="/addMember" method="post">
+		<h1 align="center">회원정보수정</h1>
+		<form align="center" action="/memberUpdate" method="post">
 			<table align="center" border="1">
 				<tr>
 					<td>memberCode</td>
 					<td><input type="text" name="memberCode"
-						placeholder="회원가입을 위한 memberCode를 입력하세요"></td>
+						value="${Member.memberCode}" readonly="readonly"></td>
 				</tr>
 				<tr>
 					<td>memberId</td>
 					<td><input type="text" name="memberId"
-						placeholder="회원가입을 위한 memberId를 입력하세요"></td>
+						placeholder="${Member.memberId}"></td>
 				</tr>
 				<tr>
 					<td>memberPw</td>
 					<td><input type="text" name="memberPw"
-						placeholder="회원가입을 위한 memberPw를 입력하세요"></td>
+						placeholder="${Member.memberPw}"></td>
 				</tr>
 				<tr>
 					<td>memberName</td>
 					<td><input type="text" name="memberName"
-						placeholder="회원가입을 위한 memberName를 입력하세요"></td>
+						placeholder="${Member.memberName}"></td>
 				</tr>
 				<tr>
 					<td>memberPhone</td>
 					<td><input type="text" name="memberPhone"
-						placeholder="회원가입을 위한 memberPhone를 입력하세요"></td>
+						placeholder="${Member.memberPhone}"></td>
 				</tr>
 				<tr>
 					<td>memberEmail</td>
 					<td><input type="text" name="memberEmail"
-						placeholder="회원가입을 위한 memberEmail를 입력하세요"></td>
+						placeholder="${Member.memberEmail}"></td>
 				</tr>
 				<tr>
 					<td>memberAddress</td>
-					<td><input type="text" id="sample3_postcode" name="memberPostNum" placeholder="우편번호"> 
+					<td><input type="text" id="sample3_postcode" name="memberPostNum" placeholder="${Member.memberPostNum}"> 
 					<input type="button" onclick="sample3_execDaumPostcode()" value="우편번호 찾기"><br>
 						<div id="wrap"
 							style="display: none; border: 1px solid; width: 500px; height: 300px; margin: 5px 0; position: relative">
@@ -83,10 +83,10 @@
 								onclick="foldDaumPostcode()" alt="접기 버튼">
 						</div>
 						<div>
-							<input type="text" id="sample3_address" class="d_form large" name="memberAddress" placeholder="주소">
+							<input type="text" id="sample3_address" class="d_form large" name="memberAddress" placeholder="${Member.memberAddress}">
 						</div>
 						<div>
-							<input type="text" id="sample3_address" class="d_form large" name="memberDetailAddress" placeholder="상세주소">
+							<input type="text" id="sample3_address" class="d_form large" name="memberDetailAddress" placeholder="${Member.memberDetailAddress}">
 						</div> 
 						<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 						<script>
@@ -164,7 +164,7 @@
 						readonly="readonly"></td>
 				</tr>
 			</table>
-			<input type="submit" value="회원가입">
+			<input type="submit" value="회원수정">
 		</form>
 	</div>
 	<div>
