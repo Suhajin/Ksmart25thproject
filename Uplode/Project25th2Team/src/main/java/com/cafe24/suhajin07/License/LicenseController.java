@@ -8,7 +8,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-
 @Controller
 public class LicenseController {
 
@@ -35,8 +34,8 @@ public class LicenseController {
 	@RequestMapping(value = "/LicenseList", method = RequestMethod.GET)
 	public String LicenseList(Model model) {
 		System.out.println("License 전체리스트");
-		List<License> list = licenseDao.selectLicenseList();
-		model.addAttribute("list", list);
+		List<License> Licenselist = licenseDao.selectLicenseList();
+		model.addAttribute("Licenselist", Licenselist);
 		return "Career_License/License_List";
 	}
 }

@@ -200,8 +200,8 @@
 				<h4>자격증 등록</h4>
 				<!-- 우측버튼 -->
 				<div class="sec_top_btn">
-					<a href="/License" class="btn_add">추가</a> <a href="/LicenseList"
-						class="btn_del">전체리스트</a>
+					<a href="/License" class="btn_add">추가</a> 
+					<a href="/LicenseList" class="btn_del">전체리스트</a>
 				</div>
 			</div>
 			<table class="list_tbl_01 mb70" summary="자격증 추가">
@@ -231,8 +231,8 @@
 				<h4>어학 등록</h4>
 				<!-- 우측버튼 -->
 				<div class="sec_top_btn">
-					<a href="javascript:addCareer('#')" class="btn_add">추가</a> <a
-						href="javascript:removeCareer('#')" class="btn_del">삭제</a>
+					<a href="/Language" class="btn_add">추가</a> <a
+						href="/LanguageList" class="btn_del">전체리스트</a>
 				</div>
 			</div>
 			<table class="list_tbl_01 mb70" summary="어학 추가">
@@ -262,8 +262,8 @@
 				<h4>수료교육 등록</h4>
 				<!-- 우측버튼 -->
 				<div class="sec_top_btn">
-					<a href="javascript:addCareer('#')" class="btn_add">추가</a> <a
-						href="javascript:removeCareer('#')" class="btn_del">삭제</a>
+					<a href="/Complete" class="btn_add">추가</a> <a
+						href="/CompleteList" class="btn_del">전체리스트</a>
 				</div>
 			</div>
 			<table class="list_tbl_01 mb70" summary="수료교육 추가">
@@ -293,8 +293,8 @@
 				<h4>연수/봉사 등록</h4>
 				<!-- 우측버튼 -->
 				<div class="sec_top_btn">
-					<a href="javascript:addCareer('#')" class="btn_add">추가</a> <a
-						href="javascript:removeCareer('#')" class="btn_del">삭제</a>
+					<a href="/Training" class="btn_add">추가</a> <a
+						href="/TrainingList" class="btn_del">전체리스트</a>
 				</div>
 			</div>
 			<table class="list_tbl_01 mb70" summary="연수봉사 추가">

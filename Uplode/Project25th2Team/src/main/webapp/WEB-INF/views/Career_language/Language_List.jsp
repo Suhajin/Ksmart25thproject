@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>자격증등록</title>
+<title>어학등록 리스트</title>
 </head>
 <body>
 	<div>
@@ -24,35 +24,35 @@
 		</header>
 		<form align="center">
 			<br> <br> <br> <br>
-			<h1>전체 보유 자격증 리스트</h1>
+			<h1>전체 어학 리스트</h1>
 			<div align="center">
 				<table border="1" align="center">
 					<thead>
 						<tr>
 							<th>ID</th>
 							<th>회원명</th>
-							<th>자격증명 </th>
-							<th>취득일 </th>
-							<th>취득번호 </th>
-							<th>발급처 </th>
-							<th>첨부파일 </th>
-							<th>승인여부 </th>
-							<th>자격증 등록일</th>
+							<th>어학자격증명</th>
+							<th>취득일</th>
+							<th>점수</th>
+							<th>발급처</th>
+							<th>첨부파일</th>
+							<th>승인여부</th>
+							<th>어학 등록일</th>
 							<th>수정</th>
 							<th>삭제</th>
 						</tr>
-						<c:forEach var="license" items="${Licenselist}">
-							
+						<c:forEach var="language" items="${Language}">
+
 							<tr>
-								<td>${license.memberId}</td>
-								<td>${license.memberName}</td>
-								<td>${license.lisenceListCode}</td>
-								<td>${license.licenseAcquire}</td>
-								<td>${license.licenseNumber}</td>
-								<td>${license.licenseOrgan}</td>
-								<td>${license.licenseFile}</td>
-								<td>${license.licenseApproval}</td>
-								<td>${license.licenseDate}</td> 
+								<td>${language.memberId}</td>
+								<td>${language.memberName}</td>
+								<td>${language.lisenceListCode}</td>
+								<td>${language.languageAcquire}</td>
+								<td>${language.languageScore}</td>
+								<td>${language.languageOrgan}</td>
+								<td>${language.languageFile}</td>
+								<td>${language.languageApproval}</td>
+								<td>${language.languageDate}</td>
 								<td><a href="#" class="btn_add">수정</a></td>
 								<td><a href="#" class="btn_add">삭제</a></td>
 							</tr>

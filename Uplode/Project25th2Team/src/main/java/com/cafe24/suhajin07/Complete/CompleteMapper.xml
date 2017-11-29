@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cafe24.suhajin07.Complete.CompleteMapper">
+	<resultMap type="com.cafe24.suhajin07.Member.Member" id="resultMember">
+		<result property="memberID" column="memberID" />
+		<result property="memberName" column="memberName" />
+	</resultMap>
+	<resultMap type="com.cafe24.suhajin07.Complete.Complete" id="resultComplete">
+		<result property="complitionCode" column="complitionCode" />
+		<result property="memberCode" column="memberCode" />
+		<result property="completeName" column="completeName" />
+		<result property="completeStart" column="completeStart" />
+		<result property="completeEnd" column="completeEnd" />
+		<result property="completeTime" column="completeTime" />
+		<result property="completeAcademyName" column="completeAcademyName" />
+		<result property="completeNo" column="completeNo" />
+		<result property="completeFile" column="completeFile" />
+		<result property="completeApproval" column="completeApproval" />
+		<result property="completeDate" column="completeDate" />
+	</resultMap>
+	<insert id="insertComplete" parameterType="com.cafe24.suhajin07.Complete.Complete">
+		INSERT INTO
+		complete(
+		complitionCode,
+		memberCode,
+		completeName,
+		completeStart,
+		completeEnd,
+		completeTime,
+		completeAcademyName,
+		completeNo,
+		completeFile,
+		completeApproval,
+		completeDate) VALUES (
+		#{complitionCode},
+		#{memberCode},
+		#{completeName},
+		#{completeStart},
+		#{completeEnd},
+		#{completeTime},
+		#{completeAcademyName} ,
+		#{completeNo},
+		#{completeFile},
+		#{completeApproval}, now())
+	</insert>
+	<select id="CompleteList" parameterType="com.cafe24.suhajin07.Complete.Complete"
+		resultMap="resultComplete">
+		SELECT memberId, memberName, completeName, completeStart,
+		completeEnd, completeTime, completeAcademyName, completeNo,
+		completeFile,completeApproval,completeDate
+		from Complete join member
+		on
+		Complete.memberCode = member.memberCode
+	</select>
+
+</mapper>

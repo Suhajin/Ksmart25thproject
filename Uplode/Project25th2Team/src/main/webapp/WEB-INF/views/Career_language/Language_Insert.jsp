@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>경력등록(자격증)</title>
+<title>경력등록(어학)</title>
 </head>
 <body>
 	<div>
@@ -22,12 +22,12 @@
 			</div>
 		</div>
 		</header>
-		<h4 align="center">자격증등록</h4>
-	<form action="/addLicense" method="post" align="center">
+		<h4 align="center">어학등록</h4>
+	<form action="/addLanguage" method="post" align="center">
 		<table align="center" border="1">
 			<tr>
-				<td>licenseCode</td>
-				<td><input type="text" name="licenseCode"></td>
+				<td>languageCode</td>
+				<td><input type="text" name="languageCode"></td>
 			</tr>
 			<tr>
 				<td>memberCode</td>
@@ -59,27 +59,27 @@
 				</td>
 			</tr>
 			<tr>
-				<td>licenseAcquire</td>
-				<td><input type="date" name="licenseAcquire"></td>
+				<td>languageAcquire</td>
+				<td><input type="date" name="languageAcquire"></td>
 			</tr>
 			<tr>
-				<td>licenseNumber</td>
-				<td><input type="text" name="licenseNumber"></td>
+				<td>languageScore</td>
+				<td><input type="text" name="languageScore"></td>
 			</tr>
 			<tr>
-				<td>licenseOrgan</td>
-				<td><input type="text" name="licenseOrgan"></td>
+				<td>languageOrgan</td>
+				<td><input type="text" name="languageOrgan"></td>
 			</tr>
 			<tr>	
-				<td>licenseFile</td>
-				<td><input type="text" name="licenseFile"></td>
+				<td>languageFile</td>
+				<td><input type="text" name="languageFile"></td>
 			</tr>
 			<tr>	
-				<td>licenseDate</td>
-				<td><input type="date" name="licenseDate"></td>
+				<td>languageDate</td>
+				<td><input type="date" name="languageDate"></td>
 			</tr>
 		</table>
-		<input type="submit" value="addLicense">
+		<input type="submit" value="addLanguage">
 	</form>
 	<div>
 		<c:import url="/WEB-INF/views/layout/Hadan.jsp">

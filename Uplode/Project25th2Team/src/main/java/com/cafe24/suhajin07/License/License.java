@@ -2,7 +2,6 @@ package com.cafe24.suhajin07.License;
 
 public class License {
 
-	
 	private String licenseCode;
 	private String memberId;
 	private String memberName;
@@ -88,5 +87,6 @@ public class License {
 				+ ", licenseFile=" + licenseFile + ", licenseApproval=" + licenseApproval + ", licenseDate="
 				+ licenseDate + "]";
 	}
+	
 	
 }
