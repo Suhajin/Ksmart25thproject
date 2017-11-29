@@ -98,7 +98,7 @@
 
 		<form id="excelForm" name="excelForm" method="post"
 			action="swc_write01_excel.jsp" target="iframe4dummy">
-			<input type="hidden" name="memberNo" value="">
+			<!--  <input type="hidden" name="memberNo" value=""> -->
 		</form>
 		<form id="writeForm" name="writeForm" method="post" action="">
 			<input type="hidden" name="callback" value="" /> <input
@@ -179,7 +179,7 @@
 					</tr>
 				</thead>
 				<tbody id="skillCareerLayer">
-					<c:forEach var="career" items="${listmember}">
+				<!-- 	<c:forEach var="career" items="${listmember}">
 						<tr>
 							<td scope="col"><input type="checkbox" name="scholarNo"
 								id="checkAll4skillCareer" onclick="onCheckAll4skillCareer()" /></td>
@@ -191,7 +191,7 @@
 							<td>${career.careerPosition}</td>
 							<td>${career.careerApproval}</td>
 						</tr>
-					</c:forEach>
+					</c:forEach> -->
 				</tbody>
 			</table>
 			<!--// 경력 등록 -->

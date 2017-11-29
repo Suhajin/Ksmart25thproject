@@ -48,7 +48,7 @@
 							<li class="nav-item"><a class="nav-link" href="/Notice">공지사항</a></li>
 							<li class="nav-item"><a class="nav-link" href="/Scheduler">스케줄러등록</a></li>
 							<li class="nav-item"><a class="nav-link"
-								href="/Insert?memberId=${Member.memberId}">마이페이지</a></li>
+								href="/MyPage">마이페이지</a></li>
 							<li class="nav-item"><a class="nav-link" href="/Logout">로그아웃</a></li>
 
 						</c:when>
@@ -85,9 +85,9 @@
 									<li><a href="#">급여관리</a></li>
 								</ul></li>
 							<li class="dropdown"><a class="nav-link"
-								data-toggle="dropdown" href="#">회원관리 <span class="caret"></span></a>
+								data-toggle="dropdown">회원관리 <span class="caret"></span></a>
 								<ul class="dropdown-menu">
-									<li><a href="#">회원리스트</a></li>
+									<li><a href="/MemberList">회원리스트</a></li>
 									<li><a href="#">회원경력리스트</a></li>
 									<li><a href="#">회원컨설리스트</a></li>
 								</ul></li>

@@ -1,26 +1,25 @@
 <!DOCTYPE html>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page language="java" contentType="text/html; charset=UTF-8" 
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
 
-<meta charset="utf-8">
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="">
-<meta name="author" content="">
-
-<title>One Page Wonder - Start Bootstrap Template</title>
-
-<!-- Bootstrap core CSS -->
-
-<link rel="stylesheet" type="text/css"
-	href="${pageContext.request.contextPath}/resources/vendor/bootstrap/css/bootstrap.min.css">
-
-<!-- Custom styles for this template -->
-
-<link rel="stylesheet" type="text/css"
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	
+	<title>One Page Wonder - Start Bootstrap Template</title>
+	
+	<!-- Bootstrap core CSS -->
+	
+	<link rel="stylesheet" type="text/css"
+		href="${pageContext.request.contextPath}/resources/vendor/bootstrap/css/bootstrap.min.css">
+	
+	<!-- Custom styles for this template -->
+	
+	<link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/resources/css/one-page-wonder.css">
 
 </head>
@@ -53,9 +52,7 @@
 								<h3>${Member.memberName}(${Member.memberGrade})님환영합니다.</h3>
 							</c:when>
 							<c:otherwise>
-								<h4>
-									<strong>환영합니다.</strong>
-								</h4>
+								<h4><strong>환영합니다.</strong></h4>
 							</c:otherwise>
 						</c:choose>
 					</div>
