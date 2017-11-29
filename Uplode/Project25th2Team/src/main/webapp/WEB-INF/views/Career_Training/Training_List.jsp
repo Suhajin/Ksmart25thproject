@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>자격증등록</title>
+<title>연수/봉사 등록</title>
 </head>
 <body>
 	<div>
@@ -24,35 +24,33 @@
 		</header>
 		<form align="center">
 			<br> <br> <br> <br>
-			<h1>전체 보유 자격증 리스트</h1>
+			<h1>전체 연수/봉사 리스트</h1>
 			<div align="center">
 				<table border="1" align="center">
 					<thead>
 						<tr>
 							<th>ID</th>
 							<th>회원명</th>
-							<th>자격증명 </th>
-							<th>취득일 </th>
-							<th>취득번호 </th>
-							<th>발급처 </th>
-							<th>첨부파일 </th>
-							<th>승인여부 </th>
-							<th>자격증 등록일</th>
+							<th>연수기간</th>
+							<th>연수시작일</th>
+							<th>연수종료일</th>
+							<th>국가</th>
+							<th>상세설명</th>
+							<th>연수봉사 등록일</th>
 							<th>수정</th>
 							<th>삭제</th>
 						</tr>
-						<c:forEach var="license" items="${Licenselist}">
-							
+						<c:forEach var="training" items="${list}">
+
 							<tr>
-								<td>${license.memberId}</td>
-								<td>${license.memberName}</td>
-								<td>${license.lisenceListCode}</td>
-								<td>${license.licenseAcquire}</td>
-								<td>${license.licenseNumber}</td>
-								<td>${license.licenseOrgan}</td>
-								<td>${license.licenseFile}</td>
-								<td>${license.licenseApproval}</td>
-								<td>${license.licenseDate}</td> 
+								<td>${training.memberId}</td>
+								<td>${training.memberName}</td>
+								<td>${training.trainingPeriod}</td>
+								<td>${training.trainingStart}</td>
+								<td>${training.trainingEnd}</td>
+								<td>${training.trainingNation}</td>
+								<td>${training.trainingDetail}</td>
+								<td>${training.trainingDate}</td>
 								<td><a href="#" class="btn_add">수정</a></td>
 								<td><a href="#" class="btn_add">삭제</a></td>
 							</tr>

@@ -8,7 +8,7 @@
 	</resultMap>
 	<resultMap type="com.cafe24.suhajin07.License.License" id="resultLicense">
 		<result property="memberCode" column="memberCode" />
-		<result property="licenseName" column="licenseName" />
+		<result property="lisenceListCode" column="lisenceListCode" />
 		<result property="licenseAcquire" column="licenseAcquire" />
 		<result property="licenseNumber" column="licenseNumber" />
 		<result property="licenseOrgan" column="licenseOrgan" />
@@ -17,7 +17,7 @@
 		<result property="licenseDate" column="licenseDate" />
 	</resultMap>
 	
-	<!-- 어학등록 -->
+	
 	<insert id="insertLicense" parameterType="com.cafe24.suhajin07.License.License">
 		INSERT INTO
 		license(
@@ -49,6 +49,7 @@
 		from License join member
 		on
 		License.memberCode = member.memberCode
+	
 	</select>
 
 </mapper>
