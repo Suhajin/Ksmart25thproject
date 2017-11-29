@@ -49,7 +49,6 @@
 		from License join member
 		on
 		License.memberCode = member.memberCode
-	
 	</select>
 
 </mapper>

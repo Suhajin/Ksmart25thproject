@@ -13,6 +13,7 @@ public class EduController {
 	@Autowired
 	EduService eduService;
 
+	
 	@RequestMapping(value = "/edu", method = RequestMethod.GET)
 	public String Edu() {
 		System.out.println("Edu_Insert 폼 요청 <-- CareerController");

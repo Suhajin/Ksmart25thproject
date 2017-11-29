@@ -6,8 +6,6 @@ import org.springframework.stereotype.Service;
 import com.cafe24.suhajin07.Member.MemberDao;
 import com.cafe24.suhajin07.Member.Member;
 
-
-
 @Service
 public class MemberService {
 	@Autowired

@@ -11,8 +11,6 @@ import com.cafe24.suhajin07.Member.Member;
 import com.cafe24.suhajin07.Member.MemberService;
 
 
-
-
 @Controller
 public class MemberController {
 

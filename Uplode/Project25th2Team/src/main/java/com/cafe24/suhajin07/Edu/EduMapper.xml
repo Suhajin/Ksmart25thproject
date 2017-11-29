@@ -29,6 +29,7 @@
 		#{eduEntrance}, #{eduFinish}, #{eduBefore}, #{eduBeforeMajor}, now())
 	</insert>
 
+
 	<!-- 등록한 학력 list로 출력 -->
 	<!-- <select id="eduList" resultType="resultEdu"> SELECT eduHighestLevel, 
 		eduName, eduMajor, eduGraduation FROM edu WHERE memberCode = #{memberCode} 

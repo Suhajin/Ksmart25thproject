@@ -19,7 +19,6 @@
 	</resultMap>
 
 	<insert id="insertCareer" parameterType="com.cafe24.suhajin07.Career.Career">
-
 		INSERT INTO
 		career(memberCode ,careerName ,careerAddress ,careerEntrance
 		,careerQuit

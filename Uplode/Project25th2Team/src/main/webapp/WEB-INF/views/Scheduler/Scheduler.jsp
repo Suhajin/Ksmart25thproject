@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.util.Calendar"%>
@@ -28,49 +28,58 @@ body {
 	margin-top: "0px";
 	margin-bottom: "0px";
 }
+
 td {
 	font-family: "돋움";
 	font-size: 9pt;
 	color: #595959;
 }
+
 th {
 	font-family: "돋움";
 	font-size: 9pt;
 	color: #000000;
 }
+
 select {
 	font-family: "돋움";
 	font-size: 9pt;
 	color: #595959;
 }
+
 .divDotText {
 	overflow: hidden;
 	text-overflow: ellipsis;
 }
+
 A:link {
 	font-size: 9pt;
 	font-family: "돋움";
 	color: #000000;
 	text-decoration: none;
 }
+
 A:visited {
 	font-size: 9pt;
 	font-family: "돋움";
 	color: #000000;
 	text-decoration: none;
 }
+
 A:active {
 	font-size: 9pt;
 	font-family: "돋움";
 	color: red;
 	text-decoration: none;
 }
+
 A:hover {
 	font-size: 9pt;
 	font-family: "돋움";
 	color: red;
 	text-decoration: none;
 }
+
 .day {
 	width: 100px;
 	height: 30px;
@@ -79,23 +88,29 @@ A:hover {
 	font-weight: bold;
 	text-align: center;
 }
+
 .sat {
 	color: #529dbc;
 }
+
 .sun {
 	color: red;
 }
+
 .today_button_div {
 	float: right;
 }
+
 .today_button {
 	width: 100px;
 	height: 30px;
 }
+
 .calendar {
 	width: 80%;
 	margin: auto;
 }
+
 .navigation {
 	margin-top: 100px;
 	margin-bottom: 30px;
@@ -103,6 +118,7 @@ A:hover {
 	font-size: 25px;
 	vertical-align: middle;
 }
+
 .calendar_body {
 	width: 100%;
 	background-color: #FFFFFF;
@@ -110,6 +126,7 @@ A:hover {
 	margin-bottom: 50px;
 	border-collapse: collapse;
 }
+
 .calendar_body .today {
 	border: 1px solid white;
 	height: 120px;
@@ -117,12 +134,14 @@ A:hover {
 	text-align: left;
 	vertical-align: top;
 }
+
 .calendar_body .date {
 	font-weight: bold;
 	font-size: 15px;
 	padding-left: 3px;
 	padding-top: 3px;
 }
+
 .calendar_body .sat_day {
 	border: 1px solid white;
 	height: 120px;
@@ -130,6 +149,7 @@ A:hover {
 	text-align: left;
 	vertical-align: top;
 }
+
 .calendar_body .sat_day .sat {
 	color: #529dbc;
 	font-weight: bold;
@@ -137,6 +157,7 @@ A:hover {
 	padding-left: 3px;
 	padding-top: 3px;
 }
+
 .calendar_body .sun_day {
 	border: 1px solid white;
 	height: 120px;
@@ -144,6 +165,7 @@ A:hover {
 	text-align: left;
 	vertical-align: top;
 }
+
 .calendar_body .sun_day .sun {
 	color: red;
 	font-weight: bold;
@@ -151,6 +173,7 @@ A:hover {
 	padding-left: 3px;
 	padding-top: 3px;
 }
+
 .calendar_body .normal_day {
 	border: 1px solid white;
 	height: 120px;
@@ -158,13 +181,16 @@ A:hover {
 	vertical-align: top;
 	text-align: left;
 }
+
 .before_after_month {
 	margin: 10px;
 	font-weight: bold;
 }
+
 .before_after_year {
 	font-weight: bold;
 }
+
 .this_month {
 	margin: 10px;
 }

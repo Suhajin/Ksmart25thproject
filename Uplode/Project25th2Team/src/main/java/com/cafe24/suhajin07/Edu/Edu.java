@@ -2,6 +2,7 @@ package com.cafe24.suhajin07.Edu;
 
 public class Edu {
 	
+	
 	private String eduCode;
 	private String memberCode;
 	private String eduHighestLevel;

@@ -12,14 +12,14 @@
 <title>회사안내</title>
 <script type="text/javascript"
 	src="https://openapi.map.naver.com/openapi/v3/maps.js?clientId=_DSaIYyBFpd1k3CfaSDe&submodules=geocoder"></script>
-	<!-- Bootstrap core CSS -->
+<!-- Bootstrap core CSS -->
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/resources/vendor/bootstrap/css/bootstrap.min.css">
 
 <!-- Custom styles for this template -->
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/resources/css/one-page-wonder.css">
-	
+
 </head>
 <body>
 

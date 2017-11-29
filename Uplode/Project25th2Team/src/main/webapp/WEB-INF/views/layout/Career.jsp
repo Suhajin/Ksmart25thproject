@@ -44,7 +44,6 @@
 }
 </style>
 <style type="text/css" media="print">
-
 #wrap {
 	background: url(none) repeat-x 0 0 !important;
 }
@@ -56,7 +55,6 @@
 
 .noprint {
 	display: none;
-	
 }
 </style>
 </head>
@@ -181,19 +179,18 @@
 					</tr>
 				</thead>
 				<tbody id="skillCareerLayer">
-				<c:forEach var="career" items="${listmember}">
-					<tr>
-						<td scope="col"><input type="checkbox"
-							name="scholarNo" id="checkAll4skillCareer"
-							onclick="onCheckAll4skillCareer()" /></td>
-						<td>${career.careerName}</td>
-						<td>${career.careerAddress}</td>
-						<td>${career.careerEntrance}</td>
-						<td>${career.careerQuit}</td>
-						<td>${career.careerWorking} </td>
-						<td>${career.careerPosition} </td>
-						<td>${career.careerApproval} </td>
-					</tr>
+					<c:forEach var="career" items="${listmember}">
+						<tr>
+							<td scope="col"><input type="checkbox" name="scholarNo"
+								id="checkAll4skillCareer" onclick="onCheckAll4skillCareer()" /></td>
+							<td>${career.careerName}</td>
+							<td>${career.careerAddress}</td>
+							<td>${career.careerEntrance}</td>
+							<td>${career.careerQuit}</td>
+							<td>${career.careerWorking}</td>
+							<td>${career.careerPosition}</td>
+							<td>${career.careerApproval}</td>
+						</tr>
 					</c:forEach>
 				</tbody>
 			</table>
@@ -203,8 +200,8 @@
 				<h4>자격증 등록</h4>
 				<!-- 우측버튼 -->
 				<div class="sec_top_btn">
-					<a href="/License" class="btn_add">추가</a> <a
-						href="/LicenseList" class="btn_del">전체리스트</a>
+					<a href="/License" class="btn_add">추가</a> <a href="/LicenseList"
+						class="btn_del">전체리스트</a>
 				</div>
 			</div>
 			<table class="list_tbl_01 mb70" summary="자격증 추가">

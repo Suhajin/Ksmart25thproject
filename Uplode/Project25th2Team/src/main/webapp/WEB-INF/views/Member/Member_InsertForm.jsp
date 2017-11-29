@@ -37,8 +37,7 @@ table {
 			</div>
 		</div>
 		</header>
-		<br>
-		<br>
+		<br> <br>
 		<h4 align="center">안녕하세요 회원가입을 해주세요!</h4>
 		<br> <br>
 		<form align="center" action="/addMember" method="post">
@@ -151,8 +150,8 @@ table {
 						</script></td>
 			</table>
 			<input type="hidden" name="memberGrade" value="member"
-				readonly="readonly"> <br> <br>
-			<input type="submit" value="회원가입">
+				readonly="readonly"> <br> <br> <input
+				type="submit" value="회원가입">
 		</form>
 	</div>
 	<br>

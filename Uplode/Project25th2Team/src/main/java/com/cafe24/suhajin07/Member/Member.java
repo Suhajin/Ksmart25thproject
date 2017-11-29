@@ -2,6 +2,7 @@ package com.cafe24.suhajin07.Member;
 
 public class Member {
 
+	
 	private int memberCode;
 	private String memberId;
 	private String memberPw;

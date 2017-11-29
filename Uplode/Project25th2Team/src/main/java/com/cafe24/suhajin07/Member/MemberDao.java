@@ -7,8 +7,6 @@ import org.springframework.stereotype.Repository;
 
 import com.cafe24.suhajin07.Member.Member;
 
-
-
 @Repository
 public class MemberDao {
 	@Autowired

@@ -2,6 +2,7 @@ package com.cafe24.suhajin07.Career;
 
 public class Career {
 
+	
 	private int careerCode;
 	private String memberId;
 	private String memberName;

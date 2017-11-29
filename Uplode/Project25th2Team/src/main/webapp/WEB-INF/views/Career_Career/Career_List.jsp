@@ -54,8 +54,11 @@
 								<td>${career.careerPeriod}</td>
 								<td>${career.careerPosition}</td>
 								<td>${career.careerApproval}</td>
-								<td><a href="/CareerUpdateOne?careerCode=${career.careerCode}" class="btn_add">수정</a></td>
-								<td><a href="/CareerDelete?careerCode=${career.careerCode}" class="btn_add">삭제</a></td>
+								<td><a
+									href="/CareerUpdateOne?careerCode=${career.careerCode}"
+									class="btn_add">수정</a></td>
+								<td><a href="/CareerDelete?careerCode=${career.careerCode}"
+									class="btn_add">삭제</a></td>
 							</tr>
 						</c:forEach>
 					</thead>

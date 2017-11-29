@@ -24,7 +24,7 @@
 		</header>
 		<h4 align="center">경력등록</h4>
 		<form align="center" action="./addCareer" method="post">
-		<input type="hidden" name="memberCode" value=${Member.memberCode}>
+			<input type="hidden" name="memberCode" value=${Member.memberCode}>
 			<table align="center" border="1">
 				<tr>
 					<td>회사명</td>
@@ -54,7 +54,7 @@
 					<td>직위</td>
 					<td><input type="text" name="careerPosition"></td>
 				</tr>
-				
+
 			</table>
 
 			<input type="submit" value="addCareer">
