@@ -21,16 +21,47 @@
  -->
 	<!-- 학력등록 -->
 	<insert id="insertEdu" parameterType="com.cafe24.suhajin07.Edu.Edu"> 
-	INSERT INTO edu(eduCode,
-		memberCode, eduHighestLevel, eduName, eduMajor, eduMinor, eduDual ,
-		eduGraduation, eduEntrance, eduFinish, eduBefore, eduBeforeMajor,
-		eduDate) VALUES (#{eduCode}, #{memberCode}, #{eduHighestLevel},
-		#{eduName}, #{eduMajor}, #{eduMinor}, #{eduDual} , #{eduGraduation},
-		#{eduEntrance}, #{eduFinish}, #{eduBefore}, #{eduBeforeMajor}, now())
+		INSERT INTO
+			edu (
+			  memberCode
+			, eduHighestLevel
+			, eduName
+			, eduMajor
+			, eduMinor
+			, eduDual
+			, eduGraduation
+			, eduEntrance
+			, eduFinish
+			, eduBefore
+			, eduBeforeMajor
+			, eduDate )
+		VALUES (
+			  #{memberCode}
+			, #{eduHighestLevel}
+			, #{eduName}
+			, #{eduMajor}
+			, #{eduMinor}
+			, #{eduDual}
+			, #{eduGraduation}
+			, #{eduEntrance}
+			, #{eduFinish}
+			, #{eduBefore}
+			, #{eduBeforeMajor}
+			, now())
 	</insert>
 
 	<!-- 등록한 학력 list로 출력 -->
-	<!-- <select id="eduList" resultType="resultEdu"> SELECT eduHighestLevel, 
-		eduName, eduMajor, eduGraduation FROM edu WHERE memberCode = #{memberCode} 
-		</select> -->
+	<select id="eduList" resultType="com.cafe24.suhajin07.Edu.Edu">
+		SELECT
+			eduHighestLevel
+			, eduName
+			, eduMajor
+			, eduGraduation
+		FROM edu
+		WHERE memberCode = #{memberCode} 
+	</select>
+	
+	<!--  -->
+	<select id="eduOneList" resultType="com.cafe24.suhajin07.Edu.Edu">
+	</select>
 </mapper>
