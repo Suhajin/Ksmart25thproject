@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cafe24.suhajin07.License.LicenseMapper">
+	<resultMap type="com.cafe24.suhajin07.Member.Member" id="resultMember">
+		<result property="memberID" column="memberID" />
+		<result property="memberName" column="memberName" />
+	</resultMap>
+	<resultMap type="com.cafe24.suhajin07.License.License" id="resultLicense">
+		<result property="memberCode" column="memberCode" />
+		<result property="licenseName" column="licenseName" />
+		<result property="licenseAcquire" column="licenseAcquire" />
+		<result property="licenseNumber" column="licenseNumber" />
+		<result property="licenseOrgan" column="licenseOrgan" />
+		<result property="licenseFile" column="licenseFile" />
+		<result property="licenseApproval" column="licenseApproval" />
+		<result property="licenseDate" column="licenseDate" />
+	</resultMap>
+	
+	<!-- 어학등록 -->
+	<insert id="insertLicense" parameterType="com.cafe24.suhajin07.License.License">
+		INSERT INTO
+		license(
+		licenseCode,
+		memberCode, 
+		lisenceListCode,
+		licenseAcquire,
+		licenseNumber, 
+		licenseOrgan, 
+		licenseFile,
+		licenseApproval,
+		licenseDate) VALUES (
+		#{licenseCode},
+		#{memberCode},
+		#{lisenceListCode},
+		#{licenseAcquire},
+		#{licenseNumber},
+		#{licenseOrgan}, 
+		#{licenseFile},
+		#{licenseApproval},
+		now())
+	</insert>
+
+	<select id="LicenseList" parameterType="com.cafe24.suhajin07.License.License"
+		resultMap="resultLicense">
+		SELECT memberId, memberName, lisenceListCode, licenseAcquire,
+		licenseNumber, licenseOrgan, licenseFile, licenseApproval,
+		licenseDate
+		from License join member
+		on
+		License.memberCode = member.memberCode
+	</select>
+
+</mapper>
