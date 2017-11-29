@@ -70,7 +70,7 @@
 								<ul class="dropdown-menu">
 									<li><a href="#">개인정보</a></li>
 									<li><a href="#">실적내역</a></li>
-									<li><a href="#">상벌내역</a></li>
+									<li><a href="#">상벌역</a></li>
 									<li><a href="#">급여내역</a></li>
 								</ul></li>
 							<li class="nav-item"><a class="nav-link" href="/Logout">로그아웃</a></li>
