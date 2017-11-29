@@ -35,7 +35,7 @@ public class TrainingController {
 	public String TrainingList(Model model) {
 		System.out.println("Training 전체리스트");
 		List<Training> list = trainingDao.selectTrainingList();
-		model.addAttribute("Traininglist", list);
+		model.addAttribute("list", list);
 		return "Career_Training/Training_List";
 	}
 }

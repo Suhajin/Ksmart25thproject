@@ -20,7 +20,7 @@ public class LanguageController {
 	@RequestMapping(value = "/Language", method = RequestMethod.GET)
 	public String Language() {
 		System.out.println("Language_Insert 폼 요청 <-- LanguageController");
-		return "Career_Language/Language_Insert";
+		return "Career_language/Language_Insert";
 	}
 	
 	@RequestMapping(value = "/addLanguage", method = RequestMethod.POST)
@@ -36,6 +36,6 @@ public class LanguageController {
 		System.out.println("Language 전체리스트");
 		List<Language> Language = languagedao.selectLanguageList();
 		model.addAttribute("Language", Language);
-		return "Career_Language/Language_List";
+		return "Career_language/Language_List";
 	}
 }

@@ -40,7 +40,7 @@
 							<th>수정</th>
 							<th>삭제</th>
 						</tr>
-						<c:forEach var="Training" items="${list}">
+						<c:forEach var="training" items="${list}">
 
 							<tr>
 								<td>${training.memberId}</td>

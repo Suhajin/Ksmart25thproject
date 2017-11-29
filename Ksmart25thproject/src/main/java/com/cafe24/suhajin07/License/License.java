@@ -3,6 +3,8 @@ package com.cafe24.suhajin07.License;
 public class License {
 
 	private String licenseCode;
+	private String memberId;
+	private String memberName;
 	private String memberCode;
 	private String lisenceListCode;
 	private String licenseAcquire;
@@ -16,6 +18,18 @@ public class License {
 	}
 	public void setLicenseCode(String licenseCode) {
 		this.licenseCode = licenseCode;
+	}
+	public String getMemberId() {
+		return memberId;
+	}
+	public void setMemberId(String memberId) {
+		this.memberId = memberId;
+	}
+	public String getMemberName() {
+		return memberName;
+	}
+	public void setMemberName(String memberName) {
+		this.memberName = memberName;
 	}
 	public String getMemberCode() {
 		return memberCode;
@@ -67,10 +81,11 @@ public class License {
 	}
 	@Override
 	public String toString() {
-		return "License [licenseCode=" + licenseCode + ", memberCode=" + memberCode + ", lisenceListCode="
-				+ lisenceListCode + ", licenseAcquire=" + licenseAcquire + ", licenseNumber=" + licenseNumber
-				+ ", licenseOrgan=" + licenseOrgan + ", licenseFile=" + licenseFile + ", licenseApproval="
-				+ licenseApproval + ", licenseDate=" + licenseDate + "]";
+		return "License [licenseCode=" + licenseCode + ", memberId=" + memberId + ", memberName=" + memberName
+				+ ", memberCode=" + memberCode + ", lisenceListCode=" + lisenceListCode + ", licenseAcquire="
+				+ licenseAcquire + ", licenseNumber=" + licenseNumber + ", licenseOrgan=" + licenseOrgan
+				+ ", licenseFile=" + licenseFile + ", licenseApproval=" + licenseApproval + ", licenseDate="
+				+ licenseDate + "]";
 	}
 	
 	

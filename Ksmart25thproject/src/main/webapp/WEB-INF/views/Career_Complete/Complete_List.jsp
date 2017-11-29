@@ -43,7 +43,7 @@
 							<th>수정</th>
 							<th>삭제</th>
 						</tr>
-						<c:forEach var="Complete" items="${list}">
+						<c:forEach var="complete" items="${list}">
 
 							<tr>
 								<td>${complete.memberId}</td>
