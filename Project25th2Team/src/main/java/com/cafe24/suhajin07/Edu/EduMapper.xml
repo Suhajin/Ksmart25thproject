@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cafe24.suhajin07.Edu.EduMapper">
+<!-- 
+	<resultMap type="com.cafe24.suhajin07.Edu.Edu" id="resultEdu">
+		<result property="eduCode" column="eduCode" />
+		<result property="memberCode" column="memberCode" />
+		<result property="eduHighestLevel" column="eduHighestLevel" />
+		<result property="eduName" column="eduName" />
+		<result property="eduMajor" column="eduMajor" />
+		<result property="eduMinor" column="eduMinor" />
+		<result property="eduDual" column="eduDual" />
+		<result property="eduGraduation" column="eduGraduation" />
+		<result property="eduEntrance" column="eduEntrance" />
+		<result property="eduFinish" column="eduFinish" />
+		<result property="eduBefore" column="eduBefore" />
+		<result property="eduBeforeMajor" column="eduBeforeMajor" />
+		<result property="eduDate" column="eduDate" />
+	</resultMap>
+ -->
+	<!-- 학력등록 -->
+	<insert id="insertEdu" parameterType="com.cafe24.suhajin07.Edu.Edu"> 
+		INSERT INTO
+			edu (
+			  memberCode
+			, eduHighestLevel
+			, eduName
+			, eduMajor
+			, eduMinor
+			, eduDual
+			, eduGraduation
+			, eduEntrance
+			, eduFinish
+			, eduBefore
+			, eduBeforeMajor
+			, eduDate )
+		VALUES (
+			  #{memberCode}
+			, #{eduHighestLevel}
+			, #{eduName}
+			, #{eduMajor}
+			, #{eduMinor}
+			, #{eduDual}
+			, #{eduGraduation}
+			, #{eduEntrance}
+			, #{eduFinish}
+			, #{eduBefore}
+			, #{eduBeforeMajor}
+			, now())
+	</insert>
+
+	<!-- 등록한 학력 list로 출력 -->
+	<select id="eduList" resultType="com.cafe24.suhajin07.Edu.Edu">
+		SELECT
+			eduHighestLevel
+			, eduName
+			, eduMajor
+			, eduGraduation
+		FROM edu
+		WHERE memberCode = #{memberCode} 
+	</select>
+	
+	<!--  -->
+	<select id="eduOneList" resultType="com.cafe24.suhajin07.Edu.Edu">
+	</select>
+</mapper>
