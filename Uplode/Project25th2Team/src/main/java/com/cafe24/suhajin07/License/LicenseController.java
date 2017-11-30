@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class LicenseController {
@@ -37,5 +38,17 @@ public class LicenseController {
 		List<License> Licenselist = licenseDao.selectLicenseList();
 		model.addAttribute("Licenselist", Licenselist);
 		return "Career_License/License_List";
+	}
+	@RequestMapping(value = "/LicenseUpdateOne", method = RequestMethod.GET)
+	public String LicenseUpdate(Model model, @RequestParam("licenseCode") int licenseCode) {
+		System.out.println("자격증 수정화면 Controller");
+		model.addAttribute("listone", licenseDao.LicenseSelectone(licenseCode));
+		return "Career_License/License_Update_Form";
+	}
+	@RequestMapping(value = "/UpdateLicense", method = RequestMethod.POST)
+	public String UpdateLicense(License license) {
+		System.out.println("UpdateLicense Controller");
+		licenseService.UpdateLicense(license);
+		return "redirect:/LicenseList";
 	}
 }

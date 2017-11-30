@@ -24,49 +24,38 @@
 		</header>
 		<h4 align="center">수료등록</h4>
 	<form action="/addComplete" method="post" align="center">
+	<input type="hidden" name="memberCode" value=${Member.memberCode}>
 		<table align="center" border="1">
 			<tr>
-				<td>complitionCode</td>
-				<td><input type="text" name="complitionCode"></td>
-			</tr>
-			<tr>
-				<td>memberCode</td>
-				<td><input type="text" name="memberCode"></td>
-			</tr>
-			<tr>
-				<td>completeName</td>
+				<td>과정명</td>
 				<td><input type="text" name="completeName"></td>
 			</tr>
 			<tr>
-				<td>completeStart</td>
+				<td>과정시작일</td>
 				<td><input type="date" name="completeStart"></td>
 			</tr>
 			<tr>
-				<td>completeEnd</td>
-				<td><input type="text" name="completeEnd"></td>
+				<td>과정종료일</td>
+				<td><input type="date" name="completeEnd"></td>
 			</tr>
 			<tr>
-				<td>completeTime</td>
+				<td>수료기간</td>
 				<td><input type="text" name="completeTime"></td>
 			</tr>
 			<tr>	
-				<td>completeAcademyName</td>
+				<td>학원명</td>
 				<td><input type="text" name="completeAcademyName"></td>
 			</tr>
 			<tr>	
-				<td>completeNo</td>
+				<td>수료번호</td>
 				<td><input type="text" name="completeNo"></td>
 			</tr>
 			<tr>	
-				<td>completeFile</td>
+				<td>첨부파일</td>
 				<td><input type="text" name="completeFile"></td>
 			</tr>
 			<tr>	
-				<td>completeApproval</td>
-				<td><input type="text" name="completeApproval"></td>
-			</tr>
-			<tr>	
-				<td>completeDate</td>
+				<td>수료 등록일</td>
 				<td><input type="date" name="completeDate"></td>
 			</tr>
 		</table>

@@ -19,7 +19,6 @@
 	<insert id="insertTraining" parameterType="com.cafe24.suhajin07.Training.Training">
 		INSERT INTO
 		training(
-		trainingCode,
 		memberCode,
 		trainingPeriod,
 		trainingStart,
@@ -27,7 +26,6 @@
 		trainingNation,
 		trainingDetail,
 		trainingDate) VALUES (
-		#{trainingCode},
 		#{memberCode},
 		#{trainingPeriod},
 		#{trainingStart},

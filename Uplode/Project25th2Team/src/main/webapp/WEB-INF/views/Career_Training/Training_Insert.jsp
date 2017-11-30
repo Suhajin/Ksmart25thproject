@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>경력등록(어학)</title>
+<title>경력등록(연수/봉사)</title>
 </head>
 <body>
 	<div>
@@ -22,39 +22,32 @@
 			</div>
 		</div>
 		</header>
-		<h4 align="center">어학등록</h4>
+		<h4 align="center">연수/봉사 등록</h4>
 	<form action="/addTraining" method="post" align="center">
+	<input type="hidden" name="memberCode" value=${Member.memberCode}>
 		<table align="center" border="1">
 			<tr>
-				<td>trainingCode</td>
-				<td><input type="text" name="trainingCode"></td>
-			</tr>
-			<tr>
-				<td>memberCode</td>
-				<td><input type="text" name="memberCode"></td>
-			</tr>
-			<tr>
-				<td>trainingPeriod</td>
+				<td>연수기간</td>
 				<td><input type="text" name="trainingPeriod"></td>
 			</tr>
 			<tr>
-				<td>trainingStart</td>
+				<td>연수시작일</td>
 				<td><input type="date" name="trainingStart"></td>
 			</tr>
 			<tr>
-				<td>trainingEnd</td>
+				<td>연수종료일</td>
 				<td><input type="date" name="trainingEnd"></td>
 			</tr>
 			<tr>
-				<td>trainingNation</td>
+				<td>국가</td>
 				<td><input type="text" name="trainingNation"></td>
 			</tr>
 			<tr>	
-				<td>trainingDetail</td>
+				<td>상세설명</td>
 				<td><input type="text" name="trainingDetail"></td>
 			</tr>
 			<tr>	
-				<td>trainingDate</td>
+				<td>연수봉사 등록일</td>
 				<td><input type="date" name="trainingDate"></td>
 			</tr>
 		</table>
