@@ -24,17 +24,10 @@
 		</header>
 		<h4 align="center">어학등록</h4>
 	<form action="/addLanguage" method="post" align="center">
+		<input type="hidden" name="memberCode" value=${Member.memberCode}>
 		<table align="center" border="1">
 			<tr>
-				<td>languageCode</td>
-				<td><input type="text" name="languageCode"></td>
-			</tr>
-			<tr>
-				<td>memberCode</td>
-				<td><input type="text" name="memberCode"></td>
-			</tr>
-			<tr>
-				<td>lisenceListName</td>
+				<td>어학자격증명</td>
 				<td>
 					<select name="lisenceListCode">
 						<option>HSK1급</option>
@@ -59,23 +52,23 @@
 				</td>
 			</tr>
 			<tr>
-				<td>languageAcquire</td>
+				<td>취득일</td>
 				<td><input type="date" name="languageAcquire"></td>
 			</tr>
 			<tr>
-				<td>languageScore</td>
+				<td>점수</td>
 				<td><input type="text" name="languageScore"></td>
 			</tr>
 			<tr>
-				<td>languageOrgan</td>
+				<td>발급처</td>
 				<td><input type="text" name="languageOrgan"></td>
 			</tr>
 			<tr>	
-				<td>languageFile</td>
+				<td>첨부파일</td>
 				<td><input type="text" name="languageFile"></td>
 			</tr>
 			<tr>	
-				<td>languageDate</td>
+				<td>어학 등록일</td>
 				<td><input type="date" name="languageDate"></td>
 			</tr>
 		</table>

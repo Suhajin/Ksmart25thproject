@@ -20,7 +20,6 @@
 	<insert id="insertLanguage" parameterType="com.cafe24.suhajin07.Language.Language">
 		INSERT INTO
 		language(
-		languageCode,
 		memberCode, 
 		lisenceListCode,
 		languageAcquire,
@@ -29,7 +28,6 @@
 		languageFile,
 		languageApproval,
 		languageDate) VALUES (
-		#{languageCode},
 		#{memberCode},
 		#{lisenceListCode},
 		#{languageAcquire},

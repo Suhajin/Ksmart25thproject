@@ -16,26 +16,24 @@
 		<result property="licenseApproval" column="licenseApproval" />
 		<result property="licenseDate" column="licenseDate" />
 	</resultMap>
-	
-	
+
+
 	<insert id="insertLicense" parameterType="com.cafe24.suhajin07.License.License">
 		INSERT INTO
 		license(
-		licenseCode,
-		memberCode, 
+		memberCode,
 		lisenceListCode,
 		licenseAcquire,
-		licenseNumber, 
-		licenseOrgan, 
+		licenseNumber,
+		licenseOrgan,
 		licenseFile,
 		licenseApproval,
 		licenseDate) VALUES (
-		#{licenseCode},
 		#{memberCode},
 		#{lisenceListCode},
 		#{licenseAcquire},
 		#{licenseNumber},
-		#{licenseOrgan}, 
+		#{licenseOrgan},
 		#{licenseFile},
 		#{licenseApproval},
 		now())
@@ -43,13 +41,52 @@
 
 	<select id="LicenseList" parameterType="com.cafe24.suhajin07.License.License"
 		resultMap="resultLicense">
-		SELECT memberId, memberName, lisenceListCode, licenseAcquire,
-		licenseNumber, licenseOrgan, licenseFile, licenseApproval,
+		SELECT memberId, memberName, lisenceListCode,
+		licenseAcquire,
+		licenseNumber, licenseOrgan, licenseFile,
+		licenseApproval,
 		licenseDate
 		from license join member
 		on
+<<<<<<< HEAD
 		license.memberCode = member.memberCode
 	
+=======
+		License.memberCode = member.memberCode
+
+>>>>>>> refs/remotes/origin/master
 	</select>
+	<select id="LicenseListOne" parameterType="com.cafe24.suhajin07.License.License"
+		resultMap="resultLicense">
+		SELECT memberId, memberName, licenseCode, lisenceListCode,
+		licenseAcquire,
+		licenseNumber, licenseOrgan, licenseFile, licenseApproval
+		from license
+		join member
+		on
+		license.memberCode = member.memberCode
+		where memberId =
+		#{memberId}
+
+	</select>
+	<select id="LicenseSelectOne" resultMap="resultLicense">
+		select * from license
+		where
+		licenseCode = #{licenseCode}
+	</select>
+
+	<update id="LicenseUpdate" parameterType="com.cafe24.suhajin07.License.License">
+		UPDATE license set
+		memberCode = #{memberCode}, lisenceListCode = #{lisenceListCode},
+		licenseAcquire =
+		#{licenseAcquire}, licenseNumber = #{licenseNumber},
+		licenseOrgan =
+		#{licenseOrgan}, licenseFile = #{licenseFile},
+		licenseApproval =
+		#{licenseApproval}, licenseDate = #{licenseDate}
+		where
+		licenseCode =
+		#{licenseCode}
+	</update>
 
 </mapper>

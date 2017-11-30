@@ -24,17 +24,10 @@
 		</header>
 		<h4 align="center">자격증등록</h4>
 	<form action="/addLicense" method="post" align="center">
+		<input type="hidden" name="memberCode" value=${Member.memberCode}>
 		<table align="center" border="1">
 			<tr>
-				<td>licenseCode</td>
-				<td><input type="text" name="licenseCode"></td>
-			</tr>
-			<tr>
-				<td>memberCode</td>
-				<td><input type="text" name="memberCode"></td>
-			</tr>
-			<tr>
-				<td>lisenceListName</td>
+				<td>자격증명</td>
 				<td>
 					<select name="lisenceListCode">
 						<option>HSK1급</option>
@@ -59,23 +52,23 @@
 				</td>
 			</tr>
 			<tr>
-				<td>licenseAcquire</td>
+				<td>취득일</td>
 				<td><input type="date" name="licenseAcquire"></td>
 			</tr>
 			<tr>
-				<td>licenseNumber</td>
+				<td>취득번호</td>
 				<td><input type="text" name="licenseNumber"></td>
 			</tr>
 			<tr>
-				<td>licenseOrgan</td>
+				<td>발급처</td>
 				<td><input type="text" name="licenseOrgan"></td>
 			</tr>
 			<tr>	
-				<td>licenseFile</td>
+				<td>첨부파일</td>
 				<td><input type="text" name="licenseFile"></td>
 			</tr>
 			<tr>	
-				<td>licenseDate</td>
+				<td>자격증 등록일</td>
 				<td><input type="date" name="licenseDate"></td>
 			</tr>
 		</table>
