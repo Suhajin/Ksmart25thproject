@@ -23,10 +23,15 @@
 	<!-- 커넥션풀 생성 -->
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
-		<property name="url"
-			value="jdbc:mysql://localhost:3306/suhajin07" />
-		<property name="username" value="root" />
-		<property name="password" value="java0000" />
+		<property value="jdbc:mysql://suhajin07.cafe24.com:3306/suhajin07"
+			name="url" />
+		<property value="suhajin07" name="username" />
+		<property value="vmfhwprxm25rl2" name="password" />
+
+
+		<!-- (( 로컬호스트 )) <property name="url" value="jdbc:mysql://localhost:3306/suhajin07" 
+			/> <property name="username" value="root" /> <property name="password" value="java0000" 
+			/> -->
 	</bean>
 
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
@@ -44,3 +49,4 @@
 		<constructor-arg ref="sqlSessionFactory" index="0" />
 	</bean>
 </beans>
+

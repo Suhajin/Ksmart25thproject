@@ -14,6 +14,30 @@
 <link rel="stylesheet" type="text/css"
 	href="<%=request.getContextPath()%>/resources/css/Career_jquery-ui.css" />
 
+<!--
+일단 패스
+ 
+<script type="text/javascript" src="<%=request.getContextPath()%>/js/jquery/jquery-1.7.2.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath()%>/js/jquery/jquery-ui-1.9.2.custom.min.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath()%>/js/jquery/jquery.alphanumeric.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath()%>/js/jquery/jquery.form.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath()%>/js/jquery/jquery.placeholder.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath()%>/js/jquery/jquery.tmpl.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath()%>/js/jquery/jquery.blockUI.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath()%>/js/kimsoft/kimsoft.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath()%>/js/common.dev.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath()%>/js/common.modal.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath()%>/js/date.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath()%>/js/gnb.js"></script>
+<script type="text/javascript">
+ 
+	gUserType = "PERSONAL";
+		var CQWEB_SERVICE_NAME = "kipa";
+	var CQWEBID_SERVICE_NAME = "kipa";
+	var CQWEB_SERVICE_URL = "https://career.sw.or.kr/CQJava";
+</script>
+-->
+
 <style type="text/css" media="screen">
 .printOnly {
 	display: none;
@@ -47,8 +71,30 @@
 
 		<!-- 타이틀 영역 -->
 		<div class="title_area">
-			<h3>${Member.memberName}님의 &nbsp;&nbsp; 경력 내역</h3>
+			<h3>기술자신고</h3>
+			<p>기술자 경력을 입력하고, 증빙방법을 선택해 주세요.</p>
+		</div>
+		<p class="reg_step_01">
+			<img src="/images/individual/register_step_01.gif"
+				alt="Step 01 경력 입력" />
+		</p>
+		<!-- 기본정보 -->
+		<div class="base_info">
+			<img src="/images/common/pic_sample.gif" alt="증명사진" />
+			<div class="info_area">
+				<p>
+					&nbsp;&nbsp;${Member.memberName}<span>(${Member.memberId})</span> <a
+						href="/personal/mem/per_modify.jsp" class="btn_type01">프로필수정</a>
+				</p>
+				<span><strong>전화번호</strong> : ${Member.memberPhone}</span> <span><strong>핸드폰번호</strong>
+					: ${Member.memberPhone}</span> <span><strong>이메일</strong> :
+					${Member.memberEmail}</span> <span class="address"><strong>주소</strong>
+					: ${Member.memberAddress}</span>
 
+			</div>
+		</div>
+		<!--// 기본정보 -->
+		<!-- NCS안내문구 -->
 
 		<form id="excelForm" name="excelForm" method="post"
 			action="swc_write01_excel.jsp" target="iframe4dummy">
@@ -133,7 +179,7 @@
 					</tr>
 				</thead>
 				<tbody id="skillCareerLayer">
-				<c:forEach var="career" items="${listmember}">
+					<c:forEach var="career" items="${listmember}">
 						<tr>
 							<td scope="col"><input type="checkbox" name="scholarNo"
 								id="checkAll4skillCareer" onclick="onCheckAll4skillCareer()" /></td>
@@ -154,8 +200,8 @@
 				<h4>자격증 등록</h4>
 				<!-- 우측버튼 -->
 				<div class="sec_top_btn">
-					<a href="/License" class="btn_add">추가</a> 
-					<a href="/LicenseList" class="btn_del">전체리스트</a>
+					<a href="/License" class="btn_add">추가</a> <a href="/LicenseList"
+						class="btn_del">전체리스트</a>
 				</div>
 			</div>
 			<table class="list_tbl_01 mb70" summary="자격증 추가">
@@ -185,8 +231,8 @@
 				<h4>어학 등록</h4>
 				<!-- 우측버튼 -->
 				<div class="sec_top_btn">
-					<a href="/Language" class="btn_add">추가</a> <a
-						href="/LanguageList" class="btn_del">전체리스트</a>
+					<a href="javascript:addCareer('#')" class="btn_add">추가</a> <a
+						href="javascript:removeCareer('#')" class="btn_del">삭제</a>
 				</div>
 			</div>
 			<table class="list_tbl_01 mb70" summary="어학 추가">
@@ -216,8 +262,8 @@
 				<h4>수료교육 등록</h4>
 				<!-- 우측버튼 -->
 				<div class="sec_top_btn">
-					<a href="/Complete" class="btn_add">추가</a> <a
-						href="/CompleteList" class="btn_del">전체리스트</a>
+					<a href="javascript:addCareer('#')" class="btn_add">추가</a> <a
+						href="javascript:removeCareer('#')" class="btn_del">삭제</a>
 				</div>
 			</div>
 			<table class="list_tbl_01 mb70" summary="수료교육 추가">
@@ -247,8 +293,8 @@
 				<h4>연수/봉사 등록</h4>
 				<!-- 우측버튼 -->
 				<div class="sec_top_btn">
-					<a href="/Training" class="btn_add">추가</a> <a
-						href="/TrainingList" class="btn_del">전체리스트</a>
+					<a href="javascript:addCareer('#')" class="btn_add">추가</a> <a
+						href="javascript:removeCareer('#')" class="btn_del">삭제</a>
 				</div>
 			</div>
 			<table class="list_tbl_01 mb70" summary="연수봉사 추가">
@@ -261,6 +307,7 @@
 				</colgroup>
 				<thead>
 					<tr class="first">
+					
 						<th scope="col"><input type="checkbox" name="checkAll4prize"
 							id="checkAll4prize" onclick="onCheckAll4prize()" /></th>
 						<th scope="col">국가명/기간명/상세활동</th>
