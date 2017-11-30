@@ -27,7 +27,7 @@
 		<c:import url="/WEB-INF/views/layout/Head.jsp">
 		</c:import>
 	</div>
-	<div>
+	<!-- <div>
 		<header class="masthead">
 		<div class="overlay">
 			<div class="container">
@@ -36,6 +36,10 @@
 			</div>
 		</div>
 		</header>
+	</div> -->
+	<div>
+		<c:import url="/WEB-INF/views/layout/mid.jsp">
+		</c:import>
 	</div>
 
 <!--------------------------------지도시작------------------------------------------>		

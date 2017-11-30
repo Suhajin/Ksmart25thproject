@@ -47,9 +47,6 @@
 		licenseApproval,
 		licenseDate
 		from license join member
-		on
-		License.memberCode = member.memberCode
-
 	</select>
 	<select id="LicenseListOne" parameterType="com.cafe24.suhajin07.License.License"
 		resultMap="resultLicense">
