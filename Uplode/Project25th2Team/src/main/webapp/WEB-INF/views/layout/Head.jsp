@@ -46,7 +46,8 @@
 							</a></li>
 							<li class="nav-item"><a class="nav-link" href="/Information">회사안내</a></li>
 							<li class="nav-item"><a class="nav-link" href="/Notice">공지사항</a></li>
-							<li class="nav-item"><a class="nav-link" href="/Scheduler">스케줄러등록</a></li>
+							<li class="nav-item"><a class="nav-link" href="/Goal">목표설정</a></li>
+							<li class="nav-item"><a class="nav-link" href="/Scheduler">스케줄등록</a></li>
 							<li class="nav-item"><a class="nav-link"
 								href="/MyPage">마이페이지</a></li>
 							<li class="nav-item"><a class="nav-link" href="/Logout">로그아웃</a></li>

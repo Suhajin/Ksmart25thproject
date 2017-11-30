@@ -18,9 +18,7 @@ public class MemberService {
 	}
 	
     public Member LoginAction(Member member) {
-        
         System.out.println(member);
-   
         member = memberDao.loginCheck(member);
         System.out.println(member);
         
