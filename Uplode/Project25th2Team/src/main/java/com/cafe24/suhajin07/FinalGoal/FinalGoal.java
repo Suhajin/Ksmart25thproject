@@ -1,10 +1,10 @@
 package com.cafe24.suhajin07.FinalGoal;
 
 public class FinalGoal {
-	private String finalGoalCode;
+	private int finalGoalCode;
 	private String biggestGoalCode;
-	private String memberCode;
-	private String managerCode;
+	private int memberCode;
+	private int managerCode;
 	private String managerGradeCode;
 	private String finalGoalName;
 	private String finalGoalStart;
@@ -15,10 +15,10 @@ public class FinalGoal {
 	private String finalGoalTotalBudget;
 	private String finalGoalNote;
 	private String finalGoalInputDate;
-	public String getFinalGoalCode() {
+	public int getFinalGoalCode() {
 		return finalGoalCode;
 	}
-	public void setFinalGoalCode(String finalGoalCode) {
+	public void setFinalGoalCode(int finalGoalCode) {
 		this.finalGoalCode = finalGoalCode;
 	}
 	public String getBiggestGoalCode() {
@@ -27,16 +27,16 @@ public class FinalGoal {
 	public void setBiggestGoalCode(String biggestGoalCode) {
 		this.biggestGoalCode = biggestGoalCode;
 	}
-	public String getMemberCode() {
+	public int getMemberCode() {
 		return memberCode;
 	}
-	public void setMemberCode(String memberCode) {
+	public void setMemberCode(int memberCode) {
 		this.memberCode = memberCode;
 	}
-	public String getManagerCode() {
+	public int getManagerCode() {
 		return managerCode;
 	}
-	public void setManagerCode(String managerCode) {
+	public void setManagerCode(int managerCode) {
 		this.managerCode = managerCode;
 	}
 	public String getManagerGradeCode() {
@@ -108,4 +108,5 @@ public class FinalGoal {
 				+ ", finalGoalTotalTime=" + finalGoalTotalTime + ", finalGoalTotalBudget=" + finalGoalTotalBudget
 				+ ", finalGoalNote=" + finalGoalNote + ", finalGoalInputDate=" + finalGoalInputDate + "]";
 	}
+
 }

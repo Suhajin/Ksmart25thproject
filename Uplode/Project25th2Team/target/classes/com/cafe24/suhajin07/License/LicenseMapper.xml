@@ -47,14 +47,6 @@
 		licenseApproval,
 		licenseDate
 		from license join member
-<<<<<<< HEAD
-		on
-		license.memberCode = member.memberCode
-=======
-		on
-		License.memberCode = member.memberCode
-
->>>>>>> refs/remotes/origin/master
 	</select>
 	<select id="LicenseListOne" parameterType="com.cafe24.suhajin07.License.License"
 		resultMap="resultLicense">
