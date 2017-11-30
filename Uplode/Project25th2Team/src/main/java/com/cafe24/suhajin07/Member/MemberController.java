@@ -10,13 +10,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.cafe24.suhajin07.Member.Member;
 import com.cafe24.suhajin07.Member.MemberService;
 
-
 @Controller
 public class MemberController {
 
 	@Autowired
 	MemberService memberservice;
-
+	
+	
 	@RequestMapping(value = "/member", method = RequestMethod.GET)
 	public String member() {
 		System.out.println("Member_InsertForm 폼 요청");
@@ -35,13 +35,15 @@ public class MemberController {
 		return "home";
 	}
 	
-	@RequestMapping(value = "/MyCareer", method = RequestMethod.GET)
+	@RequestMapping(value = "/MyPage", method = RequestMethod.GET)
 	public String MyPage(HttpSession session) {
-		
 		System.out.println(session);
 		
-		System.out.println("MyCareer 폼 요청");
-		return "layout/Career";
+		System.out.println("MyPage 폼 요청");
+		return "Member/member_Mypage";
+		
+		
+		
 		}
 }
 

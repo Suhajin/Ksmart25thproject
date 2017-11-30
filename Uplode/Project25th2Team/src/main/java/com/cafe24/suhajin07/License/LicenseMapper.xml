@@ -48,7 +48,7 @@
 		licenseDate
 		from license join member
 		on
-		license.memberCode = member.memberCode
+		License.memberCode = member.memberCode
 
 	</select>
 	<select id="LicenseListOne" parameterType="com.cafe24.suhajin07.License.License"
