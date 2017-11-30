@@ -13,4 +13,8 @@ public class LicenseService {
 		System.out.println("ServiceLicense" + license);
 		licenseDao.insertLicense(license);
 	}
+	public void UpdateLicense(License license) {
+		System.out.println("ServiceLicense" + license);
+		licenseDao.UpdateLicense(license);
+	}
 }

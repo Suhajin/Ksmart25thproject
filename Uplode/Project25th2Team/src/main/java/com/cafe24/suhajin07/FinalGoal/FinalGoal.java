@@ -1,6 +1,11 @@
 package com.cafe24.suhajin07.FinalGoal;
 
 public class FinalGoal {
+	private String finalGoalCode;
+	private String biggestGoalCode;
+	private String memberCode;
+	private String managerCode;
+	private String managerGradeCode;
 	private String finalGoalName;
 	private String finalGoalStart;
 	private String finalGoalEnd;
@@ -8,9 +13,38 @@ public class FinalGoal {
 	private String finalGoalTimeADay;
 	private String finalGoalTotalTime;
 	private String finalGoalTotalBudget;
-	private String finalGoalInputDate;
 	private String finalGoalNote;
-	
+	private String finalGoalInputDate;
+	public String getFinalGoalCode() {
+		return finalGoalCode;
+	}
+	public void setFinalGoalCode(String finalGoalCode) {
+		this.finalGoalCode = finalGoalCode;
+	}
+	public String getBiggestGoalCode() {
+		return biggestGoalCode;
+	}
+	public void setBiggestGoalCode(String biggestGoalCode) {
+		this.biggestGoalCode = biggestGoalCode;
+	}
+	public String getMemberCode() {
+		return memberCode;
+	}
+	public void setMemberCode(String memberCode) {
+		this.memberCode = memberCode;
+	}
+	public String getManagerCode() {
+		return managerCode;
+	}
+	public void setManagerCode(String managerCode) {
+		this.managerCode = managerCode;
+	}
+	public String getManagerGradeCode() {
+		return managerGradeCode;
+	}
+	public void setManagerGradeCode(String managerGradeCode) {
+		this.managerGradeCode = managerGradeCode;
+	}
 	public String getFinalGoalName() {
 		return finalGoalName;
 	}
@@ -53,23 +87,25 @@ public class FinalGoal {
 	public void setFinalGoalTotalBudget(String finalGoalTotalBudget) {
 		this.finalGoalTotalBudget = finalGoalTotalBudget;
 	}
-	public String getFinalGoalInputDate() {
-		return finalGoalInputDate;
-	}
-	public void setFinalGoalInputDate(String finalGoalInputDate) {
-		this.finalGoalInputDate = finalGoalInputDate;
-	}
 	public String getFinalGoalNote() {
 		return finalGoalNote;
 	}
 	public void setFinalGoalNote(String finalGoalNote) {
 		this.finalGoalNote = finalGoalNote;
 	}
+	public String getFinalGoalInputDate() {
+		return finalGoalInputDate;
+	}
+	public void setFinalGoalInputDate(String finalGoalInputDate) {
+		this.finalGoalInputDate = finalGoalInputDate;
+	}
 	@Override
 	public String toString() {
-		return "FinalGoal [finalGoalName=" + finalGoalName + ", finalGoalStart=" + finalGoalStart + ", finalGoalEnd="
+		return "FinalGoal [finalGoalCode=" + finalGoalCode + ", biggestGoalCode=" + biggestGoalCode + ", memberCode="
+				+ memberCode + ", managerCode=" + managerCode + ", managerGradeCode=" + managerGradeCode
+				+ ", finalGoalName=" + finalGoalName + ", finalGoalStart=" + finalGoalStart + ", finalGoalEnd="
 				+ finalGoalEnd + ", finalGoalDays=" + finalGoalDays + ", finalGoalTimeADay=" + finalGoalTimeADay
 				+ ", finalGoalTotalTime=" + finalGoalTotalTime + ", finalGoalTotalBudget=" + finalGoalTotalBudget
-				+ ", finalGoalInputDate=" + finalGoalInputDate + ", finalGoalNote=" + finalGoalNote + "]";
+				+ ", finalGoalNote=" + finalGoalNote + ", finalGoalInputDate=" + finalGoalInputDate + "]";
 	}
 }

@@ -22,7 +22,6 @@
 	<insert id="insertComplete" parameterType="com.cafe24.suhajin07.Complete.Complete">
 		INSERT INTO
 		complete(
-		complitionCode,
 		memberCode,
 		completeName,
 		completeStart,
@@ -31,9 +30,7 @@
 		completeAcademyName,
 		completeNo,
 		completeFile,
-		completeApproval,
 		completeDate) VALUES (
-		#{complitionCode},
 		#{memberCode},
 		#{completeName},
 		#{completeStart},
@@ -42,16 +39,16 @@
 		#{completeAcademyName} ,
 		#{completeNo},
 		#{completeFile},
-		#{completeApproval}, now())
+		now())
 	</insert>
 	<select id="CompleteList" parameterType="com.cafe24.suhajin07.Complete.Complete"
 		resultMap="resultComplete">
 		SELECT memberId, memberName, completeName, completeStart,
 		completeEnd, completeTime, completeAcademyName, completeNo,
 		completeFile,completeApproval,completeDate
-		from Complete join member
+		from complete join member
 		on
-		Complete.memberCode = member.memberCode
+		complete.memberCode = member.memberCode
 	</select>
 
 </mapper>

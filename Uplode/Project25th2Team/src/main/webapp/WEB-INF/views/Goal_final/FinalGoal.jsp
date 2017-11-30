@@ -9,18 +9,17 @@
 <title>목표설정</title>
 <style>
 input[type=text], select {
-    width: 50%;
+    width: 100%;
     padding: 12px 20px;
     margin: 2px 0;
 	display: inline-block;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 10px;
 	box-sizing: border-box;
 } 
 
 input[type=submit] {
     width: 50%;
-    background-color: #4CAF50;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -29,15 +28,21 @@ input[type=submit] {
     cursor: pointer;
 }
 
-input[type=submit]:hover {
-    background-color: #45a049;
-}
-
-/* div {
+form {
     border-radius: 5px;
     background-color: #f2f2f2;
-    padding: 20px;
-} */
+    padding: 10px;
+    margin : 30px;
+}
+p {
+    text-align: center;
+}
+table {
+	width: 100%;
+}
+th{
+	row:100px;
+}
 </style>
 </head>
 <body>
@@ -49,70 +54,70 @@ input[type=submit]:hover {
 
 <!------------------------------------contents-------------------------------------->
 <br>
-<h3>최종목표 등록</h3>
+<div class="container">
+	<h3 align="center">최종목표 등록</h3>
+<br>
+	
+	 <form action="./addFinalGoal" method="post">
+	    <table>
+	    
+	    <tr>
+	    	<td><input type="hidden" id="finalGoalCode" name="finalGoalCode" value=${Member.memberCode}></td>
+		</tr>
+		<tr>
+		    <td><input type="hidden" id="biggestGoalCode" name="biggestGoalCode" value=${Member.memberCode}></td>
+	    </tr>
+		<tr>
+		  	<td><input type="hidden" id="memberCode" name="memberCode" value=${Member.memberCode}></td>	
+		</tr>
+		<tr>   
+		    <td><input type="hidden" id="managerCode" name="managerCode" value=${Member.memberCode}></td>
+	    </tr>
+		<tr>	
+	    	<td><input type="hidden" id="managerGradeCode" name="managerGradeCode" value=${Member.memberCode}></td>
+	    </tr>
+		<tr>
+	    	<td align="center"><label for="Gn">목표명</label></td>
+	    	<td align="left"><input type="text" id="Gname" name="finalGoalName" placeholder="ex)2년 안에 한국전력공사 입사"></td>
+	    </tr>
+		<tr>
+		    <td align="center"><label for="Gs">최종목표 시작일</label></td>
+		    <td align="left"><input type="date" id="Start" name="finalGoalStart"></td>
+	    </tr>
+		<tr>
+	    	<td align="center"><label for="Ge">최종목표 종료일</label></td>
+	    	<td align="left"><input type="date" id="End" name="finalGoalEnd"></td>
+	    </tr>
+		<tr>
+		    <td align="center"><label for="Gd">총 목표 일수</label></td>
+		    <td align="left"><input type="text" id="finalGoalDays" name="finalGoalDays"></td>
+	    </tr>
+		<tr>
+		    <td align="center"><label for="Gtad">일일 투자시간</label></td>
+		    <td align="left"><input type="text" id="finalGoalTimeADay" name="finalGoalTimeADay"></td>
+	    </tr>
+		<tr>
+		    <td align="center"><label for="Gtt">총 투자시간</label></td>
+		    <td align="left"><input type="text" id="finalGoalTotalTime" name="finalGoalTotalTime"></td>
+	    </tr>
+		<tr>
+		    <td align="center"><label for="Gtb">전체예산</label></td>
+		    <td align="left"><input type="text" id="finalGoalTotalBudget" name="finalGoalTotalBudget"></td>
+	    </tr>
+		<tr>
+		    <td align="center"><label for="Note">메모</label></td>
+		    <td align="left"><input type="text" id="finalGoalNote" name="finalGoalNote"></td>
+	    </tr>
+	    <tr> 
+	    <td align="center"><label for="Gid">일일 투자시간</label></td>
+	    <td align="left"><input type="text" id="finalGoalInputDate" name="finalGoalInputDate"></td>
+	    </tr>
 
-	<div class="container"  align="center">
-	  <form action="./addFinalGoal">
-	    <div>
-		    <label for="Fgc">최종목표 코드</label>
-	    	<input type="text" id="finalGoalCode" name="finalGoalCode">
-		</div>
-		<div>
-		    <label for="Bgc">대분류 목표코드</label>
-		    <input type="text" id="biggestGoalCode" name="biggestGoalCode">
-	    </div>
-	    <div>
-		    <label for="Mc">회원코드</label>
-		  	<c:choose>
-			  	<c:when test="${Member.memberCode ne null}">
-					${Member.memberCode}
-				</c:when>
-			</c:choose>
-		</div>
-		<div>    
-		    <label for="Manager">매니저코드</label>
-		    <input type="text" id="managerCode" name="managerCode">
-	    </div>
-	    <div>	
-	    	<label for="Mp">매니저 직책</label>
-	    	<input type="text" id="managerGradeCode" name="managerGradeCode">
-	    </div>
-	    <div>
-	    	<label for="Gn">목표명</label>
-	    	<input type="text" id="lname" name="finalGoalName" placeholder="ex)2년 안에 한국전력공사 입사">
-	    </div>
-	    <div>
-		    <label for="Gs">최종목표 시작일</label>
-		    <input type="date" id="finalGoalStart" name="finalGoalStart">
-	    </div>
-	    <div>
-	    	<label for="Ge">최종목표 종료일</label>
-	    	<input type="date" id="finalGoalEnd" name="finalGoalEnd">
-	    </div>
-	    <div>
-		    <label for="Gd">총 목표 일수</label>
-		    <input type="text" id="finalGoalDays" name="finalGoalDays">
-	    </div>
-	    <div>
-		    <label for="Gtad">일일 투자시간</label>
-		    <input type="text" id="finalGoalTimeADay" name="finalGoalTimeADay">
-	    </div>
-	    <div>
-		    <label for="Gtt">총 투자시간</label>
-		    <input type="text" id="finalGoalTotalTime" name="finalGoalTotalTime">
-	    </div>
-	    <div>
-		    <label for="Gtb">전체예산</label>
-		    <input type="text" id="finalGoalTotalBudget" name="finalGoalTotalBudget">
-	    </div>
-	    <div>
-		    <label for="Note">메모</label>
-		    <input type="text" id="finalGoalNote" name="finalGoalNote">
-	    </div>
-	    <!-- <label for="Gid">일일 투자시간</label>
-	    <input type="text" id="finalGoalInputDate" name="finalGoalInputDate">
-	     -->
-	    <input type="submit" value="Submit" class="form-control btn btn-primary">
+	   </table>
+	   	
+	   	<div align="center">   
+	    <input type="submit" value="submit" class="form-control btn btn-primary" >
+	  	</div>
 	  </form>
 	</div>
 <!------------------------------------Hadan-------------------------------------->	
