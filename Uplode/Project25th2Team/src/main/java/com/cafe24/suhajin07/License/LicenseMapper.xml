@@ -46,9 +46,9 @@
 		SELECT memberId, memberName, lisenceListCode, licenseAcquire,
 		licenseNumber, licenseOrgan, licenseFile, licenseApproval,
 		licenseDate
-		from License join member
+		from license join member
 		on
-		License.memberCode = member.memberCode
+		license.memberCode = member.memberCode
 	
 	</select>
 

@@ -9,7 +9,9 @@ public class Member {
 	private String memberName;
 	private String memberPhone;
 	private String memberEmail;
+	private String memberPostNum;
 	private String memberAddress;
+	private String memberDetailAddress;
 	private String memberGrade;
 	public int getMemberCode() {
 		return memberCode;
@@ -47,11 +49,23 @@ public class Member {
 	public void setMemberEmail(String memberEmail) {
 		this.memberEmail = memberEmail;
 	}
+	public String getMemberPostNum() {
+		return memberPostNum;
+	}
+	public void setMemberPostNum(String memberPostNum) {
+		this.memberPostNum = memberPostNum;
+	}
 	public String getMemberAddress() {
 		return memberAddress;
 	}
 	public void setMemberAddress(String memberAddress) {
 		this.memberAddress = memberAddress;
+	}
+	public String getMemberDetailAddress() {
+		return memberDetailAddress;
+	}
+	public void setMemberDetailAddress(String memberDetailAddress) {
+		this.memberDetailAddress = memberDetailAddress;
 	}
 	public String getMemberGrade() {
 		return memberGrade;
@@ -63,7 +77,8 @@ public class Member {
 	public String toString() {
 		return "Member [memberCode=" + memberCode + ", memberId=" + memberId + ", memberPw=" + memberPw
 				+ ", memberName=" + memberName + ", memberPhone=" + memberPhone + ", memberEmail=" + memberEmail
-				+ ", memberAddress=" + memberAddress + ", memberGrade=" + memberGrade + "]";
+				+ ", memberPostNum=" + memberPostNum + ", memberAddress=" + memberAddress + ", memberDetailAddress="
+				+ memberDetailAddress + ", memberGrade=" + memberGrade + "]";
 	}
 	
 	

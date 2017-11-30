@@ -24,12 +24,13 @@ public class CareerController {
 	CareerDao careerdao;
 	
 	// 메인(head)에서 등록버튼 누르면 넘어가기.
-	@RequestMapping(value="/MyPage", method=RequestMethod.GET)
-	public String CareerInsert(/* Model model,@RequestParam ("memberId") String memberId*/) {
+	@RequestMapping(value="/MyCareer", method=RequestMethod.GET)
+	public String CareerInsert( Model model, @RequestParam ("memberId") String memberId) {
 		System.out.println("경력등록 Form 요청");
-		// model.addAttribute("listmember", careerdao.OneCareerList(memberId));
+		model.addAttribute("listmember", careerdao.OneCareerList(memberId));
 		return "layout/Career";
 	}
+	
 	
 	// 경력 입력 폽으로 넘어가기
 	@RequestMapping(value="/CareerInsert", method=RequestMethod.GET)
