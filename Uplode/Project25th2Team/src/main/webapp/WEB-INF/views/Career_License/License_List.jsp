@@ -53,8 +53,8 @@
 								<td>${license.licenseFile}</td>
 								<td>${license.licenseApproval}</td>
 								<td>${license.licenseDate}</td> 
-								<td><a href="#" class="btn_add">수정</a></td>
-								<td><a href="#" class="btn_add">삭제</a></td>
+								<td><a href="/LicenseUpdateOne?licenseCode=${license.licenseCode}" class="btn_add">수정</a></td>
+								<td><a href="/LicenseDelete?licenseCode=${license.licenseCode}" class="btn_add">삭제</a></td>
 							</tr>
 						</c:forEach>
 					</thead>

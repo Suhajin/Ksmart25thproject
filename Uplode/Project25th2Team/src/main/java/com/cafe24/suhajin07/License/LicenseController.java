@@ -51,4 +51,10 @@ public class LicenseController {
 		licenseService.UpdateLicense(license);
 		return "redirect:/LicenseList";
 	}
+	@RequestMapping(value = "/LicenseDelete", method = RequestMethod.GET)
+	public String DeleteLicense(License license) {
+		System.out.println("DeleteLicense Controller");
+		licenseService.DeleteLicense(license);
+		return "redirect:LicenseList";
+	}
 }

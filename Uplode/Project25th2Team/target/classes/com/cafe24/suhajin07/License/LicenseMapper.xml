@@ -46,9 +46,9 @@
 		licenseNumber, licenseOrgan, licenseFile,
 		licenseApproval,
 		licenseDate
-		from License join member
+		from license join member
 		on
-		License.memberCode = member.memberCode
+		license.memberCode = member.memberCode
 
 	</select>
 	<select id="LicenseListOne" parameterType="com.cafe24.suhajin07.License.License"
@@ -83,5 +83,9 @@
 		licenseCode =
 		#{licenseCode}
 	</update>
+	
+	<delete id="LicenseDelete">
+		DELETE from license where licenseCode = #{licenseCode}
+	</delete>
 
 </mapper>

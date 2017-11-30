@@ -46,9 +46,9 @@
 		SELECT memberId, memberName, completeName, completeStart,
 		completeEnd, completeTime, completeAcademyName, completeNo,
 		completeFile,completeApproval,completeDate
-		from Complete join member
+		from complete join member
 		on
-		Complete.memberCode = member.memberCode
+		complete.memberCode = member.memberCode
 	</select>
 
 </mapper>

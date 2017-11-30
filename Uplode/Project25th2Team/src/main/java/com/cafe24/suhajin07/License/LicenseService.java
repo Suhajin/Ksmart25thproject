@@ -10,11 +10,15 @@ public class LicenseService {
 	LicenseDao licenseDao;
 	
 	public void addLicense(License license) {
-		System.out.println("ServiceLicense" + license);
+		System.out.println("ServiceaddLicense" + license);
 		licenseDao.insertLicense(license);
 	}
 	public void UpdateLicense(License license) {
-		System.out.println("ServiceLicense" + license);
+		System.out.println("ServiceUpdateLicense" + license);
 		licenseDao.UpdateLicense(license);
+	}
+	public void DeleteLicense(License license) {
+		System.out.println("ServiceDeleteLicense" + license);
+		licenseDao.DeleteLicense(license);
 	}
 }
