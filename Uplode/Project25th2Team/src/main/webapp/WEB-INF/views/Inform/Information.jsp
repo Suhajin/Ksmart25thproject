@@ -38,20 +38,27 @@
 		</header>
 	</div>
 
+<!--------------------------------지도시작------------------------------------------>		
 	<h4 align="center">Information of CMS company</h4>
-
-	<div id="map" style="width: 100%; height: 400px;"></div>
-	<script>
-		var mapOptions = {
-			center : new naver.maps.LatLng(35.8406421, 127.1291779),
-			zoom : 10
-		};
-		var map = new naver.maps.Map('map', mapOptions);
-	</script>
-
-	<div>
-		<c:import url="/WEB-INF/views/layout/Hadan.jsp">
-		</c:import>
-	</div>
-</body>
+	<center>
+		<div id="map" style="width: 80%; height: 400px;"></div>
+			<script>
+				var map = new naver.maps.Map('map', {
+				    center: new naver.maps.LatLng(35.8406421, 127.1291779),
+				    zoom: 12
+				});
+			
+				var marker = new naver.maps.Marker({
+				    position: new naver.maps.LatLng(35.8406421, 127.1291779),
+				    map: map
+				});
+			</script>
+		</center>
+	<br>
+<!----------------------------하단------------------------------------------>		
+		<div>
+			<c:import url="/WEB-INF/views/layout/Hadan.jsp">
+			</c:import>
+		</div>
+	</body>
 </html>
