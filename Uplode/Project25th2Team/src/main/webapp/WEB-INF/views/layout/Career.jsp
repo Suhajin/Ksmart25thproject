@@ -112,25 +112,46 @@
 					<a href="/edu" class="btn_add">추가</a> <a href="#" class="btn_del">삭제</a>
 				</div>
 			</div>
-			<table class="list_tbl_01 mb70" summary="학력 추가">
-				<caption>최종학력</caption>
+			<table class="list_tbl_01 mb70" summary="경력 추가">
+				<caption>경력 등록</caption>
 				<colgroup>
-					<col style="width: 10%" />
-					<col style="width: 65%" />
+					<!-- 체크박스 -->
+					<col style="width: 2%" />
+					<!-- 최종학력 -->
+					<col style="width: 17%" />
+					<!-- 학교명 -->
+					<col style="width: 32%" />
+					<!-- 전공 -->
+					<col style="width: 17%" />
+					<!-- 부전공 -->
+					<col style="width: 17%" />
+					<!-- 졸업여부 -->
 					<col style="width: 15%" />
-					<col style="width: 10%" />
 				</colgroup>
 				<thead>
 					<tr class="first">
 						<th scope="col"><input type="checkbox"
-							name="checkAll4workCareer" id="checkAll4workCareer"
-							onclick="onCheckAll4workCareer()" /></th>
-						<th scope="col">학교명/학과(전공)/학위</th>
-						<th scope="col">증빙방법</th>
-						<th scope="col">진행상태</th>
+							name="checkAll4skillCareer" id="checkAll4skillCareer"
+							onclick="onCheckAll4skillCareer()" /></th>
+						<th scope="col">최종학력</th>
+						<th scope="col">학교명</th>
+						<th scope="col">전공</th>
+						<th scope="col">부전공</th>
+						<th scope="col">졸업여부</th>
 					</tr>
 				</thead>
-				<tbody id="workCareerLayer">
+				<tbody id="skillCareerLayer">
+					<c:forEach var="Edu" items="${listedu}">
+						<tr>
+							<td scope="col"><input type="checkbox" name="scholarNo"
+								id="checkAll4skillCareer" onclick="onCheckAll4skillCareer()" /></td>
+							<td>${Edu.eduHighestLevel}</td>
+							<td>${Edu.eduName}</td>
+							<td>${Edu.eduMajor}</td>
+							<td>${Edu.eduMinor}</td>
+							<td>${Edu.eduGraduation}</td>
+						</tr>
+					</c:forEach>
 				</tbody>
 			</table>
 			<!--// 근무경력 -->
@@ -279,25 +300,54 @@
 						href="/CompleteList" class="btn_del">전체리스트</a>
 				</div>
 			</div>
-			<table class="list_tbl_01 mb70" summary="수료교육 추가">
-				<caption>수료교육 등록</caption>
+			<table class="list_tbl_01 mb70" summary="등록 추가">
+				<caption>경력 등록</caption>
 				<colgroup>
+					<!-- 체크박스 -->
+					<col style="width: 2%" />
+					<!-- 과정명 -->
+					<col style="width: 26%" />
+					<!-- 과정시작 -->
 					<col style="width: 10%" />
-					<col style="width: 65%" />
-					<col style="width: 15%" />
+					<!-- 과정종료 -->
+					<col style="width: 10%" />
+					<!-- 수료시간 -->
+					<col style="width: 10%" />
+					<!-- 학원명 -->
+					<col style="width: 24%" />
+					<!-- 수료번호 -->
+					<col style="width: 10%" />
+					<!-- 승인여부 -->
 					<col style="width: 10%" />
 				</colgroup>
 				<thead>
 					<tr class="first">
 						<th scope="col"><input type="checkbox"
-							name="checkAll4education" id="checkAll4education"
-							onclick="onCheckAll4education()" /></th>
-						<th scope="col">교육과정명/교육기간/교육기관명</th>
-						<th scope="col">증빙방법</th>
-						<th scope="col">진행상태</th>
+							name="checkAll4skillCareer" id="checkAll4skillCareer"
+							onclick="onCheckAll4skillCareer()" /></th>
+						<th scope="col">과정명</th>
+						<th scope="col">과정시작</th>
+						<th scope="col">과정종료</th>
+						<th scope="col">수료시간</th>
+						<th scope="col">학원명</th>
+						<th scope="col">수료번호</th>
+						<th scope="col">승인여부</th>
 					</tr>
 				</thead>
-				<tbody id="educationLayer">
+				<tbody id="skillCareerLayer">
+					<c:forEach var="complete" items="${listcomplete}">
+						<tr>
+							<td scope="col"><input type="checkbox" name="scholarNo"
+								id="checkAll4skillCareer" onclick="onCheckAll4skillCareer()" /></td>
+							<td>${complete.completeName}</td>
+							<td>${complete.completeStart}</td>
+							<td>${complete.completeEnd}</td>
+							<td>${complete.completeTime}</td>
+							<td>${complete.completeAcademyName}</td>
+							<td>${complete.completeNo}</td>
+							<td>${complete.completeApproval}</td>
+						</tr>
+					</c:forEach>
 				</tbody>
 			</table>
 			<!--// 수료교육 등록 -->

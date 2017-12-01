@@ -6,6 +6,8 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+
+
 @Repository
 public class CompleteDao {
 
@@ -25,4 +27,8 @@ public class CompleteDao {
 		return sqlSessionTemplate.selectList(NS+"CompleteList");
 	}
 	
+	public List<Complete> OneCompleteList(String memberId){
+		System.out.println("One CompleteList성공");
+		return sqlSessionTemplate.selectList(NS+"CompleteListOne", memberId);
+	}
 }

@@ -6,48 +6,47 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>Mypage</title>
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>My page</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
 <link rel="stylesheet" type="text/css"
 	href="<%=request.getContextPath()%>/resources/css/Career_common.css" />
 <link rel="stylesheet" type="text/css"
 	href="<%=request.getContextPath()%>/resources/css/Career_jquery-ui.css" />
 
-
 </head>
 
 <style type="text/css" media="screen">
-.printOnly {
-	display: none;
-}
+	.printOnly {
+		display: none;
+	}
 </style>
 <style type="text/css" media="print">
-#wrap {
-	background: url(none) repeat-x 0 0 !important;
-}
-
-#container {
-	width: 764px;
-	background: url(none) repeat-x 0 0 !important;
-}
-
-.noprint {
-	display: none;
-}
+	#wrap {
+		background: url(none) repeat-x 0 0 !important;
+	}
+	
+	#container {
+		width: 764px;
+		background: url(none) repeat-x 0 0 !important;
+	}
+	
+	.noprint {
+		display: none;
+	}
 </style>
 </head>
-
+<!------------------------------------head-------------------------------------->
 <div>
 	<c:import url="/WEB-INF/views/layout/Head.jsp">
 	</c:import>
 </div>
+<!------------------------------------main-------------------------------------->
 <br>
 <br>
 <br>
 <body>
 	<div class="content" id="content">
-
 		<!-- 타이틀 영역 -->
 		<div class="title_area">
 			<h3>${Member.memberName}님&nbsp;&nbsp;환영합니다!</h3>
@@ -57,15 +56,15 @@
 			<img src="/images/common/pic_sample.gif" alt="증명사진" />
 			<div class="info_area">
 				<p>
-					&nbsp;&nbsp;${Member.memberName}<span>(${Member.memberId})</span> <a
-						href="/personal/mem/per_modify.jsp" class="btn_type01">프로필수정</a>
+					&nbsp;&nbsp;${Member.memberName}<span>(${Member.memberId})</span> 
+					<a href="/personal/mem/per_modify.jsp" class="btn_type01">프로필수정</a>
 				</p>
-				<span><strong>전화번호</strong> : ${Member.memberPhone}</span> <span><strong>핸드폰번호</strong>
-					: ${Member.memberPhone}</span> <span><strong>이메일</strong> :
-					${Member.memberEmail}</span> <span class="address"> <strong>우편번호</strong>
-					: ${Member.memberPostNum}
-				</span> <span><strong>주&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;소</strong> :
-					${Member.memberAddress} ${Member.memberDetailAddress}</span>
+				<span><strong>전화번호</strong> : ${Member.memberPhone}</span> 
+				<span><strong>핸드폰번호</strong>: ${Member.memberPhone}</span> 
+				<span><strong>이메일</strong> : ${Member.memberEmail}</span> 
+				<span class="address"> <strong>우편번호</strong> : ${Member.memberPostNum}</span> 
+				<span class="address"> <strong>주소</strong> : ${Member.memberAddress}</span> 
+				<span class="address"> <strong>상세주소</strong> : ${Member.memberDetailAddress}</span> 
 			</div>
 		</div>
 		<div>

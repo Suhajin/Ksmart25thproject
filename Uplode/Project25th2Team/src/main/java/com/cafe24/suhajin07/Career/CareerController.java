@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.cafe24.suhajin07.Career.CareerDao;
 import com.cafe24.suhajin07.Career.Career;
 import com.cafe24.suhajin07.Career.CareerService;
+import com.cafe24.suhajin07.Complete.CompleteDao;
+import com.cafe24.suhajin07.Edu.EduDao;
 
 
 @Controller
@@ -23,11 +25,19 @@ public class CareerController {
 	@Autowired
 	CareerDao careerdao;
 	
+	@Autowired
+	CompleteDao completedao;
+	
+	@Autowired
+	EduDao edudao;
+	
 	// 메인(head)에서 등록버튼 누르면 넘어가기.
 	@RequestMapping(value="/MyCareer", method=RequestMethod.GET)
-	public String CareerInsert( Model model, @RequestParam ("memberId") String memberId) {
+	public String CareerInsert( Model model,Model model2, Model model3, @RequestParam ("memberId") String memberId) {
 		System.out.println("경력등록 Form 요청");
 		model.addAttribute("listmember", careerdao.OneCareerList(memberId));
+		model2.addAttribute("listcomplete", completedao.OneCompleteList(memberId) );
+		model3.addAttribute("listedu", edudao.OneEduList(memberId));
 		return "layout/Career";
 	}
 	

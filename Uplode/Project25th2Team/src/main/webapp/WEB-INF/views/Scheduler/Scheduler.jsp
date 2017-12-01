@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%-- <%@page import="java.text.SimpleDateFormat"%> --%>
 
@@ -10,10 +9,10 @@
 <title>캘린더</title>
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
-
+<!-- 
 <script type="text/javaScript" language="javascript">
 	
-</script>
+</script> -->
 <style TYPE="text/css">
 body {
 	scrollbar-face-color: #F6F6F6;
@@ -52,33 +51,27 @@ select {
 	text-overflow: ellipsis;
 }
 
-A:link {
-	font-size: 9pt;
+/* A:link {
+	font-size: 12pt;
 	font-family: "돋움";
 	color: #000000;
 	text-decoration: none;
 }
 
 A:visited {
-	font-size: 9pt;
+	font-size: 15pt;
 	font-family: "돋움";
 	color: #000000;
 	text-decoration: none;
 }
 
-A:active {
-	font-size: 9pt;
-	font-family: "돋움";
-	color: red;
-	text-decoration: none;
-}
 
 A:hover {
-	font-size: 9pt;
+	font-size:9pt;
 	font-family: "돋움";
 	color: red;
 	text-decoration: none;
-}
+} */
 
 .day {
 	width: 100px;
@@ -197,6 +190,12 @@ A:hover {
 </style>
 </head>
 <body>
+<!------------------------------------head-------------------------------------->
+		<div>
+			<c:import url="/WEB-INF/views/layout/Head.jsp">
+			</c:import>
+		</div>
+<!------------------------------------contents-------------------------------------->	
 	<form name="calendarFrm" id="calendarFrm" action="" method="GET">
 
 		<div class="calendar">
@@ -204,18 +203,18 @@ A:hover {
 			<!--날짜 네비게이션  -->
 			<div class="navigation">
 				<a class="before_after_year"
-					href="./calendar.do?year=${today_info.search_year-1}&month=${today_info.search_month-1}">
+					href="/Scheduler?year=${today_info.search_year-1}&month=${today_info.search_month-1}">
 					&lt;&lt; <!-- 이전해 -->
 				</a> <a class="before_after_month"
-					href="./calendar.do?year=${today_info.before_year}&month=${today_info.before_month}">
+					href="/Scheduler?year=${today_info.before_year}&month=${today_info.before_month}">
 					&lt; <!-- 이전달 -->
 				</a> <span class="this_month"> &nbsp;${today_info.search_year}. <c:if
 						test="${today_info.search_month<10}">0</c:if>${today_info.search_month}
 				</span> <a class="before_after_month"
-					href="/calendar.do?year=${today_info.after_year}&month=${today_info.after_month}">
+					href="/Scheduler?year=${today_info.after_year}&month=${today_info.after_month}">
 					<!-- 다음달 --> &gt;
 				</a> <a class="before_after_year"
-					href="/calendar.do?year=${today_info.search_year+1}&month=${today_info.search_month-1}">
+					href="/Scheduler?year=${today_info.search_year+1}&month=${today_info.search_month-1}">
 					<!-- 다음해 --> &gt;&gt;
 				</a>
 			</div>
@@ -274,5 +273,11 @@ A:hover {
 			</table>
 		</div>
 	</form>
+<!------------------------------------Hadan-------------------------------------->	
+			<div>
+				<c:import url="/WEB-INF/views/layout/Hadan.jsp">
+				</c:import>
+			</div>
+	</div>	
 </body>
 </html>

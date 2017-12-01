@@ -50,6 +50,7 @@
 		on
 		license.memberCode = member.memberCode
 
+
 	</select>
 	<select id="LicenseListOne" parameterType="com.cafe24.suhajin07.License.License"
 		resultMap="resultLicense">

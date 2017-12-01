@@ -67,10 +67,7 @@
 				<td>첨부파일</td>
 				<td><input type="text" name="licenseFile"></td>
 			</tr>
-			<tr>	
-				<td>자격증 등록일</td>
-				<td><input type="date" name="licenseDate"></td>
-			</tr>
+			
 		</table>
 		<input type="submit" value="addLicense">
 	</form>
