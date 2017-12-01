@@ -11,7 +11,7 @@ public class FinalGoalService {
 	
 	//최종목표 입력
 	public void addFinalGoal(FinalGoal fg) {
-		System.out.println("service FinalGoal :: "+ fg);
+		System.out.println("서비스다 서비스 :: "+ fg);
 		fgd.insertFinalGoal(fg);
 	}
 }

@@ -1,11 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page session="false"%>
+<%@ page session="true"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>목표설정</title>
 <style>
 input[type=text], select {
@@ -58,59 +57,58 @@ th{
 	<h3 align="center">최종목표 등록</h3>
 <br>
 	
-	 <form action="./addFinalGoal" method="post">
+	 <form action="/addFinalGoal" method="post">
 	    <table>
 	    
 	    <tr>
-	    	<td><input type="hidden" id="finalGoalCode" name="finalGoalCode" value=${Member.memberCode}></td>
+	    	<td><input type="hidden" name="finalGoalCode" value=${Member.memberCode}></td>
 		</tr>
 		<tr>
-		    <td><input type="hidden" id="biggestGoalCode" name="biggestGoalCode" value=${Member.memberCode}></td>
+		    <td><input type="hidden" name="biggestGoalCode" value=${Member.memberCode}></td>
 	    </tr>
 		<tr>
-		  	<td><input type="hidden" id="memberCode" name="memberCode" value=${Member.memberCode}></td>	
+		  	<td><input type="hidden" name="memberCode" value=${Member.memberCode}></td>	
 		</tr>
 		<tr>   
-		    <td><input type="hidden" id="managerCode" name="managerCode" value=${Member.memberCode}></td>
+		    <td><input type="hidden" name="managerCode" value=${Member.memberCode}></td>
 	    </tr>
 		<tr>	
-	    	<td><input type="hidden" id="managerGradeCode" name="managerGradeCode" value=${Member.memberCode}></td>
+	    	<td><input type="hidden" name="managerGradeCode" value=${Member.memberCode}></td>
 	    </tr>
 		<tr>
-	    	<td align="center"><label for="Gn">목표명</label></td>
-	    	<td align="left"><input type="text" id="Gname" name="finalGoalName" placeholder="ex)2년 안에 한국전력공사 입사"></td>
+	    	<td align="center"><label for="finalGoalName">목표명</label></td>
+	    	<td><input type="text" name="finalGoalName" placeholder="ex)2년 안에 한국전력공사 입사"></td>
 	    </tr>
 		<tr>
-		    <td align="center"><label for="Gs">최종목표 시작일</label></td>
-		    <td align="left"><input type="date" id="Start" name="finalGoalStart"></td>
+		    <td align="center"><label for="finalGoalStart">최종목표 시작일</label></td>
+		    <td><input type="date" name="finalGoalStart" ></td>
 	    </tr>
 		<tr>
-	    	<td align="center"><label for="Ge">최종목표 종료일</label></td>
-	    	<td align="left"><input type="date" id="End" name="finalGoalEnd"></td>
+	    	<td align="center"><label for="finalGoalEnd">최종목표 종료일</label></td>
+	    	<td><input type="date" name="finalGoalEnd"></td>
 	    </tr>
 		<tr>
-		    <td align="center"><label for="Gd">총 목표 일수</label></td>
-		    <td align="left"><input type="text" id="finalGoalDays" name="finalGoalDays"></td>
+		    <td align="center"><label for="finalGoalDays">총 목표 일수</label></td>
+		    <td align="left"><input type="text" name="finalGoalDays"></td>
 	    </tr>
 		<tr>
 		    <td align="center"><label for="Gtad">일일 투자시간</label></td>
-		    <td align="left"><input type="text" id="finalGoalTimeADay" name="finalGoalTimeADay"></td>
+		    <td align="left"><input type="text" name="finalGoalTimeADay"></td>
 	    </tr>
 		<tr>
-		    <td align="center"><label for="Gtt">총 투자시간</label></td>
-		    <td align="left"><input type="text" id="finalGoalTotalTime" name="finalGoalTotalTime"></td>
+		    <td align="center"><label for="finalGoalTotalTime">총 투자시간</label></td>
+		    <td><input type="text" name="finalGoalTotalTime"></td>
 	    </tr>
 		<tr>
-		    <td align="center"><label for="Gtb">전체예산</label></td>
-		    <td align="left"><input type="text" id="finalGoalTotalBudget" name="finalGoalTotalBudget"></td>
+		    <td align="center"><label for="finalGoalTotalBudget">전체예산</label></td>
+		    <td><input type="text" name="finalGoalTotalBudget"></td>
 	    </tr>
 		<tr>
-		    <td align="center"><label for="Note">메모</label></td>
-		    <td align="left"><input type="text" id="finalGoalNote" name="finalGoalNote"></td>
+		    <td align="center"><label for="finalGoalNote">메모</label></td>
+		    <td><input type="text" name="finalGoalNote"></td>
 	    </tr>
 	    <tr> 
-	    <td align="center"><label for="Gid">일일 투자시간</label></td>
-	    <td align="left"><input type="text" id="finalGoalInputDate" name="finalGoalInputDate"></td>
+	    <td><input type="hidden" name="finalGoalInputDate"></td>
 	    </tr>
 
 	   </table>

@@ -14,7 +14,7 @@ public class FinalGoalDao {
 	
 	//최종목표 입력
 	public void insertFinalGoal(FinalGoal fg) {
-		System.out.println("FinalGoal insert 성공");
+		System.out.println("Dao다 Dao!!");
 		SST.insert(NS+"insertFinalGoal", fg);
 	}
 }

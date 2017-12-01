@@ -15,6 +15,7 @@ public class FinalGoal {
 	private String finalGoalTotalBudget;
 	private String finalGoalNote;
 	private String finalGoalInputDate;
+	
 	public int getFinalGoalCode() {
 		return finalGoalCode;
 	}
