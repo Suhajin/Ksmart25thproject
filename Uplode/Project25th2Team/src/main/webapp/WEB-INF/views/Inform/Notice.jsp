@@ -23,7 +23,7 @@ table {
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/resources/css/one-page-wonder.css">
 
-<title>공지사항</title>
+<title>공지 사항</title>
 </head>
 
 <body>
