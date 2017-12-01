@@ -11,8 +11,6 @@ public class FinalGoalController {
 	@Autowired
 	FinalGoalService fgService;
 	
-	@Autowired
-	FinalGoalDao fgDao;
 	
 	//메인(head)에서 등록버튼 누르면 폼 등장.
 	@RequestMapping(value="/Goal", method=RequestMethod.GET)
@@ -22,9 +20,9 @@ public class FinalGoalController {
 	}
 	
 	//최종목표 등록
-	@RequestMapping(value="/addFinalGoal", method = RequestMethod.POST)
+	@RequestMapping(value="/addFinalGoal", method=RequestMethod.POST)
 	public String addFinalGoal(FinalGoal fg) {
-		System.out.println("FinalGoalController addFinalGoal"+fg);
+		System.out.println("Controller"+fg);
 		fgService.addFinalGoal(fg);
 		
 		return "home";
