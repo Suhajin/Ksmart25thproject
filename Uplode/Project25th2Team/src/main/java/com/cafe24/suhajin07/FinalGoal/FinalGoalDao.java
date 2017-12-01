@@ -8,13 +8,13 @@ import org.springframework.stereotype.Repository;
 public class FinalGoalDao {
 
 	@Autowired
-	SqlSessionTemplate SST;
+	SqlSessionTemplate sqlSessionTemplate;
 	
 	private final String NS = "com.cafe24.suhajin07.FinalGoal.FinalGoalMapper.";
 	
 	//최종목표 입력
 	public void insertFinalGoal(FinalGoal fg) {
 		System.out.println("FinalGoal insert 성공");
-		SST.insert(NS+"insertFinalGoal", fg);
+		sqlSessionTemplate.insert(NS+"insertFinalGoal", fg);
 	}
 }
