@@ -45,27 +45,27 @@ table {
 				<tr>
 					<td>아이디</td>
 					<td><input type="text" name="memberId"
-						placeholder="회원가입을 위한 memberId를 입력하세요"></td>
+						placeholder="회원가입을 위한 ID를 입력하세요"></td>
 				</tr>
 				<tr>
 					<td>비밀번호</td>
 					<td><input type="text" name="memberPw"
-						placeholder="회원가입을 위한 memberPw를 입력하세요"></td>
+						placeholder="회원가입을 위한 PW를 입력하세요"></td>
 				</tr>
 				<tr>
 					<td>이름</td>
 					<td><input type="text" name="memberName"
-						placeholder="회원가입을 위한 memberName를 입력하세요"></td>
+						placeholder="회원가입을 위한 이름을 입력하세요"></td>
 				</tr>
 				<tr>
 					<td>휴대폰</td>
 					<td><input type="text" name="memberPhone"
-						placeholder="회원가입을 위한 memberPhone를 입력하세요"></td>
+						placeholder="회원가입을 위한  전화번호를 입력하세요"></td>
 				</tr>
 				<tr>
 					<td>Email</td>
 					<td><input type="text" name="memberEmail"
-						placeholder="회원가입을 위한 memberEmail를 입력하세요"></td>
+						placeholder="회원가입을 위한 이메일 주소를 입력하세요"></td>
 				</tr>
 				<tr>
 					<td>회원 주소</td>
