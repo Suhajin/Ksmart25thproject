@@ -6,6 +6,8 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+
+
 @Repository
 public class TrainingDao {
 
@@ -22,5 +24,11 @@ public class TrainingDao {
 	public List<Training> selectTrainingList() {
 		System.out.println("TrainingList 성공");
 		return sqlSessionTemplate.selectList(NS+"TrainingList");
+	}
+	
+	// 1사람에 대한 리스트
+	public List<Training> OneTrainingList(String memberId){
+		System.out.println("One TrainingListOne성공");
+		return sqlSessionTemplate.selectList(NS+"TrainingListOne", memberId);
 	}
 }

@@ -3,8 +3,8 @@ package com.cafe24.suhajin07.Edu;
 public class Edu {
 	
 	
-	private String eduCode;
-	private String memberCode;
+	private int eduCode;
+	private int memberCode;
 	private String eduHighestLevel;
 	private String eduName;
 	private String eduMajor;
@@ -15,16 +15,16 @@ public class Edu {
 	private String eduFinish;
 	private String eduBefore;
 	private String eduBeforeMajor;
-	public String getEduCode() {
+	public int getEduCode() {
 		return eduCode;
 	}
-	public void setEduCode(String eduCode) {
+	public void setEduCode(int eduCode) {
 		this.eduCode = eduCode;
 	}
-	public String getMemberCode() {
+	public int getMemberCode() {
 		return memberCode;
 	}
-	public void setMemberCode(String memberCode) {
+	public void setMemberCode(int memberCode) {
 		this.memberCode = memberCode;
 	}
 	public String getEduHighestLevel() {
@@ -96,5 +96,5 @@ public class Edu {
 	}
 	
 	
-
+	
 }

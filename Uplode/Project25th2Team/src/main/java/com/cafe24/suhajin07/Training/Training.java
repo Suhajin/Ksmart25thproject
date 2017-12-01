@@ -4,8 +4,8 @@ public class Training {
 
 	private String memberId;
 	private String memberName;
-	private String trainingCode;
-	private String memberCode;
+	private int trainingCode;
+	private int memberCode;
 	private String trainingPeriod;
 	private String trainingStart;
 	private String trainingEnd;
@@ -24,16 +24,16 @@ public class Training {
 	public void setMemberName(String memberName) {
 		this.memberName = memberName;
 	}
-	public String getTrainingCode() {
+	public int getTrainingCode() {
 		return trainingCode;
 	}
-	public void setTrainingCode(String trainingCode) {
+	public void setTrainingCode(int trainingCode) {
 		this.trainingCode = trainingCode;
 	}
-	public String getMemberCode() {
+	public int getMemberCode() {
 		return memberCode;
 	}
-	public void setMemberCode(String memberCode) {
+	public void setMemberCode(int memberCode) {
 		this.memberCode = memberCode;
 	}
 	public String getTrainingPeriod() {
@@ -79,6 +79,9 @@ public class Training {
 				+ trainingStart + ", trainingEnd=" + trainingEnd + ", trainingNation=" + trainingNation
 				+ ", trainingDetail=" + trainingDetail + ", trainingDate=" + trainingDate + "]";
 	}
+	
+	
+	
 	
 	
 	
