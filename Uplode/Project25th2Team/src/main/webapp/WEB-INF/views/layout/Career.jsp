@@ -109,47 +109,52 @@
 				<!-- <a href="javascript:printCareer('workCareer')" class="btn_type02">근무경력확인서출력</a>  -->
 				<!-- 우측버튼 -->
 				<div class="sec_top_btn">
-					<a href="/edu" class="btn_add">추가</a> <a href="#" class="btn_del">삭제</a>
+					<a href="/edu" class="btn_add">추가</a> <a href="/eduList"
+						class="btn_del">전체리스트</a>
 				</div>
 			</div>
-			<table class="list_tbl_01 mb70" summary="경력 추가">
-				<caption>경력 등록</caption>
+			<table class="list_tbl_01 mb70" summary="학력 추가">
+				<caption>최종학력</caption>
 				<colgroup>
 					<!-- 체크박스 -->
 					<col style="width: 2%" />
 					<!-- 최종학력 -->
-					<col style="width: 17%" />
+					<col style="width: 16%" />
 					<!-- 학교명 -->
-					<col style="width: 32%" />
+					<col style="width: 20%" />
 					<!-- 전공 -->
-					<col style="width: 17%" />
+					<col style="width: 16%" />
 					<!-- 부전공 -->
-					<col style="width: 17%" />
+					<col style="width: 16%" />
+					<!-- 복수전공 -->
+					<col style="width: 16%" />
 					<!-- 졸업여부 -->
-					<col style="width: 15%" />
+					<col style="width: 12%" />
 				</colgroup>
 				<thead>
 					<tr class="first">
 						<th scope="col"><input type="checkbox"
-							name="checkAll4skillCareer" id="checkAll4skillCareer"
-							onclick="onCheckAll4skillCareer()" /></th>
+							name="checkAll4workCareer" id="checkAll4workCareer"
+							onclick="onCheckAll4workCareer()" /></th>
 						<th scope="col">최종학력</th>
 						<th scope="col">학교명</th>
 						<th scope="col">전공</th>
 						<th scope="col">부전공</th>
+						<th scope="col">복수전공</th>
 						<th scope="col">졸업여부</th>
 					</tr>
 				</thead>
-				<tbody id="skillCareerLayer">
-					<c:forEach var="Edu" items="${listedu}">
+				<tbody id="workCareerLayer">
+					<c:forEach var="edu" items="${listedu}">
 						<tr>
 							<td scope="col"><input type="checkbox" name="scholarNo"
 								id="checkAll4skillCareer" onclick="onCheckAll4skillCareer()" /></td>
-							<td>${Edu.eduHighestLevel}</td>
-							<td>${Edu.eduName}</td>
-							<td>${Edu.eduMajor}</td>
-							<td>${Edu.eduMinor}</td>
-							<td>${Edu.eduGraduation}</td>
+							<td>${edu.eduHighestLevel}</td>
+							<td>${edu.eduName}</td>
+							<td>${edu.eduMajor}</td>
+							<td>${edu.eduMinor}</td>
+							<td>${edu.eduDual}</td>
+							<td>${edu.eduGraduation}</td>
 						</tr>
 					</c:forEach>
 				</tbody>
