@@ -2,12 +2,11 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.cafe24.suhajin07.Language.LanguageMapper">
-	<resultMap type="com.cafe24.suhajin07.Member.Member" id="resultMember">
-		<result property="memberID" column="memberID" />
-		<result property="memberName" column="memberName" />
-	</resultMap>
 	<resultMap type="com.cafe24.suhajin07.Language.Language" id="resultLanguage">
+		<result property="memberId" column="memberId" />
+		<result property="memberName" column="memberName" />
 		<result property="memberCode" column="memberCode" />
+		<result property="languageCode" column="languageCode" />
 		<result property="lisenceListCode" column="lisenceListCode" />
 		<result property="languageAcquire" column="languageAcquire" />
 		<result property="languageScore" column="languageScore" />
@@ -15,16 +14,18 @@
 		<result property="languageFile" column="languageFile" />
 		<result property="languageApproval" column="languageApproval" />
 		<result property="languageDate" column="languageDate" />
+		<result property="lisenceLevelName" column="lisenceLevelName" />
+		<result property="lisenceName" column="lisenceName" />
 	</resultMap>
 	<!-- 어학등록 -->
 	<insert id="insertLanguage" parameterType="com.cafe24.suhajin07.Language.Language">
 		INSERT INTO
 		language(
-		memberCode, 
+		memberCode,
 		lisenceListCode,
 		languageAcquire,
-		languageScore, 
-		languageOrgan, 
+		languageScore,
+		languageOrgan,
 		languageFile,
 		languageApproval,
 		languageDate) VALUES (
@@ -32,20 +33,40 @@
 		#{lisenceListCode},
 		#{languageAcquire},
 		#{languageScore},
-		#{languageOrgan}, 
+		#{languageOrgan},
 		#{languageFile},
 		#{languageApproval},
 		now())
 	</insert>
-	
+
 	<select id="LanguageList" parameterType="com.cafe24.suhajin07.Language.Language"
 		resultMap="resultLanguage">
-		SELECT memberId, memberName, lisenceListCode, languageAcquire,
-		languageScore, languageOrgan, languageFile, languageApproval,
+		SELECT memberId, memberName, lisenceListCode,
+		languageAcquire,
+		languageScore, languageOrgan, languageFile,
+		languageApproval,
 		languageDate
 		from language join member
 		on
 		language.memberCode = member.memberCode
+	</select>
+
+	<select id="languageListOne" parameterType="com.cafe24.suhajin07.Career.Career"
+		resultMap="resultLanguage">
+		SELECT memberId, memberName, languageCode,
+		languageAcquire,languageScore,languageOrgan,
+		languageApproval,lisenceLevelName,lisenceName
+		from language join member
+		join lisenceList
+		on
+		language.memberCode =
+		member.memberCode
+		and
+		language.lisenceListCode
+		=lisenceList.lisenceListCode
+		where memberId =
+		#{memberId}
+
 	</select>
 
 

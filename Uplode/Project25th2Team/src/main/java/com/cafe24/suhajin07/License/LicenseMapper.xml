@@ -46,21 +46,18 @@
 		licenseNumber, licenseOrgan, licenseFile,
 		licenseApproval,
 		licenseDate
-		from license join member
-	</select>
-	<select id="LicenseListOne" parameterType="com.cafe24.suhajin07.License.License"
-		resultMap="resultLicense">
-		SELECT memberId, memberName, licenseCode, lisenceListCode,
-		licenseAcquire,
-		licenseNumber, licenseOrgan, licenseFile, licenseApproval
-		from license
-		join member
-		on
+		from license join member on
 		license.memberCode = member.memberCode
-		where memberId =
-		#{memberId}
+
 
 	</select>
+		<select id="LicenseListOne" parameterType="com.cafe24.suhajin07.License.License"
+			resultMap="resultLicense"> SELECT memberId, memberName, licenseCode, licenseAcquire,
+			licenseNumber, licenseOrgan, licenseFile,
+			licenseApproval,lisenceLevelName,lisenceName from license join member
+			join lisenceList on license.memberCode = member.memberCode and
+			license.lisenceListCode =lisenceList.lisenceListCode where memberId =
+			#{memberId} </select>
 	<select id="LicenseSelectOne" resultMap="resultLicense">
 		select * from license
 		where
@@ -80,9 +77,10 @@
 		licenseCode =
 		#{licenseCode}
 	</update>
-	
+
 	<delete id="LicenseDelete">
-		DELETE from license where licenseCode = #{licenseCode}
+		DELETE from license where licenseCode =
+		#{licenseCode}
 	</delete>
 
 </mapper>

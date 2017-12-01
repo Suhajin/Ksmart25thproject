@@ -23,9 +23,9 @@ public class LicenseDao {
 		System.out.println("selectLicenseListDao 성공");
 		return sqlSessionTemplate.selectList(NS + "LicenseList");
 	}
-	public List<License> OneLicenseList(String memberId) {
-		System.out.println("OneLicenseListDao 성공");
-		return sqlSessionTemplate.selectList(NS + "OneLicenseList", memberId);
+	public List<License> LicenseListOne(String memberId) {
+		System.out.println("LicenseListOne 성공");
+		return sqlSessionTemplate.selectList(NS + "LicenseListOne", memberId);
 	}
 	public License LicenseSelectone(int licenseCode) {
 		System.out.println("LicenseSelectoneDao 성공");

@@ -4,8 +4,8 @@ public class Language {
 
 	private String memberId;
 	private String memberName;
-	private String languageCode;
-	private String memberCode;
+	private int languageCode;
+	private int memberCode;
 	private String lisenceListCode;
 	private String languageAcquire;
 	private String languageScore;
@@ -13,6 +13,8 @@ public class Language {
 	private String languageFile;
 	private String languageApproval;
 	private String languageDate;
+	private String lisenceLevelName;
+	private String lisenceName;
 	public String getMemberId() {
 		return memberId;
 	}
@@ -25,16 +27,16 @@ public class Language {
 	public void setMemberName(String memberName) {
 		this.memberName = memberName;
 	}
-	public String getLanguageCode() {
+	public int getLanguageCode() {
 		return languageCode;
 	}
-	public void setLanguageCode(String languageCode) {
+	public void setLanguageCode(int languageCode) {
 		this.languageCode = languageCode;
 	}
-	public String getMemberCode() {
+	public int getMemberCode() {
 		return memberCode;
 	}
-	public void setMemberCode(String memberCode) {
+	public void setMemberCode(int memberCode) {
 		this.memberCode = memberCode;
 	}
 	public String getLisenceListCode() {
@@ -79,16 +81,28 @@ public class Language {
 	public void setLanguageDate(String languageDate) {
 		this.languageDate = languageDate;
 	}
+	public String getLisenceLevelName() {
+		return lisenceLevelName;
+	}
+	public void setLisenceLevelName(String lisenceLevelName) {
+		this.lisenceLevelName = lisenceLevelName;
+	}
+	public String getLisenceName() {
+		return lisenceName;
+	}
+	public void setLisenceName(String lisenceName) {
+		this.lisenceName = lisenceName;
+	}
 	@Override
 	public String toString() {
 		return "Language [memberId=" + memberId + ", memberName=" + memberName + ", languageCode=" + languageCode
 				+ ", memberCode=" + memberCode + ", lisenceListCode=" + lisenceListCode + ", languageAcquire="
 				+ languageAcquire + ", languageScore=" + languageScore + ", languageOrgan=" + languageOrgan
 				+ ", languageFile=" + languageFile + ", languageApproval=" + languageApproval + ", languageDate="
-				+ languageDate + "]";
+				+ languageDate + ", lisenceLevelName=" + lisenceLevelName + ", lisenceName=" + lisenceName + "]";
 	}
 	
 	
-	
+
 	
 }

@@ -4,8 +4,8 @@ public class Complete {
 
 	private String memberId;
 	private String memberName;
-	private String complitionCode;
-	private String memberCode;
+	private int complitionCode;
+	private int memberCode;
 	private String completeName;
 	private String completeStart;
 	private String completeEnd;
@@ -27,16 +27,16 @@ public class Complete {
 	public void setMemberName(String memberName) {
 		this.memberName = memberName;
 	}
-	public String getComplitionCode() {
+	public int getComplitionCode() {
 		return complitionCode;
 	}
-	public void setComplitionCode(String complitionCode) {
+	public void setComplitionCode(int complitionCode) {
 		this.complitionCode = complitionCode;
 	}
-	public String getMemberCode() {
+	public int getMemberCode() {
 		return memberCode;
 	}
-	public void setMemberCode(String memberCode) {
+	public void setMemberCode(int memberCode) {
 		this.memberCode = memberCode;
 	}
 	public String getCompleteName() {
@@ -101,6 +101,7 @@ public class Complete {
 				+ completeAcademyName + ", completeNo=" + completeNo + ", completeFile=" + completeFile
 				+ ", completeApproval=" + completeApproval + ", completeDate=" + completeDate + "]";
 	}
+	
 	
 	
 }
