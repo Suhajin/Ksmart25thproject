@@ -55,7 +55,7 @@
 		resultMap="resultLicense">
 		SELECT memberId, memberName, licenseCode, lisenceListCode,
 		licenseAcquire,
-		licenseNumber, licenseOrgan, licenseFile, licenseApproval
+		licenseNumber, licenseOrgan, licenseApproval
 		from license
 		join member
 		on

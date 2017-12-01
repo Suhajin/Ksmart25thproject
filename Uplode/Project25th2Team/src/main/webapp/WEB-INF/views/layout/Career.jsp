@@ -223,6 +223,19 @@
 					</tr>
 				</thead>
 				<tbody id="scholarLayer">
+				<c:forEach var="career" items="${listmember}">
+						<tr>
+							<td scope="col"><input type="checkbox" name="scholarNo"
+								id="checkAll4skillCareer" onclick="onCheckAll4skillCareer()" /></td>
+							<td>${career.careerName}</td>
+							<td>${career.careerAddress}</td>
+							<td>${career.careerEntrance}</td>
+							<td>${career.careerQuit}</td>
+							<td>${career.careerWorking}</td>
+							<td>${career.careerPosition}</td>
+							<td>${career.careerApproval}</td>
+						</tr>
+					</c:forEach>
 				</tbody>
 			</table>
 			<!--// 자격증 등록 -->
