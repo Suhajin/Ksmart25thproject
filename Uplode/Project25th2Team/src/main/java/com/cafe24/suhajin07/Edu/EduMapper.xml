@@ -45,15 +45,6 @@
 		on
 		edu.memberCode = member.memberCode
 		where memberId = #{memberId}
-
-<<<<<<< HEAD
-	</select>
-
-	<!-- 등록한 학력 list로 출력 -->
-	<!-- <select id="eduList" resultType="resultEdu"> SELECT eduHighestLevel, 
-		eduName, eduMajor, eduGraduation FROM edu WHERE memberCode = #{memberCode} 
-		</select> -->
-=======
 		</select>
 		<!-- 등록한 학력 list로 출력 -->
 		<select id="eduList" resultType="com.cafe24.suhajin07.Edu.Edu">
@@ -127,5 +118,5 @@
 			FROM edu
 			WHERE eduCode = #{eduCode}
 		</delete>
->>>>>>> refs/remotes/origin/master
+
 </mapper>
