@@ -72,16 +72,25 @@
 			<table style="width: 100%; height: 50px; text-align: center;">
 				<tbody>
 					<tr>
-						<td style="background-color: #3d3d5c; "><b><a
-								href="/#?memberId=${Member.memberId}" style="color:white;">프로필 수정</a></b></td>
 						<td style="background-color: #3d3d5c;"><b><a
-								href="/MyCareer?memberId=${Member.memberId}" style="color:white;">내 경력보기</a></b></td>
+								href="/#?memberId=${Member.memberId}" style="color: white;">프로필
+									수정</a></b></td>
 						<td style="background-color: #3d3d5c;"><b><a
-								href="/#?memberId=${Member.memberId}" style="color:white;">등록스케줄 보기</a></b></td>
+								href="/MyCareer?memberId=${Member.memberId}"
+								style="color: white;">내 경력보기</a></b></td>
 						<td style="background-color: #3d3d5c;"><b><a
-								href="/#?memberId=${Member.memberId}" style="color:white;">실천 등록하기</a></b></td>
+								href="/#?memberId=${Member.memberId}" style="color: white;">등록스케줄
+									보기</a></b></td>
 						<td style="background-color: #3d3d5c;"><b><a
-								href="/#?memberId=${Member.memberId}" style="color:white;">진행상황 보기</a></b></td>
+								href="/#?memberId=${Member.memberId}" style="color: white;">실천
+									등록하기</a></b></td>
+						<td style="background-color: #3d3d5c;"><b><a
+								href="/#?memberId=${Member.memberId}" style="color: white;">진행상황
+									보기</a></b></td>
+						<td style="background-color: #3d3d5c;"><b><a
+								href="/#?memberId=${Member.memberId}" style="color: white;">매니저
+									평가</a></b></td>
+
 					</tr>
 				</tbody>
 			</table>
