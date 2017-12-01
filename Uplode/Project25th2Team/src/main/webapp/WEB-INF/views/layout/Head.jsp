@@ -41,8 +41,8 @@
 					<c:choose>
 
 						<c:when test="${Member.memberGrade eq 'member'}">
-							<li class="nav-item active"><a class="nav-link" href="/">Home<span
-									class="sr-only">(current)</span>
+							<li class="nav-item active"><a class="nav-link" href="/">Home
+							<span class="sr-only">(current)</span>
 							</a></li>
 							<li class="nav-item"><a class="nav-link" href="/Information">회사안내</a></li>
 							<li class="nav-item"><a class="nav-link" href="/Notice">공지사항</a></li>

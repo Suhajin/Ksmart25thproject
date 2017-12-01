@@ -12,21 +12,27 @@ public class FinalGoalController {
 	FinalGoalService fgService;
 	
 	
-	//메인(head)에서 등록버튼 누르면 폼 등장.
+
 	@RequestMapping(value="/Goal", method=RequestMethod.GET)
-	public String FinalGoalInsert(){
-			System.out.println("최종목표설정form 요청");
+	public String FinalGoal(){
+			System.out.println("목표설정 페이지 요청");
 			return "Goal_final/FinalGoal";
 	}
 	
-	//최종목표 등록
+	@RequestMapping(value="/InsertGoalForm", method=RequestMethod.GET)
+	public String FinalGoalInsertForm(){
+			System.out.println("FinalGoal_InsertForm");
+			return "Goal_final/FinalGoal_Insert_Form";
+	}
+	
+	/*//최종목표 등록
 	@RequestMapping(value="/addFinalGoal", method=RequestMethod.POST)
 	public String addFinalGoal(FinalGoal fg) {
 		System.out.println("Controller"+fg);
 		fgService.addFinalGoal(fg);
 		
 		return "home";
-	}
+	}*/
 	
 	
 	
