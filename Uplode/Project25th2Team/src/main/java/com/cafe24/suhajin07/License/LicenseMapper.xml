@@ -47,15 +47,27 @@
 		licenseApproval,
 		licenseDate
 		from license join member
+		on
+		license.memberCode = member.memberCode
+
+
 	</select>
 	<select id="LicenseListOne" parameterType="com.cafe24.suhajin07.License.License"
 		resultMap="resultLicense">
+<<<<<<< HEAD
 		SELECT memberId, memberName, licenseCode, licenseAcquire,
 		licenseNumber,
 		licenseOrgan, licenseFile,
 		licenseApproval,lisenceLevelName,lisenceName
 		from license join member
 		join lisenceList
+=======
+		SELECT memberId, memberName, licenseCode, lisenceListCode,
+		licenseAcquire,
+		licenseNumber, licenseOrgan, licenseApproval
+		from license
+		join member
+>>>>>>> refs/remotes/origin/master
 		on
 		license.memberCode = member.memberCode
 		and

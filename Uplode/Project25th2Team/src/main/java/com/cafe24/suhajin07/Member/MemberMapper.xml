@@ -9,7 +9,9 @@
 		<result column="memberName" property="memberName" />
 		<result column="memberPhone" property="memberPhone" />
 		<result column="memberEmail" property="memberEmail" />
+		<result column="memberAddress" property="memberPostNum" />
 		<result column="memberAddress" property="memberAddress" />
+		<result column="memberAddress" property="memberDetailAddress" />
 		<result column="memberGrade" property="memberGrade" />
 		<result column="memberDate" property="memberDate" />
 	</resultMap>
@@ -21,10 +23,14 @@
 		#{memberEmail}, #{memberPostNum}, #{memberDetailAddress},
 		#{memberAddress}, #{memberGrade} ,now()) </insert>
 
-	<select id="login" parameterType="com.cafe24.suhajin07.Member.Member"
-		resultMap="resultMember"> SELECT memberCode ,memberId ,memberPw ,memberName
-		,memberPhone ,memberEmail,memberPostNum ,memberAddress,
-		memberDetailAddress, memberGrade FROM member WHERE
-		memberId=#{memberId}AND memberPw=#{memberPw} </select>
+	<select id="login" parameterType="com.cafe24.suhajin07.Member.Member" resultMap="resultMember"> 
+		SELECT 
+			memberCode ,memberId ,memberPw ,memberName
+			,memberPhone ,memberEmail,memberPostNum ,memberAddress,
+			memberDetailAddress, memberGrade 
+		FROM 
+			member 
+		WHERE
+			memberId=#{memberId}AND memberPw=#{memberPw} </select>
 
 </mapper>

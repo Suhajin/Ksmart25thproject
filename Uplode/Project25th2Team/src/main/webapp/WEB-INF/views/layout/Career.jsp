@@ -84,6 +84,7 @@
 			</tbody>
 		</table>
 
+<<<<<<< HEAD
 
 
 
@@ -96,7 +97,26 @@
 			<!-- 우측버튼 -->
 			<div class="sec_top_btn">
 				<a href="/CareerInsert" class="btn_add">추가</a>
+=======
+		<form id="excelForm" name="excelForm" method="post"
+			action="swc_write01_excel.jsp" target="iframe4dummy">
+			<!--  <input type="hidden" name="memberNo" value=""> -->
+		</form>
+		<form id="writeForm" name="writeForm" method="post" action="">
+			<input type="hidden" name="callback" value="" /> <input
+				type="hidden" name="key" value="142995715" />
+			<!-- 최종학력 등록 -->
+			<div class="section_top_area">
+				<h4>최종학력 등록</h4>
+				<!-- <a href="javascript:printCareer('workCareer')" class="btn_type02">근무경력확인서출력</a>  -->
+				<!-- 우측버튼 -->
+				<div class="sec_top_btn">
+					<a href="/edu" class="btn_add">추가</a> <a href="/eduList"
+						class="btn_del">전체리스트</a>
+				</div>
+>>>>>>> refs/remotes/origin/master
 			</div>
+<<<<<<< HEAD
 		</div>
 		<table class="list_tbl_01 mb70" summary="경력 추가">
 			<caption>경력 등록</caption>
@@ -142,7 +162,39 @@
 						<td>${career.careerApproval}</td>
 						<td><a href="/CareerDelete?careerCode=${career.careerCode}"
 							class="btn_del">삭제</a></td>
+=======
+			<table class="list_tbl_01 mb70" summary="학력 추가">
+				<caption>최종학력</caption>
+				<colgroup>
+					<!-- 체크박스 -->
+					<col style="width: 2%" />
+					<!-- 최종학력 -->
+					<col style="width: 16%" />
+					<!-- 학교명 -->
+					<col style="width: 20%" />
+					<!-- 전공 -->
+					<col style="width: 16%" />
+					<!-- 부전공 -->
+					<col style="width: 16%" />
+					<!-- 복수전공 -->
+					<col style="width: 16%" />
+					<!-- 졸업여부 -->
+					<col style="width: 12%" />
+				</colgroup>
+				<thead>
+					<tr class="first">
+						<th scope="col"><input type="checkbox"
+							name="checkAll4workCareer" id="checkAll4workCareer"
+							onclick="onCheckAll4workCareer()" /></th>
+						<th scope="col">최종학력</th>
+						<th scope="col">학교명</th>
+						<th scope="col">전공</th>
+						<th scope="col">부전공</th>
+						<th scope="col">복수전공</th>
+						<th scope="col">졸업여부</th>
+>>>>>>> refs/remotes/origin/master
 					</tr>
+<<<<<<< HEAD
 				</c:forEach>
 			</tbody>
 		</table>
@@ -153,6 +205,34 @@
 			<!-- 우측버튼 -->
 			<div class="sec_top_btn">
 				<a href="/License" class="btn_add">추가</a>
+=======
+				</thead>
+				<tbody id="workCareerLayer">
+					<c:forEach var="edu" items="${listedu}">
+						<tr>
+							<td scope="col"><input type="checkbox" name="scholarNo"
+								id="checkAll4skillCareer" onclick="onCheckAll4skillCareer()" /></td>
+							<td>${edu.eduHighestLevel}</td>
+							<td>${edu.eduName}</td>
+							<td>${edu.eduMajor}</td>
+							<td>${edu.eduMinor}</td>
+							<td>${edu.eduDual}</td>
+							<td>${edu.eduGraduation}</td>
+						</tr>
+					</c:forEach>
+				</tbody>
+			</table>
+			<!--// 근무경력 -->
+			<!-- 경력등록 -->
+			<div class="section_top_area">
+				<h4>경력 등록</h4>
+				<a href="javascript:printCareer('workCareer')" class="btn_type02">근무경력확인서출력</a>
+				<!-- 우측버튼 -->
+				<div class="sec_top_btn">
+					<a href="/CareerInsert" class="btn_add">추가</a> <a
+						href="/CareerList" class="btn_del">전체 리스트</a>
+				</div>
+>>>>>>> refs/remotes/origin/master
 			</div>
 		</div>
 		<table class="list_tbl_01 mb70" summary="자격증 추가">
@@ -198,6 +278,7 @@
 							class="btn_del">삭제</a></td>
 
 					</tr>
+<<<<<<< HEAD
 				</c:forEach>
 			</tbody>
 		</table>
@@ -209,6 +290,34 @@
 			<!-- 우측버튼 -->
 			<div class="sec_top_btn">
 				<a href="javascript:addCareer('#')" class="btn_add">추가</a>
+=======
+				</thead>
+				<tbody id="skillCareerLayer">
+					<c:forEach var="career" items="${listmember}">
+						<tr>
+							<td scope="col"><input type="checkbox" name="scholarNo"
+								id="checkAll4skillCareer" onclick="onCheckAll4skillCareer()" /></td>
+							<td>${career.careerName}</td>
+							<td>${career.careerAddress}</td>
+							<td>${career.careerEntrance}</td>
+							<td>${career.careerQuit}</td>
+							<td>${career.careerWorking}</td>
+							<td>${career.careerPosition}</td>
+							<td>${career.careerApproval}</td>
+						</tr>
+					</c:forEach>
+				</tbody>
+			</table>
+			<!--// 경력 등록 -->
+			<!-- 자격증 등록 -->
+			<div class="section_top_area">
+				<h4>자격증 등록</h4>
+				<!-- 우측버튼 -->
+				<div class="sec_top_btn">
+					<a href="/License" class="btn_add">추가</a> 
+					<a href="/LicenseList"	class="btn_del">전체리스트</a>
+				</div>
+>>>>>>> refs/remotes/origin/master
 			</div>
 		</div>
 		<table class="list_tbl_01 mb70" summary="어학 추가">
@@ -249,6 +358,7 @@
 							class="btn_del">삭제</a></td>
 
 					</tr>
+<<<<<<< HEAD
 				</c:forEach>
 			</tbody>
 		</table>
@@ -264,6 +374,34 @@
 			<!-- 우측버튼 -->
 			<div class="sec_top_btn">
 				<a href="javascript:addCareer('#')" class="btn_add">추가</a>
+=======
+				</thead>
+				<tbody id="scholarLayer">
+				<c:forEach var="career" items="${listmember}">
+						<tr>
+							<td scope="col"><input type="checkbox" name="scholarNo"
+								id="checkAll4skillCareer" onclick="onCheckAll4skillCareer()" /></td>
+							<td>${career.careerName}</td>
+							<td>${career.careerAddress}</td>
+							<td>${career.careerEntrance}</td>
+							<td>${career.careerQuit}</td>
+							<td>${career.careerWorking}</td>
+							<td>${career.careerPosition}</td>
+							<td>${career.careerApproval}</td>
+						</tr>
+					</c:forEach>
+				</tbody>
+			</table>
+			<!--// 자격증 등록 -->
+			<!-- 어학 등록 -->
+			<div class="section_top_area">
+				<h4>어학 등록</h4>
+				<!-- 우측버튼 -->
+				<div class="sec_top_btn">
+					<a href="/Language" class="btn_add">추가</a> <a
+						href="/LanguageList" class="btn_del">전체리스트</a>
+				</div>
+>>>>>>> refs/remotes/origin/master
 			</div>
 		</div>
 		<table class="list_tbl_01 mb70" summary="어학 추가">
@@ -312,6 +450,7 @@
 							href="/completeDelete?complitionCode=${complete.complitionCode}"
 							class="btn_del">삭제</a></td>
 					</tr>
+<<<<<<< HEAD
 				</c:forEach>
 			</tbody>
 		</table>
@@ -323,6 +462,21 @@
 			<!-- 우측버튼 -->
 			<div class="sec_top_btn">
 				<a href="javascript:addCareer('#')" class="btn_add">추가</a>
+=======
+				</thead>
+				<tbody id="skillCertLayer">
+				</tbody>
+			</table>
+			<!--// 어학 자격증 -->
+			<!-- 수료교육 -->
+			<div class="section_top_area">
+				<h4>수료교육 등록</h4>
+				<!-- 우측버튼 -->
+				<div class="sec_top_btn">
+					<a href="/Complete" class="btn_add">추가</a> <a
+						href="/CompleteList" class="btn_del">전체리스트</a>
+				</div>
+>>>>>>> refs/remotes/origin/master
 			</div>
 		</div>
 		<table class="list_tbl_01 mb70" summary="연수봉사 추가">
@@ -363,9 +517,62 @@
 							href="/trainingDelete?trainingCode=${training.trainingCode}"
 							class="btn_del">삭제</a></td>
 					</tr>
+<<<<<<< HEAD
 				</c:forEach>
 			</tbody>
 		</table>
+=======
+				</thead>
+				<tbody id="skillCareerLayer">
+					<c:forEach var="complete" items="${listcomplete}">
+						<tr>
+							<td scope="col"><input type="checkbox" name="scholarNo"
+								id="checkAll4skillCareer" onclick="onCheckAll4skillCareer()" /></td>
+							<td>${complete.completeName}</td>
+							<td>${complete.completeStart}</td>
+							<td>${complete.completeEnd}</td>
+							<td>${complete.completeTime}</td>
+							<td>${complete.completeAcademyName}</td>
+							<td>${complete.completeNo}</td>
+							<td>${complete.completeApproval}</td>
+						</tr>
+					</c:forEach>
+				</tbody>
+			</table>
+			<!--// 수료교육 등록 -->
+			<!-- 연수/봉사 -->
+			<div class="section_top_area">
+				<h4>연수/봉사 등록</h4>
+				<!-- 우측버튼 -->
+				<div class="sec_top_btn">
+					<a href="/Training" class="btn_add">추가</a> <a
+						href="/TrainingList" class="btn_del">전체리스트</a>
+				</div>
+			</div>
+			<table class="list_tbl_01 mb70" summary="연수봉사 추가">
+				<caption>연수/봉사 등록</caption>
+				<colgroup>
+					<col style="width: 10%" />
+					<col style="width: 65%" />
+					<col style="width: 15%" />
+					<col style="width: 10%" />
+				</colgroup>
+				<thead>
+					<tr class="first">
+					
+						<th scope="col"><input type="checkbox" name="checkAll4prize"
+							id="checkAll4prize" onclick="onCheckAll4prize()" /></th>
+						<th scope="col">국가명/기간명/상세활동</th>
+						<th scope="col">증빙방법</th>
+						<th scope="col">진행상태</th>
+					</tr>
+				</thead>
+				<tbody id="prizeLayer">
+				</tbody>
+			</table>
+			<!--// 연수/봉사 -->
+		</form>
+>>>>>>> refs/remotes/origin/master
 	</div>
 	<br>
 	<br>

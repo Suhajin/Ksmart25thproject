@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.cafe24.suhajin07.BiggestGoal.FinalGoalMapper">
-	<resultMap type = "com.cafe24.suhajin07.FinalGoal.FinalGoal" id="resultFinalGoal">
+<mapper namespace="com.cafe24.suhajin07.FinalGoal.FinalGoalMapper">
+
+	<!-- <resultMap type = "com.cafe24.suhajin07.FinalGoal.FinalGoal" id="resultFinalGoal">
+
 		<result property="finalGoalName" column="finalGoalName"/>
 		<result property="finalGoalStart" column="finalGoalStart"/>
 		<result property="finalGoalEnd" column="finalGoalEnd"/>
@@ -12,7 +14,7 @@
 		<result property="finalGoalTotalBudget" column="finalGoalTotalBudget"/>
 		<result property="finalGoalInputDate" column="finalGoalInputDate"/>
 		<result property="finalGoalNote" column="finalGoalNote"/>
-	</resultMap>
+	</resultMap> -->
 
 	<insert id = "insertFinalGoal" parameterType="com.cafe24.suhajin07.FinalGoal.FinalGoal">
 		INSERT INTO
