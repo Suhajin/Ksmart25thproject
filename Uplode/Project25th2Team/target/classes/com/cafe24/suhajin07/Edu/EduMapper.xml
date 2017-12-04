@@ -23,17 +23,34 @@
 	</resultMap>
 	<!-- 학력등록 -->
 	<insert id="insertEdu" parameterType="com.cafe24.suhajin07.Edu.Edu">
-		INSERT INTO edu(eduCode,
-		memberCode, eduHighestLevel, eduName, eduMajor,
-		eduMinor, eduDual ,
-		eduGraduation, eduEntrance, eduFinish, eduBefore,
-		eduBeforeMajor,
-		eduDate) VALUES (#{eduCode}, #{memberCode},
-		#{eduHighestLevel},
-		#{eduName}, #{eduMajor}, #{eduMinor}, #{eduDual} ,
-		#{eduGraduation},
-		#{eduEntrance}, #{eduFinish}, #{eduBefore},
-		#{eduBeforeMajor}, now())
+		INSERT INTO edu(
+			  eduCode
+			, memberCode
+			, eduHighestLevel
+			, eduName
+			, eduMajor
+			, eduMinor
+			, eduDual
+			, eduGraduation
+			, eduEntrance
+			, eduFinish
+			, eduBefore
+			, eduBeforeMajor
+			, eduDate)
+		VALUES (
+			  #{eduCode}
+			, #{memberCode}
+			, #{eduHighestLevel}
+			, #{eduName}
+			, #{eduMajor}
+			, #{eduMinor}
+			, #{eduDual}
+			, #{eduGraduation}
+			, #{eduEntrance}
+			, #{eduFinish}
+			, #{eduBefore}
+			, #{eduBeforeMajor}
+			, NOW())
 	</insert>
 	<select id="EduListOne" parameterType="com.cafe24.suhajin07.Edu.Edu"
 		resultMap="resultEdu">
