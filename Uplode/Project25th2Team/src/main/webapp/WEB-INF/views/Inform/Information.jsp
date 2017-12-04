@@ -42,11 +42,11 @@
 		</c:import>
 	</div>
 
-<!--------------------------------지도시작------------------------------------------>		
+	<!--------------------------------지도시작------------------------------------------>
 	<h4 align="center">Information of CMS company</h4>
 	<center>
 		<div id="map" style="width: 80%; height: 400px;"></div>
-			<script>
+		<script>
 				var map = new naver.maps.Map('map', {
 				    center: new naver.maps.LatLng(35.8406421, 127.1291779),
 				    zoom: 12
@@ -57,12 +57,12 @@
 				    map: map
 				});
 			</script>
-		</center>
+	</center>
 	<br>
-<!----------------------------하단------------------------------------------>		
-		<div>
-			<c:import url="/WEB-INF/views/layout/Hadan.jsp">
-			</c:import>
-		</div>
-	</body>
+	<!----------------------------하단------------------------------------------>
+	<div>
+		<c:import url="/WEB-INF/views/layout/Hadan.jsp">
+		</c:import>
+	</div>
+</body>
 </html>

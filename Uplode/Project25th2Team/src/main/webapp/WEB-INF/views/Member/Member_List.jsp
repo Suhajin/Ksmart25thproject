@@ -51,11 +51,8 @@
 								<td>${member.memberDetailAddress}</td>
 								<td>${member.memberDate}</td>
 
-								<td><a
-									href="/CareerUpdateOne?careerCode="
-									class="btn_add">수정</a></td>
-								<td><a href="/CareerDelete?careerCode="
-									class="btn_add">삭제</a></td>
+								<td><a href="/CareerUpdateOne?careerCode=" class="btn_add">수정</a></td>
+								<td><a href="/CareerDelete?careerCode=" class="btn_add">삭제</a></td>
 							</tr>
 						</c:forEach>
 					</thead>

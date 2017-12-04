@@ -28,7 +28,8 @@
 			<table align="center" border="1">
 				<tr>
 					<td>회원코드</td>
-					<td><input type="text" name="memberCode" readonly="readonly" value="${eduUpdate.memberCode}"></td>
+					<td><input type="text" name="memberCode" readonly="readonly"
+						value="${eduUpdate.memberCode}"></td>
 				</tr>
 				<tr>
 					<td>최종학력</td>
@@ -46,23 +47,28 @@
 				</tr>
 				<tr>
 					<td>학교명</td>
-					<td><input type="text" name="eduName" value="${eduUpdate.eduName}"></td>
+					<td><input type="text" name="eduName"
+						value="${eduUpdate.eduName}"></td>
 				</tr>
 				<tr>
 					<td>전공</td>
-					<td><input type="text" name="eduMajor" value="${eduUpdate.eduMajor}"></td>
+					<td><input type="text" name="eduMajor"
+						value="${eduUpdate.eduMajor}"></td>
 				</tr>
 				<tr>
 					<td>부전공</td>
-					<td><input type="text" name="eduMinor" value="${eduUpdate.eduMinor}"></td>
+					<td><input type="text" name="eduMinor"
+						value="${eduUpdate.eduMinor}"></td>
 				</tr>
 				<tr>
 					<td>복수전공</td>
-					<td><input type="text" name="eduDual" value="${eduUpdate.eduDual}"></td>
+					<td><input type="text" name="eduDual"
+						value="${eduUpdate.eduDual}"></td>
 				</tr>
 				<tr>
 					<td>졸업여부</td>
-					<td><select name="eduGraduation" value="${eduUpdate.eduGraduation}">
+					<td><select name="eduGraduation"
+						value="${eduUpdate.eduGraduation}">
 							<option>선택</option>
 							<option>졸업</option>
 							<option>재학</option>
@@ -71,19 +77,23 @@
 				</tr>
 				<tr>
 					<td>입학일</td>
-					<td><input type="date" name="eduEntrance" value="${eduUpdate.eduEntrance}"></td>
+					<td><input type="date" name="eduEntrance"
+						value="${eduUpdate.eduEntrance}"></td>
 				</tr>
 				<tr>
 					<td>종업일</td>
-					<td><input type="date" name="eduFinish" value="${eduUpdate.eduFinish}"></td>
+					<td><input type="date" name="eduFinish"
+						value="${eduUpdate.eduFinish}"></td>
 				</tr>
 				<tr>
 					<td>전적대(편)</td>
-					<td><input type="text" name="eduBefore" value="${eduUpdate.eduBefore}"></td>
+					<td><input type="text" name="eduBefore"
+						value="${eduUpdate.eduBefore}"></td>
 				</tr>
 				<tr>
 					<td>전적전공(편)</td>
-					<td><input type="text" name="eduBeforeMajor" value="${eduUpdate.eduBeforeMajor}"></td>
+					<td><input type="text" name="eduBeforeMajor"
+						value="${eduUpdate.eduBeforeMajor}"></td>
 				</tr>
 			</table>
 			<input type="submit" value="수정">

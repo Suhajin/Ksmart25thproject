@@ -1,6 +1,8 @@
 package com.cafe24.suhajin07.FinalGoal;
 
 public class FinalGoal {
+	private String memberId;
+	private String memberName;
 	private int finalGoalCode;
 	private String biggestGoalCode;
 	private int memberCode;
@@ -15,7 +17,19 @@ public class FinalGoal {
 	private String finalGoalTotalBudget;
 	private String finalGoalNote;
 	private String finalGoalInputDate;
-	
+	private String biggestGoalName;
+	public String getMemberId() {
+		return memberId;
+	}
+	public void setMemberId(String memberId) {
+		this.memberId = memberId;
+	}
+	public String getMemberName() {
+		return memberName;
+	}
+	public void setMemberName(String memberName) {
+		this.memberName = memberName;
+	}
 	public int getFinalGoalCode() {
 		return finalGoalCode;
 	}
@@ -100,14 +114,21 @@ public class FinalGoal {
 	public void setFinalGoalInputDate(String finalGoalInputDate) {
 		this.finalGoalInputDate = finalGoalInputDate;
 	}
+	public String getBiggestGoalName() {
+		return biggestGoalName;
+	}
+	public void setBiggestGoalName(String biggestGoalName) {
+		this.biggestGoalName = biggestGoalName;
+	}
 	@Override
 	public String toString() {
-		return "FinalGoal [finalGoalCode=" + finalGoalCode + ", biggestGoalCode=" + biggestGoalCode + ", memberCode="
-				+ memberCode + ", managerCode=" + managerCode + ", managerGradeCode=" + managerGradeCode
-				+ ", finalGoalName=" + finalGoalName + ", finalGoalStart=" + finalGoalStart + ", finalGoalEnd="
-				+ finalGoalEnd + ", finalGoalDays=" + finalGoalDays + ", finalGoalTimeADay=" + finalGoalTimeADay
-				+ ", finalGoalTotalTime=" + finalGoalTotalTime + ", finalGoalTotalBudget=" + finalGoalTotalBudget
-				+ ", finalGoalNote=" + finalGoalNote + ", finalGoalInputDate=" + finalGoalInputDate + "]";
+		return "FinalGoal [memberId=" + memberId + ", memberName=" + memberName + ", finalGoalCode=" + finalGoalCode
+				+ ", biggestGoalCode=" + biggestGoalCode + ", memberCode=" + memberCode + ", managerCode=" + managerCode
+				+ ", managerGradeCode=" + managerGradeCode + ", finalGoalName=" + finalGoalName + ", finalGoalStart="
+				+ finalGoalStart + ", finalGoalEnd=" + finalGoalEnd + ", finalGoalDays=" + finalGoalDays
+				+ ", finalGoalTimeADay=" + finalGoalTimeADay + ", finalGoalTotalTime=" + finalGoalTotalTime
+				+ ", finalGoalTotalBudget=" + finalGoalTotalBudget + ", finalGoalNote=" + finalGoalNote
+				+ ", finalGoalInputDate=" + finalGoalInputDate + ", biggestGoalName=" + biggestGoalName + "]";
 	}
 
 }

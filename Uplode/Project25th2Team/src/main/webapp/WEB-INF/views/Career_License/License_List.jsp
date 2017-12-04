@@ -31,18 +31,18 @@
 						<tr>
 							<th>ID</th>
 							<th>회원명</th>
-							<th>자격증명 </th>
-							<th>취득일 </th>
-							<th>취득번호 </th>
-							<th>발급처 </th>
-							<th>첨부파일 </th>
-							<th>승인여부 </th>
+							<th>자격증명</th>
+							<th>취득일</th>
+							<th>취득번호</th>
+							<th>발급처</th>
+							<th>첨부파일</th>
+							<th>승인여부</th>
 							<th>자격증 등록일</th>
 							<th>수정</th>
 							<th>삭제</th>
 						</tr>
 						<c:forEach var="license" items="${Licenselist}">
-							
+
 							<tr>
 								<td>${license.memberId}</td>
 								<td>${license.memberName}</td>
@@ -52,9 +52,13 @@
 								<td>${license.licenseOrgan}</td>
 								<td>${license.licenseFile}</td>
 								<td>${license.licenseApproval}</td>
-								<td>${license.licenseDate}</td> 
-								<td><a href="/LicenseUpdateOne?licenseCode=${license.licenseCode}" class="btn_add">수정</a></td>
-								<td><a href="/LicenseDelete?licenseCode=${license.licenseCode}" class="btn_add">삭제</a></td>
+								<td>${license.licenseDate}</td>
+								<td><a
+									href="/LicenseUpdateOne?licenseCode=${license.licenseCode}"
+									class="btn_add">수정</a></td>
+								<td><a
+									href="/LicenseDelete?licenseCode=${license.licenseCode}"
+									class="btn_add">삭제</a></td>
 							</tr>
 						</c:forEach>
 					</thead>

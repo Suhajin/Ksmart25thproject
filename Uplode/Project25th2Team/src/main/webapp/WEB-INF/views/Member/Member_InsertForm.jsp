@@ -87,8 +87,7 @@ table {
 						<div>
 							<input type="text" id="sample3_address" class="d_form large"
 								name="memberDetailAddress" placeholder="상세주소">
-						</div> 
-						<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
+						</div> <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 						<script>
 							// 우편번호 찾기 찾기 화면을 넣을 element
 							var element_wrap = document.getElementById('wrap');
@@ -148,8 +147,7 @@ table {
 								// iframe을 넣은 element를 보이게 한다.
 								element_wrap.style.display = 'block';
 							}
-						</script>
-						</td>
+						</script></td>
 			</table>
 			<input type="hidden" name="memberGrade" value="member"
 				readonly="readonly"> <br> <br> <input
