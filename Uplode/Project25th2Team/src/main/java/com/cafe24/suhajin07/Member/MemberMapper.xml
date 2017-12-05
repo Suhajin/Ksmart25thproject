@@ -9,28 +9,49 @@
 		<result column="memberName" property="memberName" />
 		<result column="memberPhone" property="memberPhone" />
 		<result column="memberEmail" property="memberEmail" />
-		<result column="memberAddress" property="memberPostNum" />
+		<result column="memberPostNum" property="memberPostNum" />
 		<result column="memberAddress" property="memberAddress" />
-		<result column="memberAddress" property="memberDetailAddress" />
+		<result column="memberDetailAddress" property="memberDetailAddress" />
 		<result column="memberGrade" property="memberGrade" />
 		<result column="memberDate" property="memberDate" />
 	</resultMap>
-	<insert id="insertMember" parameterType="com.cafe24.suhajin07.Member.Member"> INSERT INTO
+	<insert id="insertMember" parameterType="com.cafe24.suhajin07.Member.Member">
+		INSERT INTO
 		member(memberCode ,memberId ,memberPw ,memberName
 		,memberPhone,memberEmail ,memberPostNum, memberDetailAddress,
-		memberAddress ,memberGrade ,memberDate) VALUES (#{memberCode},
-		#{memberId}, #{memberPw}, #{memberName}, #{memberPhone},
+		memberAddress ,memberGrade ,memberDate)
+		VALUES
+		(#{memberCode}, #{memberId}, #{memberPw}, #{memberName}, #{memberPhone},
 		#{memberEmail}, #{memberPostNum}, #{memberDetailAddress},
-		#{memberAddress}, #{memberGrade} ,now()) </insert>
+		#{memberAddress}, #{memberGrade} ,now())
+	</insert>
 
-	<select id="login" parameterType="com.cafe24.suhajin07.Member.Member" resultMap="resultMember"> 
-		SELECT 
-			memberCode ,memberId ,memberPw ,memberName
-			,memberPhone ,memberEmail,memberPostNum ,memberAddress,
-			memberDetailAddress, memberGrade 
-		FROM 
-			member 
+	<select id="login" parameterType="com.cafe24.suhajin07.Member.Member"
+		resultMap="resultMember">
+		SELECT
+		memberCode ,memberId ,memberPw ,memberName
+		,memberPhone ,memberEmail ,memberPostNum ,memberAddress,
+		memberDetailAddress, memberGrade
+		FROM
+		member
 		WHERE
-			memberId=#{memberId}AND memberPw=#{memberPw} </select>
+		memberId=#{memberId}AND memberPw=#{memberPw}
+	</select>
+
+	<update id="updateMember" parameterType="com.cafe24.suhajin07.Member.Member">
+		UPDATE member set
+		memberId = #{memberId},
+		memberPw = #{memberPw},
+		memberName = #{memberName},
+		memberPhone = #{memberPhone},
+		memberEmail = #{memberEmail},
+		memberPostNum = #{memberPostNum},
+		memberAddress = #{memberAddress},
+		memberDetailAddress = #{memberDetailAddress},
+		memberGrade = #{memberGrade},
+		memberDate = now()
+		where
+		memberCode = #{memberCode}
+	</update>
 
 </mapper>

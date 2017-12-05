@@ -41,10 +41,33 @@ public class MemberController {
 		
 		System.out.println("MyPage 폼 요청");
 		return "Member/member_Mypage";
+	}
+	
+	@RequestMapping(value = "/updateMember", method = RequestMethod.GET)
+	public String updateMember(HttpSession session) {
+		System.out.println(session);
 		
+		System.out.println("updateMember 폼 요청");
+		return "Member/Member_UpdateForm";
+	}
+	
+	@RequestMapping(value = "/updateMemberAction", method = RequestMethod.POST)
+	public String updateMemberAction(Member member, HttpSession session) {
+		System.out.println(member);
+		System.out.println("updateMemberAction 연결");
 		
+		int row = memberservice.updateMember(member);
 		
+		if(row==1) {
+			member = memberservice.updateMemberList(member);
+			System.out.println(member);
+			session.setAttribute("Member", member);
+			return "Member/Member_Mypage";
 		}
+		else {
+			return "Member/Member_UpdateForm";
+		}
+	}
 }
 
 

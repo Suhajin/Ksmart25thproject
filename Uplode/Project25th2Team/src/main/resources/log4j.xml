@@ -9,20 +9,20 @@
 			<param name="ConversionPattern" value="%-5p: %c - %m%n" />
 		</layout>
 	</appender>
-	
+
 	<logger name="log4jdbc">
 		<level value="debug">
 		</level>
 	</logger>
 
 	<!-- Application Loggers -->
- 
+
 	<logger name="com.cafe24.suhajin07">
 		<level value="info" />
 	</logger>
 
 	<!-- 3rdparty Loggers -->
- 
+
 	<logger name="org.springframework.core">
 		<level value="info" />
 	</logger>

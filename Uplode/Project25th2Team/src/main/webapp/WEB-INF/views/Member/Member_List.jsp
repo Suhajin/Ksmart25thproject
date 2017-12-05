@@ -51,8 +51,14 @@
 								<td>${member.memberAddress}</td>
 								<td>${member.memberDetailAddress}</td>
 								<td>${member.memberDate}</td>
+<<<<<<< HEAD
 								<td><a href="/#?memberCode=" class="btn_add">수정</a></td>
 								<td><a href="/#?memberCode=" class="btn_del">삭제</a></td>
+=======
+
+								<td><a href="/CareerUpdateOne?careerCode=" class="btn_add">수정</a></td>
+								<td><a href="/CareerDelete?careerCode=" class="btn_add">삭제</a></td>
+>>>>>>> refs/remotes/origin/master
 							</tr>
 						</c:forEach>
 					</thead>

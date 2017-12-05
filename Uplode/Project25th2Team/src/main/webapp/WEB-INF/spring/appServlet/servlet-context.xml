@@ -33,12 +33,15 @@
 		<property name="password" value="vmfhwprxm25rl2" />
 	</bean>
 
+<<<<<<< HEAD
 	<bean id="transactionManager"
 		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
 		<property name="dataSource" ref="dataSource" />
 	</bean>
 
 
+=======
+>>>>>>> refs/remotes/origin/master
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<!-- mybatis 세션생성시 사용할 dataSource주입 -->
 		<property name="dataSource" ref="dataSource" />

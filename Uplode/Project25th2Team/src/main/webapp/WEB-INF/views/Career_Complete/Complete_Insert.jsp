@@ -23,47 +23,47 @@
 		</div>
 		</header>
 		<h4 align="center">수료등록</h4>
-	<form action="/addComplete" method="post" align="center">
-	<input type="hidden" name="memberCode" value=${Member.memberCode}>
-		<table align="center" border="1">
-			<tr>
-				<td>과정명</td>
-				<td><input type="text" name="completeName"></td>
-			</tr>
-			<tr>
-				<td>과정시작일</td>
-				<td><input type="date" name="completeStart"></td>
-			</tr>
-			<tr>
-				<td>과정종료일</td>
-				<td><input type="date" name="completeEnd"></td>
-			</tr>
-			<tr>
-				<td>수료기간</td>
-				<td><input type="text" name="completeTime"></td>
-			</tr>
-			<tr>	
-				<td>학원명</td>
-				<td><input type="text" name="completeAcademyName"></td>
-			</tr>
-			<tr>	
-				<td>수료번호</td>
-				<td><input type="text" name="completeNo"></td>
-			</tr>
-			<tr>	
-				<td>첨부파일</td>
-				<td><input type="text" name="completeFile"></td>
-			</tr>
-			<tr>	
-				<td>수료 등록일</td>
-				<td><input type="date" name="completeDate"></td>
-			</tr>
-		</table>
-		<input type="submit" value="addComplete">
-	</form>
-	<div>
-		<c:import url="/WEB-INF/views/layout/Hadan.jsp">
-		</c:import>
-	</div>
+		<form action="/addComplete" method="post" align="center">
+			<input type="hidden" name="memberCode" value=${Member.memberCode}>
+			<table align="center" border="1">
+				<tr>
+					<td>과정명</td>
+					<td><input type="text" name="completeName"></td>
+				</tr>
+				<tr>
+					<td>과정시작일</td>
+					<td><input type="date" name="completeStart"></td>
+				</tr>
+				<tr>
+					<td>과정종료일</td>
+					<td><input type="date" name="completeEnd"></td>
+				</tr>
+				<tr>
+					<td>수료기간</td>
+					<td><input type="text" name="completeTime"></td>
+				</tr>
+				<tr>
+					<td>학원명</td>
+					<td><input type="text" name="completeAcademyName"></td>
+				</tr>
+				<tr>
+					<td>수료번호</td>
+					<td><input type="text" name="completeNo"></td>
+				</tr>
+				<tr>
+					<td>첨부파일</td>
+					<td><input type="text" name="completeFile"></td>
+				</tr>
+				<tr>
+					<td>수료 등록일</td>
+					<td><input type="date" name="completeDate"></td>
+				</tr>
+			</table>
+			<input type="submit" value="addComplete">
+		</form>
+		<div>
+			<c:import url="/WEB-INF/views/layout/Hadan.jsp">
+			</c:import>
+		</div>
 </body>
 </html>

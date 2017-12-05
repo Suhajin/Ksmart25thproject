@@ -1,126 +1,130 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@page import="java.sql.Connection"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page session="true"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>목표설정</title>
-<style>
-	input[type=text], select {
-	    width: 100%;
-	    padding: 12px 20px;
-	    margin: 2px 0;
-		display: inline-block;
-	    border: 1px solid #ccc;
-	    border-radius: 10px;
-		box-sizing: border-box;
-	} 
-	
-	input[type=submit] {
-	    width: 50%;
-	    color: white;
-	    padding: 14px 20px;
-	    margin: 8px 0;
-	    border: none;
-	    border-radius: 4px;
-	    cursor: pointer;
-	}
-	
-	form {
-	    border-radius: 5px;
-	    background-color: #f2f2f2;
-	    padding: 10px;
-	    margin : 30px;
-	}
-	p {
-	    text-align: center;
-	}
-	table {
-		width: 100%;
-	}
-	th{
-		row:100px;
-	}
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<link rel="stylesheet" type="text/css"
+	href="<%=request.getContextPath()%>/resources/css/Career_common.css" />
+<link rel="stylesheet" type="text/css"
+	href="<%=request.getContextPath()%>/resources/css/Career_jquery-ui.css" />
+<style type="text/css" media="screen">
+.printOnly {
+	display: none;
+}
 </style>
+<style type="text/css" media="print">
+#wrap {
+	background: url(none) repeat-x 0 0 !important;
+}
+
+#container {
+	width: 500px;
+	background: url(none) repeat-x 0 0 !important;
+}
+
+.noprint {
+	display: none;
+}
+</style>
+
 </head>
-<body>
 <!------------------------------------head-------------------------------------->
-	<div>
-		<c:import url="/WEB-INF/views/layout/Head.jsp">
-		</c:import>
-	</div>
+<div>
+	<c:import url="/WEB-INF/views/layout/Head.jsp">
+	</c:import>
+</div>
 <!------------------------------------main-------------------------------------->
 <br>
-<div class="container">
-	<h3 align="center">최종목표 등록</h3>
 <br>
-	
-	 <form action="/addFinalGoal" method="post">
-	    <table>
-	    
-	    <tr>
-	    	<td><input type="hidden" name="finalGoalCode" value=${Member.memberCode}></td>
-		</tr>
-		<tr>
-		    <td><input type="hidden" name="biggestGoalCode" value=${Member.memberCode}></td>
-	    </tr>
-		<tr>
-		  	<td><input type="hidden" name="memberCode" value=${Member.memberCode}></td>	
-		</tr>
-		<tr>   
-		    <td><input type="hidden" name="managerCode" value=${Member.memberCode}></td>
-	    </tr>
-		<tr>	
-	    	<td><input type="hidden" name="managerGradeCode" value=${Member.memberCode}></td>
-	    </tr>
-		<tr>
-	    	<td align="center"><label for="finalGoalName">목표명</label></td>
-	    	<td><input type="text" name="finalGoalName" placeholder="ex)2년 안에 한국전력공사 입사"></td>
-	    </tr>
-		<tr>
-		    <td align="center"><label for="finalGoalStart">최종목표 시작일</label></td>
-		    <td><input type="date" name="finalGoalStart" ></td>
-	    </tr>
-		<tr>
-	    	<td align="center"><label for="finalGoalEnd">최종목표 종료일</label></td>
-	    	<td><input type="date" name="finalGoalEnd"></td>
-	    </tr>
-		<tr>
-		    <td align="center"><label for="finalGoalDays">총 목표 일수</label></td>
-		    <td align="left"><input type="text" name="finalGoalDays"></td>
-	    </tr>
-		<tr>
-		    <td align="center"><label for="Gtad">일일 투자시간</label></td>
-		    <td align="left"><input type="text" name="finalGoalTimeADay"></td>
-	    </tr>
-		<tr>
-		    <td align="center"><label for="finalGoalTotalTime">총 투자시간</label></td>
-		    <td><input type="text" name="finalGoalTotalTime"></td>
-	    </tr>
-		<tr>
-		    <td align="center"><label for="finalGoalTotalBudget">전체예산</label></td>
-		    <td><input type="text" name="finalGoalTotalBudget"></td>
-	    </tr>
-		<tr>
-		    <td align="center"><label for="finalGoalNote">메모</label></td>
-		    <td><input type="text" name="finalGoalNote"></td>
-	    </tr>
-	    <tr> 
-	    <td><input type="hidden" name="finalGoalInputDate"></td>
-	    </tr>
+<br>
+<body>
+	<div class="content" id="content">
 
-	   </table>
-	   	
-	   	<div align="center">   
-	    <input type="submit" value="submit" class="form-control btn btn-primary" >
-	  	</div>
-	  </form>
-	</div>
-<!------------------------------------Hadan-------------------------------------->	
-	<div>
-		<c:import url="/WEB-INF/views/layout/Hadan.jsp">
-		</c:import>
+		<!-- 타이틀 영역 -->
+		<div class="title_area">
+			<h3>목표설정</h3>
+			<p>
+			<h3>${Member.memberName}님목표를 설정해주세요!</h3>
+			.
+			</p>
+		</div>
+
+		<div class="section_top_area">
+			<h4>대분류 목표 카테고리</h4>
+
+			<div class="sec_top_btn">
+				<a href="/InsertGoalForm" class="btn_add">추가</a> <a href="#"
+					class="btn_del">삭제</a>
+			</div>
+		</div>
+		<table class="list_tbl_01 mb70" summary="대분류 목표 카테고리">
+			<caption>대분류 목표 카테고리</caption>
+			<colgroup>
+				<!-- 체크박스 -->
+				<col style="width: 10%" />
+				<!-- 아이디 -->
+				<col style="width: 10%" />
+				<!-- 대분류 목표명 -->
+				<col style="width: 10%" />
+				<!--  목표명 -->
+				<col style="width: 10%" />
+				<!-- 최종목표 시작일 -->
+				<col style="width: 10%" />
+				<!-- 최종목표 종료일 -->
+				<col style="width: 10%" />
+				<!-- 총 목표 일수 -->
+				<col style="width: 10%" />
+				<!-- 총 투자시간 -->
+				<col style="width: 10%" />
+				<!-- 전체예산 -->
+				<col style="width: 10%" />
+				<!-- 메모 -->
+				<col style="width: 10%" />
+			</colgroup>
+			<thead>
+				<tr class="first">
+					<th scope="col"><input type="checkbox"
+						name="checkAll4skillCareer" id="checkAll4skillCareer"
+						onclick="onCheckAll4skillCareer()" /></th>
+					<th scope="col">아이디</th>
+					<th scope="col">이름</th>
+					<th scope="col">대분류 목표명</th>
+					<th scope="col">목표명</th>
+					<th scope="col">최종목표 시작일</th>
+					<th scope="col">최종목표 종료일</th>
+					<th scope="col">총 목표 일수</th>
+					<th scope="col">총 투자시간</th>
+					<th scope="col">전체예산</th>
+					<th scope="col">메모</th>
+				</tr>
+			</thead>
+
+			<tbody id="skillCareerLayer">
+				<c:forEach var="FinalGoal" items="${listFinalGoal}">
+					<tr>
+						<td scope="col"><input type="checkbox" name="scholarNo"
+							id="checkAll4skillCareer" onclick="onCheckAll4skillCareer()" /></td>
+						<td>${FinalGoal.memberId}</td>
+						<td>${FinalGoal.memberName}</td>
+						<td>${FinalGoal.biggestGoalName}</td>
+						<td>${FinalGoal.finalGoalName}</td>
+						<td>${FinalGoal.finalGoalStart}</td>
+						<td>${FinalGoal.finalGoalEnd}</td>
+						<td>${FinalGoal.finalGoalDays}</td>
+						<td>${FinalGoal.finalGoalTotalTime}</td>
+						<td>${FinalGoal.finalGoalTotalBudget}</td>
+						<td>${FinalGoal.finalGoalNote}</td>
+
+					</tr>
+				</c:forEach>
+			</tbody>
+		</table>
 	</div>
 </body>
 </html>

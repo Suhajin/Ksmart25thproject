@@ -52,8 +52,7 @@
 								<td>${edu.eduGraduation}</td>
 								<td>${edu.eduBefore}</td>
 								<td>${edu.eduBeforeMajor}</td>
-								<td><a
-									href="/eduUpdateForm?eduCode=${edu.eduCode}"
+								<td><a href="/eduUpdateForm?eduCode=${edu.eduCode}"
 									class="btn_add">수정</a></td>
 								<td><a href="/eduDelete?eduCode=${edu.eduCode}"
 									class="btn_add">삭제</a></td>

@@ -24,10 +24,10 @@
 		</header>
 		<h4 align="center">자격증수정</h4>
 		<form align="center" action="./UpdateLicense" method="post">
-			<input type="hidden" name="licenseCode" value="${listone.licenseCode}">
-			<input type="hidden" name="licenseApproval"
-				value="${listone.licenseApproval}"> <input type="hidden"
-				name="licenseDate" value="${listone.licenseDate}">
+			<input type="hidden" name="licenseCode"
+				value="${listone.licenseCode}"> <input type="hidden"
+				name="licenseApproval" value="${listone.licenseApproval}"> <input
+				type="hidden" name="licenseDate" value="${listone.licenseDate}">
 			<table align="center" border="1">
 				<tr>
 					<td>ID</td>

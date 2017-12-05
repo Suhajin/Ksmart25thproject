@@ -50,15 +50,17 @@
 		on
 		complete.memberCode = member.memberCode
 	</select>
-	<select id="CompleteListOne" parameterType="com.cafe24.suhajin07.Complete.Complete" resultMap="resultComplete">
-	SELECT	 
+	<select id="CompleteListOne" parameterType="com.cafe24.suhajin07.Complete.Complete"
+		resultMap="resultComplete">
+		SELECT
 
-		memberId, memberName, complitionCode,completeName,completeStart,completeEnd,completeTime,completeAcademyName,completeNo,completeFile,completeApproval,completeDate
+		memberId, memberName,
+		complitionCode,completeName,completeStart,completeEnd,completeTime,completeAcademyName,completeNo,completeFile,completeApproval,completeDate
 		from complete join member
 		on
 		complete.memberCode = member.memberCode
 		where memberId = #{memberId}
-		</select>
+	</select>
 
 
 </mapper>

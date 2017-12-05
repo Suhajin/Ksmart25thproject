@@ -32,4 +32,12 @@ public class MemberDao {
 			return member;
 			
 	    }
+	 
+	public int updateMember(Member member) {
+		System.out.println("updateMember Dao 성공");
+		System.out.println(member);
+		int row = sqlSessionTemplate.insert(NS+"updateMember",member);
+		System.out.println(row);
+		return row;
+	}
 }

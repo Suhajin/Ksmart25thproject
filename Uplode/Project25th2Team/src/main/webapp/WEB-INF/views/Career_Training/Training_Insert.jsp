@@ -23,39 +23,39 @@
 		</div>
 		</header>
 		<h4 align="center">연수/봉사 등록</h4>
-	<form action="/addTraining" method="post" align="center">
-	<input type="hidden" name="memberCode" value=${Member.memberCode}>
-		<table align="center" border="1">
-			<tr>
-				<td>연수기간</td>
-				<td><input type="text" name="trainingPeriod"></td>
-			</tr>
-			<tr>
-				<td>연수시작일</td>
-				<td><input type="date" name="trainingStart"></td>
-			</tr>
-			<tr>
-				<td>연수종료일</td>
-				<td><input type="date" name="trainingEnd"></td>
-			</tr>
-			<tr>
-				<td>국가</td>
-				<td><input type="text" name="trainingNation"></td>
-			</tr>
-			<tr>	
-				<td>상세설명</td>
-				<td><input type="text" name="trainingDetail"></td>
-			</tr>
-			<tr>	
-				<td>연수봉사 등록일</td>
-				<td><input type="date" name="trainingDate"></td>
-			</tr>
-		</table>
-		<input type="submit" value="addTraining">
-	</form>
-	<div>
-		<c:import url="/WEB-INF/views/layout/Hadan.jsp">
-		</c:import>
-	</div>
+		<form action="/addTraining" method="post" align="center">
+			<input type="hidden" name="memberCode" value=${Member.memberCode}>
+			<table align="center" border="1">
+				<tr>
+					<td>연수기간</td>
+					<td><input type="text" name="trainingPeriod"></td>
+				</tr>
+				<tr>
+					<td>연수시작일</td>
+					<td><input type="date" name="trainingStart"></td>
+				</tr>
+				<tr>
+					<td>연수종료일</td>
+					<td><input type="date" name="trainingEnd"></td>
+				</tr>
+				<tr>
+					<td>국가</td>
+					<td><input type="text" name="trainingNation"></td>
+				</tr>
+				<tr>
+					<td>상세설명</td>
+					<td><input type="text" name="trainingDetail"></td>
+				</tr>
+				<tr>
+					<td>연수봉사 등록일</td>
+					<td><input type="date" name="trainingDate"></td>
+				</tr>
+			</table>
+			<input type="submit" value="addTraining">
+		</form>
+		<div>
+			<c:import url="/WEB-INF/views/layout/Hadan.jsp">
+			</c:import>
+		</div>
 </body>
 </html>

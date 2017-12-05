@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%-- <%@page import="java.text.SimpleDateFormat"%> --%>
 
@@ -72,7 +73,6 @@ A:hover {
 	color: red;
 	text-decoration: none;
 } */
-
 .day {
 	width: 100px;
 	height: 30px;
@@ -190,12 +190,12 @@ A:hover {
 </style>
 </head>
 <body>
-<!------------------------------------head-------------------------------------->
-		<div>
-			<c:import url="/WEB-INF/views/layout/Head.jsp">
-			</c:import>
-		</div>
-<!------------------------------------contents-------------------------------------->	
+	<!------------------------------------head-------------------------------------->
+	<div>
+		<c:import url="/WEB-INF/views/layout/Head.jsp">
+		</c:import>
+	</div>
+	<!------------------------------------contents-------------------------------------->
 	<form name="calendarFrm" id="calendarFrm" action="" method="GET">
 
 		<div class="calendar">
@@ -273,11 +273,11 @@ A:hover {
 			</table>
 		</div>
 	</form>
-<!------------------------------------Hadan-------------------------------------->	
-			<div>
-				<c:import url="/WEB-INF/views/layout/Hadan.jsp">
-				</c:import>
-			</div>
-	</div>	
+	<!------------------------------------Hadan-------------------------------------->
+	<div>
+		<c:import url="/WEB-INF/views/layout/Hadan.jsp">
+		</c:import>
+	</div>
+	</div>
 </body>
 </html>
