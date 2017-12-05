@@ -17,6 +17,9 @@
 	.printOnly {
 		display: none;
 	}
+	.title {
+		 margin: 100px 0;
+	}
 	</style>
 	<style type="text/css" media="print">
 	#wrap {
@@ -41,11 +44,8 @@
 	</div>
 	
 <!------------------------------------타이틀 영역---------------------------------->
-		<div class="title_area">
-			<h3>목표설정</h3>
-			<p>
-				<h3>${Member.memberName}님 목표를 설정해주세요!</h3>
-			</p>
+		<div class="title">
+			<center><h3>${Member.memberName}님 목표를 설정해주세요!</h3></center>
 		</div>
 <!------------------------------------FinalGoal-------------------------------------->
 <body>
