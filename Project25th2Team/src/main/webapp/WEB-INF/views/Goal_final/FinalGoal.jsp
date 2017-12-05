@@ -79,7 +79,7 @@
 	    	<td><input type="text" name="finalGoalName" placeholder="ex)2년 안에 한국전력공사 입사"></td>
 	    </tr>
 		<tr>
-		    <td align="center"><label for="finalGoalStart">최종목표 시작일</label></td>
+		    <td align="center"><label for="finalGoalStart">최일</label></td>
 		    <td><input type="date" name="finalGoalStart" ></td>
 	    </tr>
 		<tr>
