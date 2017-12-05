@@ -48,16 +48,18 @@
 		licenseDate
 		from license join member on
 		license.memberCode = member.memberCode
+		order by memberId
 
 
 	</select>
-		<select id="LicenseListOne" parameterType="com.cafe24.suhajin07.License.License"
-			resultMap="resultLicense"> SELECT memberId, memberName, licenseCode, licenseAcquire,
-			licenseNumber, licenseOrgan, licenseFile,
-			licenseApproval,lisenceLevelName,lisenceName from license join member
-			join lisenceList on license.memberCode = member.memberCode and
-			license.lisenceListCode =lisenceList.lisenceListCode where memberId =
-			#{memberId} </select>
+	<select id="LicenseListOne" parameterType="com.cafe24.suhajin07.License.License"
+		resultMap="resultLicense"> SELECT memberId, memberName, licenseCode, licenseAcquire,
+		licenseNumber, licenseOrgan, licenseFile,
+		licenseApproval,lisenceLevelName,lisenceName from license join member
+		join lisenceList on license.memberCode = member.memberCode and
+		license.lisenceListCode =lisenceList.lisenceListCode where memberId =
+		#{memberId}
+	</select>
 	<select id="LicenseSelectOne" resultMap="resultLicense">
 		select * from license
 		where

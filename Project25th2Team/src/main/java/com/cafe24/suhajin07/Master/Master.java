@@ -13,30 +13,7 @@ public class Master {
 	private String memberDetailAddress;
 	private String memberGrade;
 	private String memberDate;
-	
-	public Master(){
-		super();
-	}
-	
-	public Master(int memberCode, String memberId, String memberPw,
-			String memberName, String memberPhone, String memberEmail, String memberPostNum
-			, String memberAddress, String memberDetailAddress, String memberGrade, String memberDate ) {
-		super();
-		this.memberCode = memberCode;
-		this.memberId = memberId;
-		this.memberPw = memberPw;
-		this.memberName = memberName;
-		this.memberPhone = memberPhone;
-		this.memberEmail = memberEmail;
-		this.memberPostNum = memberPostNum;
-		this.memberAddress = memberAddress;
-		this.memberDetailAddress = memberDetailAddress;
-		this.memberGrade = memberGrade;
-		this.memberDate = memberDate;
-	}
-	
-	
-	
+	private String gradeName;
 	public int getMemberCode() {
 		return memberCode;
 	}
@@ -103,13 +80,21 @@ public class Master {
 	public void setMemberDate(String memberDate) {
 		this.memberDate = memberDate;
 	}
+	public String getGradeName() {
+		return gradeName;
+	}
+	public void setGradeName(String gradeName) {
+		this.gradeName = gradeName;
+	}
 	@Override
 	public String toString() {
 		return "Master [memberCode=" + memberCode + ", memberId=" + memberId + ", memberPw=" + memberPw
 				+ ", memberName=" + memberName + ", memberPhone=" + memberPhone + ", memberEmail=" + memberEmail
 				+ ", memberPostNum=" + memberPostNum + ", memberAddress=" + memberAddress + ", memberDetailAddress="
-				+ memberDetailAddress + ", memberGrade=" + memberGrade + ", memberDate=" + memberDate + "]";
+				+ memberDetailAddress + ", memberGrade=" + memberGrade + ", memberDate=" + memberDate + ", gradeName="
+				+ gradeName + "]";
 	}
+	
 	
 	
 	

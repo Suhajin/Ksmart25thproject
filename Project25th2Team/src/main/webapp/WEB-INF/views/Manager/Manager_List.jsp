@@ -31,7 +31,7 @@
 				<table border="1" align="center">
 					<thead>
 						<tr>
-							<th>회원ID</th>
+							<th>등급</th>
 							<th>회원 성명</th>
 							<th>회원 연락처</th>
 							<th>회원 Email</th>
@@ -42,17 +42,17 @@
 							<th>수정</th>
 							<th>삭제</th>
 						</tr>
-						<c:forEach var="member" items="${memberlist}">
+						<c:forEach var="manager" items="${managerlist}">
 							<tr>
-								<td>${member.memberId}</td>
-								<td>${member.memberName}</td>
-								<td>${member.memberPhone}</td>
-								<td>${member.memberEmail}</td>
-								<td>${member.memberPostNum}</td>
-								<td>${member.memberAddress}</td>
-								<td>${member.memberDetailAddress}</td>
-								<td>${member.memberDate}</td>
-								<td><a href="/MemberUpdate?memberCode=${member.memberCode}" class="btn_add">수정</a></td>
+								<td>${manager.gradeName}</td>
+								<td>${manager.memberName}</td>
+								<td>${manager.memberPhone}</td>
+								<td>${manager.memberEmail}</td>
+								<td>${manager.memberPostNum}</td>
+								<td>${manager.memberAddress}</td>
+								<td>${manager.memberDetailAddress}</td>
+								<td>${manager.memberDate}</td>
+								<td><a href="/MemberUpdate?memberCode=${manager.memberCode}" class="btn_add">수정</a></td>
 								<td><a href="/#?memberCode=" class="btn_del">삭제</a></td>
 							</tr>
 						</c:forEach>

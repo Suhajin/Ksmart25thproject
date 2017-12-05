@@ -3,7 +3,7 @@
 
 <mapper namespace="com.cafe24.suhajin07.Edu.EduMapper">
 	<resultMap type="com.cafe24.suhajin07.Member.Member" id="resultMember">
-		<result property="memberID" column="memberID" />
+		<result property="memberId" column="memberId" />
 		<result property="memberName" column="memberName" />
 	</resultMap>
 	<resultMap type="com.cafe24.suhajin07.Edu.Edu" id="resultEdu">
@@ -68,6 +68,7 @@
 		<select id="eduAllList" resultType="com.cafe24.suhajin07.Edu.Edu">
 			SELECT
 				  A.memberId
+				, A.memberName
 				, B.eduCode
 				, B.eduHighestLevel
 				, B.eduName
@@ -83,6 +84,7 @@
 				edu AS B 
 			ON
 				A.memberCode = B.memberCode
+						order by memberId
 		</select>
 		
 		<!-- 한사람에 대한 내용 출력 -->
