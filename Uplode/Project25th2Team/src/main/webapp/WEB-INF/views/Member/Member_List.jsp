@@ -25,6 +25,7 @@
 		<form align="center">
 			<br> <br> <br> <br>
 			<h1>전체 회원 리스트</h1>
+
 			<div align="center">
 				<table border="1" align="center">
 					<thead>
@@ -50,16 +51,30 @@
 								<td>${member.memberAddress}</td>
 								<td>${member.memberDetailAddress}</td>
 								<td>${member.memberDate}</td>
-
-								<td><a
-									href="/CareerUpdateOne?careerCode="
-									class="btn_add">수정</a></td>
-								<td><a href="/CareerDelete?careerCode="
-									class="btn_add">삭제</a></td>
+								<td><a href="/#?memberCode=" class="btn_add">수정</a></td>
+								<td><a href="/#?memberCode=" class="btn_del">삭제</a></td>
 							</tr>
 						</c:forEach>
 					</thead>
 				</table>
+				<!-- 아이디 검색 -->
+				<div>
+					<form action="#">
+						아이디 검색 : <input type="text" name="word" /><input type="submit" />
+					</form>
+				</div>
+				<!-- 페이징 -->
+				<div>
+					<c:if test="${page>1}">
+						<a href="/userList?page=${page-1}">이전</a>
+					</c:if>
+
+					${page}
+
+					<c:if test="${page<lastPage}">
+						<a href="/userList?page=${page+1}">다음</a>
+					</c:if>
+				</div>
 			</div>
 
 			<br> <br> <br> <br>

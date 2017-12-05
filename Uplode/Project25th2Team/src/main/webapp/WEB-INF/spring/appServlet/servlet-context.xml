@@ -21,10 +21,10 @@
 	</bean>
 	<context:component-scan base-package="com.cafe24.suhajin07" />
 	<!-- 커넥션풀 생성 -->
-	
-	 <!-- 컴퓨터에서 작업할때 사용해야하는 url : jdbc:mysql://suhajin07.cafe24.com:3306/suhajin07 -->
-         <!--  홈페이지 Uplode 할때 사용되는 url : jdbc:mysql://localhost:3306/suhajin07  -->
-         
+
+	<!-- 컴퓨터에서 작업할때 사용해야하는 url : jdbc:mysql://suhajin07.cafe24.com:3306/suhajin07 -->
+	<!-- 홈페이지 Uplode 할때 사용되는 url : jdbc:mysql://localhost:3306/suhajin07 -->
+
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
 		<property name="url"
@@ -32,7 +32,13 @@
 		<property name="username" value="suhajin07" />
 		<property name="password" value="vmfhwprxm25rl2" />
 	</bean>
-	
+
+	<bean id="transactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<!-- mybatis 세션생성시 사용할 dataSource주입 -->
 		<property name="dataSource" ref="dataSource" />
@@ -47,4 +53,18 @@
 	<bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
 		<constructor-arg ref="sqlSessionFactory" index="0" />
 	</bean>
+	<!-- component scan (Controller) -->
+	<context:component-scan base-package="com.common.*">
+
+		<context:include-filter type="annotation"
+			expression="org.springframework.context.annotation.Configuration" />
+		<context:include-filter type="annotation"
+			expression="org.springframework.stereotype.Service" />
+		<context:include-filter type="annotation"
+			expression="org.springframework.stereotype.Repository" />
+		<context:include-filter type="annotation"
+			expression="org.springframework.stereotype.Controller" />
+		<context:include-filter type="regex"
+			expression="(service|controller|dao)\..*" />
+	</context:component-scan>
 </beans>

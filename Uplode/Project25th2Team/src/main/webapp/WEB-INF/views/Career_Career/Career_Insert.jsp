@@ -23,7 +23,7 @@
 		</div>
 		</header>
 		<h4 align="center">경력등록</h4>
-		<form align="center" action="./addCareer" method="post">
+		<form align="center" action="/addCareer" method="post">
 			<input type="hidden" name="memberCode" value=${Member.memberCode}>
 			<table align="center" border="1">
 				<tr>

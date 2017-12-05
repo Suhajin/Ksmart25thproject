@@ -57,6 +57,7 @@
 			<artifactId>mybatis</artifactId>
 			<version>3.4.5</version>
 		</dependency>
+		
 
 		<!-- spring mybatis연동 ... https://mvnrepository.com/artifact/org.mybatis/mybatis-spring -->
 		<dependency>

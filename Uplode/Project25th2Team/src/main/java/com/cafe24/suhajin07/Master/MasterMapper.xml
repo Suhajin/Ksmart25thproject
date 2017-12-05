@@ -18,8 +18,25 @@
 	<select id="memberAllList" parameterType="com.cafe24.suhajin07.Master.Master"
 		resultMap="resultMaster">
 		SELECT
-		memberCode,memberId,memberName,memberPhone,memberEmail,memberPostNum,memberAddress,memberDetailAddress
-		from member where memberGrade = 'member' order by memberCode
+		memberCode,memberId,memberName,memberPhone,memberEmail,memberPostNum,
+		memberAddress,memberDetailAddress
+		from member where memberGrade =
+		'member' order by memberCode
 	</select>
+	<select id="AllMemberCount" parameterType="com.cafe24.suhajin07.Master.Master"
+		resultMap="resultMaster">
+		SELECT
+		COUNT(*)
+		FROM member
+	</select>
+	<select resultMap="resultMaster" id="memberListPaging"
+		parameterType="com.cafe24.suhajin07.Master.Master">
+		SELECT * FROM member
+		ORDER BY memberCode DESC
+		LIMIT
+		#{startRow},#{pagePerCount}
+	</select>
+
+
 
 </mapper>
