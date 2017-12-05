@@ -6,7 +6,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-
 <title>목표설정</title>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
@@ -14,7 +13,6 @@
 	href="<%=request.getContextPath()%>/resources/css/Career_common.css" />
 <link rel="stylesheet" type="text/css"
 	href="<%=request.getContextPath()%>/resources/css/Career_jquery-ui.css" />
-
 <style type="text/css" media="screen">
 	.printOnly {
 		display: none;
@@ -26,7 +24,7 @@
 	}
 	
 	#container {
-		width: 764px;
+		width: 500px;
 		background: url(none) repeat-x 0 0 !important;
 	}
 	
@@ -34,6 +32,7 @@
 		display: none;
 	}
 </style>
+
 </head>
 <!------------------------------------head-------------------------------------->
 <div>
@@ -65,15 +64,25 @@
 				<caption>대분류 목표 카테고리</caption>
 				<colgroup>
 					<!-- 체크박스 -->
-					<col style="width: 2%" />
+					<col style="width: 10%" />
 					<!-- 아이디 -->
-					<col style="width: 17%" />
-					<!-- 이름 -->
-					<col style="width: 32%" />
+					<col style="width: 10%" />
 					<!-- 대분류 목표명 -->
-					<col style="width: 17%" />
-					<!-- 중분류 목표명 -->
-					<col style="width: 17%" />
+					<col style="width: 10%" />
+					<!--  목표명 -->
+					<col style="width: 10%" />
+					<!-- 최종목표 시작일 -->
+					<col style="width: 10%" />
+					<!-- 최종목표 종료일 -->
+					<col style="width: 10%" />
+					<!-- 총 목표 일수 -->
+					<col style="width: 10%" />
+					<!-- 총 투자시간 -->
+					<col style="width: 10%" />
+					<!-- 전체예산 -->
+					<col style="width: 10%" />
+					<!-- 메모 -->
+					<col style="width: 10%" />
 				</colgroup>
 				<thead>
 					<tr class="first">
@@ -83,18 +92,32 @@
 						<th scope="col">아이디</th>
 						<th scope="col">이름</th>
 						<th scope="col">대분류 목표명</th>
-						<th scope="col">중분류 목표명</th>
+						<th scope="col">목표명</th>
+						<th scope="col">최종목표 시작일</th>
+						<th scope="col">최종목표 종료일</th>
+						<th scope="col">총 목표 일수</th>
+						<th scope="col">총 투자시간</th>
+						<th scope="col">전체예산</th>
+						<th scope="col">메모</th>
 					</tr>
 				</thead>
+				
 				<tbody id="skillCareerLayer">
-					<c:forEach var="Goal" items="${listedu}">
+					<c:forEach var="FinalGoal" items="${listFinalGoal}">
 						<tr>
 							<td scope="col"><input type="checkbox" name="scholarNo"
 								id="checkAll4skillCareer" onclick="onCheckAll4skillCareer()" /></td>
-							<td>${Edu.eduHighestLevel}</td>
-							<td>${Edu.eduName}</td>
-							<td>${Edu.eduMajor}</td>
-							<td>${Edu.eduMinor}</td>
+							<td>${FinalGoal.memberId}</td>
+							<td>${FinalGoal.memberName}</td>
+							<td>${FinalGoal.biggestGoalName}</td>
+							<td>${FinalGoal.finalGoalName}</td>
+							<td>${FinalGoal.finalGoalStart}</td>
+							<td>${FinalGoal.finalGoalEnd}</td>
+							<td>${FinalGoal.finalGoalDays}</td>
+							<td>${FinalGoal.finalGoalTotalTime}</td>
+							<td>${FinalGoal.finalGoalTotalBudget}</td>
+							<td>${FinalGoal.finalGoalNote}</td>
+							
 						</tr>
 					</c:forEach>
 				</tbody>

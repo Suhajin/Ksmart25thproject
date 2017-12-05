@@ -56,59 +56,62 @@
 	<h3 align="center">최종목표 등록</h3>
 <br>
 	
-	 <form action="/addFinalGoal" method="post">
+	 <form action="/addFinalGoal?memberId=${Member.memberId}" method="post">
 	    <table>
 	    
-	    <tr>
-	    	<td><input type="hidden" name="finalGoalCode" value=${Member.memberCode}></td>
-		</tr>
-		<tr>
-		    <td><input type="hidden" name="biggestGoalCode" value=${Member.memberCode}></td>
-	    </tr>
-		<tr>
-		  	<td><input type="hidden" name="memberCode" value=${Member.memberCode}></td>	
-		</tr>
-		<tr>   
-		    <td><input type="hidden" name="managerCode" value=${Member.memberCode}></td>
-	    </tr>
-		<tr>	
-	    	<td><input type="hidden" name="managerGradeCode" value=${Member.memberCode}></td>
-	    </tr>
-		<tr>
-	    	<td align="center"><label for="finalGoalName">목표명</label></td>
-	    	<td><input type="text" name="finalGoalName" placeholder="ex)2년 안에 한국전력공사 입사"></td>
-	    </tr>
-		<tr>
-		    <td align="center"><label for="finalGoalStart">최종목표 시작일</label></td>
-		    <td><input type="date" name="finalGoalStart" ></td>
-	    </tr>
-		<tr>
-	    	<td align="center"><label for="finalGoalEnd">최종목표 종료일</label></td>
-	    	<td><input type="date" name="finalGoalEnd"></td>
-	    </tr>
-		<tr>
-		    <td align="center"><label for="finalGoalDays">총 목표 일수</label></td>
-		    <td align="left"><input type="text" name="finalGoalDays"></td>
-	    </tr>
-		<tr>
-		    <td align="center"><label for="Gtad">일일 투자시간</label></td>
-		    <td align="left"><input type="text" name="finalGoalTimeADay"></td>
-	    </tr>
-		<tr>
-		    <td align="center"><label for="finalGoalTotalTime">총 투자시간</label></td>
-		    <td><input type="text" name="finalGoalTotalTime"></td>
-	    </tr>
-		<tr>
-		    <td align="center"><label for="finalGoalTotalBudget">전체예산</label></td>
-		    <td><input type="text" name="finalGoalTotalBudget"></td>
-	    </tr>
-		<tr>
-		    <td align="center"><label for="finalGoalNote">메모</label></td>
-		    <td><input type="text" name="finalGoalNote"></td>
-	    </tr>
-	    <tr> 
-	    <td><input type="hidden" name="finalGoalInputDate"></td>
-	    </tr>
+			<tr>
+				<td align="center"><label for="finalGoalStart">대분류 목표</label></td>
+				<td>
+				<select name="biggestGoalCode">
+				       <option value="null">==선택하세요==</option>
+				       <option value="bcc_001">취업</option>
+				       <option value="bcc_002">승진</option>
+				       <option value="bcc_003">이직</option>
+				       <option value="bcc_004">기타</option>
+				</select>
+				</td>
+		    </tr>
+			<tr>
+			  	<td><input type="hidden" name="memberCode" value=${Member.memberCode}></td>	
+			</tr>
+			<tr>   
+			    <td><input type="hidden" name="managerCode" value=${Member.memberCode}></td>
+		    </tr>
+		    <tr>   
+			    <td><input type="hidden" name="managerGradeCode" value=${Member.memberCode}></td>
+		    </tr>
+			<tr>
+		    	<td align="center"><label for="finalGoalName">목표명</label></td>
+		    	<td><input type="text" name="finalGoalName" placeholder="ex)2년 안에 한국전력공사 입사"></td>
+		    </tr>
+			<tr>
+			    <td align="center"><label for="finalGoalStart">최종목표 시작일</label></td>
+			    <td><input type="date" name="finalGoalStart" ></td>
+		    </tr>
+			<tr>
+		    	<td align="center"><label for="finalGoalEnd">최종목표 종료일</label></td>
+		    	<td><input type="date" name="finalGoalEnd"></td>
+		    </tr>
+			<tr>
+			    <td align="center"><label for="finalGoalDays">총 목표 일수</label></td>
+			    <td align="left"><input type="text" name="finalGoalDays"></td>
+		    </tr>
+			<tr>
+			    <td align="center"><label for="Gtad">일일 투자시간</label></td>
+			    <td align="left"><input type="text" name="finalGoalTimeADay"></td>
+		    </tr>
+			<tr>
+			    <td align="center"><label for="finalGoalTotalTime">총 투자시간</label></td>
+			    <td><input type="text" name="finalGoalTotalTime"></td>
+		    </tr>
+			<tr>
+			    <td align="center"><label for="finalGoalTotalBudget">전체예산</label></td>
+			    <td><input type="text" name="finalGoalTotalBudget"></td>
+		    </tr>
+			<tr>
+			    <td align="center"><label for="finalGoalNote">메모</label></td>
+			    <td><input type="text" name="finalGoalNote"></td>
+		    </tr>
 
 	   </table>
 	   	
