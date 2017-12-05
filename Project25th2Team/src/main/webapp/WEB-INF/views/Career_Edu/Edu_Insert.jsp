@@ -28,7 +28,7 @@
 				<tr>
 					<td>ID</td>
 					<td><input type="text" name="memberCode" readonly="readonly"
-						value=${Member.memberId}></td>
+						value=${Member.memberCode}></td>
 				</tr>
 				<tr>
 					<td>최종학력</td>
