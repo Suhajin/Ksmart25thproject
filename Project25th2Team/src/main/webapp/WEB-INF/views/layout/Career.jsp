@@ -77,7 +77,7 @@
 						<td>${Edu.eduMajor}</td>
 						<td>${Edu.eduMinor}</td>
 						<td>${Edu.eduGraduation}</td>
-						<td><a href="/EduDelete?eduCode=${Edu.eduCode}"
+						<td><a href="/eduDelete?eduCode=${Edu.eduCode}"
 							class="btn_del">삭제</a></td>
 					</tr>
 				</c:forEach>

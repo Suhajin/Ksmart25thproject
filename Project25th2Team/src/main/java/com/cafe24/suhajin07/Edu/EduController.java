@@ -1,5 +1,7 @@
 package com.cafe24.suhajin07.Edu;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -9,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.cafe24.suhajin07.Edu.Edu;
 import com.cafe24.suhajin07.Edu.EduService;
+import com.cafe24.suhajin07.Member.Member;
 
 @Controller
 public class EduController {
@@ -19,14 +22,13 @@ public class EduController {
 	@Autowired
 	EduDao eduDao;
 	
-	//마이페이지 버튼 클릭시 Id값을 받아 DB에 입력된 eduList출력
+	/*//마이페이지 버튼 클릭시 Id값을 받아 DB에 입력된 eduList출력
 	@RequestMapping(value="", method=RequestMethod.GET)
 	public String eduList(Model model, @RequestParam("memberId") String memberId) {
 		System.out.println("eudList 출력요청");
 		model.addAttribute("eduList", eduDao.eduList(memberId));
 		return "layout/Career";
-		
-	}
+	}*/
 	
 	//학력 추가버튼 클릭시 Edu_Insert화면으로 이동
 	@RequestMapping(value = "/edu", method = RequestMethod.GET)
@@ -37,12 +39,12 @@ public class EduController {
 	
 	//Edu_Insert화면에서 입력후 등록 -> Career화면으로 이동
 	@RequestMapping(value = "/edu", method = RequestMethod.POST)
-	public String addEdu(Edu edu) {
+	public String addEdu(HttpSession session, Edu edu) {
 		System.out.println(edu + "addEdu <-- EduController.java");
 		
 		eduService.addEdu(edu);
 		
-		return "Member/member_Mypage";
+		return "redirect:/MyCareer?memberId="+((Member)session.getAttribute("Member")).getMemberId();
 	}
 	
 	//전체리스트 버튼 클릭시 edu 전체리스트 출력
@@ -73,9 +75,9 @@ public class EduController {
 	
 	//edu 삭제처리
 	@RequestMapping(value = "/eduDelete", method = RequestMethod.GET)
-	public String deleteEdu(Edu edu) {
+	public String deleteEdu(HttpSession session, Edu edu) {
 		System.out.println("deleteEdu <-- EduController.java");
 		eduDao.deleteEdu(edu);
-		return "redirect:/eduList";
+		return "redirect:/MyCareer?memberId="+((Member)session.getAttribute("Member")).getMemberId();
 	}
 }
