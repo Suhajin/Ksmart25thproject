@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cafe24.suhajin07.Member.MemberMapper">
+
+	<resultMap id="resultMember" type="com.cafe24.suhajin07.Member.Member">
+		<result column="memberCode" property="memberCode" />
+		<result column="memberId" property="memberId" />
+		<result column="memberPw" property="memberPw" />
+		<result column="memberName" property="memberName" />
+		<result column="memberPhone" property="memberPhone" />
+		<result column="memberEmail" property="memberEmail" />
+		<result column="memberPostNum" property="memberPostNum" />
+		<result column="memberAddress" property="memberAddress" />
+		<result column="memberDetailAddress" property="memberDetailAddress" />
+		<result column="memberGrade" property="memberGrade" />
+		<result column="memberDate" property="memberDate" />
+	</resultMap>
+	<insert id="insertMember" parameterType="com.cafe24.suhajin07.Member.Member">
+		INSERT INTO
+		member(memberCode ,memberId ,memberPw ,memberName
+		,memberPhone,memberEmail ,memberPostNum, memberDetailAddress,
+		memberAddress ,memberGrade ,memberDate)
+		VALUES
+		(#{memberCode}, #{memberId}, #{memberPw}, #{memberName}, #{memberPhone},
+		#{memberEmail}, #{memberPostNum}, #{memberDetailAddress},
+		#{memberAddress}, #{memberGrade} ,now())
+	</insert>
+
+	<select id="login" parameterType="com.cafe24.suhajin07.Member.Member"
+		resultMap="resultMember">
+		SELECT
+		memberCode ,memberId ,memberPw ,memberName
+		,memberPhone ,memberEmail ,memberPostNum ,memberAddress,
+		memberDetailAddress, memberGrade
+		FROM
+		member
+		WHERE
+		memberId=#{memberId}AND memberPw=#{memberPw}
+	</select>
+
+	<update id="updateMember" parameterType="com.cafe24.suhajin07.Member.Member">
+		UPDATE member set
+		memberId = #{memberId},
+		memberPw = #{memberPw},
+		memberName = #{memberName},
+		memberPhone = #{memberPhone},
+		memberEmail = #{memberEmail},
+		memberPostNum = #{memberPostNum},
+		memberAddress = #{memberAddress},
+		memberDetailAddress = #{memberDetailAddress},
+		memberGrade = #{memberGrade},
+		memberDate = now()
+		where
+		memberCode = #{memberCode}
+	</update>
+
+</mapper>
