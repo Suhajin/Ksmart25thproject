@@ -36,11 +36,6 @@
 </head>
 <body>
 	<div class="content" id="content">
-		<!-- 타이틀 영역 -->
-		<div class="title_area">
-			<h3>목표설정</h3>
-			<p><h3>${Member.memberName}님 목표를 설정해주세요!</h3>.</p>
-		</div>
 
 			<div class="section_top_area">
 				<h4>대분류 목표 카테고리</h4>
