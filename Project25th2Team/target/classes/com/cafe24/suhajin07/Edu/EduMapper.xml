@@ -3,7 +3,7 @@
 
 <mapper namespace="com.cafe24.suhajin07.Edu.EduMapper">
 	<resultMap type="com.cafe24.suhajin07.Member.Member" id="resultMember">
-		<result property="memberID" column="memberID" />
+		<result property="memberId" column="memberId" />
 		<result property="memberName" column="memberName" />
 	</resultMap>
 	<resultMap type="com.cafe24.suhajin07.Edu.Edu" id="resultEdu">
@@ -21,30 +21,51 @@
 		<result property="eduBeforeMajor" column="eduBeforeMajor" />
 		<result property="eduDate" column="eduDate" />
 	</resultMap>
-	<!-- 학력등록 -->
-	<insert id="insertEdu" parameterType="com.cafe24.suhajin07.Edu.Edu">
-		INSERT INTO edu(eduCode,
-		memberCode, eduHighestLevel, eduName, eduMajor,
-		eduMinor, eduDual ,
-		eduGraduation, eduEntrance, eduFinish, eduBefore,
-		eduBeforeMajor,
-		eduDate) VALUES (#{eduCode}, #{memberCode},
-		#{eduHighestLevel},
-		#{eduName}, #{eduMajor}, #{eduMinor}, #{eduDual} ,
-		#{eduGraduation},
-		#{eduEntrance}, #{eduFinish}, #{eduBefore},
-		#{eduBeforeMajor}, now())
-	</insert>
-	<select id="EduListOne" parameterType="com.cafe24.suhajin07.Edu.Edu"
-		resultMap="resultEdu">
-		SELECT
-		memberId,eduCode,
-		eduHighestLevel,eduName,eduMajor,eduMinor,eduGraduation
-		from edu join
-		member
-		on
-		edu.memberCode = member.memberCode
-		where memberId = #{memberId}
+		<!-- 학력등록 -->
+		<insert id="insertEdu" parameterType="com.cafe24.suhajin07.Edu.Edu">
+			INSERT INTO edu(
+				  memberCode
+				, eduHighestLevel
+				, eduName
+				, eduMajor
+				, eduMinor
+				, eduDual
+				, eduGraduation
+				, eduEntrance
+				, eduFinish
+				, eduBefore
+				, eduBeforeMajor
+				, eduDate)
+			VALUES (
+				  #{memberCode}
+				, #{eduHighestLevel}
+				, #{eduName}
+				, #{eduMajor}
+				, #{eduMinor}
+				, #{eduDual}
+				, #{eduGraduation}
+				, #{eduEntrance}
+				, #{eduFinish}
+				, #{eduBefore}
+				, #{eduBeforeMajor}
+				, now())
+		</insert>
+		<select id="EduListOne" parameterType="com.cafe24.suhajin07.Edu.Edu"
+			resultMap="resultEdu">
+			SELECT
+				  memberId
+				, eduCode
+				, eduHighestLevel
+				, eduName
+				, eduMajor
+				, eduMinor
+				, eduGraduation
+			FROM edu join
+				member
+			ON
+				edu.memberCode = member.memberCode
+			WHERE
+				memberId = #{memberId}
 		</select>
 		<!-- 등록한 학력 list로 출력 -->
 		<select id="eduList" resultType="com.cafe24.suhajin07.Edu.Edu">
@@ -68,6 +89,7 @@
 		<select id="eduAllList" resultType="com.cafe24.suhajin07.Edu.Edu">
 			SELECT
 				  A.memberId
+				, A.memberName
 				, B.eduCode
 				, B.eduHighestLevel
 				, B.eduName
@@ -83,6 +105,7 @@
 				edu AS B 
 			ON
 				A.memberCode = B.memberCode
+						order by memberId
 		</select>
 		
 		<!-- 한사람에 대한 내용 출력 -->

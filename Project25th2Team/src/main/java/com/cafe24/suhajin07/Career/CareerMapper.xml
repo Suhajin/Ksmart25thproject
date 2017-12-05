@@ -42,6 +42,7 @@
 		from career join member
 		on
 		career.memberCode = member.memberCode
+			order by memberId
 	</select>
 	<select id="CareerListOne" parameterType="com.cafe24.suhajin07.Career.Career" resultMap="resultCareer">
 		SELECT memberId, memberName, careerCode, careerName,

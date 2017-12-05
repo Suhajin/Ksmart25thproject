@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.cafe24.suhajin07.Member.Member;
 
 
+import javax.servlet.http.HttpSession;
+
 @Controller
 public class FinalGoalController {
 

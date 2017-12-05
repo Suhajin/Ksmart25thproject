@@ -49,6 +49,7 @@
 		from language join member
 		on
 		language.memberCode = member.memberCode
+		order by memberId
 	</select>
 
 	<select id="languageListOne" parameterType="com.cafe24.suhajin07.Career.Career"
