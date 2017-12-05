@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cafe24.suhajin07.Master.MasterMapper">
+	<resultMap type="com.cafe24.suhajin07.Master.Master" id="resultMaster">
+		<result property="memberCode" column="memberCode" />
+		<result property="memberId" column="memberId" />
+		<result property="memberPw" column="memberPw" />
+		<result property="memberName" column="memberName" />
+		<result property="memberPhone" column="memberPhone" />
+		<result property="memberEmail" column="memberEmail" />
+		<result property="memberPostNum" column="memberPostNum" />
+		<result property="memberAddress" column="memberAddress" />
+		<result property="memberDetailAddress" column="memberDetailAddress" />
+		<result property="memberGrade" column="memberGrade" />
+		<result property="memberDate" column="memberDate" />
+	</resultMap>
+
+	<select id="memberAllList" parameterType="com.cafe24.suhajin07.Master.Master"
+		resultMap="resultMaster">
+		SELECT
+		memberCode,memberId,memberName,memberPhone,memberEmail,memberPostNum,
+		memberAddress,memberDetailAddress
+		from member where memberGrade =
+		'member' order by memberCode
+	</select>
+	<select id="AllMemberCount" parameterType="com.cafe24.suhajin07.Master.Master"
+		resultMap="resultMaster">
+		SELECT
+		COUNT(*)
+		FROM member
+	</select>
+	<select resultMap="resultMaster" id="memberListPaging"
+		parameterType="com.cafe24.suhajin07.Master.Master">
+		SELECT * FROM member
+		ORDER BY memberCode DESC
+		LIMIT
+		#{startRow},#{pagePerCount}
+	</select>
+
+
+
+</mapper>
