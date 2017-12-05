@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@page import="java.sql.Connection"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@page import="java.sql.Connection"%>
 <%@ page session="true"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -13,28 +13,25 @@
 	href="<%=request.getContextPath()%>/resources/css/Career_common.css" />
 <link rel="stylesheet" type="text/css"
 	href="<%=request.getContextPath()%>/resources/css/Career_jquery-ui.css" />
-<style type="text/css" media="screen">
-	.printOnly {
-		display: none;
+
+<!-- <style type="text/css" media="screen">
+	
+	#table {
+		width: 1000px;
 	}
-	</style>
+	</style> -->
 	<style type="text/css" media="print">
 	#wrap {
 		background: url(none) repeat-x 0 0 !important;
 	}
 	
 	#container {
-		width: 500px;
+		width: 900px;
 		background: url(none) repeat-x 0 0 !important;
 	}
-	
-	.noprint {
-		display: none;
-	}
+
 </style>
-
 </head>
-
 <body>
 	<div class="content" id="content">
 	
@@ -46,21 +43,23 @@
 					<a href="#" class="btn_del">삭제</a>
 				</div>
 			</div>
-			<table class="list_tbl_01 mb70" summary="대분류 목표 카테고리">
+			<table class="list_tbl_01 mb70" id="table" summary="대분류 목표 카테고리">
 				<caption>대분류 목표 카테고리</caption>
 				<colgroup>
 					<!-- 체크박스 -->
-					<col style="width: 10%" />
+					<col style="width: 2%" />
 					<!-- 아이디 -->
+					<col style="width: 10%" />
+					<!-- 이름 -->
 					<col style="width: 10%" />
 					<!-- 대분류 목표명 -->
 					<col style="width: 10%" />
 					<!--  목표명 -->
 					<col style="width: 10%" />
 					<!-- 최종목표 시작일 -->
-					<col style="width: 10%" />
+					<col style="width: 13%" />
 					<!-- 최종목표 종료일 -->
-					<col style="width: 10%" />
+					<col style="width: 13%" />
 					<!-- 총 목표 일수 -->
 					<col style="width: 10%" />
 					<!-- 총 투자시간 -->
@@ -71,7 +70,7 @@
 					<col style="width: 10%" />
 				</colgroup>
 				<thead>
-					<tr class="first">
+					<tr class="first" align = "center">
 						<th scope="col"><input type="checkbox"
 							name="checkAll4skillCareer" id="checkAll4skillCareer"
 							onclick="onCheckAll4skillCareer()" /></th>
@@ -87,7 +86,6 @@
 						<th scope="col">메모</th>
 					</tr>
 				</thead>
-				
 				<tbody id="skillCareerLayer">
 					<c:forEach var="FinalGoal" items="${listFinalGoal}">
 						<tr>
@@ -103,11 +101,10 @@
 							<td>${FinalGoal.finalGoalTotalTime}</td>
 							<td>${FinalGoal.finalGoalTotalBudget}</td>
 							<td>${FinalGoal.finalGoalNote}</td>
-							
 						</tr>
 					</c:forEach>
 				</tbody>
 			</table>
-			</div>
+		</div>
 	</body>
 </html>

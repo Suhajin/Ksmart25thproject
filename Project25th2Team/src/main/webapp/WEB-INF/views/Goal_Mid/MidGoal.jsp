@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page import="java.sql.Connection"%>
 <%@ page session="true"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -13,23 +14,23 @@
 
 
 <style type="text/css" media="screen">
-.printOnly {
-	display: none;
-}
+	.printOnly {
+		display: none;
+	}
 </style>
 <style type="text/css" media="print">
-#wrap {
-	background: url(none) repeat-x 0 0 !important;
-}
-
-#container {
-	width: 764px;
-	background: url(none) repeat-x 0 0 !important;
-}
-
-.noprint {
-	display: none;
-}
+	#wrap {
+		background: url(none) repeat-x 0 0 !important;
+	}
+	
+	#container {
+		width: 764px;
+		background: url(none) repeat-x 0 0 !important;
+	}
+	
+	.noprint {
+		display: none;
+	}
 </style>
 </head>
 <body>
@@ -82,7 +83,6 @@
 					</c:forEach>
 				</tbody>
 			</table>
-
-			</div>
-</body>
+		</div>
+	</body>
 </html>
