@@ -1,12 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 <%@page import="java.sql.Connection"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page session="true"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>목표설정</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>상세 목표 설정</title>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
 <link rel="stylesheet" type="text/css"
@@ -32,12 +33,9 @@
 		display: none;
 	}
 </style>
-
 </head>
-
 <body>
 	<div class="content" id="content">
-
 		<!-- 타이틀 영역 -->
 		<div class="title_area">
 			<h3>목표설정</h3>
@@ -114,6 +112,6 @@
 					</c:forEach>
 				</tbody>
 			</table>
-			</div>
+		</div>
 	</body>
 </html>

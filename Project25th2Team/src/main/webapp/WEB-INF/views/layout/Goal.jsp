@@ -35,13 +35,26 @@
 
 </head>
 <!------------------------------------head-------------------------------------->
-<div>
-	<c:import url="/WEB-INF/views/layout/Head.jsp">
-	</c:import>
-</div>
-<!------------------------------------main-------------------------------------->
-
+	<div>
+		<c:import url="/WEB-INF/views/layout/Head.jsp">
+		</c:import>
+	</div>
+<!------------------------------------FinalGoal-------------------------------------->
 <body>
-
-	</body>
+	<div>
+		<c:import url="/WEB-INF/views/Goal_final/FinalGoal.jsp">
+		</c:import>
+	</div>
+<!------------------------------------MidGoal-------------------------------------->
+	<div>
+		<c:import url="/WEB-INF/views/Goal_Mid/MidGoal.jsp">
+		</c:import>
+	</div>
+<!------------------------------------DetailGoal-------------------------------------->
+	<div>
+		<c:import url="/WEB-INF/views/DetailGoal/DetailGoal.jsp">
+		</c:import>
+	</div>
+<!------------------------------------------------------------------------------------->
+</body>
 </html>

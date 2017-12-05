@@ -30,7 +30,7 @@ public class FinalGoalController {
 			System.out.println(memberId);
 			List<FinalGoal> list = fgService.listFinalGoal(memberId);
 			model.addAttribute("listFinalGoal", list);
-			return "Goal_final/FinalGoal";
+			return "layout/Goal";
 	}
 	
 	// 목표설정 페이지에서 대분류목표설정 insertForm 이동
