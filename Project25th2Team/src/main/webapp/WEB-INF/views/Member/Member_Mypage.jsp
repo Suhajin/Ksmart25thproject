@@ -18,23 +18,25 @@
 </head>
 
 <style type="text/css" media="screen">
-.printOnly {
-	display: none;
-}
+	.printOnly {
+		display: none;
+	}
 </style>
 <style type="text/css" media="print">
-#wrap {
-	background: url(none) repeat-x 0 0 !important;
-}
-
-#container {
-	width: 764px;
-	background: url(none) repeat-x 0 0 !important;
-}
-
-.noprint {
-	display: none;
-}
+	#wrap {
+		background: url(none) repeat-x 0 0 !important;
+	}
+	
+	#container {
+		width: 764px;
+		background: url(none) repeat-x 0 0 !important;
+	}
+	
+	.noprint {
+		display: none;
+		
+		
+	}
 </style>
 </head>
 
@@ -58,7 +60,7 @@
 			<div class="info_area">
 				<p>
 					&nbsp;&nbsp;${Member.memberName}<span>(${Member.memberId})</span> <a
-						href="/personal/mem/per_modify.jsp" class="btn_type01">프로필수정</a>
+						href="/updateMember" class="btn_type01">프로필수정</a>
 				</p>
 				<span><strong>전화번호</strong> : ${Member.memberPhone}</span> <span><strong>핸드폰번호</strong>
 					: ${Member.memberPhone}</span> <span><strong>이메일</strong> :
@@ -96,8 +98,6 @@
 			</table>
 		</div>
 	</div>
-
-
 
 	<br>
 	<br>

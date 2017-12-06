@@ -8,6 +8,7 @@ public class MidGoal {
 	private int memberCode;
 	private int managerCode;
 	private String managerGradeCode;
+	private String midGoalName;
 	private String studyCode;
 	private String lisenceListCode;
 	private String midGoalPlan;
@@ -57,6 +58,12 @@ public class MidGoal {
 	public void setManagerGradeCode(String managerGradeCode) {
 		this.managerGradeCode = managerGradeCode;
 	}
+	public String getMidGoalName() {
+		return midGoalName;
+	}
+	public void setMidGoalName(String midGoalName) {
+		this.midGoalName = midGoalName;
+	}
 	public String getStudyCode() {
 		return studyCode;
 	}
@@ -103,9 +110,10 @@ public class MidGoal {
 	public String toString() {
 		return "MidGoal [midGoalCode=" + midGoalCode + ", finalGoalCode=" + finalGoalCode + ", biggestGoalCode="
 				+ biggestGoalCode + ", goalTotalCode=" + goalTotalCode + ", memberCode=" + memberCode + ", managerCode="
-				+ managerCode + ", managerGradeCode=" + managerGradeCode + ", studyCode=" + studyCode
-				+ ", lisenceListCode=" + lisenceListCode + ", midGoalPlan=" + midGoalPlan + ", midGoalStart="
-				+ midGoalStart + ", midGoalEnd=" + midGoalEnd + ", midGoalBudget=" + midGoalBudget + ", midGoalDate="
-				+ midGoalDate + "]";
+				+ managerCode + ", managerGradeCode=" + managerGradeCode + ", midGoalName=" + midGoalName
+				+ ", studyCode=" + studyCode + ", lisenceListCode=" + lisenceListCode + ", midGoalPlan=" + midGoalPlan
+				+ ", midGoalStart=" + midGoalStart + ", midGoalEnd=" + midGoalEnd + ", midGoalBudget=" + midGoalBudget
+				+ ", midGoalDate=" + midGoalDate + "]";
 	}
 }
+

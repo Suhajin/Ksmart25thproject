@@ -56,7 +56,7 @@
 	<h3 align="center">최종목표 등록</h3>
 <br>
 	
-	 <form action="/addFinalGoal?memberId=${Member.memberId}" method="post">
+	 <form action="/addFinalGoal" method="post">
 	    <table>
 	    
 			<tr>

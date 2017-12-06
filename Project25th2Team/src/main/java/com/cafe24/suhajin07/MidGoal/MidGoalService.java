@@ -12,6 +12,6 @@ public class MidGoalService {
 		//중간목표 입력 처리
 		public void addMidGoal(MidGoal mg) {
 			System.out.println("미드골 서비스닷 "+ mg);
-		
+			mgd.insertMidGoal(mg);		
 		}
 }

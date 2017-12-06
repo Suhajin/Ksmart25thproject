@@ -14,6 +14,7 @@ public class MidGoalDao {
 	//중간목표 입력
 	public void insertMidGoal(MidGoal mg) {
 		System.out.println("미드골 인서트 성공!!in DAO");
+		System.out.println(mg);
 		SST.insert(NS+"insertMidGoal",mg);
 	}
 }

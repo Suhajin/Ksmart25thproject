@@ -10,6 +10,21 @@ import com.cafe24.suhajin07.Member.Member;
 public class MemberService {
 	@Autowired
 	MemberDao memberDao;
+	
+	public int updateMember(Member member) {
+
+		System.out.println(member);
+		int row = memberDao.updateMember(member);
+		return row;
+	}
+	
+	public Member updateMemberList(Member member) {
+
+		System.out.println(member);
+		member = memberDao.loginCheck(member);
+		return member;
+	}
+	
 
 	public void addMember(Member member) {
 

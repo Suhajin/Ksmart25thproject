@@ -56,12 +56,9 @@
 	<h3 align="center">중간목표 등록</h3>
 <br>
 	
-	 <form action="/addMidGoal" method="post">
+	 <form action="/AddMidGoal" method="post">
 	    <table>
-	    
-	    <tr>
-	    	<td><input type="hidden" name="midGoalCode" value=${Member.memberCode}></td>
-		</tr>
+	   
 		<tr>
 		    <td><input type="hidden" name="finalGoalCode" value=${Member.memberCode}></td>
 	    </tr>
@@ -81,50 +78,43 @@
 	    	<td><input type="hidden" name="managerGradeCode" value=${Member.memberCode}></td>
 	    </tr>
 	    <tr>
+	    	<td align="center"><label for="midGoalName">중간목표명</label></td>
+	    	<td><input type="text" name="midGoalName" placeholder="ex)토익 990점 "></td>
+	    </tr>
+	    <tr>
 	    	<td align="center"><label for="studyCode">공부방법</label></td>
             <td>
             	<select name="studyCode">
                    <option value="null">==선택하세요==</option>
-                   <option value="study_1">학원</option>
-                   <option value="study_2">독학</option>
-                   <option value="study_3">인강</option>
-                   <option value="study_4">과외</option>
-                   <option value="study_5">기타</option>
+                   <option value="study_01">학원</option>
+                   <option value="study_02">독학</option>
+                   <option value="study_03">인강</option>
+                   <option value="study_04">과외</option>
+                   <option value="study_05">기타</option>
             	</select>
             </td>
         </tr>
 	    <tr>
-	    	<td align="center"><label for="studyCode">자격증명</label></td>
-            <td>
-            	<select name="lisenceListCode">
-                   <option value="null">==선택하세요==</option>
-                   <option value="bcc_001">취업</option>
-                   <option value="bcc_002">승진</option>
-                   <option value="bcc_002">이직</option>
-                   <option value="bcc_002">기타</option>
-            	</select>
-            </td>
+	    	<td align="center"><label for="lisenceListCode">자격증명</label></td>
+	    	<td><input type="text" name="lisenceListCode" placeholder="ex)정보처리기사"></td>
         </tr>
 		<tr>
-	    	<td align="center"><label for="midGoalPlan">중간목표명</label></td>
-	    	<td><input type="text" name="finalGoalName" placeholder="ex)토익 990점 "></td>
+	    	<td align="center"><label for="midGoalPlan">중간목표계획</label></td>
+	    	<td><input type="text" name="midGoalPlan" placeholder="ex)하루에 RC 20문제 풀기"></td>
 	    </tr>
 		<tr>
 		    <td align="center"><label for="midGoalStart">중간목표 시작일</label></td>
-		    <td><input type="date" name="finalGoalStart" ></td>
+		    <td><input type="date" name="midGoalStart" ></td>
 	    </tr>
 		<tr>
 	    	<td align="center"><label for="midGoalEnd">중간목표 종료일</label></td>
-	    	<td><input type="date" name="finalGoalEnd"></td>
+	    	<td><input type="date" name="midGoalEnd"></td>
 	    </tr>
 		<tr>
 		    <td align="center"><label for="midGoalBudget">중간목표 예산</label></td>
-		    <td align="left"><input type="text" name="finalGoalDays"></td>
+		    <td align="left"><input type="text" name="midGoalBudget"></td>
 	    </tr>
-		<tr> 
-	    <td><input type="hidden" name="midGoalDate"></td>
-	    </tr>
-
+		
 	   </table>
 	   	
 	   	<div align="center">   

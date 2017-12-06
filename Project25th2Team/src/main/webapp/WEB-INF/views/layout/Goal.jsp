@@ -8,47 +8,23 @@
 <head>
 <title>목표설정</title>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-<link rel="stylesheet" type="text/css"
-	href="<%=request.getContextPath()%>/resources/css/Career_common.css" />
-<link rel="stylesheet" type="text/css"
-	href="<%=request.getContextPath()%>/resources/css/Career_jquery-ui.css" />
-<style type="text/css" media="screen">
-	.printOnly {
-		display: none;
-	}
+<style>
 	.title {
-		 margin: 100px 0;
-	}
-	</style>
-	<style type="text/css" media="print">
-	#wrap {
-		background: url(none) repeat-x 0 0 !important;
-	}
-	
-	#container {
-		width: 500px;
-		background: url(none) repeat-x 0 0 !important;
-	}
-	
-	.noprint {
-		display: none;
-	}
+			 margin: 100px 0;
+		}
 </style>
-
 </head>
+<body>
 <!------------------------------------head-------------------------------------->
 	<div>
 		<c:import url="/WEB-INF/views/layout/Head.jsp">
 		</c:import>
-	</div>
-	
+	</div>	
 <!------------------------------------타이틀 영역---------------------------------->
-		<div class="title">
-			<center><h3>${Member.memberName}님 목표를 설정해주세요!</h3></center>
-		</div>
+	<div class="title">
+		<center><h3>${Member.memberName}님 목표를 설정해주세요!</h3></center>
+	</div>
 <!------------------------------------FinalGoal-------------------------------------->
-<body>
 	<div>
 		<c:import url="/WEB-INF/views/Goal_final/FinalGoal.jsp">
 		</c:import>
@@ -60,7 +36,7 @@
 	</div>
 <!------------------------------------DetailGoal-------------------------------------->
 	<div>
-		<c:import url="/WEB-INF/views/DetailGoal/DetailGoal.jsp">
+		<c:import url="/WEB-INF/views/Detail_Goal/DetailGoal.jsp">
 		</c:import>
 	</div>
 <!------------------------------------------------------------------------------------->
