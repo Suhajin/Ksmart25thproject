@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.cafe24.suhajin07.Member.Member;
 
 @Controller
-public class MidgoalController {
+public class MidGoalController {
 	@Autowired
 	MidGoalService mgService;
 	
@@ -34,7 +34,7 @@ public class MidgoalController {
 	@RequestMapping(value="/InsertMidGoalForm", method=RequestMethod.GET)
 	public String MidGoalInsertForm(){
 			System.out.println("MidGoalInsertForm");
-			return "Goal_Mid/MidGoal_Insert_Form";
+			return "Mid_Goal/MidGoal_Insert_Form";
 	}
 	//중간목표 등록
 		@RequestMapping(value="/AddMidGoal", method=RequestMethod.POST)

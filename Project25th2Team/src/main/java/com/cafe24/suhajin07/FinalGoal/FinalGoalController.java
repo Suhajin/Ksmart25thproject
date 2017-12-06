@@ -35,10 +35,10 @@ public class FinalGoalController {
 			if(row==1) {
 				List<FinalGoal> list = fgService.listFinalGoal(member.getMemberId());
 				model.addAttribute("listFinalGoal", list);
-				return "Goal_Final/FinalGoal";
+				return "Final_Goal/FinalGoal";
 			}
 			else {
-				return "Goal_Final/FinalGoal_Insert_Form";
+				return "Final_Goal/FinalGoal_Insert_Form";
 			}
 	}
 	
