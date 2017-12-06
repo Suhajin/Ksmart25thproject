@@ -34,7 +34,7 @@ public class MidgoalController {
 	@RequestMapping(value="/InsertMidGoalForm", method=RequestMethod.GET)
 	public String MidGoalInsertForm(){
 			System.out.println("MidGoalInsertForm");
-			return "Goal_Mid/MidGoal_Insert_form";
+			return "Goal_Mid/MidGoal_Insert_Form";
 	}
 	//중간목표 등록
 		@RequestMapping(value="/AddMidGoal", method=RequestMethod.POST)

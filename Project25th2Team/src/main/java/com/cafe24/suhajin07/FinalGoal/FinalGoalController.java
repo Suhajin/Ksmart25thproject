@@ -35,15 +35,15 @@ public class FinalGoalController {
 			if(row==1) {
 				List<FinalGoal> list = fgService.listFinalGoal(member.getMemberId());
 				model.addAttribute("listFinalGoal", list);
-				return "Goal_final/FinalGoal";
+				return "Goal_Final/FinalGoal";
 			}
 			else {
-				return "Goal_final/FinalGoal_Insert_Form";
+				return "Goal_Final/FinalGoal_Insert_Form";
 			}
 	}
 	
 	//최종목표 등록
-	@RequestMapping(value="/addFinalGoal", method=RequestMethod.POST)
+	@RequestMapping(value="/AddFinalGoal", method=RequestMethod.POST)
 	public String addFinalGoal(HttpSession session,FinalGoal fg) {
 		System.out.println("FinalGoalController"+fg);
 		fgService.addFinalGoal(fg);
