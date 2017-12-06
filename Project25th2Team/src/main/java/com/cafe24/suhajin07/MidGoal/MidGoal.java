@@ -16,6 +16,7 @@ public class MidGoal {
 	private String midGoalEnd;
 	private String midGoalBudget;
 	private String midGoalDate;
+	private String studyMethod;
 	public int getMidGoalCode() {
 		return midGoalCode;
 	}
@@ -106,6 +107,12 @@ public class MidGoal {
 	public void setMidGoalDate(String midGoalDate) {
 		this.midGoalDate = midGoalDate;
 	}
+	public String getStudyMethod() {
+		return studyMethod;
+	}
+	public void setStudyMethod(String studyMethod) {
+		this.studyMethod = studyMethod;
+	}
 	@Override
 	public String toString() {
 		return "MidGoal [midGoalCode=" + midGoalCode + ", finalGoalCode=" + finalGoalCode + ", biggestGoalCode="
@@ -113,7 +120,10 @@ public class MidGoal {
 				+ managerCode + ", managerGradeCode=" + managerGradeCode + ", midGoalName=" + midGoalName
 				+ ", studyCode=" + studyCode + ", lisenceListCode=" + lisenceListCode + ", midGoalPlan=" + midGoalPlan
 				+ ", midGoalStart=" + midGoalStart + ", midGoalEnd=" + midGoalEnd + ", midGoalBudget=" + midGoalBudget
-				+ ", midGoalDate=" + midGoalDate + "]";
+				+ ", midGoalDate=" + midGoalDate + ", studyMethod=" + studyMethod + "]";
 	}
+	
+	
+	
 }
 

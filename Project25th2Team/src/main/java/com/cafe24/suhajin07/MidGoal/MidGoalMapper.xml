@@ -3,41 +3,73 @@
 
 <mapper namespace="com.cafe24.suhajin07.MidGoal.MidGoalMapper">
 
-<insert id="insertMidGoal" parameterType="com.cafe24.suhajin07.MidGoal.MidGoal">
-		INSERT INTO 
-		midGoal (
-			midGoalCode
-			, finalGoalCode
-			, biggestGoalCode
-			, goalTotalCode
-			, memberCode
-			, managerCode
-			, managerGradeCode
-			, midGoalName
-			, studyCode
-			, lisenceListCode
-			, midGoalPlan
-			, midGoalStart
-			, midGoalEnd
-			, midGoalBudget
-			, midGoalDate
-		)VALUE(
-			#{midGoalCode},
-			#{finalGoalCode},
-			#{biggestGoalCode},
-			#{goalTotalCode},
-			#{memberCode},
-			#{managerCode},
-			#{managerGradeCode},
-			#{midGoalName},
-			#{studyCode},
-			#{lisenceListCode},
-			#{midGoalPlan},
-			#{midGoalStart},
-			#{midGoalEnd},
-			#{midGoalBudget},
-			now())
-			
-</insert>
+
+<resultMap type="com.cafe24.suhajin07.MidGoal.MidGoal" id="resultMidGoal">
+
+<result property="midGoalCode" column="midGoalCode"/>
+<result property="finalGoalCode" column="finalGoalCode"/>
+<result property="biggestGoalCode" column="biggestGoalCode"/>
+<result property="goalTotalCode" column="goalTotalCode"/>
+<result property="memberCode" column="memberCode"/>
+<result property="managerCode" column="managerCode"/>
+<result property="managerGradeCode" column="managerGradeCode"/>
+<result property="midGoalName" column="midGoalName"/>
+<result property="studyCode" column="studyCode"/>
+<result property="lisenceListCode" column="lisenceListCode"/>
+<result property="midGoalPlan" column="midGoalPlan"/>
+<result property="midGoalStart" column="midGoalStart"/>
+<result property="midGoalEnd" column="midGoalEnd"/>
+<result property="midGoalBudget" column="midGoalBudget"/>
+<result property="midGoalDate" column="midGoalDate"/>
+</resultMap>
+
+	<insert id="insertMidGoal" parameterType="com.cafe24.suhajin07.MidGoal.MidGoal"> 
+		INSERT INTO midGoal ( 
+			midGoalCode 
+			, finalGoalCode 
+			, biggestGoalCode 
+			, goalTotalCode 
+			, memberCode 
+			, managerCode 
+			, managerGradeCode 
+			, midGoalName 
+			, studyCode 
+			, lisenceListCode 
+			, midGoalPlan 
+			, midGoalStart 
+			, midGoalEnd 
+			, midGoalBudget 
+			, midGoalDate 
+		)VALUE( 
+			#{midGoalCode}
+			, #{finalGoalCode}
+			, #{biggestGoalCode}
+			, #{goalTotalCode}
+			, #{memberCode}
+			, #{managerCode}
+			, #{managerGradeCode}
+			, #{midGoalName}
+			, #{studyCode}
+			, #{lisenceListCode}
+			, #{midGoalPlan}
+			, #{midGoalStart}
+			, #{midGoalEnd}
+			, #{midGoalBudget}
+			, now()) 
+	</insert>
+
+	<select id="selectMidGoalList" parameterType="com.cafe24.suhajin07.MidGoal.MidGoal" resultMap="resultMidGoal"> 
+		select midGoalName 
+			,studyMethod 
+			,midGoalPlan 
+			,midGoalStart 
+			,midGoalEnd 
+			,midGoalBudget 
+			,midGoalDate 
+		from midGoal join member join study 
+		on midGoal.memberCode = member.memberCode
+		and study.studyCode = midGoal.studyCode 
+		where memberId=#{memberId} 
+	</select>
 
 </mapper>
