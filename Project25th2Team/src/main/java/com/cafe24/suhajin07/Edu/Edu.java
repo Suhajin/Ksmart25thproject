@@ -6,6 +6,8 @@ public class Edu {
 	
 	private int eduCode;
 	private int memberCode;
+	private String memberId;
+	private String memberName;
 	private String eduHighestLevel;
 	private String eduName;
 	private String eduMajor;
@@ -27,6 +29,18 @@ public class Edu {
 	}
 	public void setMemberCode(int memberCode) {
 		this.memberCode = memberCode;
+	}
+	public String getMemberId() {
+		return memberId;
+	}
+	public void setMemberId(String memberId) {
+		this.memberId = memberId;
+	}
+	public String getMemberName() {
+		return memberName;
+	}
+	public void setMemberName(String memberName) {
+		this.memberName = memberName;
 	}
 	public String getEduHighestLevel() {
 		return eduHighestLevel;
@@ -90,10 +104,11 @@ public class Edu {
 	}
 	@Override
 	public String toString() {
-		return "Edu [eduCode=" + eduCode + ", memberCode=" + memberCode + ", eduHighestLevel=" + eduHighestLevel
-				+ ", eduName=" + eduName + ", eduMajor=" + eduMajor + ", eduMinor=" + eduMinor + ", eduDual=" + eduDual
-				+ ", eduGraduation=" + eduGraduation + ", eduEntrance=" + eduEntrance + ", eduFinish=" + eduFinish
-				+ ", eduBefore=" + eduBefore + ", eduBeforeMajor=" + eduBeforeMajor + "]";
+		return "Edu [eduCode=" + eduCode + ", memberCode=" + memberCode + ", memberId=" + memberId + ", memberName="
+				+ memberName + ", eduHighestLevel=" + eduHighestLevel + ", eduName=" + eduName + ", eduMajor="
+				+ eduMajor + ", eduMinor=" + eduMinor + ", eduDual=" + eduDual + ", eduGraduation=" + eduGraduation
+				+ ", eduEntrance=" + eduEntrance + ", eduFinish=" + eduFinish + ", eduBefore=" + eduBefore
+				+ ", eduBeforeMajor=" + eduBeforeMajor + "]";
 	}
 	
 	

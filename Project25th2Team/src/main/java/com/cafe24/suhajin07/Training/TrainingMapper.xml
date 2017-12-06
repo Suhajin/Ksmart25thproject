@@ -42,6 +42,7 @@
 		join member
 		on
 		training.memberCode = member.memberCode
+		order by memberId
 	</select>
 
 	<select id="TrainingListOne" parameterType="com.cafe24.suhajin07.Training.Training"

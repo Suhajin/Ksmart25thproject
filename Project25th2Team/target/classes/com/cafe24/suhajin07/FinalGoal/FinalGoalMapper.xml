@@ -74,4 +74,10 @@
 			and finalGoal.biggestGoalCode = biggestGoal.biggestGoalCode
 		WHERE memberId= #{memberId}
    </select>
+   
+   <select id="selectFinalGoal" parameterType="com.cafe24.suhajin07.FinalGoal.FinalGoal" resultType="int">
+		SELECT COUNT(0)
+		FROM finalGoal
+		WHERE memberCode= #{memberCode}
+   </select>
 </mapper>

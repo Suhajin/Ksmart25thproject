@@ -23,16 +23,31 @@
 		from member where memberGrade =
 		'member' order by memberCode
 	</select>
+	<select id="managerAllList" parameterType="com.cafe24.suhajin07.Master.Master"
+		resultMap="resultMaster">
+		SELECT
+		memberCode,gradeName,memberName,memberPhone,memberEmail,memberPostNum,
+		memberAddress,memberDetailAddress
+		from member join manager join
+		managerGrade
+		on member.memberId=manager.memberId and
+		manager.managerGradeCode=managerGrade.managerGradeCode
+		where memberGrade =
+		'manager' order by memberCode
+	</select>
 	<select id="AllMemberCount" parameterType="com.cafe24.suhajin07.Master.Master"
 		resultMap="resultMaster">
 		SELECT
 		COUNT(*)
 		FROM member
+		where memberId>0
 	</select>
 	<select resultMap="resultMaster" id="memberListPaging"
 		parameterType="com.cafe24.suhajin07.Master.Master">
 		SELECT * FROM member
-		ORDER BY memberCode DESC
+		where memberCode > 0
+		ORDER BY
+		memberCode DESC
 		LIMIT
 		#{startRow},#{pagePerCount}
 	</select>

@@ -53,10 +53,10 @@
 <!------------------------------------main-------------------------------------->
 <br>
 <div class="container">
-	<h3 align="center">최종목표 등록</h3>
+	<h3 align ="center">${Member.memberName}님의&nbsp;최종목표설정을&nbsp;등록해주세요!</h3>
 <br>
 	
-	 <form action="/addFinalGoal?memberId=${Member.memberId}" method="post">
+	 <form action="/AddFinalGoal" method="post">
 	    <table>
 	    
 			<tr>

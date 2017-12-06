@@ -46,7 +46,7 @@
 							</a></li>
 							<li class="nav-item"><a class="nav-link" href="/Information">회사안내</a></li>
 							<li class="nav-item"><a class="nav-link" href="/Notice">공지사항</a></li>
-							<li class="nav-item"><a class="nav-link" href="/Goal?memberId=${Member.memberId}">목표설정</a></li>
+							<li class="nav-item"><a class="nav-link" href="/Goal">목표설정</a></li>
 							<li class="nav-item"><a class="nav-link" href="/Scheduler">스케줄등록</a></li>
 							<li class="nav-item"><a class="nav-link"
 								href="/MyPage">마이페이지</a></li>
@@ -81,7 +81,7 @@
 								data-toggle="dropdown" href="#">매니저 <span class="caret"></span></a>
 								<ul class="dropdown-menu">
 									<li><a href="#">매니저등록</a></li>
-									<li><a href="#">매니저관리</a></li>
+									<li><a href="/ManagerList">매니저관리</a></li>
 									<li><a href="#">매니저실적관리</a></li>
 									<li><a href="#">급여관리</a></li>
 								</ul></li>
@@ -89,7 +89,7 @@
 								data-toggle="dropdown">회원관리 <span class="caret"></span></a>
 								<ul class="dropdown-menu">
 									<li><a href="/MemberList">회원리스트</a></li>
-									<li><a href="#">회원경력리스트</a></li>
+									<li><a href="/MemberCareerList">회원경력리스트</a></li>
 									<li><a href="#">회원컨설리스트</a></li>
 								</ul></li>
 							<li class="nav-item"><a class="nav-link" href="/Logout">로그아웃</a></li>
