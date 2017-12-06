@@ -6,7 +6,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>Mypage</title>
+<title>MyPage</title>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
 <link rel="stylesheet" type="text/css"
@@ -14,15 +14,14 @@
 <link rel="stylesheet" type="text/css"
 	href="<%=request.getContextPath()%>/resources/css/Career_jquery-ui.css" />
 
-
 </head>
 
 <style type="text/css" media="screen">
 	.printOnly {
 		display: none;
 	}
-</style>
-<style type="text/css" media="print">
+	</style>
+	<style type="text/css" media="print">
 	#wrap {
 		background: url(none) repeat-x 0 0 !important;
 	}
@@ -34,8 +33,6 @@
 	
 	.noprint {
 		display: none;
-		
-		
 	}
 </style>
 </head>
