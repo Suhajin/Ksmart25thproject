@@ -1,19 +1,19 @@
-<!-- ��µ�� ȭ�� CSS -->
+<!-- 占쏙옙쨉占쏙옙 화占쏙옙 CSS -->
 
 @charset "utf-8";
 
 @font-face {
    font-family:"NanumGothic"; 
-   src:url(../font/NanumGothic.eot); /*IE9 ȣȯ�� ����*/
-   src:local("NanumGothic"), /* ����� ��ǻ�Ϳ� ��Ʈ�� �ִ��� ã�� */
+   src:url(../font/NanumGothic.eot); /*IE9 호환占쏙옙 占쏙옙占쏙옙*/
+   src:local("NanumGothic"), /* 占쏙옙占쏙옙占� 占쏙옙퓨占싶울옙 占쏙옙트占쏙옙 占쌍댐옙占쏙옙 찾占쏙옙 */
    url(../font/NanumGothic.eot?#iefix) format('embedded-opentype'), /*IE 6-8*/
-   url(../font/NanumGothic.woff) format('woff'); /*ǥ�� ������*/
+   url(../font/NanumGothic.woff) format('woff'); /*표占쏙옙 占쏙옙占쏙옙占쏙옙*/
    font-style:normal; 
    font-weight:normal
 }
 
 /* reset */
-html, body, div, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, address, dl, dt, dd, ol, ul, li, fieldset, form, legend, table, caption, tbody, tfoot, thead, tr, th, td, input, select, textarea {margin:0; padding:0; ; font-family:'NanumGothic', '�������', 'sans-serif'}
+html, body, div, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, address, dl, dt, dd, ol, ul, li, fieldset, form, legend, table, caption, tbody, tfoot, thead, tr, th, td, input, select, textarea {margin:0; padding:0; ; font-family:'NanumGothic', '占쏙옙占쏙옙占쏙옙占�', 'sans-serif'}
 html {font-size:100%; color:#333;}
 body {font-size:14px; word-break:break-all}
 h1, h2, h3, h4, h5, h6 {font-weight:normal}
@@ -33,7 +33,7 @@ textarea {resize:none}
 a:link, a:visited {color:#39548b; text-decoration:none}
 a:hover, a:focus, a:active {color:#fa8300;#fa8300 text-decoration:none}
 
-/* Ÿ��Ʋ ���� */
+/* 타占쏙옙틀 占쏙옙占쏙옙 */
 .title_area {position:relative; height:120px; overflow:hidden}
 .title_area h3 {font-size:28px; font-weight:bold; padding-top:30px; letter-spacing:-1px}
 .title_area p {font-size:15px; font-weight:bold; padding-top:20px; color:#555}
@@ -41,7 +41,7 @@ a:hover, a:focus, a:active {color:#fa8300;#fa8300 text-decoration:none}
 .title_area span {position:absolute; top:50px; right:5px; display:block; text-align:right; color:#666; font-size:12px}
 .title_area span a {color:#666}
 
-/* ����ڽŰ� */
+/* 占쏙옙占쏙옙黴키占� */
 .reg_step_01 {width:910px; height:57px; overflow:hidden; text-indent:-10000px; background:url(../images/individual/register_step_01.gif) no-repeat; margin-bottom:30px}
 .base_info {position:relative; background:#f8f8f8; border:1px solid #dedbd7; padding:30px 30px 30px 200px; min-height:190px; margin-bottom:40px}
 .base_info img {position:absolute; top:30px; left:30px; width:150px; min-height:190px; overflow:hidden; z-index:10}
@@ -57,7 +57,7 @@ a:hover, a:focus, a:active {color:#fa8300;#fa8300 text-decoration:none}
 /* common */
 .content {width:100%; padding: 0 150px;}
 
-/* ������ ��� ���� */
+/* 占쏙옙占쏙옙占쏙옙 占쏙옙占� 占쏙옙占쏙옙 */
 .section_top_area {position:relative; margin-bottom:10px}
 .section_top_area h4 {display:inline-block; font-size:18px; font-weight:bold; background:url(../images/common/icon_subtitle.gif) 0 3px no-repeat; padding:0 10px; *zoom:1; *display:inline}
 .section_top_area h4 span {color:#00ac88}
@@ -66,24 +66,24 @@ a:hover, a:focus, a:active {color:#fa8300;#fa8300 text-decoration:none}
 .section_top_area p {font-size:18px; font-weight:bold; margin-bottom:20px}
 .sec_top_btn {position:absolute; bottom:0; right:0; z-indez:10}
 
-/* ��ư */
-.btn_add {display:inline-block; background:#f7984b url(../images/common/icon_add.png) 12px 10px no-repeat; color:#fff !important; vertical-align:middle; line-height:1.2; padding:6px 12px 6px 28px; *zoom:1; *display:inline} /* �߰���ư */
+/* 占쏙옙튼 */
+.btn_add {display:inline-block; background:#f7984b url(../images/common/icon_add.png) 12px 10px no-repeat; color:#fff !important; vertical-align:middle; line-height:1.2; padding:6px 12px 6px 28px; *zoom:1; *display:inline} /* 占쌩곤옙占쏙옙튼 */
 .btn_add:hover,
 .btn_add:focus,
 .btn_add:active {background:#292929 url(../images/common/icon_add.png) 12px 10px no-repeat}
 
-.btn_del {display:inline-block; background:#888 url(../images/common/icon_del.png) 12px 10px no-repeat; color:#fff !important; vertical-align:middle; line-height:1.2; padding:6px 12px 6px 28px; *zoom:1; *display:inline} /* ������ư */
+.btn_del {display:inline-block; background:#888 url(../images/common/icon_del.png) 12px 10px no-repeat; color:#fff !important; vertical-align:middle; line-height:1.2; padding:6px 12px 6px 28px; *zoom:1; *display:inline} /* 占쏙옙占쏙옙占쏙옙튼 */
 .btn_del:hover,
 .btn_del:focus,
 .btn_del:active {background:#292929 url(../images/common/icon_del.png) 12px 10px no-repeat}
 
-.btn_type02 {display:inline-block; font-size:13px; color:#666 !important; border:1px solid #b8b8b8; line-height:1.2; padding:7px 30px 7px 20px; text-align:right; vertical-align:middle; background:url(../images/common/icon_arrow01_base.png) right 8px no-repeat; *zoom:1; *display:inline} /* ����ȭ��ǥ ������ư */
+.btn_type02 {display:inline-block; font-size:13px; color:#666 !important; border:1px solid #b8b8b8; line-height:1.2; padding:7px 30px 7px 20px; text-align:right; vertical-align:middle; background:url(../images/common/icon_arrow01_base.png) right 8px no-repeat; *zoom:1; *display:inline} /* 占쏙옙占쏙옙화占쏙옙표 占쏙옙占쏙옙占쏙옙튼 */
 .btn_type02:hover,
 .btn_type02:focus,
 .btn_type02:active {border:1px solid #000; color:#fff !important; background:#292929 url(../images/common/icon_arrow01_active.png) right 8px no-repeat}
 
-/* ���̺� */
-.list_tbl_01 {border-bottom:1px solid #acacac} /* û�ϻ� �⺻ list ���̺� */
+/* 占쏙옙占싱븝옙 */
+.list_tbl_01 {border-bottom:1px solid #acacac} /* 청占싹삼옙 占썩본 list 占쏙옙占싱븝옙 */
 .list_tbl_01 tr.first th{border-top:2px solid #01a7a1}
 .list_tbl_01 tr.first td{border-top:2px solid #01a7a1}
 .list_tbl_01 th {background:#f7fdfc; font-size:15px; height:35px; padding:5px; border-bottom:1px solid #e2e2e2; border-left:1px solid #e2e2e2}
@@ -97,7 +97,7 @@ a:hover, a:focus, a:active {color:#fa8300;#fa8300 text-decoration:none}
 .list_tbl_01 td.no_bd_btm {border-bottom:none}
 .list_tbl_01 td.bd_left {border-left:1px solid #e2e2e2}
 
-/* ������ ��� ���� */
+/* 占쏙옙占쏙옙占쏙옙 占쏙옙占� 占쏙옙占쏙옙 */
 .section_top_area {position:relative; margin-bottom:10px}
 .section_top_area h4 {display:inline-block; font-size:18px; font-weight:bold; background:url(../images/common/icon_subtitle.gif) 0 3px no-repeat; padding:0 10px; *zoom:1; *display:inline}
 .section_top_area h4 span {color:#00ac88}
