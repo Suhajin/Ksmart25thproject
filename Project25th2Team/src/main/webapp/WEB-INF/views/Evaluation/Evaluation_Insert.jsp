@@ -163,7 +163,6 @@ ul {
 			<br>
 			<!-- 본문내용 -->
 			<h1>컨설팅 고객만족도 조사</h1>
-			<br> <br>
 			<br>
 			<div class="panel panel-default">
 				<h5>Q1. 매니저의 관리는 어느정도 만족 하십니까?</h5>
@@ -186,8 +185,6 @@ ul {
 							for="evaluation1_1">매우불만족</label></li>
 					</ul>
 				</div>
-				<br>
-				<br>
 				<h5 class="sub_title04">Q2. 매니저의 응대는 어느정도 만족하십니까?</h5>
 				<div class="panel-body">
 					<ul class="list-group">
@@ -208,8 +205,6 @@ ul {
 							for="evaluation2_1">매우불만족</label></li>
 					</ul>
 				</div>
-				<br>
-				<br>
 				<h5 class="sub_title04">Q3. 매니저의 정보 전달내용은 어느정도 만족하십니까?</h5>
 				<div class="panel-body">
 					<ul class="list-group">
@@ -230,8 +225,6 @@ ul {
 							for="evaluation3_1">매우불만족</label></li>
 					</ul>
 				</div>
-				<br>
-				<br>
 				<h5 class="sub_title04">Q4. 매니저의 정보 컨설팅 방법은 어느정도 만족하십니까?</h5>
 				<div class="panel-body">
 					<ul class="list-group">
@@ -252,18 +245,12 @@ ul {
 							for="evaluation4_1">매우불만족</label></li>
 					</ul>
 				</div>
-
-				<h3 class="panel-body">************* 기타의견 & 건의사항
-					******************</h3>
-
-				<div class="panel-body">
-					<label for="evaluationMemo" class="blind"></label>
-					<textarea name="evaluationMemo" rows="8" cols=70
-						id="evaluationMemo"></textarea>
+				<h4 class="panel-body">※ 기타의견 & 건의사항 ※</h4>
+				<div class="form-group">
+					<label for="comment"></label>
+					<textarea class="form-control" rows="5"	id="comment"></textarea>
 				</div>
-				<br> <br>
 			</div>
-
 			<div>
 				<a  type="button" href="#"
 					onclick="fn_egov_save_QustnrRespondInfo(document.forms[0]); return false;"
