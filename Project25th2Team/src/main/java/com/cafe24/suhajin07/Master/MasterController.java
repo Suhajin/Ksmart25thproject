@@ -70,13 +70,18 @@ public class MasterController {
 		return "Member/Member_List";
 
 	}
+	// 매니저 전체리스트 + 등급별 리스트
 	@RequestMapping(value = "/ManagerList", method = RequestMethod.GET)
 	public String ManagerList(Model model) throws Exception {
 		System.out.println("controller memberList 요청");
 		System.out.println("Career 전체리스트");
 		List<Master> list = masterdao.AllManagerList();
 		model.addAttribute("managerlist", list);
-
+		model.addAttribute("ma1List", masterdao.MagerGrade1List());
+		model.addAttribute("ma2List", masterdao.MagerGrade2List());
+		model.addAttribute("ma3List", masterdao.MagerGrade3List());
+		model.addAttribute("ma4List", masterdao.MagerGrade4List());
+		model.addAttribute("ma5List", masterdao.MagerGrade5List());
 		return "Manager/Manager_List";
 
 	}
