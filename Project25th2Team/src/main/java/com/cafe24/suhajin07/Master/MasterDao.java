@@ -28,5 +28,29 @@ public class MasterDao {
 		return sql.selectList(NS+"managerAllList");
 				
 	}
+	public List<Master> MagerGrade1List(){
+		System.out.println("총괄매니저 List");
+		return sql.selectList(NS+"managerGradeList_1");
+	}
+
+	public List<Master> MagerGrade2List(){
+		System.out.println("담당 실장 List");
+		return sql.selectList(NS+"managerGradeList_2");
+	}
+
+	public List<Master> MagerGrade3List(){
+		System.out.println("담당 부실장 List");
+		return sql.selectList(NS+"managerGradeList_3");
+	}
+
+	public List<Master> MagerGrade4List(){
+		System.out.println("담당 매니저 List");
+		return sql.selectList(NS+"managerGradeList_4");
+	}
+
+	public List<Master> MagerGrade5List(){
+		System.out.println("수습 매니저 List");
+		return sql.selectList(NS+"managerGradeList_5");
+	}
 
 }

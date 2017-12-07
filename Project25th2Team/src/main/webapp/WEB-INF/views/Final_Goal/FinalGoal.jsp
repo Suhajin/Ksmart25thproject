@@ -75,7 +75,7 @@
 				<tbody>
 					<tr>
 						<td style="background-color: #3d3d5c;"><b><a
-								href="/#?memberId=${Member.memberId}" style="color: white;">중간목표설정</a></b></td>
+								href="/MidGoalList?memberId=${Member.memberId}" style="color: white;">중간목표설정</a></b></td>
 						<td style="background-color: #3d3d5c;"><b><a
 								href="/MyCareer?memberId=${Member.memberId}" style="color: white;">상세목표설정</a></b></td>
 					</tr>

@@ -132,19 +132,21 @@ html ul.tabs li.active, html ul.tabs li.active a:hover {
 
 		<!--탭 메뉴 영역 -->
 		<ul class="tabs">
-			<li><a href="#tab1">전체 매니저 List</a></li>
-			<li><a href="#tab2">총괄 매니저 List</a></li>
-			<li><a href="#tab3">담당 실장 List</a></li>
-			<li><a href="#tab4">담당 부실장 List</a></li>
-			<li><a href="#tab5">담당 매니저 List</a></li>
-			<li><a href="#tab6">수습 매니저 List</a></li>
+			<li><a href="#tab1">전체 매니저</a></li>
+			<li><a href="#tab2">총괄 매니저</a></li>
+			<li><a href="#tab3">담당 실장</a></li>
+			<li><a href="#tab4">담당 부실장</a></li>
+			<li><a href="#tab5">담당 매니저</a></li>
+			<li><a href="#tab6">수습 매니저</a></li>
 		</ul>
 
 		<!--탭 콘텐츠 영역 -->
 		<div id="tab1" class="tab_content">
+		<br><br>
+			<h1>전체 매니저 List</h1>
 			<!--Content-->
-			<h1>전체 매니저</h1>
 			<div align="center">
+			<br><br>
 				<table border="1" align="center">
 					<thead>
 						<tr>
@@ -179,10 +181,12 @@ html ul.tabs li.active, html ul.tabs li.active a:hover {
 				</table>
 			</div>
 		</div>
-		
+
 		<div id="tab2" class="tab_content">
+		<br><br>
+			<h1>총괄 매니저 List</h1>
+			<br><br>
 			<!--Content-->
-			<h1>전체 매니저</h1>
 			<div align="center">
 				<table border="1" align="center">
 					<thead>
@@ -198,7 +202,7 @@ html ul.tabs li.active, html ul.tabs li.active a:hover {
 							<th>수정</th>
 							<th>삭제</th>
 						</tr>
-						<c:forEach var="manager" items="${managerlist}">
+						<c:forEach var="manager" items="${ma1List}">
 							<tr>
 								<td>${manager.gradeName}</td>
 								<td>${manager.memberName}</td>
@@ -218,11 +222,13 @@ html ul.tabs li.active, html ul.tabs li.active a:hover {
 				</table>
 			</div>
 		</div>
-		
-		
+
+
 		<div id="tab3" class="tab_content">
+		<br><br>
+			<h1>담당 실장 List</h1>
+			<br><br>
 			<!--Content-->
-			<h1>전체 매니저</h1>
 			<div align="center">
 				<table border="1" align="center">
 					<thead>
@@ -238,7 +244,7 @@ html ul.tabs li.active, html ul.tabs li.active a:hover {
 							<th>수정</th>
 							<th>삭제</th>
 						</tr>
-						<c:forEach var="manager" items="${managerlist}">
+						<c:forEach var="manager" items="${ma2List}">
 							<tr>
 								<td>${manager.gradeName}</td>
 								<td>${manager.memberName}</td>
@@ -258,11 +264,13 @@ html ul.tabs li.active, html ul.tabs li.active a:hover {
 				</table>
 			</div>
 		</div>
-		
-		
+
+
 		<div id="tab4" class="tab_content">
+		<br><br>
+			<h1>담당 부실장 List</h1>
+			<br><br>
 			<!--Content-->
-			<h1>전체 매니저</h1>
 			<div align="center">
 				<table border="1" align="center">
 					<thead>
@@ -278,7 +286,7 @@ html ul.tabs li.active, html ul.tabs li.active a:hover {
 							<th>수정</th>
 							<th>삭제</th>
 						</tr>
-						<c:forEach var="manager" items="${managerlist}">
+						<c:forEach var="manager" items="${ma3List}">
 							<tr>
 								<td>${manager.gradeName}</td>
 								<td>${manager.memberName}</td>
@@ -298,11 +306,13 @@ html ul.tabs li.active, html ul.tabs li.active a:hover {
 				</table>
 			</div>
 		</div>
-		
-		
+
+
 		<div id="tab5" class="tab_content">
+		<br><br>
+			<h1>담당 매니저 List</h1>
+			<br><br>
 			<!--Content-->
-			<h1>전체 매니저</h1>
 			<div align="center">
 				<table border="1" align="center">
 					<thead>
@@ -318,7 +328,7 @@ html ul.tabs li.active, html ul.tabs li.active a:hover {
 							<th>수정</th>
 							<th>삭제</th>
 						</tr>
-						<c:forEach var="manager" items="${managerlist}">
+						<c:forEach var="manager" items="${ma4List}">
 							<tr>
 								<td>${manager.gradeName}</td>
 								<td>${manager.memberName}</td>
@@ -338,12 +348,14 @@ html ul.tabs li.active, html ul.tabs li.active a:hover {
 				</table>
 			</div>
 		</div>
-		
-		
-		
+
+
+
 		<div id="tab6" class="tab_content">
+		<br><br>
+			<h1>수습 매니저 List</h1>
+			<br><br>
 			<!--Content-->
-			<h1>전체 매니저</h1>
 			<div align="center">
 				<table border="1" align="center">
 					<thead>
@@ -359,7 +371,7 @@ html ul.tabs li.active, html ul.tabs li.active a:hover {
 							<th>수정</th>
 							<th>삭제</th>
 						</tr>
-						<c:forEach var="manager" items="${managerlist}">
+						<c:forEach var="manager" items="${ma5List}">
 							<tr>
 								<td>${manager.gradeName}</td>
 								<td>${manager.memberName}</td>
@@ -379,8 +391,8 @@ html ul.tabs li.active, html ul.tabs li.active a:hover {
 				</table>
 			</div>
 		</div>
-		
-			<br> <br> <br> <br>
+
+		<br> <br> <br> <br>
 	</form>
 	<div>
 		<c:import url="/WEB-INF/views/layout/Hadan.jsp">
