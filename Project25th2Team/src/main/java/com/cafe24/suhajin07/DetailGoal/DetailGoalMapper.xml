@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+	<mapper namespace="com.cafe24.suhajin07.DetailGoal.DetailGoalMapper">
+		<insert id="insertDetailGoal" parameterType="com.cafe24.suhajin07.DetailGoal.DetailGoal">
+			INSERT INTO detailGoal (
+				detailGoalCode
+				,midGoalCode
+				,memberCode
+				,biggestGoalCode
+				,goalTotalCode
+				,managerCode
+				,studyCode
+				,managerGradeCode
+				,lisenceListCode
+				,detailGoalDate
+				,detailGoalStart
+				,detailGoalEnd
+				,detailGoalTotal
+				,detailGoalList
+				,detailGoalBudget
+				,detailGoalExplain
+				,detailCheckDate
+			)VALUE(
+				#{detailGoalCode}
+				,#{midGoalCode}
+				,#{memberCode}
+				,#{biggestGoalCode}
+				,#{goalTotalCode}
+				,#{managerCode}
+				,#{studyCode}
+				,#{managerGradeCode}
+				,#{lisenceListCode}
+				,#{detailGoalDate}
+				,#{detailGoalStart}
+				,#{detailGoalEnd}
+				,#{detailGoalTotal}
+				,#{detailGoalList}
+				,#{detailGoalBudget}
+				,#{detailGoalExplain}
+				, now()) 
+		</insert>
+		
+		<select id="selectMidGoalList" parameterType="com.cafe24.suhajin07.MidGoal.MidGoal" resultMap="resultMidGoal"> 
+		select midGoalName 
+			,studyMethod 
+			,midGoalPlan 
+			,midGoalStart 
+			,midGoalEnd 
+			,midGoalBudget 
+			,midGoalDate 
+		from midGoal join member join study 
+		on midGoal.memberCode = member.memberCode
+		and study.studyCode = midGoal.studyCode 
+		where memberId=#{memberId} 
+	</select>
+	</mapper>
+	

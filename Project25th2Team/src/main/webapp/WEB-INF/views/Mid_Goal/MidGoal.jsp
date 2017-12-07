@@ -40,11 +40,16 @@
 		</c:import>
 	</div>
 		<div class="content" id="content">
-	
+			<!-- 타이틀 영역 -->
+		<div class="title_area">
+			<h3>중간목표</h3>
+			<h5>${Member.memberName}님의 세부목표를 상세하게 기입해주세요.</h5>
+		</div>
+		<br>
+		<br>
+		<br>
 			<div class="section_top_area">
-				<br><br>
-				<h4>중간목표 카테고리</h4>
-			
+				
 				<div class="sec_top_btn">
 					<a href="/InsertMidGoalForm" class="btn_add">추가</a>
 					<a href="#" class="btn_del">삭제</a>

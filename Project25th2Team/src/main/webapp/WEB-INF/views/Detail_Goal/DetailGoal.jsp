@@ -41,7 +41,7 @@
 				<h4>대분류 목표 카테고리</h4>
 			
 				<div class="sec_top_btn">
-					<a href="/InsertGoalForm" class="btn_add">추가</a>
+					<a href="/InsertDetailGoalForm" class="btn_add">추가</a>
 					<a href="#" class="btn_del">삭제</a>
 				</div>
 			</div>
