@@ -78,6 +78,13 @@
 			
 	</select>
 	
+	<!-- 실천코드 하나에 대한 List출력 -->
+	<select id="oneActionList" resultType="com.cafe24.suhajin07.Action.Action">
+		SELECT *
+		FROM action
+		WHERE actionCode = #{actionCode}
+	</select>
+	
 	<!-- 실천내용과 실천률 등록 update  -->
 	<update id="actionUpdate" parameterType="com.cafe24.suhajin07.Action.Action">
 		UPDATE action
