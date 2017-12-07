@@ -26,7 +26,7 @@ public class MidGoalController {
 		System.out.println(memberId);
 		List<MidGoal> list= mgService.listMidGoal(memberId);
 		model.addAttribute("listMidGoal", list);
-		return "layout/Goal";
+		return "Mid_Goal/MidGoal_List";
 		
 	}
 	
