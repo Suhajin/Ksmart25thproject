@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+	<mapper namespace="com.cafe24.suhajin07.DetailGoal.DetailGoalMapper">
+		<resultMap type="com.cafe24.suhajin07.MidGoal.MidGoal" id="resultDetailGoal">
+			<result property="detailGoalCode" column="detailGoalCode"/>
+			<result property="midGoalCode" column="midGoalCode"/>
+			<result property="memberCode" column="memberCode"/>
+			<result property="biggestGoalCode" column="biggestGoalCode"/>
+			<result property="goalTotalCode" column="goalTotalCode"/>
+			<result property="managerCode" column="managerCode"/>
+			<result property="studyCode" column="studyCode"/>
+			<result property="managerGradeCode" column="managerGradeCode"/>
+			<result property="lisenceListCode" column="lisenceListCode"/>
+			<result property="detailGoalDate" column="detailGoalDate"/>
+			<result property="detailGoalStart" column="detailGoalStart"/>
+			<result property="detailGoalEnd" column="detailGoalEnd"/>
+			<result property="detailGoalTotal" column="detailGoalTotal"/>
+			<result property="detailGoalList" column="detailGoalList"/>
+			<result property="detailGoalBudget" column="detailGoalBudget"/>
+			<result property="detailGoalExplain" column="detailGoalExplain"/>
+			<result property="detailCheckDate" column="detailCheckDate"/>
+		</resultMap>
+		
+		<insert id="insertDetailGoal" parameterType="com.cafe24.suhajin07.DetailGoal.DetailGoal">
+			INSERT INTO detailGoal (
+				detailGoalCode
+				,midGoalCode
+				,memberCode
+				,biggestGoalCode
+				,goalTotalCode
+				,managerCode
+				,studyCode
+				,managerGradeCode
+				,lisenceListCode
+				,detailGoalDate
+				,detailGoalStart
+				,detailGoalEnd
+				,detailGoalTotal
+				,detailGoalList
+				,detailGoalBudget
+				,detailGoalExplain
+				,detailCheckDate
+			)VALUE(
+				#{detailGoalCode}
+				,#{midGoalCode}
+				,#{memberCode}
+				,#{biggestGoalCode}
+				,#{goalTotalCode}
+				,#{managerCode}
+				,#{studyCode}
+				,#{managerGradeCode}
+				,#{lisenceListCode}
+				,#{detailGoalDate}
+				,#{detailGoalStart}
+				,#{detailGoalEnd}
+				,#{detailGoalTotal}
+				,#{detailGoalList}
+				,#{detailGoalBudget}
+				,#{detailGoalExplain}
+				, now()) 
+		</insert>
+		
+		<select id="selectDetailGoalList" parameterType="com.cafe24.suhajin07.DetailGoal.DetailGoal" resultMap="resultDetailGoal"> 
+		select detailGoalDate 
+			,detailGoalStart 
+			,detailGoalEnd 
+			,detailGoalTotal 
+			,detailGoalBudget 
+			,detailGoalExplain 
+		from detailGoal join member
+		on detailGoal.memberCode = member.memberCode
+		where memberId=#{memberId} 
+		</select>
+	</mapper>
+	

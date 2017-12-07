@@ -41,7 +41,7 @@
 				<h4>대분류 목표 카테고리</h4>
 			
 				<div class="sec_top_btn">
-					<a href="/InsertGoalForm" class="btn_add">추가</a>
+					<a href="/InsertDetailGoalForm" class="btn_add">추가</a>
 					<a href="#" class="btn_del">삭제</a>
 				</div>
 			</div>
@@ -50,11 +50,7 @@
 				<colgroup>
 					<!-- 체크박스 -->
 					<col style="width: 2%" />
-					<!-- 아이디 -->
-					<col style="width: 10%" />
-					<!-- 이름 -->
-					<col style="width: 10%" />
-					<!--  중간목표 -->
+					<!--  세부목표 -->
 					<col style="width: 10%" />
 					<!-- 세부목표 일자 -->
 					<col style="width: 10%" />
@@ -74,9 +70,7 @@
 						<th scope="col"><input type="checkbox"
 							name="checkAll4skillCareer" id="checkAll4skillCareer"
 							onclick="onCheckAll4skillCareer()" /></th>
-						<th scope="col">아이디</th>
-						<th scope="col">이름</th>
-						<th scope="col">중간목표</th>
+						<th scope="col">세부목표</th>
 						<th scope="col">세부목표 일자</th>
 						<th scope="col">세부목표 시작시간</th>
 						<th scope="col">세부목표 종료시간</th>
@@ -91,17 +85,13 @@
 						<tr>
 							<td scope="col"><input type="checkbox" name="scholarNo"
 								id="checkAll4skillCareer" onclick="onCheckAll4skillCareer()" /></td>
-							<td>${DetailGoal.memberId}</td>
-							<td>${DetailGoal.memberName}</td>
-							<td>${FinalGoal.biggestGoalName}</td>
-							<td>${FinalGoal.finalGoalName}</td>
-							<td>${FinalGoal.finalGoalStart}</td>
-							<td>${FinalGoal.finalGoalEnd}</td>
-							<td>${FinalGoal.finalGoalDays}</td>
-							<td>${FinalGoal.finalGoalTotalTime}</td>
-							<td>${FinalGoal.finalGoalTotalBudget}</td>
-							<td>${FinalGoal.finalGoalNote}</td>
-							
+							<td>${DetailGoal.detailGoalList}</td>
+							<td>${DetailGoal.detailGoalDate}</td>
+							<td>${DetailGoal.detailGoalStart}</td>
+							<td>${DetailGoal.detailGoalEnd}</td>
+							<td>${DetailGoal.detailGoalTotal}</td>
+							<td>${DetailGoal.detailGoalBudget}</td>
+							<td>${DetailGoal.detailGoalExplain}</td>			
 						</tr>
 					</c:forEach>
 				</tbody>
