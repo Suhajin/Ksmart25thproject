@@ -88,7 +88,7 @@
 								href="/#?memberId=${Member.memberId}" style="color: white;">진행상황
 									보기</a></b></td>
 						<td style="background-color: #3d3d5c;"><b><a
-								href="/#?memberId=${Member.memberId}" style="color: white;">매니저
+								href="/Evaluation?memberId=${Member.memberId}" style="color: white;">매니저
 									평가</a></b></td>
 
 					</tr>
