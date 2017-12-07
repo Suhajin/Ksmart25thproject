@@ -12,7 +12,7 @@
 <link rel="stylesheet" type="text/css"
 	href="<%=request.getContextPath()%>/resources/css/Career_common.css" />
 <link rel="stylesheet" type="text/css"
-	href="<%=request.getContextPath()%>/resources/css/Career_jquery-ui.css" />
+	href="<%=request.getContextPath()%>/resources/css/Career_jquery_ui.css" />
 
 <!--
 일단 패스
