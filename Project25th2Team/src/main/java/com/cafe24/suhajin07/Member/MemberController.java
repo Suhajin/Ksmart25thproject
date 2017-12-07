@@ -48,7 +48,7 @@ public class MemberController {
 		System.out.println(session);
 		
 		System.out.println("updateMember 폼 요청");
-		return "Member/Member_UpdateForm";
+		return "Member/Member_Update";
 	}
 	
 	@RequestMapping(value = "/updateMemberAction", method = RequestMethod.POST)

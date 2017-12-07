@@ -61,10 +61,10 @@ public class CareerController {
 	// 수정처리하기
 
 	@RequestMapping(value = "/UpdateCareer", method = RequestMethod.POST)
-	public String UpdateCareer(Career career) {
+	public String UpdateCareer(HttpSession session, Career career) {
 		System.out.println("UpdateCareer Controller");
 		careerservice.UpdateCareer(career);
-		return "redirect:/MemberCareerList"; // /MemberCareerList 의 서블렛이 실행
+		return "redirect:/MemberCareerList?memberId="+((Member)session.getAttribute("Member")).getMemberId();
 	}
 
 	// 삭제처리하기
@@ -72,7 +72,7 @@ public class CareerController {
 	public String DeleteCareer(HttpSession session, Career career) {
 		System.out.println("DeleteCareer Controller");
 		careerservice.DeleteCareer(career);
-		return "redirect:/MyCareer?memberId="+((Member)session.getAttribute("Member")).getMemberId();
+		return "redirect:/MemberCareerList?memberId="+((Member)session.getAttribute("Member")).getMemberId();
 		
 	}
 }

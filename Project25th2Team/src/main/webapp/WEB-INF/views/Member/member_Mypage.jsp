@@ -58,7 +58,7 @@
 			<div class="info_area">
 				<p>
 					&nbsp;&nbsp;${Member.memberName}<span>(${Member.memberId})</span> <a
-						href="/personal/mem/per_modify.jsp" class="btn_type01">프로필수정</a>
+						href="/updateMember" class="btn_type01">프로필수정</a>
 				</p>
 				<span><strong>전화번호</strong> : ${Member.memberPhone}</span> <span><strong>핸드폰번호</strong>
 					: ${Member.memberPhone}</span> <span><strong>이메일</strong> :
