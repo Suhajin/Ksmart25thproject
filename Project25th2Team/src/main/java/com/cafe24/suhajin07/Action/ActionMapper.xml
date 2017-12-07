@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cafe24.suhajin07.Action.ActionMapper">
+	<resultMap type="com.cafe24.suhajin07.Action.Action" id="resultAction">
+
+	</resultMap>
+	
+	<!-- 목표등록 -->
+	<insert id="goalAdd" parameterType="com.cafe24.suhajin07.Action.Action">
+		INSERT INTO action (
+			  actionCode
+			, detailGoalCode
+			, memberCode
+			, midGoalCode
+			, biggestGoalCode
+			, goalTotalCode
+			, detailGoalList)
+		VALUES (
+			  #{actionCode}
+			, #{detailGoalCode}
+			, #{memberCode}
+			, #{midGoalCode}
+			, #{biggestGoalCode}
+			, #{goalTotalCode}
+			, #{detailGoalList})
+	</insert>
+	
+	<!-- Action insert -->
+	<insert id="insertAction" parameterType="com.cafe24.suhajin07.Action.Action">
+		INSERT INTO action(
+			  detailGoalCode
+			, memberCode
+			, midGoalCode
+			, biggestGoalCode
+			, goalTotalCode
+			, managerCode
+			, studyCode
+			, managerGradeCode
+			, lisenceListCode
+			, detailGoalList
+			, actionResult
+			, actionDate
+			, actionStart
+			, actionEnd
+			, actionTime
+			, actionRate
+			, actionCheckDate)
+		VALUES (
+			  #{detailGoalCode}
+			, #{memberCode}
+			, #{midGoalCode}
+			, #{biggestGoalCode}
+			, #{goalTotalCode}
+			, #{managerCode}
+			, #{studyCode}
+			, #{managerGradeCode}
+			, #{lisenceListCode}
+			, #{detailGoalList}
+			, #{actionResult}
+			, #{actionDate}
+			, #{actionStart}
+			, #{actionEnd}
+			, #{actionTime}
+			, #{actionRate}
+			, NOW())
+	</insert>
+	
+	<!-- 상세목표 List출력 -->
+	<select id="ActionOneList" resultType="com.cafe24.suhajin07.Action.Action">
+		SELECT *
+		FROM action
+		JOIN member
+		ON
+			action.memberCode = member.memberCode
+		WHERE
+			memberId = #{memberId}
+			
+	</select>
+	
+	<!-- 실천내용과 실천률 등록 update  -->
+	<update id="actionUpdate" parameterType="com.cafe24.suhajin07.Action.Action">
+		UPDATE action
+		SET  
+			  actionCode = #{actionCode} 
+			, detailGoalList = #{detailGoalList}
+			, actionDate = #{actionDate}
+			, actionStart = #{actionStart}
+			, actionEnd = #{actionEnd}
+			, actionTime = #{actionTime}
+			, actionResult = #{actionResult}
+			, actionRate = #{actionRate}
+		WHERE
+			  actionCode = #{actionCode}
+	</update>
+	
+</mapper>

@@ -7,7 +7,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>경력등록</title>
+
 </head>
+
 <body>
 	<div>
 		<c:import url="/WEB-INF/views/layout/Head.jsp">

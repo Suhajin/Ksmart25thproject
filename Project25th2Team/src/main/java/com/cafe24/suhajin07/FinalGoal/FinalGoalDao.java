@@ -21,6 +21,15 @@ public class FinalGoalDao {
       System.out.println("insertFinalGoal Dao 성공");
       sqlSessionTemplate.insert(NS+"insertFinalGoal", fg);
    }
+   //최종목표설정 등록되어있는지 확인
+   public int checkFinalGoal(int memberCode) {
+
+	      System.out.println("checkFinalGoal Dao 성공" + memberCode);
+	      int row = sqlSessionTemplate.selectOne(NS+"selectFinalGoal", memberCode);
+	      System.out.println(row);
+	      return row;
+	   }
+   
    //최종목표 리스트
    public List<FinalGoal> selectFinalGoalList(String memberId){
       System.out.println("selectFinalGoalList Dao 성공");

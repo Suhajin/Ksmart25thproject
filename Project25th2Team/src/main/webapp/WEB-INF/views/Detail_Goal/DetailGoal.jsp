@@ -49,51 +49,50 @@
 				<caption>대분류 목표 카테고리</caption>
 				<colgroup>
 					<!-- 체크박스 -->
-					<col style="width: 10%" />
+					<col style="width: 2%" />
 					<!-- 아이디 -->
 					<col style="width: 10%" />
-					<!-- 대분류 목표명 -->
+					<!-- 이름 -->
 					<col style="width: 10%" />
-					<!--  목표명 -->
+					<!--  중간목표 -->
 					<col style="width: 10%" />
-					<!-- 최종목표 시작일 -->
+					<!-- 세부목표 일자 -->
 					<col style="width: 10%" />
-					<!-- 최종목표 종료일 -->
+					<!-- 세부목표 시작시간 -->
+					<col style="width: 13%" />
+					<!-- 세부목표 종료시간 -->
+					<col style="width: 13%" />
+					<!-- 세부 총 목표시간 -->
+					<col style="width: 13%" />
+					<!-- 세부예산 -->
 					<col style="width: 10%" />
-					<!-- 총 목표 일수 -->
-					<col style="width: 10%" />
-					<!-- 총 투자시간 -->
-					<col style="width: 10%" />
-					<!-- 전체예산 -->
-					<col style="width: 10%" />
-					<!-- 메모 -->
+					<!-- 개요(비고 및 부가설명) -->
 					<col style="width: 10%" />
 				</colgroup>
 				<thead>
-					<tr class="first">
+					<tr class="first" align = "center">
 						<th scope="col"><input type="checkbox"
 							name="checkAll4skillCareer" id="checkAll4skillCareer"
 							onclick="onCheckAll4skillCareer()" /></th>
 						<th scope="col">아이디</th>
 						<th scope="col">이름</th>
-						<th scope="col">대분류 목표명</th>
-						<th scope="col">목표명</th>
-						<th scope="col">최종목표 시작일</th>
-						<th scope="col">최종목표 종료일</th>
-						<th scope="col">총 목표 일수</th>
-						<th scope="col">총 투자시간</th>
-						<th scope="col">전체예산</th>
-						<th scope="col">메모</th>
+						<th scope="col">중간목표</th>
+						<th scope="col">세부목표 일자</th>
+						<th scope="col">세부목표 시작시간</th>
+						<th scope="col">세부목표 종료시간</th>
+						<th scope="col">세부 총 목표시간</th>
+						<th scope="col">세부예산</th>
+						<th scope="col">개요(비고 및 부가설명)</th>
 					</tr>
 				</thead>
 				
 				<tbody id="skillCareerLayer">
-					<c:forEach var="FinalGoal" items="${listFinalGoal}">
+					<c:forEach var="DetailGoal" items="${listDetailGoal}">
 						<tr>
 							<td scope="col"><input type="checkbox" name="scholarNo"
 								id="checkAll4skillCareer" onclick="onCheckAll4skillCareer()" /></td>
-							<td>${FinalGoal.memberId}</td>
-							<td>${FinalGoal.memberName}</td>
+							<td>${DetailGoal.memberId}</td>
+							<td>${DetailGoal.memberName}</td>
 							<td>${FinalGoal.biggestGoalName}</td>
 							<td>${FinalGoal.finalGoalName}</td>
 							<td>${FinalGoal.finalGoalStart}</td>
