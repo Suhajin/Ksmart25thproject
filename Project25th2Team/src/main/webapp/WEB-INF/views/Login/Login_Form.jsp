@@ -45,10 +45,10 @@
             <div class="panel-body">
                 <form id="login-form" action=/LoginAction method="post">
                     <div>
-                        <input type="text" class="form-control" name="memberId" placeholder="Id" autofocus >
+                        <input type="text" class="form-control" name="memberId" placeholder="Id" autofocus value="id001" >
                     </div>
                     <div>
-                        <input type="password" class="form-control" name="memberPw" placeholder="Password">
+                        <input type="password" class="form-control" name="memberPw" placeholder="Password" value="pw001"> 
                     </div>
                     <div>
                         <button type="submit" class="form-control btn btn-primary">Login</button>
