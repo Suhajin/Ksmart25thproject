@@ -5,14 +5,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page session="true"%>
 
-<head>
-<meta charset="utf-8">
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="">
-<meta name="author" content="">
-
-<title>One Page Wonder - Start Bootstrap Template</title>
 
 <!-- Bootstrap core CSS -->
 <link rel="stylesheet" type="text/css"
@@ -22,9 +14,27 @@
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/resources/css/one-page-wonder.css">
 
-</head>
+<!-- Bootstrap core JavaScript -->
 
-<body>
+
+<script
+	src="${pageContext.request.contextPath}/resources/vendor/jquery/jquery.min.js"></script>
+<script
+	src="${pageContext.request.contextPath}/resources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<script>
+	
+	$(document).ready(function(){		
+		$('.nav-link').click(function(){
+			var menuTarget = $(this).parent().find('ul.dropdown-menu');	
+			if(menuTarget.length > 0){				
+				$('ul.dropdown-menu').hide();
+				menuTarget.show();
+			}
+		});
+	});
+	
+</script>
 
 	<!-- Navigation -->
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
@@ -36,8 +46,7 @@
 				<span class="navbar-toggler-icon"></span>
 			</button>
 			<div class="collapse navbar-collapse" id="navbarResponsive">
-				<ul class="navbar-nav ml-auto">
-
+				<ul class="navbar-nav ml-auto">					
 					<c:choose>
 
 						<c:when test="${Member.memberGrade eq 'member'}">
@@ -77,16 +86,16 @@
 							</a></li>
 							<li class="nav-item"><a class="nav-link" href="/Information">회사안내</a></li>
 							<li class="nav-item"><a class="nav-link" href="/Notice">공지사항</a></li>
-							<li class="dropdown"><a class="nav-link"
-								data-toggle="dropdown" href="#">매니저 <span class="caret"></span></a>
+							<li class="dropdown">
+								<a class="nav-link" data-toggle="dropdown" href="#">매니저 <span class="caret"></span></a>
 								<ul class="dropdown-menu">
 									<li><a href="#">매니저등록</a></li>
 									<li><a href="/ManagerList">매니저관리</a></li>
 									<li><a href="#">매니저실적관리</a></li>
 									<li><a href="#">급여관리</a></li>
 								</ul></li>
-							<li class="dropdown"><a class="nav-link"
-								data-toggle="dropdown">회원관리 <span class="caret"></span></a>
+							<li class="dropdown">
+								<a class="nav-link" data-toggle="dropdown">회원관리 <span class="caret"></span></a>
 								<ul class="dropdown-menu">
 									<li><a href="/MemberList">회원리스트</a></li>
 									<li><a href="/MemberCareerList">회원경력리스트</a></li>
@@ -108,16 +117,5 @@
 		</div>
 	</nav>
 
-
-
-	<!-- Bootstrap core JavaScript -->
-
-	<script
-		src="${pageContext.request.contextPath}/resources/vendor/jquery/jquery.min.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/resources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-
-</body>
-
-</html>
+	
+	
