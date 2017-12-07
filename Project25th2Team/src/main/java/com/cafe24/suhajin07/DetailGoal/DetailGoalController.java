@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.cafe24.suhajin07.Member.Member;
-import com.cafe24.suhajin07.MidGoal.MidGoal;
 
 @Controller
 public class DetailGoalController {
