@@ -35,9 +35,14 @@
 </head>
 
 <body>
-	<div class="content" id="content">
+	<div>
+		<c:import url="/WEB-INF/views/layout/Head.jsp">
+		</c:import>
+	</div>
+		<div class="content" id="content">
 	
 			<div class="section_top_area">
+				<br><br>
 				<h4>중간목표 카테고리</h4>
 			
 				<div class="sec_top_btn">
@@ -51,19 +56,19 @@
 					<!-- 체크박스 -->
 					<col style="width: 2%" />
 					<!--  중간목표명 -->
-					<col style="width: 10%" />
+					<col style="width: 12%" />
 					<!--  공부방법 -->
-					<col style="width: 10%" />
+					<col style="width: 4%" />
 					<!--  중간계획 -->
-					<col style="width: 10%" />
+					<col style="width: 15%" />
 					<!-- 중간목표 시작일 -->
-					<col style="width: 10%" />
+					<col style="width: 6%" />
 					<!-- 중간목표 종료일 -->
-					<col style="width: 10%" />
+					<col style="width: 6%" />
 					<!-- 중간목표예산 -->
-					<col style="width: 10%" />
+					<col style="width: 5%" />
 					<!-- 등록일자 -->
-					<col style="width: 10%" />
+					<col style="width: 5%" />
 				</colgroup>
 				<thead>
 					<tr class="first"  align="center">
@@ -79,11 +84,11 @@
 				</thead>
 				
 				<tbody>
-					<c:forEach var="midGoal" items="${listmidGoal}">
+					<c:forEach var="midGoal" items="${listMidGoal}">
 						<tr>
 							<td scope="col"><input type="checkbox" name="midGoalList"/></td>
 							<td>${midGoal.midGoalName}</td>
-							<td>${midGoal.studyCode}</td>
+							<td>${midGoal.studyMethod}</td>
 							<td>${midGoal.midGoalPlan}</td>
 							<td>${midGoal.midGoalStart}</td>
 							<td>${midGoal.midGoalEnd}</td>
