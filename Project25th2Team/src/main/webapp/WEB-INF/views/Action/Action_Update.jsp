@@ -23,13 +23,12 @@
 		</div>
 		</header>
 		<h4 align="center">최종학력등록</h4>
-		<form action="/updateAction" method="post" align="center">
-			<input type="hidden" name="actionCode" value=${actionUpdateForm.actionCode}>
-			<table align="center" border="1">
+		<form action="/updateAction" method="post" align="center" >
+			<input type="hidden" name="actionCode" value="${actionUpdateForm.actionCode}">
+			<table align="center" border="1" >
 				<tr>
 					<td>상세목표</td>
-					<td><input type="text" name="detailGoalList" readonly="readonly"
-						value="${actionUpdateForm.detailGoalList}"></td>
+					<td><input type="text" name="detailGoalList" readonly="readonly" value="${actionUpdateForm.detailGoalList}"></td>
 				</tr>
 				<tr>
 					<td>실천날짜</td>

@@ -26,38 +26,11 @@ public class ActionController {
 		
 	}
 	
-	/*//Action insert화면으로 이동
-	@RequestMapping(value="/actionAdd", method=RequestMethod.GET)
-	public String action() {
-		System.out.println("action등록 화면으로 이동 성공 <--ActionController.java");
-		return "Action/Action_Insert";
-		
-	}
-	
-	//Action insert 등록 처리
-	@RequestMapping(value="/addAction", method=RequestMethod.POST)
-	public String addAction(Action action) {
-		System.out.println("addAction 성공 <-- ActionController.java");
-		System.out.println(action + "<--ActionController.java");
-		actionService.addAction(action);
-		
-		return "redirect:/ActionForm";
-		
-	}*/
-	
-	@RequestMapping(value="/goalAdd", method= {RequestMethod.GET,RequestMethod.POST})
-	public String goalAdd(Action action) {
-		System.out.println("goalAdd <-- ActionController.java");
-		actionDao.goalAdd(action);
-		return "Action/Action_Form";
-		
-	}
-	
 	//updateForm으로 이동
 	@RequestMapping(value="/actionUpdateForm", method=RequestMethod.GET)
 	public String actionUpdateForm(Model model, @RequestParam("actionCode") int actionCode) {
 		System.out.println("ActionUpdateForm으로 이동 성공 <--ActionController.java");
-		model.addAttribute("actionUpdateForm" + actionDao.actionUpdateForm(actionCode));
+		model.addAttribute("actionUpdateForm", actionDao.actionUpdateForm(actionCode));
 		return "Action/Action_Update";
 		
 	}
