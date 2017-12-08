@@ -61,7 +61,7 @@ footer {
 					<li><a href="/TeamERD">ERD</a></li>
 					<br>
 					<li><a href="https://github.com/Suhajin/Ksmart25thproject"
-						target="_blank">GitHub</a></li>
+						target="_blank">Team GitHub</a></li>
 					<br>
 					<li><a href="/home">프로젝트 화면</a></li>
 					<br>
