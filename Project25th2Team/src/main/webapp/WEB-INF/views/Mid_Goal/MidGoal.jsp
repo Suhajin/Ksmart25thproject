@@ -35,7 +35,6 @@
 </head>
 
 <body>
-<<<<<<< HEAD
 	<div>
 		<c:import url="/WEB-INF/views/layout/Head.jsp">
 		</c:import>
@@ -47,9 +46,9 @@
 				<h4>중간목표 카테고리</h4>
 			
 				<div class="sec_top_btn">
-					<a href="/UpdateMidGoal?midGoalName=${midGoal.midGoalName}" class="btn_add">추가</a>
-					<a href="/InsertMidGoalForm" class="btn_add">수정</a>
-					<a href="#" class="btn_del">삭제</a>
+					<a href="/InsertMidGoalForm" class="btn_add">추가</a>
+					<a href="javascript:void(0)" class="btn_del midGoalModifyProcessButton">수정</a>
+					<a href="javascript:void(0)" class="btn_del midGoalDelectProcessButton">삭제</a>
 				</div>
 			</div>
 			<table class="list_tbl_01 mb70" summary="중간목표 카테고리">
@@ -88,7 +87,14 @@
 				<tbody>
 					<c:forEach var="midGoal" items="${listMidGoal}">
 						<tr>
-							<td scope="col"><input type="checkbox" name="${midGoal.midGoalName}"/></td>
+							<td>
+								<input type="checkbox" name="check" class="midGoalCheckTarget"
+								 value="${midGoal.midGoalName}"
+								 <c:if test="${empty midGoal.midGoalName}">
+									 disabled="disabled"
+								 </c:if>
+								 />
+							</td>
 							<td>${midGoal.midGoalName}</td>
 							<td>${midGoal.studyMethod}</td>
 							<td>${midGoal.midGoalPlan}</td>
@@ -100,72 +106,41 @@
 					</c:forEach>
 				</tbody>
 			</table>
-			</div>
+		</div>
+		
+		
+		<script>
+
+			$(document).ready(function(){
+				
+				var midGoalCheckTargetObj = $('.midGoalCheckTarget');		
+				midGoalCheckTargetObj.click(function(){
+					midGoalCheckTargetObj.prop('checked',false);
+					$(this).prop('checked',true);
+				});
+				
+				$('.midGoalModifyProcessButton').click(function(){			
+					var midGoal = $('.midGoalCheckTarget:checked').val();						
+					if(midGoal != '' && midGoal != undefined){
+						location.href='/UpdateMidGoal?midGoalName='+midGoal;
+					}else{
+						alert('대상을 선택해주세요.');
+						return false;
+					}
+				});
+				
+				$('.midGoalDelectProcessButton').click(function(){			
+					var midGoal = $('.midGoalCheckTarget:checked').val();						
+					if(midGoal != '' && midGoal != undefined){
+						location.href='/DeleteMidGoal?midGoalName='+midGoal;
+					}else{
+						alert('대상을 선택해주세요.');
+						return false;
+					}
+				});
+			});
+		 	
+		</script>
+		
 	</body>
-</html>
-   <div>
-      <c:import url="/WEB-INF/views/layout/Head.jsp">
-      </c:import>
-   </div>
-      <div class="content" id="content">
-   
-         <div class="section_top_area">
-            <br><br>
-            <h4>중간목표 카테고리</h4>
-         
-            <div class="sec_top_btn">
-               <a href="/InsertMidGoalForm" class="btn_add">추가</a>
-               <a href="#" class="btn_del">삭제</a>
-            </div>
-         </div>
-         <table class="list_tbl_01 mb70" summary="중간목표 카테고리">
-            <caption>중간목표 카테고리</caption>
-            <colgroup>
-               <!-- 체크박스 -->
-               <col style="width: 2%" />
-               <!--  중간목표명 -->
-               <col style="width: 12%" />
-               <!--  공부방법 -->
-               <col style="width: 4%" />
-               <!--  중간계획 -->
-               <col style="width: 15%" />
-               <!-- 중간목표 시작일 -->
-               <col style="width: 6%" />
-               <!-- 중간목표 종료일 -->
-               <col style="width: 6%" />
-               <!-- 중간목표예산 -->
-               <col style="width: 5%" />
-               <!-- 등록일자 -->
-               <col style="width: 5%" />
-            </colgroup>
-            <thead>
-               <tr class="first"  align="center">
-                  <th scope="col"><input type="checkbox"/></th>
-                  <th scope="col">중간목표명</th>
-                  <th scope="col">공부방법</th>
-                  <th scope="col">중간계획</th>
-                  <th scope="col">중간목표 시작일</th>
-                  <th scope="col">중간목표 종료일</th>
-                  <th scope="col">중간목표예산</th>
-                  <th scope="col">등록일자</th>
-               </tr>
-            </thead>
-            
-            <tbody>
-               <c:forEach var="midGoal" items="${listMidGoal}">
-                  <tr>
-                     <td scope="col"><input type="checkbox" name="midGoalList"/></td>
-                     <td>${midGoal.midGoalName}</td>
-                     <td>${midGoal.studyMethod}</td>
-                     <td>${midGoal.midGoalPlan}</td>
-                     <td>${midGoal.midGoalStart}</td>
-                     <td>${midGoal.midGoalEnd}</td>
-                     <td>${midGoal.midGoalBudget}</td>
-                     <td>${midGoal.midGoalDate}</td>
-                  </tr>
-               </c:forEach>
-            </tbody>
-         </table>
-         </div>
-   </body>
 </html>

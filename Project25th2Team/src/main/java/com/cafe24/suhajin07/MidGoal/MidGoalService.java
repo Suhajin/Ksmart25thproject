@@ -11,13 +11,19 @@ public class MidGoalService {
 		@Autowired
 		MidGoalDao mgd;
 		
-	/*	//중간목표 수정
-				public List<MidGoal> updateMidGoal(String midGoalName) {
-					System.out.println("updateMidGoal service 성공");
-					List<MidGoal> listMidGoal = mgd.selectMidGoalList(midGoalName);
-					System.out.println(listMidGoal);
-					return listMidGoal;
-				}*/
+		//중간목표 삭제
+		public void deleteMidGoal(String midGoalName) {
+			System.out.println("deleteMidGoal service 성공");
+			mgd.deleteMidGoal(midGoalName);
+		}
+		
+		//중간목표 수정
+		public List<MidGoal> updateMidGoal(String midGoalName) {
+			System.out.println("updateMidGoal service 성공");
+			List<MidGoal> listMidGoal = mgd.selectMidGoalUpdate(midGoalName);
+			System.out.println(listMidGoal);
+			return listMidGoal;
+		}
 		
 		//중간목표 리스트
 		public List<MidGoal> listMidGoal(String memberId) {
@@ -28,7 +34,7 @@ public class MidGoalService {
 		}
 		//중간목표 입력 처리
 		public void addMidGoal(MidGoal mg) {
-			System.out.println("미드골 서비스닷 "+ mg);
+			System.out.println("addMidGoal service 성공 "+ mg);
 			mgd.insertMidGoal(mg);	
 		}
 }
