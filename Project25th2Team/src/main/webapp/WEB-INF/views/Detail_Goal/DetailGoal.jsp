@@ -119,6 +119,49 @@ body{margin:0}
 				</tbody>
 			</table>
 		</div>
+		<script>
+
+			$(document).ready(function(){
+				
+				var midGoalCheckTargetObj = $('.midGoalCheckTarget');		
+				midGoalCheckTargetObj.click(function(){
+					midGoalCheckTargetObj.prop('checked',false);
+					$(this).prop('checked',true);
+				});
+				
+				$('.midGoalModifyProcessButton').click(function(){			
+					var midGoal = $('.midGoalCheckTarget:checked').val();						
+					if(midGoal != '' && midGoal != undefined){
+						location.href='/UpdateMidGoal?midGoalName='+midGoal;
+					}else{
+						alert('대상을 선택해주세요.');
+						return false;
+					}
+				});
+				
+				$('.midGoalDelectProcessButton').click(function(){			
+					var midGoal = $('.midGoalCheckTarget:checked').val();						
+					if(midGoal != '' && midGoal != undefined){
+						location.href='/DeleteMidGoal?midGoalName='+midGoal;
+					}else{
+						alert('대상을 선택해주세요.');
+						return false;
+					}
+				});
+			});
+		 	
+		</script>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		<div id="foot">
 		<c:import url="/WEB-INF/views/layout/Hadan.jsp">
 		</c:import>
