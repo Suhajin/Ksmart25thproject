@@ -71,4 +71,20 @@
 		and study.studyCode = midGoal.studyCode 
 		where memberId=#{memberId} 
 	</select>
+
+	<select id="selectMidGoalUpdate" parameterType="com.cafe24.suhajin07.MidGoal.MidGoal" resultMap="resultMidGoal"> 
+		select midGoalName
+			,lisenceListCode
+			,midGoalPlan 
+			,midGoalStart 
+			,midGoalEnd 
+			,midGoalBudget
+		from midGoal 
+		where midGoalName=#{midGoalName} 
+	</select>
+	
+	<delete id="delectMidGoal">
+		DELETE from midGoal where midGoalName=#{midGoalName} 
+	</delete>
+
 </mapper>
