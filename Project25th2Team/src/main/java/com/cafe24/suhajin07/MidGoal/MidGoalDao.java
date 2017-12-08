@@ -18,6 +18,11 @@ public class MidGoalDao {
 		System.out.println("delectMidGoal Dao 성공");
 		SST.delete(NS+"delectMidGoal",midGoalName);	
 		}
+	//목표설정수정Action
+		public void MidGoalUpdateAction(MidGoal mg){
+			System.out.println("MidGoalUpdateAction Dao 성공");
+			SST.update(NS+"MidGoalUpdate",mg);
+		}
 	//중간목표 수정
 	public List<MidGoal> selectMidGoalUpdate(String midGoalName){
 		System.out.println("updateMidGoal Dao 성공");

@@ -17,6 +17,12 @@ public class MidGoalService {
 			mgd.deleteMidGoal(midGoalName);
 		}
 		
+		//목표설정수정Action
+		public void updateActionMidGoal(MidGoal mg) {
+			System.out.println("updateActionMidGoal service 성공");
+			mgd.MidGoalUpdateAction(mg);
+		}
+				
 		//중간목표 수정
 		public List<MidGoal> updateMidGoal(String midGoalName) {
 			System.out.println("updateMidGoal service 성공");

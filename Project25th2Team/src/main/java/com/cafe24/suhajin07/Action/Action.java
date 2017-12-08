@@ -17,7 +17,7 @@ public class Action {
 	private String actionStart;
 	private String actionEnd;
 	private String actionTime;
-	private float actionRate;
+	private int actionRate;
 	
 	public int getActionCode() {
 		return actionCode;
@@ -115,10 +115,10 @@ public class Action {
 	public void setActionTime(String actionTime) {
 		this.actionTime = actionTime;
 	}
-	public float getActionRate() {
+	public int getActionRate() {
 		return actionRate;
 	}
-	public void setActionRate(float actionRate) {
+	public void setActionRate(int actionRate) {
 		this.actionRate = actionRate;
 	}
 	
