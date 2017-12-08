@@ -49,7 +49,7 @@
 				<ul class="navbar-nav ml-auto">					
 					<c:choose>
 						<c:when test="${Member.memberGrade eq 'member'}">
-							<li class="nav-item active"><a class="nav-link" href="/">Home
+							<li class="nav-item active"><a class="nav-link" href="/home">Home
 							<span class="sr-only">(current)</span>
 							</a></li>
 							<li class="nav-item"><a class="nav-link" href="/Information">회사안내</a></li>
@@ -60,9 +60,10 @@
 								href="/MyPage">마이페이지</a></li>
 							<li class="nav-item"><a class="nav-link" href="/Logout">로그아웃</a></li>
 
+
 						</c:when>
 						<c:when test="${Member.memberGrade eq 'manager'}">
-							<li class="nav-item active"><a class="nav-link" href="/">Home<span
+							<li class="nav-item active"><a class="nav-link" href="/home">Home<span
 									class="sr-only">(current)</span>
 							</a></li>
 							<li class="nav-item"><a class="nav-link" href="/Information">회사안내</a></li>
@@ -80,7 +81,7 @@
 							<li class="nav-item"><a class="nav-link" href="/Logout">로그아웃</a></li>
 						</c:when>
 						<c:when test="${Member.memberGrade eq 'master'}">
-							<li class="nav-item active"><a class="nav-link" href="/">Home<span
+							<li class="nav-item active"><a class="nav-link" href="/home">Home<span
 									class="sr-only">(current)</span>
 							</a></li>
 							<li class="nav-item"><a class="nav-link" href="/Information">회사안내</a></li>
@@ -103,7 +104,7 @@
 							<li class="nav-item"><a class="nav-link" href="/Logout">로그아웃</a></li>
 						</c:when>
 						<c:when test="${Member.memberGrade eq 'Allmaster'}">
-							<li class="nav-item active"><a class="nav-link" href="/">Home<span
+							<li class="nav-item active"><a class="nav-link" href="/home">Home<span
 									class="sr-only">(current)</span>
 							</a></li>
 							<li class="nav-item"><a class="nav-link" href="/Information">회사안내</a></li>
@@ -141,16 +142,15 @@
 						</c:when>
 						
 						<c:otherwise>
-							<li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+							<li class="nav-item"><a class="nav-link" href="/home">Home</a></li>
 							<li class="nav-item"><a class="nav-link" href="/Information">회사안내</a></li>
 							<li class="nav-item"><a class="nav-link" href="/Notice">공지사항</a></li>
 							<li class="nav-item"><a class="nav-link" href="/member">회원가입</a></li>
 							<li class="nav-item"><a class="nav-link" href="/Login">로그인</a></li>
 						</c:otherwise>
 					</c:choose>
-
 				</ul>
-			</div>
+		</div>
 		</div>
 	</nav>
 
