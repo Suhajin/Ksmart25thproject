@@ -14,7 +14,13 @@ public class DetailGoalDao {
 	
 	private final String NS = "com.cafe24.suhajin07.DetailGoal.DetailGoalMapper.";
 	
-	//중간목표 리스트
+	//세부목표 수정화면
+	public DetailGoal UpdateDetailGoalForm(int memberCode) {
+		System.out.println("UpdateDetailGoalForm in 세부목표 DAO!!");
+		return SST.selectOne(NS+"selectOne4Update",memberCode);
+	}
+	
+	//세부목표 리스트
 		public List<DetailGoal> selectDetailGoalList(String memberId){
 			System.out.println("selectDetailGoalList Dao 성공");
 			List<DetailGoal> list = SST.selectList(NS+"selectDetailGoalList",memberId);
