@@ -40,7 +40,7 @@ public class MemberController {
 		System.out.println(session);
 		
 		System.out.println("MyPage 폼 요청");
-		return "Member/member_Mypage";
+		return "Member/Member_Mypage";
 	}
 	
 	@RequestMapping(value = "/updateMember", method = RequestMethod.GET)
@@ -62,10 +62,10 @@ public class MemberController {
 			member = memberservice.updateMemberList(member);
 			System.out.println(member);
 			session.setAttribute("Member", member);
-			return "Member/member_Mypage";
+			return "Member/Member_Mypage";
 		}
 		else {
-			return "Member/Member_UpdateForm";
+			return "Member/Member_Update";
 		}
 	}
 }
