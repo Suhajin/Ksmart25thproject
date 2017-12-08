@@ -27,4 +27,9 @@ public class ActionDao {
 		return sst.selectOne(NS+"oneActionList", actionCode);
 		
 	}
+	
+	public void updateAction(Action action) {
+		System.out.println("updateAction <-- ActionDao.java");
+		sst.update(NS+"actionUpdate", action);
+	}
 }
