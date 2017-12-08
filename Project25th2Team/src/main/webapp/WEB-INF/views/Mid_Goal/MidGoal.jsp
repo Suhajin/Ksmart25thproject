@@ -46,7 +46,8 @@
 				<h4>중간목표 카테고리</h4>
 			
 				<div class="sec_top_btn">
-					<a href="/InsertMidGoalForm" class="btn_add">추가</a>
+					<a href="/UpdateMidGoal?midGoalName=${midGoal.midGoalName}" class="btn_add">추가</a>
+					<a href="/InsertMidGoalForm" class="btn_add">수정</a>
 					<a href="#" class="btn_del">삭제</a>
 				</div>
 			</div>
@@ -72,7 +73,7 @@
 				</colgroup>
 				<thead>
 					<tr class="first"  align="center">
-						<th scope="col"><input type="checkbox"/></th>
+						<th scope="col"></th>
 						<th scope="col">중간목표명</th>
 						<th scope="col">공부방법</th>
 						<th scope="col">중간계획</th>
@@ -86,7 +87,7 @@
 				<tbody>
 					<c:forEach var="midGoal" items="${listMidGoal}">
 						<tr>
-							<td scope="col"><input type="checkbox" name="midGoalList"/></td>
+							<td scope="col"><input type="checkbox" name="${midGoal.midGoalName}"/></td>
 							<td>${midGoal.midGoalName}</td>
 							<td>${midGoal.studyMethod}</td>
 							<td>${midGoal.midGoalPlan}</td>

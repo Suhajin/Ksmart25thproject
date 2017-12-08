@@ -19,9 +19,21 @@ public class MidGoalController {
 	@Autowired
 	MidGoalService mgService;
 	
+	
+	/*//목표설정수정
+	@RequestMapping(value="/UpdateMidGoal", method=RequestMethod.GET)
+	public String FinalGoal(Model model, @RequestParam("midGoalName") String midGoalName) {
+		System.out.println("중간목표 수정페이지");
+		System.out.println(midGoalName);
+		List<MidGoal> list= mgService.updateMidGoal(midGoalName);
+		model.addAttribute("listMidGoal", list);
+		return "Mid_Goal/MidGoal";
+		
+	}*/
+	
 	//목표설정 최종목표 밑에 중간목표 리스트
 	@RequestMapping(value="/MidGoalList", method=RequestMethod.GET)
-	public String FinalGoal(Model model, @RequestParam("memberId") String memberId) {
+	public String MidGoal(Model model, @RequestParam("memberId") String memberId) {
 		System.out.println("중간목표 in 목표설정페이지");
 		System.out.println(memberId);
 		List<MidGoal> list= mgService.listMidGoal(memberId);
