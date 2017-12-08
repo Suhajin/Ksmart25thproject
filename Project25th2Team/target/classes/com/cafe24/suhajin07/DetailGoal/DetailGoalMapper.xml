@@ -62,7 +62,7 @@
 	</insert>
 
 	<select id="selectDetailGoalList" parameterType="com.cafe24.suhajin07.DetailGoal.DetailGoal" resultMap="resultDetailGoal">
-		select 
+		SELECT 
 			detailGoalList 
 			,detailGoalDate 
 			,detailGoalStart 
@@ -74,5 +74,11 @@
 		on detailGoal.memberCode = member.memberCode 
 		where memberId=#{memberId} 
 	</select>
+	
+	<select id="selectOne4Update" resultType="com.cafe24.suhajin07.DetailGoal.DetailGoal">
+		SELECT *
+		FROM detailGoal
+		WHERE memberCode=#{memberCode}
+	</select> 
 
 </mapper>

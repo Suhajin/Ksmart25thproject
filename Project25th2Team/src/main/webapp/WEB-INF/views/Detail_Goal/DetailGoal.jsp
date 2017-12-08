@@ -62,6 +62,7 @@ body{margin:0}
 					
 				<div class="sec_top_btn">
 					<a href="/InsertDetailGoalForm" class="btn_add">추가</a>
+					<a href="/UpdateDetailGoalForm?memberCode=${Member.memberCode}" class="btn_add">수정</a>
 					<a href="#" class="btn_del">삭제</a>
 				</div>
 			</div>

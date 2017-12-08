@@ -11,7 +11,7 @@ public class DetailGoalService {
 	
 	@Autowired
 	DetailGoalDao dgd;
-	
+		
 	//세부목표 리스트 listDetailGoal
 	public List<DetailGoal> listDetailGoal(String memberId) {
 		System.out.println("listDetailGoal service 성공");
