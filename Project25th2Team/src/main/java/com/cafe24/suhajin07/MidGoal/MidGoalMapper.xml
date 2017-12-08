@@ -71,7 +71,7 @@
 		and study.studyCode = midGoal.studyCode 
 		where memberId=#{memberId} 
 	</select>
-	
+
 	<select id="selectMidGoalUpdate" parameterType="com.cafe24.suhajin07.MidGoal.MidGoal" resultMap="resultMidGoal"> 
 		select midGoalCode 
 			,midGoalName

@@ -100,15 +100,28 @@ td { text-align:center;
 					<td><input type="text" name="actionResult"
 						value="${actionUpdateForm.actionResult}"></td>
 				</tr>
-				<tr>
+				<%-- <tr>
 					<td>실천률</td>
 					<td><input type="text" name="actionRate"
 						value="${actionUpdateForm.actionRate}&#37;"></td>
+				</tr> --%>
+				<tr>
+					<td>실천률</td>
+					<td>
+						<select name="actionRate">
+							<option value="0">====== 선택하세요 ======</option>
+							<option value="20">실천률 20% 완료</option>
+							<option value="40">실천률 40% 완료</option>
+							<option value="60">실천률 60% 완료</option>
+							<option value="80">실천률 80% 완료</option>
+							<option value="100">실천률 100% 완료</option>
+						</select>
+					</td>
 				</tr>
 			</table>
 			<center><input type="submit" value="수정" class="form-control btn btn-primary"><center>
 		</form>
-
+	
 		<div>
 			<c:import url="/WEB-INF/views/layout/Hadan.jsp">
 			</c:import>

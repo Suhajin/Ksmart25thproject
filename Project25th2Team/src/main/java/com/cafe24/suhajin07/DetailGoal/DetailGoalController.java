@@ -15,8 +15,23 @@ import com.cafe24.suhajin07.Member.Member;
 
 @Controller
 public class DetailGoalController {
+	
 	@Autowired
 	DetailGoalService dgService;
+	@Autowired
+	DetailGoalDao dgDao;
+	
+	/*
+	//세부목표 수정 Action
+	@RequestMapping(value="/DetailGoalUpdate", method=RequestMethod.POST)*/
+	//세부목표 수정 폼 UpdateDetailGoalForm
+	@RequestMapping(value="/UpdateDetailGoalForm", method=RequestMethod.GET)
+	public String UpdateDetailGoalForm(Model model, @RequestParam("memberCode") int memberCode) {
+		System.out.println("수정폼 요청");
+		System.out.println("memberCode ="+memberCode);
+		model.addAttribute("UpdateDetailGoalForm",dgDao.UpdateDetailGoalForm(memberCode));
+		return "Detail_Goal/DetailGoal_Update_Form";
+	}
 	
 	//세부목표 리스트
 	@RequestMapping(value="/DetailGoalList", method=RequestMethod.GET)
@@ -27,7 +42,6 @@ public class DetailGoalController {
 		md.addAttribute("listDetailGoal", list);
 		System.out.println(list);
 		return "Detail_Goal/DetailGoal";
-		
 	}
 	
 	//세부목표 인서트 폼

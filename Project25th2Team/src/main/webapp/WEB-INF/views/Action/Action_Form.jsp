@@ -14,34 +14,18 @@
 <link rel="stylesheet" type="text/css"
 	href="<%=request.getContextPath()%>/resources/css/Career_jquery_ui.css" />
 
-<!--
-일단 패스
- 
-<script type="text/javascript" src="<%=request.getContextPath()%>/js/jquery/jquery-1.7.2.js"></script>
-<script type="text/javascript" src="<%=request.getContextPath()%>/js/jquery/jquery-ui-1.9.2.custom.min.js"></script>
-<script type="text/javascript" src="<%=request.getContextPath()%>/js/jquery/jquery.alphanumeric.js"></script>
-<script type="text/javascript" src="<%=request.getContextPath()%>/js/jquery/jquery.form.js"></script>
-<script type="text/javascript" src="<%=request.getContextPath()%>/js/jquery/jquery.placeholder.js"></script>
-<script type="text/javascript" src="<%=request.getContextPath()%>/js/jquery/jquery.tmpl.js"></script>
-<script type="text/javascript" src="<%=request.getContextPath()%>/js/jquery/jquery.blockUI.js"></script>
-<script type="text/javascript" src="<%=request.getContextPath()%>/js/kimsoft/kimsoft.js"></script>
-<script type="text/javascript" src="<%=request.getContextPath()%>/js/common.dev.js"></script>
-<script type="text/javascript" src="<%=request.getContextPath()%>/js/common.modal.js"></script>
-<script type="text/javascript" src="<%=request.getContextPath()%>/js/date.js"></script>
-<script type="text/javascript" src="<%=request.getContextPath()%>/js/gnb.js"></script>
-<script type="text/javascript">
- 
-	gUserType = "PERSONAL";
-		var CQWEB_SERVICE_NAME = "kipa";
-	var CQWEBID_SERVICE_NAME = "kipa";
-	var CQWEB_SERVICE_URL = "https://career.sw.or.kr/CQJava";
-</script>
--->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 
 <style type="text/css" media="screen">
 .printOnly {
-	display: none;
-.content {float:center; width:1000px; margin:auto}
+	display: none; .
+	content {float: center;
+	width: 1000px;
+	margin: auto
+}
 }
 </style>
 <style type="text/css" media="print">
@@ -57,8 +41,6 @@
 .noprint {
 	display: none;
 }
-
-
 </style>
 </head>
 
@@ -73,22 +55,11 @@
 
 		<!-- 타이틀 영역 -->
 		<div class="title_area">
-			<h3>실천목표 등록</h3>
-			<p>회원님의 상세목표를 입력해 주세요.</p>
+			<h3>실천률 등록 확인</h3>
+			<p>회원님의 상세목표에 대한 실천률을 입력해주세요.</p>
 		</div>
-		<br>
-		<br>
-		<br>
-		
-		<!-- <p class="reg_step_01">
-			<img src="/images/individual/register_step_01.gif"
-				alt="Step 01 경력 입력" />
-		</p>
+		<br> <br> <br>
 
-		<form id="excelForm" name="excelForm" method="post"
-			action="swc_write01_excel.jsp" target="iframe4dummy">
-			 <input type="hidden" name="memberNo" value="">
-		</form> -->
 		<form>
 			<input type="hidden" name="detailGoalCode" value=${Member.memberCode}>
 			<input type="hidden" name="memberCode" value=${Member.memberCode}>
@@ -96,20 +67,14 @@
 			<input type="hidden" name="biggestGoalCode" value=${Member.memberCode}>
 			<input type="hidden" name="goalTotalCode" value=${Member.memberCode}>
 		</form>
-		<br>
-		<br>
+		<br> <br>
 
 		<form id="writeForm" name="writeForm" method="post" action="">
 			<input type="hidden" name="callback" value="" /> <input
 				type="hidden" name="key" value="142995715" />
 			<!-- 최종학력 등록 -->
 			<div class="section_top_area">
-				
-				<!-- <a href="javascript:printCareer('workCareer')" class="btn_type02">근무경력확인서출력</a>  -->
-				<!-- 우측버튼 -->
-				<div class="sec_top_btn">
-					<a href="/actionAdd" class="btn_add">목표등록</a>
-				</div>
+
 			</div>
 			<br>
 			<table class="list_tbl_01 mb70" summary="학력 추가">
@@ -118,22 +83,22 @@
 					<!-- 상세목표 -->
 					<col style="width: 25%" />
 					<!-- 실천날짜 -->
-					<col style="width: 10%" />
-					<!-- 시작시간 -->	
-					<col style="width: 10%" />
+					<col style="width: 8%" />
+					<!-- 시작시간 -->
+					<col style="width: 8%" />
 					<!-- 종료시간 -->
-					<col style="width: 10%" />
+					<col style="width: 8%" />
 					<!-- 총시간 -->
-					<col style="width: 6%" />
+					<col style="width: 4%" />
 					<!-- 실천결과 -->
 					<col style="width: 25%" />
 					<!-- 실천률 -->
-					<col style="width: 7%" />
+					<col style="width: 15%" />
 					<!-- 평가 -->
 					<col style="width: 7%" />
 				</colgroup>
 				<thead>
-					<tr class="first" style="text-align:center">
+					<tr class="first" style="text-align: center">
 						<th scope="col">상세목표</th>
 						<th scope="col">실천날짜</th>
 						<th scope="col">시작시간</th>
@@ -153,9 +118,21 @@
 							<td>${action.actionEnd}</td>
 							<td>${action.actionTime}</td>
 							<td>${action.actionResult}</td>
-							<td>${action.actionRate}&#37;</td>
-							<td><a href="/actionUpdateForm?actionCode=${action.actionCode}" class="btn_del">평가</a></td>
-						</tr>
+							<td><div class="progress">
+									<div class="progress-bar" role="progressbar" aria-valuenow="60"
+										aria-valuemin="0" aria-valuemax="100" style="width:${action.actionRate}&#37;">
+										${action.actionRate}&#37;</div></td>
+							<%-- <td>${action.actionRate}&#37;</td> --%>
+							<td><a
+								href="/actionUpdateForm?actionCode=${action.actionCode}"
+								class="btn_del">평가</a></td>
+
+						<!-- <div class="progress">
+  							<div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+   							 60%
+ 							 </div>
+							</div> -->
+							</tr>
 					</c:forEach>
 				</tbody>
 			</table>

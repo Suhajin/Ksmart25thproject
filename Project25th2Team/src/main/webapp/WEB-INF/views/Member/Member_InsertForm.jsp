@@ -30,12 +30,10 @@ table {
 	</div>
 	<div>
 		<header class="masthead">
-		<div class="overlay">
-			<div class="container">
-				<h1 class="display-1 text-white">Welcome!</h1>
-				<h2 class="display-4 text-white">Consulting for you.</h2>
-			</div>
-		</div>
+		<div>
+		<c:import url="/WEB-INF/views/layout/mid.jsp">
+		</c:import>
+	</div>
 		</header>
 		<br> <br>
 		<h4 align="center">안녕하세요 회원가입을 해주세요!</h4>
