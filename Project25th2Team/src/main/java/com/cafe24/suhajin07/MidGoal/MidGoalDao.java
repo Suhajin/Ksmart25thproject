@@ -13,6 +13,13 @@ public class MidGoalDao {
 	
 	private final String NS = "com.cafe24.suhajin07.MidGoal.MidGoalMapper.";
 	
+/*	//중간목표 수정
+		public List<MidGoal> updateMidGoal(String midGoalName){
+			System.out.println("updateMidGoal Dao 성공");
+			List<MidGoal> list = SST.selectList(NS+"selectMidGoalList",midGoalName);
+			System.out.println(list);
+			return list;
+		}*/
 	//중간목표 리스트
 	public List<MidGoal> selectMidGoalList(String memberId){
 		System.out.println("selectMidGoalList Dao 성공");

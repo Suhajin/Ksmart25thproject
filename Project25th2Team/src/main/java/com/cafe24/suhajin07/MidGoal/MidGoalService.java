@@ -11,6 +11,14 @@ public class MidGoalService {
 		@Autowired
 		MidGoalDao mgd;
 		
+	/*	//중간목표 수정
+				public List<MidGoal> updateMidGoal(String midGoalName) {
+					System.out.println("updateMidGoal service 성공");
+					List<MidGoal> listMidGoal = mgd.selectMidGoalList(midGoalName);
+					System.out.println(listMidGoal);
+					return listMidGoal;
+				}*/
+		
 		//중간목표 리스트
 		public List<MidGoal> listMidGoal(String memberId) {
 			System.out.println("listMidGoal service 성공");
