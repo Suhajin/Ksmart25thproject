@@ -62,7 +62,7 @@ public class MemberController {
 			member = memberservice.updateMemberList(member);
 			System.out.println(member);
 			session.setAttribute("Member", member);
-			return "Member/Member_Mypage";
+			return "Member/member_Mypage";
 		}
 		else {
 			return "Member/Member_Update";

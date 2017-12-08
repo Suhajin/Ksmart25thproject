@@ -73,7 +73,8 @@
 	</select>
 	
 	<select id="selectMidGoalUpdate" parameterType="com.cafe24.suhajin07.MidGoal.MidGoal" resultMap="resultMidGoal"> 
-		select midGoalName
+		select midGoalCode 
+			,midGoalName
 			,lisenceListCode
 			,midGoalPlan 
 			,midGoalStart 
@@ -82,6 +83,20 @@
 		from midGoal 
 		where midGoalName=#{midGoalName} 
 	</select>
+	
+	<update id="MidGoalUpdate" parameterType="com.cafe24.suhajin07.MidGoal.MidGoal">
+		UPDATE midGoal set
+		  midGoalName = #{midGoalName},
+		  studyCode = #{studyCode},
+		  lisenceListCode = #{lisenceListCode},
+		  midGoalPlan = #{midGoalPlan},
+		  midGoalStart = #{midGoalStart},
+		  midGoalEnd = #{midGoalEnd},
+		  midGoalBudget = #{midGoalBudget},
+		  midGoalDate = now()
+		where
+			midGoalCode = #{midGoalCode}
+	</update>
 	
 	<delete id="delectMidGoal">
 		DELETE from midGoal where midGoalName=#{midGoalName} 
