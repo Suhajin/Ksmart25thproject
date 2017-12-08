@@ -34,13 +34,18 @@ public class HomeController {
 
 		model.addAttribute("serverTime", formattedDate);
 
-		return "home";
+		return "Team_Intro/Team_Intro";
 	}
-
 	@RequestMapping(value = "/Notice", method = RequestMethod.GET)
 	public String Notice() {
 		System.out.println("이것은  공지사항");
 		return "Inform/Notice";
+	}
+	
+	@RequestMapping(value = "/ProjectInporm", method = RequestMethod.GET)
+	public String TeamImtro() {
+		System.out.println("팀 소개로 이동");
+		return "Team_Intro/Team_Intro";
 	}
 
 	@RequestMapping(value = "/Information", method = RequestMethod.GET)
@@ -48,5 +53,22 @@ public class HomeController {
 		System.out.println("이것은  회사안내");
 		return "Inform/Information";
 	}
+	
+	@RequestMapping(value = "/home", method = RequestMethod.GET)
+	public String Home() {
+		System.out.println("Homepage 메인으로 이동");
+		return "home";
+	}
+	@RequestMapping(value = "/TeamMember", method = RequestMethod.GET)
+	public String TeamMember() {
+		System.out.println("Team멤버소개로 이동");
+		return "Team_Intro/TeamMember";
+	}
+	@RequestMapping(value = "/TeamERD", method = RequestMethod.GET)
+	public String TeamERD() {
+		System.out.println("ERD소개 화면으로 이동");
+		return "Team_Intro/TeamERD";
+	}
+
 
 }

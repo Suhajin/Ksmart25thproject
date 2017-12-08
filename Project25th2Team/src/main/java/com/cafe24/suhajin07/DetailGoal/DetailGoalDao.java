@@ -6,7 +6,6 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.cafe24.suhajin07.MidGoal.MidGoal;
 
 @Repository
 public class DetailGoalDao {
