@@ -33,7 +33,7 @@
 		on member.memberId=manager.memberId and
 		manager.managerGradeCode=managerGrade.managerGradeCode
 		where memberGrade =
-		'manager' order by memberCode
+		'manager' order by manager.managerGradeCode
 	</select>
 	<select id="managerGradeList_1" parameterType="com.cafe24.suhajin07.Master.Master"
 		resultMap="resultMaster">
