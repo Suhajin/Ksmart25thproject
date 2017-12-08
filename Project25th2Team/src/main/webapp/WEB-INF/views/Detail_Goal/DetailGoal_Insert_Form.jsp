@@ -59,10 +59,7 @@
 	 <form action="/AddDetailGoal" method="post">
 	    <table>
 	   
-		<tr>
-		    <td><input type="hidden" name="detailGoalCode" value=${Member.memberCode}></td>
-	    </tr>
-		<tr>
+				<tr>
 		  	<td><input type="hidden" name="midGoalCode" value=${Member.memberCode}></td>	
 		</tr>
 		<tr>   

@@ -14,7 +14,9 @@
 	href="<%=request.getContextPath()%>/resources/css/Career_common.css" />
 <link rel="stylesheet" type="text/css"
 	href="<%=request.getContextPath()%>/resources/css/Career_jquery-ui.css" />
+
 <style type="text/css" media="screen">
+
 	.printOnly {
 		display: none;
 	}
@@ -32,38 +34,57 @@
 	.noprint {
 		display: none;
 	}
+	html,body{height:100%}
+
+body{margin:0}
+
+#body{min-height:100%}
+
+#content{padding-bottom:1.9em}
+
+#foot{margin-top:-1.9em;height:1.9em}
+	
 </style>
 </head>
 <body>
+	<div>
+      <c:import url="/WEB-INF/views/layout/Head.jsp">
+      </c:import>
+   </div>
+   
 	<div class="content" id="content">
 
-			<div class="section_top_area">
-				<h4>대분류 목표 카테고리</h4>
-			
+			<div class="title_area">
+			<h3>세부목표 등록</h3>
+			<p>${member.memberName}님의 세부목표를 입력해 주세요.</p>
+		
+		<br><br><br>
+					
 				<div class="sec_top_btn">
 					<a href="/InsertDetailGoalForm" class="btn_add">추가</a>
 					<a href="#" class="btn_del">삭제</a>
 				</div>
 			</div>
+			<br>
 			<table class="list_tbl_01 mb70" summary="대분류 목표 카테고리">
-				<caption>대분류 목표 카테고리</caption>
+				<caption>세부목표 카테고리</caption>
 				<colgroup>
 					<!-- 체크박스 -->
 					<col style="width: 2%" />
 					<!--  세부목표 -->
 					<col style="width: 10%" />
 					<!-- 세부목표 일자 -->
-					<col style="width: 10%" />
+					<col style="width: 5%" />
 					<!-- 세부목표 시작시간 -->
-					<col style="width: 13%" />
+					<col style="width: 5%" />
 					<!-- 세부목표 종료시간 -->
-					<col style="width: 13%" />
+					<col style="width: 5%" />
 					<!-- 세부 총 목표시간 -->
-					<col style="width: 13%" />
+					<col style="width: 5%" />
 					<!-- 세부예산 -->
-					<col style="width: 10%" />
+					<col style="width: 6%" />
 					<!-- 개요(비고 및 부가설명) -->
-					<col style="width: 10%" />
+					<col style="width: 7%" />
 				</colgroup>
 				<thead>
 					<tr class="first" align = "center">
@@ -97,5 +118,9 @@
 				</tbody>
 			</table>
 		</div>
+		<div id="foot">
+		<c:import url="/WEB-INF/views/layout/Hadan.jsp">
+		</c:import>
+	</div>
 	</body>
 </html>

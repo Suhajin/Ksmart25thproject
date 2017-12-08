@@ -6,34 +6,78 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>경력등록(학력)</title>
+<title>평가등록수정</title>
+
+<style>
+input[type=text], select {
+	width: 100%;
+	padding: 12px 20px;
+	margin: 2px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 10px;
+	box-sizing: border-box;
+}
+
+input[type=submit] {
+	width: 20%;
+	color: white;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+form {
+	border-radius: 5px;
+	background-color: #f2f2f2;
+	padding: 10px;
+	margin: 30px;
+}
+
+p {
+	text-align: center;
+}
+
+table {
+	width: 50%;
+}
+
+th {
+	row: 100px;
+}
+
+td { text-align:center;
+	 font-weight:bold;
+}
+</style>
 </head>
 <body>
+	<!-- head -->
 	<div>
 		<c:import url="/WEB-INF/views/layout/Head.jsp">
 		</c:import>
 	</div>
+	<!-- main -->
+	<br>
+	<br>
+	<br>
 	<div>
-		<header class="masthead">
-		<div class="overlay">
-			<div class="container">
-				<h1 class="display-1 text-white">Welcome!</h1>
-				<h2 class="display-4 text-white">Consulting for you.</h2>
-			</div>
-		</div>
-		</header>
-		<h4 align="center">최종학력등록</h4>
-		<form action="/updateAction" method="post" align="center">
-			<input type="hidden" name="actionCode" value=${actionUpdateForm.actionCode}>
+		<h3 align="center">실천률평가등록</h3>
+		<br>
+		
+		<form action="/updateAction" method="post">
+			<input type="hidden" name="actionCode" value="${actionUpdateForm.actionCode}">
 			<table align="center" border="1">
 				<tr>
 					<td>상세목표</td>
-					<td><input type="text" name="detailGoalList" readonly="readonly"
-						value="${actionUpdateForm.detailGoalList}"></td>
+					<td><input type="text" name="detailGoalList"
+						readonly="readonly" value="${actionUpdateForm.detailGoalList}"></td>
 				</tr>
 				<tr>
 					<td>실천날짜</td>
-					<td><input type="date" name="actionDate"
+					<td><input type="date" name="actionDate" 
 						value="${actionUpdateForm.actionDate}"></td>
 				</tr>
 				<tr>
@@ -62,7 +106,7 @@
 						value="${actionUpdateForm.actionRate}&#37;"></td>
 				</tr>
 			</table>
-			<input type="submit" value="수정">
+			<center><input type="submit" value="수정" class="form-control btn btn-primary"><center>
 		</form>
 
 		<div>

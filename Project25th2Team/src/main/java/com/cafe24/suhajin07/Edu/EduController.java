@@ -66,11 +66,11 @@ public class EduController {
 	
 	//edu 수정처리
 	@RequestMapping(value = "/updateEdu", method = RequestMethod.POST)
-	public String updateEdu(Edu edu) {
+	public String updateEdu(HttpSession session, Edu edu) {
 		System.out.println("updateEdu <-- EduController.java");
 		System.out.println(edu + "<--updateEdu");
 		eduDao.updateEdu(edu);
-		return "redirect:/eduList";
+		return "redirect:/MemberCareerList?memberId="+((Member)session.getAttribute("Member")).getMemberId();
 	}
 	
 	//edu 삭제처리
@@ -78,6 +78,6 @@ public class EduController {
 	public String deleteEdu(HttpSession session, Edu edu) {
 		System.out.println("deleteEdu <-- EduController.java");
 		eduDao.deleteEdu(edu);
-		return "redirect:/MyCareer?memberId="+((Member)session.getAttribute("Member")).getMemberId();
+		return "redirect:/MemberCareerList?memberId="+((Member)session.getAttribute("Member")).getMemberId();
 	}
 }
