@@ -36,7 +36,7 @@
 	</insert>
 	<select id="TrainingList" parameterType="com.cafe24.suhajin07.Training.Training"
 		resultMap="resultTraining">
-		SELECT memberId, memberName, trainingPeriod, trainingStart,
+		SELECT memberId, memberName, trainingPeriod, trainingStart,trainingCode,
 		trainingEnd, trainingNation, trainingDetail, trainingDate
 		from training
 		join member

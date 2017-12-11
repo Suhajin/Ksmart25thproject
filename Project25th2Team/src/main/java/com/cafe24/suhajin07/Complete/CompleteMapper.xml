@@ -43,8 +43,10 @@
 	</insert>
 	<select id="CompleteList" parameterType="com.cafe24.suhajin07.Complete.Complete"
 		resultMap="resultComplete">
-		SELECT memberId, memberName, completeName, completeStart,
-		completeEnd, completeTime, completeAcademyName, completeNo,
+		SELECT memberId, memberName, completeName,
+		completeStart, complitionCode,
+		completeEnd, completeTime,
+		completeAcademyName, completeNo,
 		completeFile,completeApproval,completeDate
 		from complete join member
 		on
@@ -56,7 +58,9 @@
 		SELECT
 
 		memberId, memberName,
-		complitionCode,completeName,completeStart,completeEnd,completeTime,completeAcademyName,completeNo,completeFile,completeApproval,completeDate
+		complitionCode,completeName,completeStart,completeEnd,
+		completeTime,completeAcademyName,completeNo,
+		completeFile,completeApproval,completeDate
 		from complete join member
 		on
 		complete.memberCode = member.memberCode

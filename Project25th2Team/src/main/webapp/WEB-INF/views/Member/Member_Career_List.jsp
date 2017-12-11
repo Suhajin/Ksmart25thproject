@@ -7,6 +7,13 @@
 <title>회원리스트</title>
 <head>
 <title>Document</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<link rel="stylesheet" type="text/css"
+	href="<%=request.getContextPath()%>/resources/css/Career_common.css" />
+<link rel="stylesheet" type="text/css"
+	href="<%=request.getContextPath()%>/resources/css/Career_jquery-ui.css" />
+
 
 <style type="text/css">
 body {
@@ -131,7 +138,7 @@ html ul.tabs li.active, html ul.tabs li.active a:hover {
 	<h1>전체 회원 리스트</h1>
 	<br>
 	<br>
-	
+
 	<!--탭 메뉴 영역 -->
 	<ul class="tabs">
 		<li><a href="#tab1">학력List</a></li>
@@ -145,9 +152,10 @@ html ul.tabs li.active, html ul.tabs li.active a:hover {
 	<!--탭 콘텐츠 영역 -->
 	<div id="tab1" class="tab_content">
 		<!--Content-->
-		<h1>Edu</h1>
+
+		<h1>Edu List</h1>
 		<div align="center">
-			<table border="1" align="center">
+			<table class="list_tbl_01 mb70" border="1" align="center">
 				<thead>
 					<tr>
 						<th>ID</th>
@@ -176,18 +184,19 @@ html ul.tabs li.active, html ul.tabs li.active a:hover {
 							<td><a href="/eduUpdateForm?eduCode=${edu.eduCode}"
 								class="btn_add">수정</a></td>
 							<td><a href="/eduDelete?eduCode=${edu.eduCode}"
-								class="btn_add">삭제</a></td>
+								class="btn_del">삭제</a></td>
 						</tr>
 					</c:forEach>
 				</thead>
 			</table>
 		</div>
 	</div>
+
 	<div id="tab2" class="tab_content">
 		<!--Content-->
 		<h1>Career</h1>
 		<div align="center">
-			<table border="1" align="center">
+			<table class="list_tbl_01 mb70" border="1" align="center">
 				<thead>
 					<tr>
 						<th>ID</th>
@@ -219,7 +228,7 @@ html ul.tabs li.active, html ul.tabs li.active a:hover {
 								href="/CareerUpdateOne?careerCode=${career.careerCode}"
 								class="btn_add">수정</a></td>
 							<td><a href="/CareerDelete?careerCode=${career.careerCode}"
-								class="btn_add">삭제</a></td>
+								class="btn_del">삭제</a></td>
 						</tr>
 					</c:forEach>
 				</thead>
@@ -230,7 +239,7 @@ html ul.tabs li.active, html ul.tabs li.active a:hover {
 		<!--Content-->
 		<h1>License</h1>
 		<div align="center">
-			<table border="1" align="center">
+			<table class="list_tbl_01 mb70" border="1" align="center">
 				<thead>
 					<tr>
 						<th>ID</th>
@@ -262,7 +271,7 @@ html ul.tabs li.active, html ul.tabs li.active a:hover {
 								class="btn_add">수정</a></td>
 							<td><a
 								href="/LicenseDelete?licenseCode=${license.licenseCode}"
-								class="btn_add">삭제</a></td>
+								class="btn_del">삭제</a></td>
 						</tr>
 					</c:forEach>
 				</thead>
@@ -275,7 +284,7 @@ html ul.tabs li.active, html ul.tabs li.active a:hover {
 		<!--Content-->
 		<h1>Language</h1>
 		<div align="center">
-			<table border="1" align="center">
+			<table class="list_tbl_01 mb70" border="1" align="center">
 				<thead>
 					<tr>
 						<th>ID</th>
@@ -302,8 +311,12 @@ html ul.tabs li.active, html ul.tabs li.active a:hover {
 							<td>${language.languageFile}</td>
 							<td>${language.languageApproval}</td>
 							<td>${language.languageDate}</td>
-							<td><a href="#" class="btn_add">수정</a></td>
-							<td><a href="#" class="btn_add">삭제</a></td>
+							<td><a
+								href="/LanguageUpdateOne?languageCode=${language.languageCode}"
+								class="btn_add">수정</a></td>
+							<td><a
+								href="/LanguageDelete?languageCode=${language.languageCode}"
+								class="btn_del">삭제</a></td>
 						</tr>
 					</c:forEach>
 				</thead>
@@ -315,7 +328,7 @@ html ul.tabs li.active, html ul.tabs li.active a:hover {
 		<!--Content-->
 		<h1>Completelist</h1>
 		<div align="center">
-			<table border="1" align="center">
+			<table class="list_tbl_01 mb70" border="1" align="center">
 				<thead>
 					<tr>
 						<th>ID</th>
@@ -346,8 +359,11 @@ html ul.tabs li.active, html ul.tabs li.active a:hover {
 							<td>${complete.completeFile}</td>
 							<td>${complete.completeApproval}</td>
 							<td>${complete.completeDate}</td>
-							<td><a href="#" class="btn_add">수정</a></td>
-							<td><a href="#" class="btn_add">삭제</a></td>
+							<td><a
+								href="/CompleteUpdateOne?complitionCode=${complete.complitionCode}"
+								class="btn_add">수정</a></td>
+							<td><a href="/CompleteDelete?complitionCode=${complete.complitionCode}"
+								class="btn_del">삭제</a></td>
 						</tr>
 					</c:forEach>
 				</thead>
@@ -359,7 +375,7 @@ html ul.tabs li.active, html ul.tabs li.active a:hover {
 		<!--Content-->
 		<h1>Training</h1>
 		<div align="center">
-			<table border="1" align="center">
+			<table class="list_tbl_01 mb70" border="1" align="center">
 				<thead>
 					<tr>
 						<th>ID</th>
@@ -384,8 +400,12 @@ html ul.tabs li.active, html ul.tabs li.active a:hover {
 							<td>${training.trainingNation}</td>
 							<td>${training.trainingDetail}</td>
 							<td>${training.trainingDate}</td>
-							<td><a href="#" class="btn_add">수정</a></td>
-							<td><a href="#" class="btn_add">삭제</a></td>
+							<td><a
+								href="/TrainingUpdateOne?trainingCode=${training.trainingCode}"
+								class="btn_add">수정</a></td>
+							<td><a
+								href="/TrainingDelete?trainingCode=${training.trainingCode}"
+								class="btn_del">삭제</a></td>
 						</tr>
 					</c:forEach>
 				</thead>

@@ -41,7 +41,7 @@
 
 	<select id="LanguageList" parameterType="com.cafe24.suhajin07.Language.Language"
 		resultMap="resultLanguage">
-		SELECT memberId, memberName, lisenceListCode,
+		SELECT memberId, memberName, lisenceListCode,languageCode,
 		languageAcquire,
 		languageScore, languageOrgan, languageFile,
 		languageApproval,
