@@ -14,6 +14,7 @@ public class Master {
 	private String memberGrade;
 	private String memberDate;
 	private String gradeName;
+	private String managerDepartment;
 	public int getMemberCode() {
 		return memberCode;
 	}
@@ -86,13 +87,19 @@ public class Master {
 	public void setGradeName(String gradeName) {
 		this.gradeName = gradeName;
 	}
+	public String getManagerDepartment() {
+		return managerDepartment;
+	}
+	public void setManagerDepartment(String managerDepartment) {
+		this.managerDepartment = managerDepartment;
+	}
 	@Override
 	public String toString() {
 		return "Master [memberCode=" + memberCode + ", memberId=" + memberId + ", memberPw=" + memberPw
 				+ ", memberName=" + memberName + ", memberPhone=" + memberPhone + ", memberEmail=" + memberEmail
 				+ ", memberPostNum=" + memberPostNum + ", memberAddress=" + memberAddress + ", memberDetailAddress="
 				+ memberDetailAddress + ", memberGrade=" + memberGrade + ", memberDate=" + memberDate + ", gradeName="
-				+ gradeName + "]";
+				+ gradeName + ", managerDepartment=" + managerDepartment + "]";
 	}
 	
 	

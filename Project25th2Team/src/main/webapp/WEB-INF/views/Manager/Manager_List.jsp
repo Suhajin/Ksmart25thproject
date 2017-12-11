@@ -142,15 +142,17 @@ html ul.tabs li.active, html ul.tabs li.active a:hover {
 
 		<!--탭 콘텐츠 영역 -->
 		<div id="tab1" class="tab_content">
-		<br><br>
+			<br> <br>
 			<h1>전체 매니저 List</h1>
+
 			<!--Content-->
 			<div align="center">
-			<br><br>
+				<br> <br>
 				<table border="1" align="center">
 					<thead>
 						<tr>
 							<th>등급</th>
+							<th>담당부서</th>
 							<th>회원 성명</th>
 							<th>회원 연락처</th>
 							<th>회원 Email</th>
@@ -164,6 +166,7 @@ html ul.tabs li.active, html ul.tabs li.active a:hover {
 						<c:forEach var="manager" items="${managerlist}">
 							<tr>
 								<td>${manager.gradeName}</td>
+								<td>${manager.managerDepartment}</td>
 								<td>${manager.memberName}</td>
 								<td>${manager.memberPhone}</td>
 								<td>${manager.memberEmail}</td>
@@ -172,9 +175,9 @@ html ul.tabs li.active, html ul.tabs li.active a:hover {
 								<td>${manager.memberDetailAddress}</td>
 								<td>${manager.memberDate}</td>
 								<td><a
-									href="/MemberUpdate?memberCode=${manager.memberCode}"
+									href="/ManagerUpdate?memberCode=${manager.memberCode}"
 									class="btn_add">수정</a></td>
-								<td><a href="/#?memberCode=" class="btn_del">삭제</a></td>
+								<td><a href="/ManagerDelete?memberCode=${manager.memberCode}" class="btn_del">삭제</a></td>
 							</tr>
 						</c:forEach>
 					</thead>
@@ -183,15 +186,16 @@ html ul.tabs li.active, html ul.tabs li.active a:hover {
 		</div>
 
 		<div id="tab2" class="tab_content">
-		<br><br>
+			<br> <br>
 			<h1>총괄 매니저 List</h1>
-			<br><br>
+			<br> <br>
 			<!--Content-->
 			<div align="center">
 				<table border="1" align="center">
 					<thead>
 						<tr>
 							<th>등급</th>
+							<th>담당부서</th>
 							<th>회원 성명</th>
 							<th>회원 연락처</th>
 							<th>회원 Email</th>
@@ -205,6 +209,7 @@ html ul.tabs li.active, html ul.tabs li.active a:hover {
 						<c:forEach var="manager" items="${ma1List}">
 							<tr>
 								<td>${manager.gradeName}</td>
+								<td>${manager.managerDepartment}</td>
 								<td>${manager.memberName}</td>
 								<td>${manager.memberPhone}</td>
 								<td>${manager.memberEmail}</td>
@@ -225,15 +230,16 @@ html ul.tabs li.active, html ul.tabs li.active a:hover {
 
 
 		<div id="tab3" class="tab_content">
-		<br><br>
+			<br> <br>
 			<h1>담당 실장 List</h1>
-			<br><br>
+			<br> <br>
 			<!--Content-->
 			<div align="center">
 				<table border="1" align="center">
 					<thead>
 						<tr>
 							<th>등급</th>
+							<th>담당부서</th>
 							<th>회원 성명</th>
 							<th>회원 연락처</th>
 							<th>회원 Email</th>
@@ -247,6 +253,7 @@ html ul.tabs li.active, html ul.tabs li.active a:hover {
 						<c:forEach var="manager" items="${ma2List}">
 							<tr>
 								<td>${manager.gradeName}</td>
+								<td>${manager.managerDepartment}</td>
 								<td>${manager.memberName}</td>
 								<td>${manager.memberPhone}</td>
 								<td>${manager.memberEmail}</td>
@@ -267,15 +274,16 @@ html ul.tabs li.active, html ul.tabs li.active a:hover {
 
 
 		<div id="tab4" class="tab_content">
-		<br><br>
+			<br> <br>
 			<h1>담당 부실장 List</h1>
-			<br><br>
+			<br> <br>
 			<!--Content-->
 			<div align="center">
 				<table border="1" align="center">
 					<thead>
 						<tr>
 							<th>등급</th>
+							<th>담당부서</th>
 							<th>회원 성명</th>
 							<th>회원 연락처</th>
 							<th>회원 Email</th>
@@ -289,6 +297,7 @@ html ul.tabs li.active, html ul.tabs li.active a:hover {
 						<c:forEach var="manager" items="${ma3List}">
 							<tr>
 								<td>${manager.gradeName}</td>
+								<td>${manager.managerDepartment}</td>
 								<td>${manager.memberName}</td>
 								<td>${manager.memberPhone}</td>
 								<td>${manager.memberEmail}</td>
@@ -309,15 +318,16 @@ html ul.tabs li.active, html ul.tabs li.active a:hover {
 
 
 		<div id="tab5" class="tab_content">
-		<br><br>
+			<br> <br>
 			<h1>담당 매니저 List</h1>
-			<br><br>
+			<br> <br>
 			<!--Content-->
 			<div align="center">
 				<table border="1" align="center">
 					<thead>
 						<tr>
 							<th>등급</th>
+							<th>담당부서</th>
 							<th>회원 성명</th>
 							<th>회원 연락처</th>
 							<th>회원 Email</th>
@@ -331,6 +341,7 @@ html ul.tabs li.active, html ul.tabs li.active a:hover {
 						<c:forEach var="manager" items="${ma4List}">
 							<tr>
 								<td>${manager.gradeName}</td>
+								<td>${manager.managerDepartment}</td>
 								<td>${manager.memberName}</td>
 								<td>${manager.memberPhone}</td>
 								<td>${manager.memberEmail}</td>
@@ -352,15 +363,16 @@ html ul.tabs li.active, html ul.tabs li.active a:hover {
 
 
 		<div id="tab6" class="tab_content">
-		<br><br>
+			<br> <br>
 			<h1>수습 매니저 List</h1>
-			<br><br>
+			<br> <br>
 			<!--Content-->
 			<div align="center">
 				<table border="1" align="center">
 					<thead>
 						<tr>
 							<th>등급</th>
+							<th>담당부서</th>
 							<th>회원 성명</th>
 							<th>회원 연락처</th>
 							<th>회원 Email</th>
@@ -374,6 +386,7 @@ html ul.tabs li.active, html ul.tabs li.active a:hover {
 						<c:forEach var="manager" items="${ma5List}">
 							<tr>
 								<td>${manager.gradeName}</td>
+								<td>${manager.managerDepartment}</td>
 								<td>${manager.memberName}</td>
 								<td>${manager.memberPhone}</td>
 								<td>${manager.memberEmail}</td>
