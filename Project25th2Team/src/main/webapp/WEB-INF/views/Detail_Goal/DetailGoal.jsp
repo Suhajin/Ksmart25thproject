@@ -62,7 +62,7 @@ body{margin:0}
 					
 				<div class="sec_top_btn">
 					<a href="/InsertDetailGoalForm" class="btn_add">추가</a>
-					<a href="javascript:void(0)" class="btn_add datailGoalModifyProcessButton">수정</a>
+					<a href="javascript:void(0)" class="btn_del datailGoalModifyProcessButton">수정</a>
 					<a href="javascript:void(0)" class="btn_del datailGoalDeleteProcessButton">삭제</a>
 				</div>
 			</div>
@@ -73,7 +73,7 @@ body{margin:0}
 					<!-- 체크박스 -->
 					<col style="width: 2%" />
 					<!-- 세부목표 코드 -->
-					<col style="width: 4%" />
+					<col style="width: 3%" />
 					<!--  세부목표 -->
 					<col style="width: 10%" />
 					<!-- 세부목표 일자 -->

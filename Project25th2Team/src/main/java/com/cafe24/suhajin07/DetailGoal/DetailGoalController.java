@@ -21,9 +21,18 @@ public class DetailGoalController {
 	@Autowired
 	DetailGoalDao dgDao;
 	
-	/*
+
 	//세부목표 수정 Action
-	@RequestMapping(value="/DetailGoalUpdate", method=RequestMethod.POST)*/
+	@RequestMapping(value="/UpdateActionDetailGoal", method=RequestMethod.POST)
+	public String UpdateActionDetailGoal(Model model, DetailGoal dg, HttpSession session) {
+		System.out.println("세부목표 수정 Action");
+		System.out.println(dg);
+		Member member = (Member) session.getAttribute("Member");
+		dgService.updateActionDetailGoal(dg);
+		model.addAttribute("memberId",member.getMemberId());
+		return "redirect:/DetailGoalList";
+	}
+	
 	//세부목표 수정 폼 UpdateDetailGoalForm
 	@RequestMapping(value="/UpdateDetailGoal", method=RequestMethod.GET)
 	public String UpdateDetailGoal(Model model, @RequestParam("detailGoalCode") int detailGoalCode) {
