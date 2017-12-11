@@ -7,6 +7,14 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>회원리스트</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<link rel="stylesheet" type="text/css"
+	href="<%=request.getContextPath()%>/resources/css/Career_common.css" />
+<link rel="stylesheet" type="text/css"
+	href="<%=request.getContextPath()%>/resources/css/Career_jquery-ui.css" />
+
+
 
 <style type="text/css">
 body {
@@ -148,7 +156,7 @@ html ul.tabs li.active, html ul.tabs li.active a:hover {
 			<!--Content-->
 			<div align="center">
 				<br> <br>
-				<table border="1" align="center">
+			<table class="list_tbl_01 mb70" border="1" align="center" >
 					<thead>
 						<tr>
 							<th>등급</th>
@@ -175,9 +183,9 @@ html ul.tabs li.active, html ul.tabs li.active a:hover {
 								<td>${manager.memberDetailAddress}</td>
 								<td>${manager.memberDate}</td>
 								<td><a
-									href="/ManagerUpdate?memberCode=${manager.memberCode}"
+									href="/ManagerUpdate?managerCode=${manager.managerCode}"
 									class="btn_add">수정</a></td>
-								<td><a href="/ManagerDelete?memberCode=${manager.memberCode}" class="btn_del">삭제</a></td>
+								<td><a href="/ManagerDelete?managerCode=${manager.managerCode}" class="btn_del">삭제</a></td>
 							</tr>
 						</c:forEach>
 					</thead>
@@ -191,7 +199,7 @@ html ul.tabs li.active, html ul.tabs li.active a:hover {
 			<br> <br>
 			<!--Content-->
 			<div align="center">
-				<table border="1" align="center">
+			<table class="list_tbl_01 mb70" border="1" align="center">
 					<thead>
 						<tr>
 							<th>등급</th>
@@ -218,9 +226,9 @@ html ul.tabs li.active, html ul.tabs li.active a:hover {
 								<td>${manager.memberDetailAddress}</td>
 								<td>${manager.memberDate}</td>
 								<td><a
-									href="/MemberUpdate?memberCode=${manager.memberCode}"
+									href="/ManagerUpdate?managerCode=${manager.managerCode}"
 									class="btn_add">수정</a></td>
-								<td><a href="/#?memberCode=" class="btn_del">삭제</a></td>
+								<td><a href="/ManagerDelete?managerCode=${manager.managerCode}" class="btn_del">삭제</a></td>
 							</tr>
 						</c:forEach>
 					</thead>
@@ -235,7 +243,7 @@ html ul.tabs li.active, html ul.tabs li.active a:hover {
 			<br> <br>
 			<!--Content-->
 			<div align="center">
-				<table border="1" align="center">
+			<table class="list_tbl_01 mb70" border="1" align="center">
 					<thead>
 						<tr>
 							<th>등급</th>
@@ -262,9 +270,9 @@ html ul.tabs li.active, html ul.tabs li.active a:hover {
 								<td>${manager.memberDetailAddress}</td>
 								<td>${manager.memberDate}</td>
 								<td><a
-									href="/MemberUpdate?memberCode=${manager.memberCode}"
+									href="/ManagerUpdate?managerCode=${manager.managerCode}"
 									class="btn_add">수정</a></td>
-								<td><a href="/#?memberCode=" class="btn_del">삭제</a></td>
+								<td><a href="/ManagerDelete?managerCode=${manager.managerCode}" class="btn_del">삭제</a></td>
 							</tr>
 						</c:forEach>
 					</thead>
@@ -279,7 +287,7 @@ html ul.tabs li.active, html ul.tabs li.active a:hover {
 			<br> <br>
 			<!--Content-->
 			<div align="center">
-				<table border="1" align="center">
+			<table class="list_tbl_01 mb70" border="1" align="center">
 					<thead>
 						<tr>
 							<th>등급</th>
@@ -306,9 +314,9 @@ html ul.tabs li.active, html ul.tabs li.active a:hover {
 								<td>${manager.memberDetailAddress}</td>
 								<td>${manager.memberDate}</td>
 								<td><a
-									href="/MemberUpdate?memberCode=${manager.memberCode}"
+									href="/ManagerUpdate?managerCode=${manager.managerCode}"
 									class="btn_add">수정</a></td>
-								<td><a href="/#?memberCode=" class="btn_del">삭제</a></td>
+								<td><a href="/ManagerDelete?managerCode=${manager.managerCode}" class="btn_del">삭제</a></td>
 							</tr>
 						</c:forEach>
 					</thead>
@@ -323,7 +331,7 @@ html ul.tabs li.active, html ul.tabs li.active a:hover {
 			<br> <br>
 			<!--Content-->
 			<div align="center">
-				<table border="1" align="center">
+			<table class="list_tbl_01 mb70" border="1" align="center">
 					<thead>
 						<tr>
 							<th>등급</th>
@@ -350,9 +358,11 @@ html ul.tabs li.active, html ul.tabs li.active a:hover {
 								<td>${manager.memberDetailAddress}</td>
 								<td>${manager.memberDate}</td>
 								<td><a
-									href="/MemberUpdate?memberCode=${manager.memberCode}"
+									href="/ManagerUpdate?managerCode=${manager.managerCode}"
 									class="btn_add">수정</a></td>
-								<td><a href="/#?memberCode=" class="btn_del">삭제</a></td>
+								<td><a
+									href="/ManagerDelete?managerCode=${manager.managerCode}"
+									class="btn_del">삭제</a></td>
 							</tr>
 						</c:forEach>
 					</thead>
@@ -368,7 +378,7 @@ html ul.tabs li.active, html ul.tabs li.active a:hover {
 			<br> <br>
 			<!--Content-->
 			<div align="center">
-				<table border="1" align="center">
+			<table class="list_tbl_01 mb70" border="1" align="center">
 					<thead>
 						<tr>
 							<th>등급</th>
@@ -395,9 +405,11 @@ html ul.tabs li.active, html ul.tabs li.active a:hover {
 								<td>${manager.memberDetailAddress}</td>
 								<td>${manager.memberDate}</td>
 								<td><a
-									href="/MemberUpdate?memberCode=${manager.memberCode}"
+									href="/ManagerUpdate?managerCode=${manager.managerCode}"
 									class="btn_add">수정</a></td>
-								<td><a href="/#?memberCode=" class="btn_del">삭제</a></td>
+								<td><a
+									href="/ManagerDelete?managerCode=${manager.managerCode}"
+									class="btn_del">삭제</a></td>
 							</tr>
 						</c:forEach>
 					</thead>
