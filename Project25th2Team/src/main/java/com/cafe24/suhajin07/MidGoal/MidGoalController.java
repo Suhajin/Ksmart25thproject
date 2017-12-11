@@ -30,6 +30,18 @@ public class MidGoalController {
 		model.addAttribute("memberId", member.getMemberId());
 		return "redirect:/MidGoalList";		
 	}
+	
+	//목표설정수정Action
+		@RequestMapping(value="/UpdateActionMidGoal", method=RequestMethod.POST)
+		public String UpdateActionMidGoal(Model model, MidGoal mg, HttpSession session) {
+			System.out.println("중간목표 수정페이지Action");
+			System.out.println(mg);
+			Member member = (Member) session.getAttribute("Member");	
+			mgService.updateActionMidGoal(mg);
+			model.addAttribute("memberId", member.getMemberId());
+			return "redirect:/MidGoalList";
+	}
+	
 	//목표설정수정
 	@RequestMapping(value="/UpdateMidGoal", method=RequestMethod.GET)
 	public String UpdateMidGoal(Model model, @RequestParam("midGoalName") String midGoalName) {
@@ -37,8 +49,7 @@ public class MidGoalController {
 		System.out.println(midGoalName);
 		List<MidGoal> list= mgService.updateMidGoal(midGoalName);
 		model.addAttribute("listMidGoal", list);
-		return "Mid_Goal/MidGoal";
-		
+		return "Mid_Goal/MidGoal_Update_Form";
 	}
 	
 	//목표설정 최종목표 밑에 중간목표 리스트
@@ -49,7 +60,6 @@ public class MidGoalController {
 		List<MidGoal> list= mgService.listMidGoal(memberId);
 		model.addAttribute("listMidGoal", list);
 		return "Mid_Goal/MidGoal";
-		
 	}
 	
 	//중간목표 인서트 폼
@@ -58,6 +68,7 @@ public class MidGoalController {
 			System.out.println("MidGoalInsertForm");
 			return "Mid_Goal/MidGoal_Insert_Form";
 	}
+	
 	//중간목표 등록
 		@RequestMapping(value="/AddMidGoal", method=RequestMethod.POST)
 		public String addMidGoal(HttpSession session, MidGoal mg) {
@@ -65,5 +76,5 @@ public class MidGoalController {
 			mgService.addMidGoal(mg);
 			System.out.println("return 전");
 			return "redirect:/MidGoalList?memberId="+((Member)session.getAttribute("Member")).getMemberId();		
-		}
+	}
 }
