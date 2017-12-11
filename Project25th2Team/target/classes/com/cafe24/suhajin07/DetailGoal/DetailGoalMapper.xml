@@ -62,8 +62,8 @@
 	</insert>
 
 	<select id="selectDetailGoalList" parameterType="com.cafe24.suhajin07.DetailGoal.DetailGoal" resultMap="resultDetailGoal">
-		SELECT 
-			detailGoalList 
+		SELECT detailGoalCode 
+			,detailGoalList 
 			,detailGoalDate 
 			,detailGoalStart 
 			,detailGoalEnd 
@@ -75,10 +75,30 @@
 		where memberId=#{memberId} 
 	</select>
 	
-	<select id="selectOne4Update" resultType="com.cafe24.suhajin07.DetailGoal.DetailGoal">
-		SELECT *
-		FROM detailGoal
-		WHERE memberCode=#{memberCode}
+	<select id="selectDetailGoalUpdate" resultType="com.cafe24.suhajin07.DetailGoal.DetailGoal">
+		SELECT detailGoalCode
+				,detailGoalList
+				,detailGoalDate
+				,detailGoalStart
+				,detailGoalEnd
+				,detailGoalTotal
+				,detailGoalBudget
+				,detailGoalExplain
+		from detailGoal		
+		WHERE detailGoalCode=#{detailGoalCode}
 	</select> 
+	
+	<update id="DetailGoalUpdate" parameterType="com.cafe24.suhajin07.DetailGoal.DetailGoal">
+		UPDATE detailGoal set
+			detailGoalList=#{detailGoalList}
+			,detailGoalDate=#{detailGoalDate}
+			,detailGoalStart=#{detailGoalStart}
+			,detailGoalEnd=#{detailGoalEnd}
+			,detailGoalTotal=#{detailGoalTotal}
+			,detailGoalBudget=#{detailGoalBudget}
+			,detailGoalExplain=#{detailGoalExplain}
+		WHERE detailGoalCode=#{detailGoalCode}
+	
+	</update>
 
 </mapper>
