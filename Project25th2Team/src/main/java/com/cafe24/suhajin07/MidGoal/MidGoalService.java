@@ -20,6 +20,7 @@ public class MidGoalService {
 		//목표설정수정Action
 		public void updateActionMidGoal(MidGoal mg) {
 			System.out.println("updateActionMidGoal service 성공");
+			System.out.println(mg);
 			mgd.MidGoalUpdateAction(mg);
 		}
 				
