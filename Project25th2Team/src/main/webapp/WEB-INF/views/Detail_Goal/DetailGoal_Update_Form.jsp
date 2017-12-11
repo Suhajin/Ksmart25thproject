@@ -55,18 +55,44 @@
 <div class="container">
 	<h3 align="center">세부목표 등록</h3>
 <br>
-	
-	 <form action="/DetailGoalUpdate" method="post">
-	 	<input type="hidden" name="memberId" value="${Member.memberId}">
+	<c:forEach var="detailGoal" items="${listDetailGoal}">
+	 <form action="/UpdateActionDetailGoal" method="post">
 	    <table>
-
-	   	<tr>
-	    	<td align="center"><label for="detailGoalList">세부목표 리스트</label></td>
-	    	<td><input type="text" name="detailGoalList" value="${detailGoal.detailGoalList}"></td>
+		<tr>
+		  	<td><input type="hidden" name="midGoalCode" value="${detailGoal.midGoalCode}"></td>	
+		</tr>
+		<tr>   
+		    <td><input type="hidden" name="memberCode" value="${detailGoal.memberCode}"></td>
+	    </tr>
+		<tr>	
+	    	<td><input type="hidden" name="biggestGoalCode" value="${detailGoal.biggestGoalCode}"></td>
+	    </tr>
+	    <tr>	
+	    	<td><input type="hidden" name="goalTotalCode" value="${detailGoal.goalTotalCode}"></td>
+	    </tr>
+	    <tr>	
+	    	<td><input type="hidden" name="managerCode" value="${detailGoal.managerCode}"></td>
+	    </tr>
+	    <tr>	
+	    	<td><input type="hidden" name="studyCode" value="${detailGoal.studyCode}"></td>
+	    </tr>
+	    <tr>	
+	    	<td><input type="hidden" name="managerGradeCode" value="${detailGoal.managerGradeCode}"></td>
+	    </tr>
+	    <tr>	
+	    	<td><input type="hidden" name="lisenceListCode" value="${detailGoal.lisenceListCode}"></td>
 	    </tr>
 	    <tr>
-	    	<td align="center"><label for="detailGoalList">세부목표 일자</label></td>
-	    	<td><input type="text" name="detailGoalList" value="${detailGoal.detailGoalDate}"></td>
+	    	<td align="center"><label for="detailGoalCode">세부목표 코드</label></td>
+	    	<td><input type="text" name="detailGoalCode" value="${detailGoal.detailGoalCode}" readonly></td>
+	    </tr>
+	   	<tr>
+	    	<td align="center"><label for="detailGoalList">세부목표 리스트</label></td>
+	    	<td><input type="text" name="detailGoalList" value= "${detailGoal.detailGoalList}"></td>
+	    </tr>
+	    <tr>
+	    	<td align="center"><label for="detailGoalDate">세부목표 일자</label></td>
+	    	<td><input type="text" name="detailGoalDate" value="${detailGoal.detailGoalDate}"></td>
 	    </tr>
 	    <tr>
 		    <td align="center"><label for="detailGoalStart">세부목표 시작시간</label></td>
@@ -94,8 +120,29 @@
 	   	<div align="center">   
 	    <input type="submit" value="수정" class="form-control btn btn-primary" >
 	  	</div>
+	  	<div align="center">   
+	    <a href="/DetailGoalList?memberId=${Member.memberId}">취소</a>
+	  	</div>
 	  </form>
+	  </c:forEach>
 	</div>
+		<script>
+			$(document).ready(function(){
+				$('#from').submit(function(){
+					var detailGoalStart = document.getElementById("detailGoalStart");
+					var a = detailGoalStart.options[detailGoalStart.selectedIndex].value;
+					var b = detailGoalEnd.options[detailGoalStart.selectedIndex].value;
+					
+					if(a==''){
+						alert("시작시간을 정하세요!");
+						return false;
+					}else if(b==''){
+						alert("종료시간을 정해주세요!");
+						return false;
+					}
+				})
+			})
+		</script>
 <!------------------------------------Hadan-------------------------------------->	
 	<div>
 		<c:import url="/WEB-INF/views/layout/Hadan.jsp">

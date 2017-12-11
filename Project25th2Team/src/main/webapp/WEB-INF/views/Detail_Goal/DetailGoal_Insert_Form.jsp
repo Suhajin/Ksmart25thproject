@@ -60,28 +60,32 @@
 	    <table>
 	   
 				<tr>
-		  	<td><input type="hidden" name="midGoalCode" value=${Member.memberCode}></td>	
+		  	<td><input type="hidden" name="midGoalCode" value="${detailGoal.midGoalCode}"></td>	
 		</tr>
 		<tr>   
-		    <td><input type="hidden" name="memberCode" value=${Member.memberCode}></td>
+		    <td><input type="hidden" name="memberCode" value="${detailGoal.memberCode}"></td>
 	    </tr>
 		<tr>	
-	    	<td><input type="hidden" name="biggestGoalCode" value=${Member.memberCode}></td>
+	    	<td><input type="hidden" name="biggestGoalCode" value="${detailGoal.biggestGoalCode}"></td>
 	    </tr>
 	    <tr>	
-	    	<td><input type="hidden" name="goalTotalCode" value=${Member.memberCode}></td>
+	    	<td><input type="hidden" name="goalTotalCode" value="${detailGoal.goalTotalCode}"></td>
 	    </tr>
 	    <tr>	
-	    	<td><input type="hidden" name="managerCode" value=${Member.memberCode}></td>
+	    	<td><input type="hidden" name="managerCode" value="${detailGoal.managerCode}"></td>
 	    </tr>
 	    <tr>	
-	    	<td><input type="hidden" name="studyCode" value=${Member.memberCode}></td>
+	    	<td><input type="hidden" name="studyCode" value="${detailGoal.studyCode}"></td>
 	    </tr>
 	    <tr>	
-	    	<td><input type="hidden" name="managerGradeCode" value=${Member.memberCode}></td>
+	    	<td><input type="hidden" name="managerGradeCode" value="${detailGoal.managerGradeCode}"></td>
 	    </tr>
 	    <tr>	
-	    	<td><input type="hidden" name="lisenceListCode" value=${Member.memberCode}></td>
+	    	<td><input type="hidden" name="lisenceListCode" value="${detailGoal.lisenceListCode}"></td>
+	    </tr>
+	    <tr>
+	    	<td align="center"><label for="detailGoalList">세부목표 리스트</label></td>
+	    	<td><input type="text" name="detailGoalList" placeholder="ex)영어단어30개 외우기 "></td>
 	    </tr>
 	    <tr>
 		    <td align="center"><label for="detailGoalDate">세부목표 시작일</label></td>
@@ -98,10 +102,6 @@
 	    <tr>
 		    <td align="center"><label for="detailGoalTotal">세부목표 총 시간</label></td>
 		    <td><input type="text" name="detailGoalTotal" ></td>
-	    </tr>
-	    <tr>
-	    	<td align="center"><label for="detailGoalList">세부목표 리스트</label></td>
-	    	<td><input type="text" name="detailGoalList" placeholder="ex)영어단어30개 외우기 "></td>
 	    </tr>
 	    <tr>
 	    	<td align="center"><label for="detailGoalBudget">세부목표 예산</label></td>

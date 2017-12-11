@@ -19,78 +19,103 @@
 		resultMap="resultMaster">
 		SELECT
 		memberCode,memberId,memberName,memberPhone,memberEmail,memberPostNum,
-		memberAddress,memberDetailAddress
-		from member where memberGrade =
+		memberAddress,memberDetailAddress,memberDate
+		from member where
+		memberGrade =
 		'member' order by memberCode
 	</select>
 	<select id="managerAllList" parameterType="com.cafe24.suhajin07.Master.Master"
 		resultMap="resultMaster">
 		SELECT
 		memberCode,gradeName,memberName,memberPhone,memberEmail,memberPostNum,
-		memberAddress,memberDetailAddress
-		from member join manager join
+		memberAddress,memberDetailAddress,managerDepartment,memberDate
+		from
+		member join
+		manager join
 		managerGrade
-		on member.memberId=manager.memberId and
+		on member.memberId=manager.memberId
+		and
 		manager.managerGradeCode=managerGrade.managerGradeCode
-		where memberGrade =
+		where
+		memberGrade =
 		'manager' order by manager.managerGradeCode
 	</select>
 	<select id="managerGradeList_1" parameterType="com.cafe24.suhajin07.Master.Master"
 		resultMap="resultMaster">
 		SELECT
 		memberCode,gradeName,memberName,memberPhone,memberEmail,memberPostNum,
-		memberAddress,memberDetailAddress
-		from member join manager join managerGrade
-		on member.memberId=manager.memberId and
+		memberAddress,memberDetailAddress,managerDepartment,memberDate
+		from
+		member join
+		manager join managerGrade
+		on
+		member.memberId=manager.memberId and
 		manager.managerGradeCode=managerGrade.managerGradeCode
-		where gradeName =
+		where gradeName
+		=
 		'총괄매니저' order by memberCode
 	</select>
-		<select id="managerGradeList_2" parameterType="com.cafe24.suhajin07.Master.Master"
+	<select id="managerGradeList_2" parameterType="com.cafe24.suhajin07.Master.Master"
 		resultMap="resultMaster">
 		SELECT
 		memberCode,gradeName,memberName,memberPhone,memberEmail,memberPostNum,
-		memberAddress,memberDetailAddress
-		from member join manager join managerGrade
-		on member.memberId=manager.memberId and
+		memberAddress,memberDetailAddress,managerDepartment,memberDate
+		from
+		member join
+		manager join managerGrade
+		on
+		member.memberId=manager.memberId and
 		manager.managerGradeCode=managerGrade.managerGradeCode
-		where gradeName =
+		where gradeName
+		=
 		'담당 실장' order by memberCode
 	</select>
-		<select id="managerGradeList_3" parameterType="com.cafe24.suhajin07.Master.Master"
+	<select id="managerGradeList_3" parameterType="com.cafe24.suhajin07.Master.Master"
 		resultMap="resultMaster">
 		SELECT
 		memberCode,gradeName,memberName,memberPhone,memberEmail,memberPostNum,
-		memberAddress,memberDetailAddress
-		from member join manager join managerGrade
-		on member.memberId=manager.memberId and
+		memberAddress,memberDetailAddress,managerDepartment,memberDate
+		from
+		member join
+		manager join managerGrade
+		on
+		member.memberId=manager.memberId and
 		manager.managerGradeCode=managerGrade.managerGradeCode
-		where gradeName =
+		where gradeName
+		=
 		'담당 부실장' order by memberCode
 	</select>
-		<select id="managerGradeList_4" parameterType="com.cafe24.suhajin07.Master.Master"
+	<select id="managerGradeList_4" parameterType="com.cafe24.suhajin07.Master.Master"
 		resultMap="resultMaster">
 		SELECT
 		memberCode,gradeName,memberName,memberPhone,memberEmail,memberPostNum,
-		memberAddress,memberDetailAddress
-		from member join manager join managerGrade
-		on member.memberId=manager.memberId and
+		memberAddress,memberDetailAddress,managerDepartment,memberDate
+		from
+		member join
+		manager join managerGrade
+		on
+		member.memberId=manager.memberId and
 		manager.managerGradeCode=managerGrade.managerGradeCode
-		where gradeName =
+		where gradeName
+		=
 		'담당 매니저' order by memberCode
 	</select>
-		<select id="managerGradeList_5" parameterType="com.cafe24.suhajin07.Master.Master"
+	<select id="managerGradeList_5" parameterType="com.cafe24.suhajin07.Master.Master"
 		resultMap="resultMaster">
 		SELECT
 		memberCode,gradeName,memberName,memberPhone,memberEmail,memberPostNum,
-		memberAddress,memberDetailAddress
-		from member join manager join managerGrade
-		on member.memberId=manager.memberId and
+		memberAddress,memberDetailAddress,managerDepartment,memberDate
+		from
+		member join
+		manager join managerGrade
+		on
+		member.memberId=manager.memberId and
 		manager.managerGradeCode=managerGrade.managerGradeCode
-		where gradeName =
+		where gradeName
+		=
 		'수습 매니저' order by memberCode
 	</select>
-	
+
 	<select id="AllMemberCount" parameterType="com.cafe24.suhajin07.Master.Master"
 		resultMap="resultMaster">
 		SELECT
@@ -107,6 +132,10 @@
 		LIMIT
 		#{startRow},#{pagePerCount}
 	</select>
+	
+	
+	
+
 
 
 
