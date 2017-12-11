@@ -42,7 +42,7 @@
 	<select id="LicenseList" parameterType="com.cafe24.suhajin07.License.License"
 		resultMap="resultLicense">
 		SELECT memberId, memberName, lisenceListCode,
-		licenseAcquire,
+		licenseAcquire,licenseCode,
 		licenseNumber, licenseOrgan, licenseFile,
 		licenseApproval,
 		licenseDate

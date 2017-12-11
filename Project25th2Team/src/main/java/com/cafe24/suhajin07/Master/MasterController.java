@@ -1,5 +1,6 @@
 package com.cafe24.suhajin07.Master;
 
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,22 +10,23 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+
 import com.cafe24.suhajin07.Career.CareerDao;
 import com.cafe24.suhajin07.Career.CareerService;
 import com.cafe24.suhajin07.Complete.CompleteDao;
 import com.cafe24.suhajin07.Edu.EduDao;
-import com.cafe24.suhajin07.Language.Language;
 import com.cafe24.suhajin07.Language.LanguageDao;
 import com.cafe24.suhajin07.License.LicenseDao;
 import com.cafe24.suhajin07.Master.MasterDao;
 import com.cafe24.suhajin07.Training.TrainingDao;
+
 
 @Controller
 public class MasterController {
 
 	@Autowired
 	MasterDao masterdao;
-
+	
 	@Autowired
 	CareerService careerservice;
 
@@ -46,6 +48,7 @@ public class MasterController {
 	@Autowired
 	TrainingDao trainingdao;
 
+	
 	// 마이페이지 - 내 경력보기
 	@RequestMapping(value = "/MyCareer", method = RequestMethod.GET)
 	public String CareerInsert(Model model, Model model2, Model model3, Model model4, Model model5, Model model6,
@@ -104,5 +107,15 @@ public class MasterController {
 		model.addAttribute("Trainingdao", trainingdao.selectTrainingList());
 		return "Member/Member_Career_List";
 	}
+	
+	// 매니저 업데이트 폼으로 이동.
+	@RequestMapping(value = "/ManagerUpdate", method = RequestMethod.GET)
+	public String CareerUpdate() {
+		System.out.println("매니저 수정화면 Controller");
+
+		return "Manager/Manager_UpdateForm"; // Manager_UpdateForm.jsp 로 이동
+	}
+
+	
 
 }
