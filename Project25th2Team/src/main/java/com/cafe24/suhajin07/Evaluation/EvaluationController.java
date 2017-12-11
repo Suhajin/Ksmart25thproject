@@ -25,4 +25,5 @@ public class EvaluationController {
 		evaluationService.EvaluationAdd(eva);
 		return "redirect:/Evaluation?memberId="+((Member)session.getAttribute("Member")).getMemberId();
 	}
+	
 }
