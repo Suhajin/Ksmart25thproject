@@ -25,11 +25,12 @@ public class DetailGoalController {
 	//세부목표 수정 Action
 	@RequestMapping(value="/DetailGoalUpdate", method=RequestMethod.POST)*/
 	//세부목표 수정 폼 UpdateDetailGoalForm
-	@RequestMapping(value="/UpdateDetailGoalForm", method=RequestMethod.GET)
-	public String UpdateDetailGoalForm(Model model, @RequestParam("memberCode") int memberCode) {
+	@RequestMapping(value="/UpdateDetailGoal", method=RequestMethod.GET)
+	public String UpdateDetailGoal(Model model, @RequestParam("detailGoalCode") int detailGoalCode) {
 		System.out.println("수정폼 요청");
-		System.out.println("memberCode ="+memberCode);
-		model.addAttribute("UpdateDetailGoalForm",dgDao.UpdateDetailGoalForm(memberCode));
+		System.out.println(detailGoalCode);
+		List<DetailGoal> list=dgService.updateDetailGoal(detailGoalCode);
+		model.addAttribute("listDetailGoal",list);
 		return "Detail_Goal/DetailGoal_Update_Form";
 	}
 	

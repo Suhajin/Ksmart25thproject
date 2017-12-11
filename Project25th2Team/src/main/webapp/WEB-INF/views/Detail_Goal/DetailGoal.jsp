@@ -62,16 +62,18 @@ body{margin:0}
 					
 				<div class="sec_top_btn">
 					<a href="/InsertDetailGoalForm" class="btn_add">추가</a>
-					<a href="/UpdateDetailGoalForm?memberCode=${Member.memberCode}" class="btn_add">수정</a>
-					<a href="#" class="btn_del">삭제</a>
+					<a href="javascript:void(0)" class="btn_add datailGoalModifyProcessButton">수정</a>
+					<a href="javascript:void(0)" class="btn_del datailGoalDeleteProcessButton">삭제</a>
 				</div>
 			</div>
 			<br>
-			<table class="list_tbl_01 mb70" summary="대분류 목표 카테고리">
+			<table class="list_tbl_01 mb70" summary="세부목표 카테고리">
 				<caption>세부목표 카테고리</caption>
 				<colgroup>
 					<!-- 체크박스 -->
 					<col style="width: 2%" />
+					<!-- 세부목표 코드 -->
+					<col style="width: 4%" />
 					<!--  세부목표 -->
 					<col style="width: 10%" />
 					<!-- 세부목표 일자 -->
@@ -89,9 +91,8 @@ body{margin:0}
 				</colgroup>
 				<thead>
 					<tr class="first" align = "center">
-						<th scope="col"><input type="checkbox"
-							name="checkAll4skillCareer" id="checkAll4skillCareer"
-							onclick="onCheckAll4skillCareer()" /></th>
+						<th scope="col"></th>
+						<th scope="col">세부목표 코드</th>
 						<th scope="col">세부목표</th>
 						<th scope="col">세부목표 일자</th>
 						<th scope="col">세부목표 시작시간</th>
@@ -102,18 +103,25 @@ body{margin:0}
 					</tr>
 				</thead>
 				
-				<tbody id="skillCareerLayer">
-					<c:forEach var="DetailGoal" items="${listDetailGoal}">
+				<tbody>
+					<c:forEach var="detailGoal" items="${listDetailGoal}">
 						<tr>
-							<td scope="col"><input type="checkbox" name="scholarNo"
-								id="checkAll4skillCareer" onclick="onCheckAll4skillCareer()" /></td>
-							<td>${DetailGoal.detailGoalList}</td>
-							<td>${DetailGoal.detailGoalDate}</td>
-							<td>${DetailGoal.detailGoalStart}</td>
-							<td>${DetailGoal.detailGoalEnd}</td>
-							<td>${DetailGoal.detailGoalTotal}</td>
-							<td>${DetailGoal.detailGoalBudget}</td>
-							<td>${DetailGoal.detailGoalExplain}</td>			
+							<td>
+								<input type="checkbox" name="check" class="detailGoalCheckTarget"
+								value="${detailGoal.detailGoalCode}"
+								<c:if test="${empty detailGoal.detailGoalCode}">
+									disabled="disabled"
+								</c:if>
+								 />
+							</td>
+							<td ${detailGoal.detailGoalCode}></td>	
+							<td>${detailGoal.detailGoalList}</td>
+							<td>${detailGoal.detailGoalDate}</td>
+							<td>${detailGoal.detailGoalStart}</td>
+							<td>${detailGoal.detailGoalEnd}</td>
+							<td>${detailGoal.detailGoalTotal}</td>
+							<td>${detailGoal.detailGoalBudget}</td>
+							<td>${detailGoal.detailGoalExplain}</td>		
 						</tr>
 					</c:forEach>
 				</tbody>
@@ -123,26 +131,26 @@ body{margin:0}
 
 			$(document).ready(function(){
 				
-				var midGoalCheckTargetObj = $('.midGoalCheckTarget');		
-				midGoalCheckTargetObj.click(function(){
-					midGoalCheckTargetObj.prop('checked',false);
+				var detailGoalCheckTargetObj = $('.detailGoalCheckTarget');		
+				detailGoalCheckTargetObj.click(function(){
+					detailGoalCheckTargetObj.prop('checked',false);
 					$(this).prop('checked',true);
 				});
 				
-				$('.midGoalModifyProcessButton').click(function(){			
-					var midGoal = $('.midGoalCheckTarget:checked').val();						
-					if(midGoal != '' && midGoal != undefined){
-						location.href='/UpdateMidGoal?midGoalName='+midGoal;
+				$('.datailGoalModifyProcessButton').click(function(){			
+					var detailGoal = $('.detailGoalCheckTarget:checked').val();						
+					if(detailGoal != '' && detailGoal != undefined){
+						location.href='/UpdateDetailGoal?detailGoalCode='+detailGoal;
 					}else{
 						alert('대상을 선택해주세요.');
 						return false;
 					}
 				});
 				
-				$('.midGoalDelectProcessButton').click(function(){			
-					var midGoal = $('.midGoalCheckTarget:checked').val();						
-					if(midGoal != '' && midGoal != undefined){
-						location.href='/DeleteMidGoal?midGoalName='+midGoal;
+				$('.datailGoalDeleteProcessButton').click(function(){			
+					var detailGoal = $('.detailGoalCheckTarget:checked').val();						
+					if(detailGoal != '' && detailGoal != undefined){
+						location.href='/DeleteDetailGoal?detailGoalList='+detailGoal;
 					}else{
 						alert('대상을 선택해주세요.');
 						return false;
@@ -151,20 +159,5 @@ body{margin:0}
 			});
 		 	
 		</script>
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		<div id="foot">
-		<c:import url="/WEB-INF/views/layout/Hadan.jsp">
-		</c:import>
-	</div>
 	</body>
 </html>
