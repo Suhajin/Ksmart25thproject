@@ -43,6 +43,7 @@
 		row:100px;
 	}
 </style>
+
 </head>
 <body>
 <!------------------------------------head-------------------------------------->
@@ -56,7 +57,7 @@
 	<h3 align="center">중간목표 수정</h3>
 <br>
 <c:forEach var="MidGoal" items="${listMidGoal}">
-	<form action="/UpdateActionMidGoal" method="post">
+	<form id="form" action="/UpdateActionMidGoal" method="post">
 	    <table>
 	   	<tr>
 		    <td><input type="hidden" name="midGoalCode" value="${MidGoal.midGoalCode}"></td>
@@ -86,8 +87,8 @@
 	    <tr>
 	    	<td align="center"><label for="studyCode">공부방법</label></td>
             <td>
-            	<select name="studyCode">
-                   <option value="null">==선택하세요==</option>
+            	<select id="studycode" name="studyCode">
+                   <option value="">==선택하세요==</option>
                    <option value="study_01">학원</option>
                    <option value="study_02">독학</option>
                    <option value="study_03">인강</option>
@@ -118,15 +119,23 @@
 	    </tr>
 	</table>
 	   	<div align="center">   
-	    	<input type="submit" value="수정" class="form-control btn btn-primary" >
+	    	<input type="submit" value="수정" class="form-control btn btn-primary">
 	  	</div>
 	</form>
 </c:forEach>
 </div>
-<!------------------------------------Hadan-------------------------------------->	
-	<div>
-		<c:import url="/WEB-INF/views/layout/Hadan.jsp">
-		</c:import>
-	</div>
+
+	<script>
+		$(document).ready(function(){
+			$('#form').submit(function() { 
+				var studycode = document.getElementById("studycode");
+				var a = studycode.options[studycode.selectedIndex].value;
+				if(a == ''){
+					alert("공부방법을 선택하세요"); 
+					return false;
+				}
+			});
+		});
+	</script>
 </body>
 </html>
