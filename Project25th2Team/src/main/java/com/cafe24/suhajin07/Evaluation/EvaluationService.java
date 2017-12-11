@@ -8,8 +8,8 @@ public class EvaluationService {
 	@Autowired
 	EvaluationDao evaluationDao;
 	
-	public void EvaluationAdd(Evaluation evaluation) {
-		System.out.println("EvaluationService" + evaluation);
-		evaluationDao.EvaluationInsert(evaluation);
+	public void EvaluationAdd(Evaluation eva) {
+		System.out.println("EvaluationService" + eva);
+		evaluationDao.EvaluationInsert(eva);
 	}
 }

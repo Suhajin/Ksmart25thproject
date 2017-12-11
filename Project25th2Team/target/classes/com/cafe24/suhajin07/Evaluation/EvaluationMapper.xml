@@ -2,5 +2,34 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.cafe24.suhajin07.Evaluation.EvaluationMapper">
-
+	<insert parameterType="com.cafe24.suhajin07.Evaluation.Evaluation" id="insertEvaluation">
+		INSERT INTO evaluation (
+		evaluationCode, 
+		managerCode, 
+		memberCode, 
+		managerGradeCode, 
+		evaluationStart,
+		evaluationEnd, 
+		evaluation1, 
+		evaluation2, 
+		evaluation3, 
+		evaluation4,
+		evaluationDay, 
+		evaluationGrade, 
+		evaluationMemo
+		) VALUES (
+		#{evaluationCode}, 
+		#{managerCode}, 
+		#{memberCode}, 
+		#{managerGradeCode},
+		#{evaluationStart}, 
+		#{evaluationEnd}, 
+		#{evaluation1}, 
+		#{evaluation2},
+		#{evaluation3}, 
+		#{evaluation4}, 
+		#{evaluationDay}, 
+		#{evaluationGrade},
+		#{evaluationMemo})
+	</insert>
 </mapper>
