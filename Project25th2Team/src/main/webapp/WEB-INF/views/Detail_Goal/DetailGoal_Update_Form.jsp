@@ -56,7 +56,7 @@
 	<h3 align="center">세부목표 등록</h3>
 <br>
 	<c:forEach var="detailGoal" items="${listDetailGoal}">
-	 <form action="/UpdateActionDetailGoal" method="post">
+	 <form id ="form" action="/UpdateActionDetailGoal" method="post">
 	    <table>
 		<tr>
 		  	<td><input type="hidden" name="midGoalCode" value="${detailGoal.midGoalCode}"></td>	
@@ -96,11 +96,11 @@
 	    </tr>
 	    <tr>
 		    <td align="center"><label for="detailGoalStart">세부목표 시작시간</label></td>
-		    <td><input type="time" name="detailGoalStart"  value="${detailGoal.detailGoalStart}"></td>
-	    </tr>
-	     <tr>
+		    <td><input type="time" name="detailGoalStart" value=""></td>
+		</tr>
+	    <tr>
 		    <td align="center"><label for="detailGoalEnd">세부목표 종료시간</label></td>
-		    <td><input type="time" name="detailGoalEnd"  value="${detailGoal.detailGoalEnd}"></td>
+		    <td><input type="time" name="detailGoalEnd" value=""></td>
 	    </tr>
 	    <tr>
 		    <td align="center"><label for="detailGoalTotal">세부목표 총 시간</label></td>
@@ -127,21 +127,16 @@
 	  </c:forEach>
 	</div>
 		<script>
-			$(document).ready(function(){
-				$('#from').submit(function(){
-					var detailGoalStart = document.getElementById("detailGoalStart");
-					var a = detailGoalStart.options[detailGoalStart.selectedIndex].value;
-					var b = detailGoalEnd.options[detailGoalStart.selectedIndex].value;
-					
-					if(a==''){
-						alert("시작시간을 정하세요!");
-						return false;
-					}else if(b==''){
-						alert("종료시간을 정해주세요!");
-						return false;
-					}
-				})
-			})
+		$(document).ready(function(){
+			$('#form').submit(function() { 
+				var studycode = document.getElementById("detailGoalStart");
+				var a = detailGoalStart.options[detailGoalStart.selectedIndex].value;
+				if(a == ''){
+					alert("공부시작 시간을 선택하세요"); 
+					return false;
+				}
+			});
+		});
 		</script>
 <!------------------------------------Hadan-------------------------------------->	
 	<div>

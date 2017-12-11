@@ -59,29 +59,29 @@
 	 <form action="/AddDetailGoal" method="post">
 	    <table>
 	   
-				<tr>
-		  	<td><input type="hidden" name="midGoalCode" value="${detailGoal.midGoalCode}"></td>	
+		<tr>
+		  	<td><input type="hidden" name="midGoalCode" value=${detailGoal.midGoalCode}></td>	
 		</tr>
 		<tr>   
-		    <td><input type="hidden" name="memberCode" value="${detailGoal.memberCode}"></td>
+		    <td><input type="hidden" name="memberCode" value=${detailGoal.memberCode}></td>
 	    </tr>
 		<tr>	
-	    	<td><input type="hidden" name="biggestGoalCode" value="${detailGoal.biggestGoalCode}"></td>
+	    	<td><input type="hidden" name="biggestGoalCode" value=${detailGoal.biggestGoalCode}></td>
 	    </tr>
 	    <tr>	
-	    	<td><input type="hidden" name="goalTotalCode" value="${detailGoal.goalTotalCode}"></td>
+	    	<td><input type="hidden" name="goalTotalCode" value=${detailGoal.goalTotalCode}></td>
 	    </tr>
 	    <tr>	
-	    	<td><input type="hidden" name="managerCode" value="${detailGoal.managerCode}"></td>
+	    	<td><input type="hidden" name="managerCode" value=${detailGoal.managerCode}></td>
 	    </tr>
 	    <tr>	
-	    	<td><input type="hidden" name="studyCode" value="${detailGoal.studyCode}"></td>
+	    	<td><input type="hidden" name="studyCode" value=${detailGoal.studyCode}></td>
 	    </tr>
 	    <tr>	
-	    	<td><input type="hidden" name="managerGradeCode" value="${detailGoal.managerGradeCode}"></td>
+	    	<td><input type="hidden" name="managerGradeCode" value=${detailGoal.managerGradeCode}></td>
 	    </tr>
 	    <tr>	
-	    	<td><input type="hidden" name="lisenceListCode" value="${detailGoal.lisenceListCode}"></td>
+	    	<td><input type="hidden" name="lisenceListCode" value=${detailGoal.lisenceListCode}></td>
 	    </tr>
 	    <tr>
 	    	<td align="center"><label for="detailGoalList">세부목표 리스트</label></td>
@@ -111,7 +111,6 @@
 	    	<td align="center"><label for="detailGoalExplain">세부목표 설명</label></td>
 	    	<td><input type="text" name="detailGoalExplain" placeholder="ex)영어단어 10개씩 3번 외우기"></td>
 	    </tr>
-				
 	   </table>
 	   	
 	   	<div align="center">   

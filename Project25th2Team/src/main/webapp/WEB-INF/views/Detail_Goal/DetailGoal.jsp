@@ -72,8 +72,6 @@ body{margin:0}
 				<colgroup>
 					<!-- 체크박스 -->
 					<col style="width: 2%" />
-					<!-- 세부목표 코드 -->
-					<col style="width: 3%" />
 					<!--  세부목표 -->
 					<col style="width: 10%" />
 					<!-- 세부목표 일자 -->
@@ -92,7 +90,6 @@ body{margin:0}
 				<thead>
 					<tr class="first" align = "center">
 						<th scope="col"></th>
-						<th scope="col">세부목표 코드</th>
 						<th scope="col">세부목표</th>
 						<th scope="col">세부목표 일자</th>
 						<th scope="col">세부목표 시작시간</th>
@@ -114,7 +111,6 @@ body{margin:0}
 								</c:if>
 								 />
 							</td>
-							<td ${detailGoal.detailGoalCode}></td>	
 							<td>${detailGoal.detailGoalList}</td>
 							<td>${detailGoal.detailGoalDate}</td>
 							<td>${detailGoal.detailGoalStart}</td>
@@ -150,7 +146,7 @@ body{margin:0}
 				$('.datailGoalDeleteProcessButton').click(function(){			
 					var detailGoal = $('.detailGoalCheckTarget:checked').val();						
 					if(detailGoal != '' && detailGoal != undefined){
-						location.href='/DeleteDetailGoal?detailGoalList='+detailGoal;
+						location.href='/DeleteDetailGoal?detailGoalCode='+detailGoal;
 					}else{
 						alert('대상을 선택해주세요.');
 						return false;

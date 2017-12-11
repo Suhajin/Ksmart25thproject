@@ -21,6 +21,16 @@ public class DetailGoalController {
 	@Autowired
 	DetailGoalDao dgDao;
 	
+	//세부목표 삭제
+	@RequestMapping(value="/DeleteDetailGoal", method=RequestMethod.GET)
+	public String DeleteDetailGoal(Model model, @RequestParam("detailGoalCode")int detailGoalCode, HttpSession session) {
+		System.out.println("세부목표 삭제");
+		System.out.println("detailGoalCode");
+		Member member = (Member) session.getAttribute("Member");
+		dgService.deleteDetailGoal(detailGoalCode);
+		model.addAttribute("memberId", member.getMemberId());
+		return "redirect:/DetailGoalList";
+	}
 
 	//세부목표 수정 Action
 	@RequestMapping(value="/UpdateActionDetailGoal", method=RequestMethod.POST)
