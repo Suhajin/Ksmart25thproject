@@ -113,7 +113,7 @@
 		    </tr>
 			<tr>
 			    <td align="center"><label for="finalGoalNote">메모</label></td>
-			    <td><input type="text" name="finalGoalNote" value="${FinalGoal.finalGoalNote}"></td>
+			    <td><textarea class="form-control" rows="5" name="finalGoalNote">${FinalGoal.finalGoalNote}</textarea></td>
 		    </tr>
 		</c:forEach>
 	</table>
