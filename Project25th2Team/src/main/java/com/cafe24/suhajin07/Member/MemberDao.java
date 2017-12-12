@@ -40,4 +40,6 @@ public class MemberDao {
 		System.out.println(row);
 		return row;
 	}
+	
+	
 }

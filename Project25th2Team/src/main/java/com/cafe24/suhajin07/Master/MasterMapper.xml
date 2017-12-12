@@ -12,7 +12,13 @@
 		<result property="memberAddress" column="memberAddress" />
 		<result property="memberDetailAddress" column="memberDetailAddress" />
 		<result property="memberGrade" column="memberGrade" />
+		<result property="managerCode" column="managerCode" />
 		<result property="memberDate" column="memberDate" />
+		<result property="gradeName" column="gradeName" />
+		<result property="managerDepartment" column="managerDepartment" />
+		<result property="managerGradeCode" column="managerGradeCode" />
+		<result property="managerBasePay" column="managerBasePay" />
+
 	</resultMap>
 
 	<select id="memberAllList" parameterType="com.cafe24.suhajin07.Master.Master"
@@ -27,7 +33,7 @@
 	<select id="managerAllList" parameterType="com.cafe24.suhajin07.Master.Master"
 		resultMap="resultMaster">
 		SELECT
-		memberCode,gradeName,memberName,memberPhone,memberEmail,memberPostNum,
+		member.memberCode,managerCode,gradeName,memberName,memberPhone,memberEmail,memberPostNum,
 		memberAddress,memberDetailAddress,managerDepartment,memberDate
 		from
 		member join
@@ -43,77 +49,82 @@
 	<select id="managerGradeList_1" parameterType="com.cafe24.suhajin07.Master.Master"
 		resultMap="resultMaster">
 		SELECT
-		memberCode,gradeName,memberName,memberPhone,memberEmail,memberPostNum,
+		member.memberId,managerCode,
+		gradeName,memberName,memberPhone,memberEmail,memberPostNum,
 		memberAddress,memberDetailAddress,managerDepartment,memberDate
 		from
 		member join
 		manager join managerGrade
 		on
-		member.memberId=manager.memberId and
+		member.memberCode=manager.memberCode and
 		manager.managerGradeCode=managerGrade.managerGradeCode
 		where gradeName
 		=
-		'총괄매니저' order by memberCode
+		'총괄매니저' order by memberId
 	</select>
 	<select id="managerGradeList_2" parameterType="com.cafe24.suhajin07.Master.Master"
 		resultMap="resultMaster">
 		SELECT
-		memberCode,gradeName,memberName,memberPhone,memberEmail,memberPostNum,
+		member.memberId,managerCode,
+		gradeName,memberName,memberPhone,memberEmail,memberPostNum,
 		memberAddress,memberDetailAddress,managerDepartment,memberDate
 		from
 		member join
 		manager join managerGrade
 		on
-		member.memberId=manager.memberId and
+		member.memberCode=manager.memberCode and
 		manager.managerGradeCode=managerGrade.managerGradeCode
 		where gradeName
 		=
-		'담당 실장' order by memberCode
+		'담당 실장' order by memberId
 	</select>
 	<select id="managerGradeList_3" parameterType="com.cafe24.suhajin07.Master.Master"
 		resultMap="resultMaster">
 		SELECT
-		memberCode,gradeName,memberName,memberPhone,memberEmail,memberPostNum,
+		member.memberId,managerCode,
+		gradeName,memberName,memberPhone,memberEmail,memberPostNum,
 		memberAddress,memberDetailAddress,managerDepartment,memberDate
 		from
 		member join
 		manager join managerGrade
 		on
-		member.memberId=manager.memberId and
+		member.memberCode=manager.memberCode and
 		manager.managerGradeCode=managerGrade.managerGradeCode
 		where gradeName
 		=
-		'담당 부실장' order by memberCode
+		'담당 부실장' order by memberId
 	</select>
 	<select id="managerGradeList_4" parameterType="com.cafe24.suhajin07.Master.Master"
 		resultMap="resultMaster">
 		SELECT
-		memberCode,gradeName,memberName,memberPhone,memberEmail,memberPostNum,
+		member.memberId,managerCode,
+		gradeName,memberName,memberPhone,memberEmail,memberPostNum,
 		memberAddress,memberDetailAddress,managerDepartment,memberDate
 		from
 		member join
 		manager join managerGrade
 		on
-		member.memberId=manager.memberId and
+		member.memberCode=manager.memberCode and
 		manager.managerGradeCode=managerGrade.managerGradeCode
 		where gradeName
 		=
-		'담당 매니저' order by memberCode
+		'담당 매니저' order by memberId
 	</select>
 	<select id="managerGradeList_5" parameterType="com.cafe24.suhajin07.Master.Master"
 		resultMap="resultMaster">
 		SELECT
-		memberCode,gradeName,memberName,memberPhone,memberEmail,memberPostNum,
+		member.memberId,managerCode,
+		gradeName,memberName,memberPhone,memberEmail,memberPostNum,
 		memberAddress,memberDetailAddress,managerDepartment,memberDate
 		from
 		member join
 		manager join managerGrade
 		on
-		member.memberId=manager.memberId and
+		member.memberCode=manager.memberCode and
 		manager.managerGradeCode=managerGrade.managerGradeCode
 		where gradeName
 		=
-		'수습 매니저' order by memberCode
+		'수습 매니저' order by memberId
 	</select>
 
 	<select id="AllMemberCount" parameterType="com.cafe24.suhajin07.Master.Master"
@@ -132,11 +143,36 @@
 		LIMIT
 		#{startRow},#{pagePerCount}
 	</select>
-	
-	
-	
 
+	<select id="ManagerSelectOne" resultMap="resultMaster">
+		select * from manager
+		join member on manager.memberCode=member.memberCode
+		where
+		manager.managerCode = #{managerCode}
+	</select>
 
+	<insert id="insertManager" parameterType="com.cafe24.suhajin07.Master.Master">
+		INSERT INTO
+		member(memberCode ,memberId ,memberPw ,memberName
+		,memberPhone,memberEmail ,memberPostNum, memberDetailAddress,
+		memberAddress ,memberGrade ,memberDate)
+		VALUES
+		(#{memberCode},
+		#{memberId}, #{memberPw}, #{memberName}, #{memberPhone},
+		#{memberEmail}, #{memberPostNum}, #{memberDetailAddress},
+		#{memberAddress}, #{memberGrade} ,now())
+	</insert>
 
+	<insert id="insertManagerGrade" parameterType="com.cafe24.suhajin07.Master.Master">
+	<selectKey resultType="hashmap" keyProperty="memberCode,memberName" order="BEFORE">
+	select memberCode,memberName from member order by memberCode DESC limit 1
+	</selectKey>
+		INSERT INTO
+		manager(managerCode,memberCode,memberId,managerGradeCode,managerName,managerDepartment)
+		VALUES
+		(#{managerCode}, #{memberCode}, #{memberId},
+		#{managerGradeCode}, #{memberName},
+		#{managerDepartment})
+	</insert>
 
 </mapper>

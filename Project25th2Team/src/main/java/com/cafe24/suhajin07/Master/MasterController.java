@@ -3,6 +3,8 @@ package com.cafe24.suhajin07.Master;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,6 +20,8 @@ import com.cafe24.suhajin07.Edu.EduDao;
 import com.cafe24.suhajin07.Language.LanguageDao;
 import com.cafe24.suhajin07.License.LicenseDao;
 import com.cafe24.suhajin07.Master.MasterDao;
+import com.cafe24.suhajin07.Member.Member;
+import com.cafe24.suhajin07.Member.MemberService;
 import com.cafe24.suhajin07.Training.TrainingDao;
 
 
@@ -47,6 +51,8 @@ public class MasterController {
 
 	@Autowired
 	TrainingDao trainingdao;
+	@Autowired
+	MemberService memberservice;
 
 	
 	// 마이페이지 - 내 경력보기
@@ -62,7 +68,7 @@ public class MasterController {
 		model6.addAttribute("listtraining", trainingdao.OneTrainingList(memberId));
 		return "layout/Career";
 	}
-
+	// 멤버 전체 리스트
 	@RequestMapping(value = "/MemberList", method = RequestMethod.GET)
 	public String MemberList(Model model) throws Exception {
 		System.out.println("controller memberList 요청");
@@ -88,14 +94,14 @@ public class MasterController {
 		return "Manager/Manager_List";
 
 	}
-
+	// 멤버 수정
 	@RequestMapping(value = "/MemberUpdate", method = RequestMethod.GET)
 	public String MemberUpdate() {
 		System.out.println("MemberUpdate Controller");
 
 		return "Member/Member_Update";
 	}
-
+	// 개인 경력 전체리스트/ 경력별 리스트구현
 	@RequestMapping(value = "/MemberCareerList", method = RequestMethod.GET)
 	public String MemberCareerList(Model model) {
 		System.out.println("Career 회원 전체리스트");
@@ -110,12 +116,48 @@ public class MasterController {
 	
 	// 매니저 업데이트 폼으로 이동.
 	@RequestMapping(value = "/ManagerUpdate", method = RequestMethod.GET)
-	public String CareerUpdate() {
+	public String MasterManagerUpdate(Model model, @RequestParam("managerCode") int managerCode) {
 		System.out.println("매니저 수정화면 Controller");
-
+		model.addAttribute("managerListone", masterdao.Managerselectone(managerCode));
 		return "Manager/Manager_UpdateForm"; // Manager_UpdateForm.jsp 로 이동
 	}
-
+	// 매니저 수정처리
+	@RequestMapping(value = "/updatemanagerAction", method = RequestMethod.POST)
+	public String updateMemberAction(Member member, HttpSession session) {
+		System.out.println(member);
+		System.out.println("updateMemberAction 연결");
+		
+		int row = memberservice.updateMember(member);
+		
+		if(row==1) {
+			return "redirect:/ManagerList";
+		}
+		else {
+			return "Manager/Manager_UpdateForm";
+		}
+	}
+	@RequestMapping(value = "/ManagerGrde", method = RequestMethod.GET)
+	public String MasterManagerGradeUpdate() {
+		System.out.println("매니저 권한수정화면 Controller");
+		
+		return "Manager/ManagerGrade_UpdateForm"; // Manager_UpdateForm.jsp 로 이동
+	}
+	// 매니저 등록 form
+	@RequestMapping(value="/ManagerInsert", method=RequestMethod.GET)
+	public String ManagerInsert() {
+		System.out.println("매니저 등록 Controller");
+		
+		return "Manager/Manager_InsertForm";
+	}
 	
-
+	@RequestMapping(value = "/addmanager", method = RequestMethod.POST)
+	// command객체이용하는 방법
+	public String addmanager(Master master) {
+		System.out.println("ManagerController addmanager");
+		System.out.println(master);
+		
+		masterdao.insertManager(master);
+		
+		return "redirect:/ManagerList";
+	}
 }

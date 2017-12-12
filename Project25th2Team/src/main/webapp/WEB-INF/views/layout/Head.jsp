@@ -126,7 +126,7 @@
 							<li class="dropdown">
 								<a class="nav-link" data-toggle="dropdown" href="#">매니저 <span class="caret"></span></a>
 								<ul class="dropdown-menu">
-									<li><a href="#">매니저등록</a></li>
+									<li><a href="/ManagerInsert">매니저등록</a></li>
 									<li><a href="/ManagerList">매니저관리</a></li>
 									<li><a href="#">매니저실적관리</a></li>
 									<li><a href="#">급여관리</a></li>

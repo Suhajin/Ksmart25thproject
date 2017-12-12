@@ -12,6 +12,12 @@ public class DetailGoalService {
 	@Autowired
 	DetailGoalDao dgd;
 	
+	//세부목표 삭제
+	public void deleteDetailGoal(int detailGoalCode) {
+		System.out.println("detailGoalCode service 입니당");
+		dgd.deleteDetailGoal(detailGoalCode);
+	}
+	
 	//세부목표 수정(Action)
 	public void updateActionDetailGoal(DetailGoal dg) {
 		System.out.println("updateActionDetailGoal in 서비스!!");

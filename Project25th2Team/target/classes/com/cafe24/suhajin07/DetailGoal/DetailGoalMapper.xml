@@ -98,7 +98,10 @@
 			,detailGoalBudget=#{detailGoalBudget}
 			,detailGoalExplain=#{detailGoalExplain}
 		WHERE detailGoalCode=#{detailGoalCode}
-	
 	</update>
+	
+	<delete id="deleteDetailGoal">
+		DELETE from detailGoal where detailGoalCode=#{detailGoalCode}
+	</delete>
 
 </mapper>

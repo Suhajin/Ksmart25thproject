@@ -14,6 +14,12 @@ public class DetailGoalDao {
 	
 	private final String NS = "com.cafe24.suhajin07.DetailGoal.DetailGoalMapper.";
 	
+	//세부목표 삭제
+	public void deleteDetailGoal(int detailGoalCode) {
+		System.out.println("deleteDetailGoal Dao!!!");
+		SST.delete(NS+"deleteDetailGoal",detailGoalCode);
+	}
+	
 	//세부목표 수정 Action
 	public void DetailGoalUpdateAction(DetailGoal dg) {
 		System.out.println("DetailGoalUpdateAction Dao 디에이오에오");
