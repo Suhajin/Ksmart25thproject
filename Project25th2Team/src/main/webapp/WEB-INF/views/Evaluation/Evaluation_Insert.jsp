@@ -12,124 +12,7 @@
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script>
-	//초기화
-	function fn_egov_init_QustnrRespondInfo() {
-	}
-	//목록으로 가기
-	function fn_egov_list_QustnrRespondInfo() {
-		location.href = "";
-	}
-	//저장처리화면
-	function fn_egov_save_QustnrRespondInfo() {
-		var varFrom = document.qustnrRespondInfoManage;
 
-		//설문정보 Validtation
-
-		if ((!fn_egov_selectBoxChecking("evaluation1"))) {
-			alert('1번 설문문항을 작성해 주세요!');
-			document.getElementsByName("evaluation1")[0].focus();
-			return;
-		}
-
-		if ((!fn_egov_selectBoxChecking("evaluation2"))) {
-			alert('2번 설문문항을 작성해 주세요!');
-			document.getElementsByName("evaluation2")[0].focus();
-			return;
-		}
-
-		if ((!fn_egov_selectBoxChecking("evaluation3"))) {
-			alert('3번 설문문항을 작성해 주세요!');
-			document.getElementsByName("evaluation3")[0].focus();
-			return;
-		}
-
-		if ((!fn_egov_selectBoxChecking("evaluation4"))) {
-			alert('4번 설문문항을 작성해 주세요!');
-			document.getElementsByName("evaluation4")[0].focus();
-			return;
-		}
-
-		if (confirm("저장하시겠습니까?")) {
-
-			varFrom.action = "home";
-			varFrom.submit();
-		}
-	}
-	//라디오박스 : 몇개선택했는데 체크해주는함수
-	function fn_egov_checkbox_amout_max(sbName) {
-		var FLength = document.getElementsByName(sbName).length;
-
-		var reuslt = false;
-		var reusltCount = 0;
-		for (var i = 0; i < FLength; i++) {
-			if (document.getElementsByName(sbName)[i].checked == true) {
-				reusltCount++;
-			}
-		}
-
-		return reusltCount;
-
-	}
-	//라디오박스 : 최대선택건수 체크
-	function fn_egov_checkbox_amout(sbName, sbCount, sbObj) {
-
-		var FLength = document.getElementsByName(sbName).length;
-
-		var reuslt = false;
-		var reusltCount = 0;
-		for (var i = 0; i < FLength; i++) {
-			if (document.getElementsByName(sbName)[i].checked == true) {
-				reusltCount++;
-			}
-		}
-
-		if (reusltCount > sbCount) {
-			alert("최대선택건수 [" + sbCount + "]건을  초과하였습니다!");
-			sbObj.checked = false;
-			return;
-		}
-	}
-
-	//select 박스 선택했는 찾는 함수
-
-	function fn_egov_selectBoxChecking(sbName) {
-
-		var FLength = document.getElementsByName(sbName).length;
-
-		var reuslt = false;
-		for (var i = 0; i < FLength; i++) {
-			if (document.getElementsByName(sbName)[i].checked == true) {
-				reuslt = true;
-			}
-		}
-
-		return reuslt;
-	}
-	//select박스 값 컨트롤 함수
-	function fn_egov_SelectBoxValue(sbName) {
-		var FValue = "";
-		for (var i = 0; i < document.getElementById(sbName).length; i++) {
-			if (document.getElementById(sbName).options[i].selected == true) {
-
-				FValue = document.getElementById(sbName).options[i].value;
-			}
-		}
-
-		return FValue;
-	}
-	//radio박스 체크 박스
-	function fn_egov_RadioBoxValue(sbName) {
-		var FLength = document.getElementsByName(sbName).length;
-		var FValue = "";
-		for (var i = 0; i < FLength; i++) {
-			if (document.getElementsByName(sbName)[i].checked == true) {
-				FValue = document.getElementsByName(sbName)[i].value;
-			}
-		}
-
-		return FValue;
-	}
-//-->
 </script>
 <style>
 ul {
@@ -145,15 +28,17 @@ ul {
 		<c:import url="/WEB-INF/views/layout/Head.jsp">
 		</c:import>
 	</div>
+	
+	<div class="container">
 	<form action="/EvaluationAdd" method="post">
-		<input type="hidden" name="memberCode" value=${Evaluation.evaluationCode}> 
-		<input type="hidden" name="memberCode" value=${Evaluation.managerCode}> 
-		<input type="hidden" name="memberCode" value=${Evaluation.memberCode}>
-		<input type="hidden" name="memberCode" value=${Evaluation.managerGradeCode}>
-		<div class="container">
+		<input type="hidden" name="managerCode" value=${Member.memberCode}> 
+		<input type="hidden" name="memberCode" value=${Member.memberCode}> 
+		<input type="hidden" name="managerGradeCode" value=${Member.memberCode}>
+		
 			<br>
 			<!-- 본문내용 -->
-			<h1>컨설팅 고객만족도 조사</h1>
+			<h1 align="center">컨설팅 고객만족도 조사</h1><br><br>
+				<h5 >※평가기간 <input type="date" name="evaluationStart" > ~ <input type="date" name="evaluationEnd" > </h5>
 			<br>
 			<div class="panel panel-default">
 				<h5>Q1. 매니저의 관리는 어느정도 만족 하십니까?</h5>
@@ -258,22 +143,16 @@ ul {
 				</div>
 				<h4 class="panel-body">※ 기타의견 & 건의사항 ※</h4>
 				<div class="form-group">
-					<label for="comment"></label>
-					<textarea class="form-control" rows="5"	id="comment"></textarea>
+					<label for="evaluationMemo"></label>
+					<textarea class="form-control" rows="5"	name="evaluationMemo" ></textarea>
 				</div>
 			</div>
 			<div>
-				<a  type="button" href="home"
-					onclick="fn_egov_save_QustnrRespondInfo(document.forms[0]); return false;"
-					class="btn btn-default">설문완료</a>
+				<input type="submit" value="완료">
 			</div>
 			<!-- //본문내용 -->
-		</div>
-
-		<input name="qestnrId" id="qestnrId" type="hidden"
-			value="QMANAGE_000000000001" /> <input name="cmd" type="hidden"
-			value="save" />
-	</form>
+			</form>
+		</div>	
 	<c:import url="/WEB-INF/views/layout/Hadan.jsp">
 	</c:import>
 

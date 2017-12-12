@@ -23,7 +23,7 @@ public class EvaluationController {
 	public String EvaluationAdd(HttpSession session, Evaluation eva) {
 		System.out.println("EvaluationController 성공 " + eva);
 		evaluationService.EvaluationAdd(eva);
-		return "redirect:/Evaluation?memberId="+((Member)session.getAttribute("Member")).getMemberId();
+		return "home";
 	}
 	
 }
