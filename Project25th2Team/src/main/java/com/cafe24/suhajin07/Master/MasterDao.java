@@ -1,8 +1,6 @@
 package com.cafe24.suhajin07.Master;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +15,13 @@ public class MasterDao {
 	SqlSessionTemplate sql;
 
 	private final String NS = "com.cafe24.suhajin07.Master.MasterMapper.";
+	
+	
+	public void insertManager(Master master) {
+		System.out.println("Career Insert 성공");
+		sql.insert(NS+"insertManager", master);
+		sql.insert(NS+"insertManagerGrade", master);
+	}
 
 	// 전체리스트(회원)
 	public List<Master> AllMemberList() {
@@ -55,6 +60,17 @@ public class MasterDao {
 		return sql.selectList(NS+"managerGradeList_5");
 	}
 	
+	public Master managerselectone(int managerCode) {
+		System.out.println("managerCode출력 :: masterdao " + managerCode);
+		return sql.selectOne(NS+"managerselectOne", managerCode);
+	}
 	
-
+	public void managerGardeUpdate(Master master) {
+		System.out.println("manager 업데이트  :: " + master);
+		sql.update(NS+"managerGradeupdate", master);
+	}
+	public void managerdelete(Master master) {
+		System.out.println("manager 삭제");
+		sql.delete(NS+"ManagerDelete", master);
+	}
 }

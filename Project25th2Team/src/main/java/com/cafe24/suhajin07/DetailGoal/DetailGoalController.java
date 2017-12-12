@@ -1,6 +1,7 @@
 package com.cafe24.suhajin07.DetailGoal;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
@@ -10,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+/*import org.springframework.web.servlet.ModelAndView;*/
 
 import com.cafe24.suhajin07.Member.Member;
 
@@ -20,6 +22,26 @@ public class DetailGoalController {
 	DetailGoalService dgService;
 	@Autowired
 	DetailGoalDao dgDao;
+	
+	//세부목표 삭제
+	@RequestMapping(value="/DeleteDetailGoal", method=RequestMethod.GET)
+	public String DeleteDetailGoal(Model model, @RequestParam("detailGoalCode")int detailGoalCode, HttpSession session) {
+	System.out.println("세부목표 삭제");
+	System.out.println("detailGoalCode");
+	Member member = (Member) session.getAttribute("Member");
+	dgService.deleteDetailGoal(detailGoalCode);
+	model.addAttribute("memberId", member.getMemberId());
+	return "redirect:/DetailGoalList";
+}
+	/*	public ModelAndView DeleteDetailGoal(@RequestParam Map<String,Object>map) {
+		String a = Integer.parseInt(detailGoalCode);	
+		ModelAndView mav=new ModelAndView();
+			System.out.println(map.get("delSeqNo"));
+			mav.addAllObjects(dgService.deleteDetailGoal(map));
+			mav.setViewName("JSON");
+			return null;
+	}*/
+
 	
 
 	//세부목표 수정 Action

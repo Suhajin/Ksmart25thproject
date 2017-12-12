@@ -3,9 +3,11 @@ package com.cafe24.suhajin07.Master;
 public class Master {
 	
 	private int memberCode;
+	private int managerCode;
 	private String memberId;
 	private String memberPw;
 	private String memberName;
+	private String managerName;
 	private String memberPhone;
 	private String memberEmail;
 	private String memberPostNum;
@@ -15,11 +17,22 @@ public class Master {
 	private String memberDate;
 	private String gradeName;
 	private String managerDepartment;
+	private String managerGradeCode;
+	private String managerBasePay;
+	private String bankCode;
+	private String bankName;
+	private String bankNum;
 	public int getMemberCode() {
 		return memberCode;
 	}
 	public void setMemberCode(int memberCode) {
 		this.memberCode = memberCode;
+	}
+	public int getManagerCode() {
+		return managerCode;
+	}
+	public void setManagerCode(int managerCode) {
+		this.managerCode = managerCode;
 	}
 	public String getMemberId() {
 		return memberId;
@@ -38,6 +51,12 @@ public class Master {
 	}
 	public void setMemberName(String memberName) {
 		this.memberName = memberName;
+	}
+	public String getManagerName() {
+		return managerName;
+	}
+	public void setManagerName(String managerName) {
+		this.managerName = managerName;
 	}
 	public String getMemberPhone() {
 		return memberPhone;
@@ -93,18 +112,46 @@ public class Master {
 	public void setManagerDepartment(String managerDepartment) {
 		this.managerDepartment = managerDepartment;
 	}
+	public String getManagerGradeCode() {
+		return managerGradeCode;
+	}
+	public void setManagerGradeCode(String managerGradeCode) {
+		this.managerGradeCode = managerGradeCode;
+	}
+	public String getManagerBasePay() {
+		return managerBasePay;
+	}
+	public void setManagerBasePay(String managerBasePay) {
+		this.managerBasePay = managerBasePay;
+	}
+	public String getBankCode() {
+		return bankCode;
+	}
+	public void setBankCode(String bankCode) {
+		this.bankCode = bankCode;
+	}
+	public String getBankName() {
+		return bankName;
+	}
+	public void setBankName(String bankName) {
+		this.bankName = bankName;
+	}
+	public String getBankNum() {
+		return bankNum;
+	}
+	public void setBankNum(String bankNum) {
+		this.bankNum = bankNum;
+	}
 	@Override
 	public String toString() {
-		return "Master [memberCode=" + memberCode + ", memberId=" + memberId + ", memberPw=" + memberPw
-				+ ", memberName=" + memberName + ", memberPhone=" + memberPhone + ", memberEmail=" + memberEmail
-				+ ", memberPostNum=" + memberPostNum + ", memberAddress=" + memberAddress + ", memberDetailAddress="
-				+ memberDetailAddress + ", memberGrade=" + memberGrade + ", memberDate=" + memberDate + ", gradeName="
-				+ gradeName + ", managerDepartment=" + managerDepartment + "]";
+		return "Master [memberCode=" + memberCode + ", managerCode=" + managerCode + ", memberId=" + memberId
+				+ ", memberPw=" + memberPw + ", memberName=" + memberName + ", managerName=" + managerName
+				+ ", memberPhone=" + memberPhone + ", memberEmail=" + memberEmail + ", memberPostNum=" + memberPostNum
+				+ ", memberAddress=" + memberAddress + ", memberDetailAddress=" + memberDetailAddress + ", memberGrade="
+				+ memberGrade + ", memberDate=" + memberDate + ", gradeName=" + gradeName + ", managerDepartment="
+				+ managerDepartment + ", managerGradeCode=" + managerGradeCode + ", managerBasePay=" + managerBasePay
+				+ ", bankCode=" + bankCode + ", bankName=" + bankName + ", bankNum=" + bankNum + "]";
 	}
-	
-	
-	
-	
 	
 	
 
