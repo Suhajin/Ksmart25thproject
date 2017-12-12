@@ -7,6 +7,7 @@
 		<result property="memberName" column="memberName" />
 	</resultMap>
 	<resultMap type="com.cafe24.suhajin07.License.License" id="resultLicense">
+		<result property="licenseCode" column="licenseCode"/>
 		<result property="memberCode" column="memberCode" />
 		<result property="lisenceListCode" column="lisenceListCode" />
 		<result property="licenseAcquire" column="licenseAcquire" />
@@ -15,6 +16,7 @@
 		<result property="licenseFile" column="licenseFile" />
 		<result property="licenseApproval" column="licenseApproval" />
 		<result property="licenseDate" column="licenseDate" />
+		<result property="lisenceName" column="lisenceName"/>
 	</resultMap>
 
 
@@ -41,17 +43,26 @@
 
 	<select id="LicenseList" parameterType="com.cafe24.suhajin07.License.License"
 		resultMap="resultLicense">
-		SELECT memberId, memberName, lisenceListCode,
-		licenseAcquire,licenseCode,
-		licenseNumber, licenseOrgan, licenseFile,
-		licenseApproval,
-		licenseDate
-		from license join member on
-		license.memberCode = member.memberCode
-		order by memberId
-
-
+		SELECT
+			  a.memberId
+			, a.memberName
+			, c.lisenceName
+			, b.lisenceListCode
+			, b.licenseAcquire
+			, b.licenseCode
+			, b.licenseNumber
+			, b.licenseOrgan
+			, b.licenseFile
+			, b.licenseApproval
+			, b.licenseDate
+		from
+			  member a
+			, license b
+			, lisenceList c
+		where a.memberCode = b.memberCode 
+		and b.lisenceListCode = c.lisenceListCode
 	</select>
+	
 	<select id="LicenseListOne" parameterType="com.cafe24.suhajin07.License.License"
 		resultMap="resultLicense"> SELECT memberId, memberName, licenseCode, licenseAcquire,
 		licenseNumber, licenseOrgan, licenseFile,
@@ -60,29 +71,33 @@
 		license.lisenceListCode =lisenceList.lisenceListCode where memberId =
 		#{memberId}
 	</select>
-	<select id="LicenseSelectOne" resultMap="resultLicense">
+	<select id="LicenseSelectOne" resultType="com.cafe24.suhajin07.License.License">
 		select * from license
 		where
 		licenseCode = #{licenseCode}
 	</select>
 
 	<update id="LicenseUpdate" parameterType="com.cafe24.suhajin07.License.License">
-		UPDATE license set
-		memberCode = #{memberCode}, lisenceListCode = #{lisenceListCode},
-		licenseAcquire =
-		#{licenseAcquire}, licenseNumber = #{licenseNumber},
-		licenseOrgan =
-		#{licenseOrgan}, licenseFile = #{licenseFile},
-		licenseApproval =
-		#{licenseApproval}, licenseDate = #{licenseDate}
+		UPDATE license
+		set
+			  licenseCode = #{licenseCode}
+			, memberCode = #{memberCode}
+			, lisenceListCode = #{lisenceListCode}
+			, licenseAcquire = #{licenseAcquire}
+			, licenseNumber = #{licenseNumber}
+			, licenseOrgan = #{licenseOrgan}
+			, licenseFile = #{licenseFile}
+			, licenseApproval = #{licenseApproval}
+			, licenseDate = #{licenseDate}
 		where
-		licenseCode =
-		#{licenseCode}
+			licenseCode = #{licenseCode}
 	</update>
-
-	<delete id="LicenseDelete">
-		DELETE from license where licenseCode =
-		#{licenseCode}
+	
+	<!-- 자격증 삭제 -->
+	<delete id="LicenseDelete" parameterType="com.cafe24.suhajin07.License.License">
+		DELETE
+		from license
+		where licenseCode = #{licenseCode}
 	</delete>
 
 </mapper>

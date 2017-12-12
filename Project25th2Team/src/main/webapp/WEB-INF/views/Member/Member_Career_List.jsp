@@ -259,7 +259,7 @@ html ul.tabs li.active, html ul.tabs li.active a:hover {
 						<tr>
 							<td>${license.memberId}</td>
 							<td>${license.memberName}</td>
-							<td>${license.lisenceListCode}</td>
+							<td>${license.lisenceName}</td>
 							<td>${license.licenseAcquire}</td>
 							<td>${license.licenseNumber}</td>
 							<td>${license.licenseOrgan}</td>

@@ -15,6 +15,7 @@ public class License {
 	private String licenseDate;
 	private String lisenceLevelName;
 	private String lisenceName;
+	
 	public int getLicenseCode() {
 		return licenseCode;
 	}

@@ -23,7 +23,7 @@
 		</div>
 		</header>
 		<h4 align="center">경력등록</h4>
-		<form align="center" action="./UpdateCareer" method="post">
+		<form align="center" action="/UpdateCareer" method="post">
 			<input type="hidden" name="careerCode" value="${listone.careerCode}">
 			<input type="hidden" name="careerApproval"
 				value="${listone.careerApproval}"> <input type="hidden"
