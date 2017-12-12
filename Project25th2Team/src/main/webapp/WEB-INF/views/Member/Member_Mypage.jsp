@@ -77,7 +77,7 @@
 								href="/MyCareer?memberId=${Member.memberId}"
 								style="color: white;">내 경력보기</a></b></td>
 						<td style="background-color: #3d3d5c;"><b><a
-								href="/#?memberId=${Member.memberId}" style="color: white;">등록스케줄
+								href="/DetailGoalList?memberId=${Member.memberId}" style="color: white;">등록스케줄
 									보기</a></b></td>
 					<td style="background-color: #3d3d5c;"><b><a
 								href="/actionForm?memberId=${Member.memberId}" style="color: white;">실천률 등록하기</a></b></td>

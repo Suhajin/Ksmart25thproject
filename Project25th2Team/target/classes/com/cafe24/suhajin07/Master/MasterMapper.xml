@@ -185,16 +185,21 @@
 		UPDATE manager set
 		memberCode = #{memberCode},
 		memberId = #{memberId},
-		managerGradeCode = #{managerGradeCode},
+		managerGradeCode =
+		#{managerGradeCode},
 		managerName = #{managerName},
-		managerDepartment = #{managerDepartment}
+		managerDepartment =
+		#{managerDepartment}
 		where
 		managerCode = #{managerCode}
 	</update>
-	
+
 	<delete id="ManagerDelete">
-		DELETE from manager where managerCode = #{managerCode}
+		delete member,manager
+		from member left join manager on member.memberCode=manager.memberCode
+		where member.memberCode = #{memberCode}
+
 	</delete>
-	
+
 
 </mapper>
