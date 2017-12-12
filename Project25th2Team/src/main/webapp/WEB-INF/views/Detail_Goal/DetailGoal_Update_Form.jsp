@@ -92,15 +92,15 @@
 	    </tr>
 	    <tr>
 	    	<td align="center"><label for="detailGoalDate">세부목표 일자</label></td>
-	    	<td><input type="text" name="detailGoalDate" value="${detailGoal.detailGoalDate}"></td>
+	    	<td><input type="date" name="detailGoalDate" value="${detailGoal.detailGoalDate}"></td>
 	    </tr>
 	    <tr>
 		    <td align="center"><label for="detailGoalStart">세부목표 시작시간</label></td>
-		    <td><input type="time" name="detailGoalStart" value=""></td>
+		    <td><input type="time" name="detailGoalStart" value="${detailGoal.detailGoalStart}"></td>
 		</tr>
 	    <tr>
 		    <td align="center"><label for="detailGoalEnd">세부목표 종료시간</label></td>
-		    <td><input type="time" name="detailGoalEnd" value=""></td>
+		    <td><input type="time" name="detailGoalEnd" value="${detailGoal.detailGoalEnd}"></td>
 	    </tr>
 	    <tr>
 		    <td align="center"><label for="detailGoalTotal">세부목표 총 시간</label></td>
@@ -126,6 +126,18 @@
 	  </form>
 	  </c:forEach>
 	</div>
+	<script>
+		$(document).ready(function(){
+			$('.form').submit(function() { 
+				var detailGoalBudget = document.getElementById("detailGoalBudget");
+				var a = ${detailGoal.detailGoalBudget}.value;
+				if(a == ''){
+					alert("공부방법을 선택하세요"); 
+					return false;
+				}
+			});
+		});
+	</script>
 	
 <!------------------------------------Hadan-------------------------------------->	
 	<div>
