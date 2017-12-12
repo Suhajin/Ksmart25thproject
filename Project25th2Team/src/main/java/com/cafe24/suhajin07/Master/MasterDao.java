@@ -60,12 +60,17 @@ public class MasterDao {
 		return sql.selectList(NS+"managerGradeList_5");
 	}
 	
-	
-	public Master Managerselectone(int managerCode) {
-		System.out.println("career onelist 성공");
-		System.out.println(managerCode);
-		return sql.selectOne(NS+"ManagerSelectOne", managerCode);
+	public Master managerselectone(int managerCode) {
+		System.out.println("managerCode출력 :: masterdao " + managerCode);
+		return sql.selectOne(NS+"managerselectOne", managerCode);
 	}
 	
-
+	public void managerGardeUpdate(Master master) {
+		System.out.println("manager 업데이트  :: " + master);
+		sql.update(NS+"managerGradeupdate", master);
+	}
+	public void managerdelete(Master master) {
+		System.out.println("manager 삭제");
+		sql.delete(NS+"ManagerDelete", master);
+	}
 }

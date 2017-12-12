@@ -19,6 +19,9 @@ public class Master {
 	private String managerDepartment;
 	private String managerGradeCode;
 	private String managerBasePay;
+	private String bankCode;
+	private String bankName;
+	private String bankNum;
 	public int getMemberCode() {
 		return memberCode;
 	}
@@ -112,16 +115,6 @@ public class Master {
 	public String getManagerGradeCode() {
 		return managerGradeCode;
 	}
-	@Override
-	public String toString() {
-		return "Master [memberCode=" + memberCode + ", managerCode=" + managerCode + ", memberId=" + memberId
-				+ ", memberPw=" + memberPw + ", memberName=" + memberName + ", managerName=" + managerName
-				+ ", memberPhone=" + memberPhone + ", memberEmail=" + memberEmail + ", memberPostNum=" + memberPostNum
-				+ ", memberAddress=" + memberAddress + ", memberDetailAddress=" + memberDetailAddress + ", memberGrade="
-				+ memberGrade + ", memberDate=" + memberDate + ", gradeName=" + gradeName + ", managerDepartment="
-				+ managerDepartment + ", managerGradeCode=" + managerGradeCode + ", managerBasePay=" + managerBasePay
-				+ "]";
-	}
 	public void setManagerGradeCode(String managerGradeCode) {
 		this.managerGradeCode = managerGradeCode;
 	}
@@ -131,7 +124,34 @@ public class Master {
 	public void setManagerBasePay(String managerBasePay) {
 		this.managerBasePay = managerBasePay;
 	}
-	
+	public String getBankCode() {
+		return bankCode;
+	}
+	public void setBankCode(String bankCode) {
+		this.bankCode = bankCode;
+	}
+	public String getBankName() {
+		return bankName;
+	}
+	public void setBankName(String bankName) {
+		this.bankName = bankName;
+	}
+	public String getBankNum() {
+		return bankNum;
+	}
+	public void setBankNum(String bankNum) {
+		this.bankNum = bankNum;
+	}
+	@Override
+	public String toString() {
+		return "Master [memberCode=" + memberCode + ", managerCode=" + managerCode + ", memberId=" + memberId
+				+ ", memberPw=" + memberPw + ", memberName=" + memberName + ", managerName=" + managerName
+				+ ", memberPhone=" + memberPhone + ", memberEmail=" + memberEmail + ", memberPostNum=" + memberPostNum
+				+ ", memberAddress=" + memberAddress + ", memberDetailAddress=" + memberDetailAddress + ", memberGrade="
+				+ memberGrade + ", memberDate=" + memberDate + ", gradeName=" + gradeName + ", managerDepartment="
+				+ managerDepartment + ", managerGradeCode=" + managerGradeCode + ", managerBasePay=" + managerBasePay
+				+ ", bankCode=" + bankCode + ", bankName=" + bankName + ", bankNum=" + bankNum + "]";
+	}
 	
 	
 

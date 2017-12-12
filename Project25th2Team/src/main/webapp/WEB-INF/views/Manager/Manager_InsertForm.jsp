@@ -36,7 +36,7 @@ table {
 	</div>
 		</header>
 		<br> <br>
-		<h4 align="center">안녕하세요 회원가입을 해주세요!</h4>
+		<h4 align="center">안녕하세요 매니저 등록을 해주세요!</h4>
 		<br> <br>
 		<form align="center" action="/addmanager" method="post">
 			<table align="center" border="1">

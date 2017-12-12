@@ -3,7 +3,6 @@ package com.cafe24.suhajin07.Master;
 
 import java.util.List;
 
-import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,7 +19,6 @@ import com.cafe24.suhajin07.Edu.EduDao;
 import com.cafe24.suhajin07.Language.LanguageDao;
 import com.cafe24.suhajin07.License.LicenseDao;
 import com.cafe24.suhajin07.Master.MasterDao;
-import com.cafe24.suhajin07.Member.Member;
 import com.cafe24.suhajin07.Member.MemberService;
 import com.cafe24.suhajin07.Training.TrainingDao;
 
@@ -114,34 +112,6 @@ public class MasterController {
 		return "Member/Member_Career_List";
 	}
 	
-	// 매니저 업데이트 폼으로 이동.
-	@RequestMapping(value = "/ManagerUpdate", method = RequestMethod.GET)
-	public String MasterManagerUpdate(Model model, @RequestParam("managerCode") int managerCode) {
-		System.out.println("매니저 수정화면 Controller");
-		model.addAttribute("managerListone", masterdao.Managerselectone(managerCode));
-		return "Manager/Manager_UpdateForm"; // Manager_UpdateForm.jsp 로 이동
-	}
-	// 매니저 수정처리
-	@RequestMapping(value = "/updatemanagerAction", method = RequestMethod.POST)
-	public String updateMemberAction(Member member, HttpSession session) {
-		System.out.println(member);
-		System.out.println("updateMemberAction 연결");
-		
-		int row = memberservice.updateMember(member);
-		
-		if(row==1) {
-			return "redirect:/ManagerList";
-		}
-		else {
-			return "Manager/Manager_UpdateForm";
-		}
-	}
-	@RequestMapping(value = "/ManagerGrde", method = RequestMethod.GET)
-	public String MasterManagerGradeUpdate() {
-		System.out.println("매니저 권한수정화면 Controller");
-		
-		return "Manager/ManagerGrade_UpdateForm"; // Manager_UpdateForm.jsp 로 이동
-	}
 	// 매니저 등록 form
 	@RequestMapping(value="/ManagerInsert", method=RequestMethod.GET)
 	public String ManagerInsert() {
@@ -149,9 +119,8 @@ public class MasterController {
 		
 		return "Manager/Manager_InsertForm";
 	}
-	
+	// 매니저 등록처리
 	@RequestMapping(value = "/addmanager", method = RequestMethod.POST)
-	// command객체이용하는 방법
 	public String addmanager(Master master) {
 		System.out.println("ManagerController addmanager");
 		System.out.println(master);
@@ -160,4 +129,28 @@ public class MasterController {
 		
 		return "redirect:/ManagerList";
 	}
+	// 수정화면 열어보기
+	@RequestMapping(value="/ManagerUpdate", method = RequestMethod.GET)
+	public String selectoneManager(Model model, @RequestParam("managerCode") int managerCode) {
+		System.out.println("selectoneManger Controller");
+		model.addAttribute("managerupdatelist", masterdao.managerselectone(managerCode));
+		
+		return "Manager/Manager_UpdateForm";
+	}
+	// 매니저 수정처리
+	@RequestMapping(value="/UpdateManagerGrade", method= RequestMethod.POST)
+	public String UpdateManagerGrade(Master master) {
+		System.out.println("매니저 권한 수정 Controller");
+		masterdao.managerGardeUpdate(master);
+		return "redirect:/ManagerList";
+	}
+	
+	// 매니저 삭제처리
+	@RequestMapping(value="/ManagerDelete", method=RequestMethod.GET)
+	public String DeleteManger(Master master) {
+		System.out.println("매니저 삭제 Controller");
+		masterdao.managerdelete(master);
+		return "redirect:/ManagerList";
+	}
+			
 }
