@@ -53,9 +53,13 @@
       <!-- 타이틀 영역 -->
       <div class="title_area">
          <h3>${Member.memberName}님&nbsp;&nbsp;대분류 목표 설정</h3>
+         <div class="sec_top_btn">
+			<a href="/UpdateFinalGoal" class="btn_del">수정</a>
+		 </div>
       </div>
       <!-- 기본정보 -->
       <div class="base_info">
+      	<img src="/images/common/pic_sample.gif" alt="증명사진" />
          <div class="info_area">
          <c:forEach var="FinalGoal" items="${listFinalGoal}">
             <div>
