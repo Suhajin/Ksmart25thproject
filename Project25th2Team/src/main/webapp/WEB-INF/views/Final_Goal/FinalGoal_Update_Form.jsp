@@ -56,7 +56,7 @@
 	<h3 align ="center">${Member.memberName}님의&nbsp;최종목표설정을&nbsp;수정해주세요!</h3>
 <br>
 	
-<form action="/UpdateActionFinalGoal" method="post">
+<form id="form" action="/UpdateActionFinalGoal" method="post">
 	<table>
 		<c:forEach var="FinalGoal" items="${listFinalGoal}">
 			<tr>
@@ -65,8 +65,8 @@
 			<tr>
 				<td align="center"><label for="finalGoalStart">대분류 목표</label></td>
 				<td>
-				<select name="biggestGoalCode">
-				       <option value="null">==선택해주세요=</option>
+				<select id="biggestgoalcode" name="biggestGoalCode">
+				       <option value="">==선택해주세요=</option>
 				       <option value="bcc_001">취업</option>
 				       <option value="bcc_002">승진</option>
 				       <option value="bcc_003">이직</option>
@@ -123,10 +123,17 @@
 	  	</div>
 	  </form>
 	</div>
-<!------------------------------------Hadan-------------------------------------->	
-	<div>
-		<c:import url="/WEB-INF/views/layout/Hadan.jsp">
-		</c:import>
-	</div>
+		<script>
+			$(document).ready(function(){
+				$('#form').submit(function() { 
+					var biggestgoalcode = document.getElementById("biggestgoalcode");
+					var a = biggestgoalcode.options[biggestgoalcode.selectedIndex].value;
+					if(a == ''){
+						alert("대분류목표를 선택하세요"); 
+						return false;
+					}
+				});
+			});
+		</script>
 </body>
 </html>

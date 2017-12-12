@@ -59,7 +59,7 @@
       </div>
       <!-- 기본정보 -->
       <div class="base_info">
-      	<img src="/images/common/pic_sample.gif" alt="증명사진" />
+      	<img src="/resources/image/img.jpg">
          <div class="info_area">
          <c:forEach var="FinalGoal" items="${listFinalGoal}">
             <div>
@@ -71,10 +71,10 @@
 	            <span><strong>최종목표 종료일</strong> : ${FinalGoal.finalGoalEnd}</span> 
             </div>
             <div>
-            <span><strong>총 목표 일수</strong> : ${FinalGoal.finalGoalDays}</span>
-            <span><strong>총 투자시간</strong> : ${FinalGoal.finalGoalTotalTime}</span>
+            <span><strong>총 목표 일수</strong> : ${FinalGoal.finalGoalDays}일</span>
+            <span><strong>총 투자시간</strong> : ${FinalGoal.finalGoalTotalTime}시간</span>
             </div>
-            <span class="address"><strong>전체예산</strong> : ${FinalGoal.finalGoalTotalBudget}</span>
+            <span class="address"><strong>전체예산</strong> : ${FinalGoal.finalGoalTotalBudget}원</span>
             <span><strong>메모</strong> : ${FinalGoal.finalGoalNote}</span>
          </c:forEach>
          </div>

@@ -99,7 +99,7 @@
 			finalGoalTotalTime = #{finalGoalTotalTime},
 			finalGoalTotalBudget = #{finalGoalTotalBudget},
 			finalGoalNote = #{finalGoalNote},
-			finalGoalDays = now()
+			finalGoalInputDate = now()
 		WHERE
 			finalGoalCode = #{finalGoalCode}
 	</update>
