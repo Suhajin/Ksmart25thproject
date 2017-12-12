@@ -59,7 +59,6 @@ public class CareerController {
 	}
 
 	// 수정처리하기
-
 	@RequestMapping(value = "/UpdateCareer", method = RequestMethod.POST)
 	public String UpdateCareer(HttpSession session, Career career) {
 		System.out.println("UpdateCareer Controller");

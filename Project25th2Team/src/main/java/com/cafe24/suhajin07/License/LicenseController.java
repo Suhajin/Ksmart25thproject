@@ -2,12 +2,16 @@ package com.cafe24.suhajin07.License;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import com.cafe24.suhajin07.Member.Member;
 
 @Controller
 public class LicenseController {
@@ -39,6 +43,7 @@ public class LicenseController {
 		model.addAttribute("Licenselist", Licenselist);
 		return "Career_License/License_List";
 	}
+	//자격증 수정폼으로 이동
 	@RequestMapping(value = "/LicenseUpdateOne", method = RequestMethod.GET)
 	public String LicenseUpdate(Model model, @RequestParam("licenseCode") int licenseCode) {
 		System.out.println("자격증 수정화면 Controller");
@@ -46,15 +51,15 @@ public class LicenseController {
 		return "Career_License/License_Update_Form";
 	}
 	@RequestMapping(value = "/UpdateLicense", method = RequestMethod.POST)
-	public String UpdateLicense(License license) {
+	public String UpdateLicense(HttpSession session, License license) {
 		System.out.println("UpdateLicense Controller");
 		licenseService.UpdateLicense(license);
-		return "redirect:/LicenseList";
+		return "redirect:/MemberCareerList?memberId="+((Member)session.getAttribute("Member")).getMemberId();
 	}
 	@RequestMapping(value = "/LicenseDelete", method = RequestMethod.GET)
-	public String DeleteLicense(License license) {
+	public String DeleteLicense(HttpSession session, License license) {
 		System.out.println("DeleteLicense Controller");
 		licenseService.DeleteLicense(license);
-		return "redirect:LicenseList";
+		return "redirect:/MemberCareerList?memberId="+((Member)session.getAttribute("Member")).getMemberId();
 	}
 }

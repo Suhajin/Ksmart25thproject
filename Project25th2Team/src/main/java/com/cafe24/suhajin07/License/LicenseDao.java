@@ -27,17 +27,18 @@ public class LicenseDao {
 		System.out.println("LicenseListOne 성공");
 		return sqlSessionTemplate.selectList(NS + "LicenseListOne", memberId);
 	}
+	//수정폼으로 이동
 	public License LicenseSelectone(int licenseCode) {
 		System.out.println("LicenseSelectoneDao 성공");
 		System.out.println(licenseCode);
-		return sqlSessionTemplate.selectOne(NS + "LicenseSelectone", licenseCode);
+		return sqlSessionTemplate.selectOne(NS + "LicenseSelectOne", licenseCode);
 	}
 	public void UpdateLicense(License license) {
 		System.out.println("UpdateLicenseDao 성공");
-		sqlSessionTemplate.update(NS + "UpdateLicense", license);
+		sqlSessionTemplate.update(NS + "LicenseUpdate", license);
 	}
 	public void DeleteLicense(License license) {
 		System.out.println("DeleteLicenseDao 성공");
-		sqlSessionTemplate.delete(NS + "DeleteLicense", license);
+		sqlSessionTemplate.delete(NS + "LicenseDelete", license);
 	}
 }
