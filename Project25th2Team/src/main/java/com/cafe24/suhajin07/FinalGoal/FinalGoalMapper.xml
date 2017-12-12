@@ -3,81 +3,105 @@
 
 <mapper namespace="com.cafe24.suhajin07.FinalGoal.FinalGoalMapper">
 
-	<resultMap type = "com.cafe24.suhajin07.FinalGoal.FinalGoal" id="resultFinalGoal">
-		<result property="finalGoalCode" column="finalGoalCode"/>
-		<result property="biggestGoalCode" column="biggestGoalCode"/>
-		<result property="memberCode" column="memberCode"/>
-		<result property="managerCode" column="managerCode"/>
-		<result property="managerGradeCode" column="managerGradeCode"/>
-		<result property="finalGoalName" column="finalGoalName"/>
-		<result property="finalGoalStart" column="finalGoalStart"/>
-		<result property="finalGoalEnd" column="finalGoalEnd"/>
-		<result property="finalGoalDays" column="finalGoalDays"/>
-		<result property="finalGoalTimeADay" column="finalGoalTimeADay"/>
-		<result property="finalGoalTotalTime" column="finalGoalTotalTime"/>
-		<result property="finalGoalTotalBudget" column="finalGoalTotalBudget"/>
-		<result property="finalGoalNote" column="finalGoalNote"/>
-		<result property="finalGoalInputDate" column="finalGoalInputDate"/>
-   </resultMap>
+	<resultMap type="com.cafe24.suhajin07.FinalGoal.FinalGoal"
+		id="resultFinalGoal">
+		<result property="finalGoalCode" column="finalGoalCode" />
+		<result property="biggestGoalCode" column="biggestGoalCode" />
+		<result property="memberCode" column="memberCode" />
+		<result property="managerCode" column="managerCode" />
+		<result property="managerGradeCode" column="managerGradeCode" />
+		<result property="finalGoalName" column="finalGoalName" />
+		<result property="finalGoalStart" column="finalGoalStart" />
+		<result property="finalGoalEnd" column="finalGoalEnd" />
+		<result property="finalGoalDays" column="finalGoalDays" />
+		<result property="finalGoalTimeADay" column="finalGoalTimeADay" />
+		<result property="finalGoalTotalTime" column="finalGoalTotalTime" />
+		<result property="finalGoalTotalBudget" column="finalGoalTotalBudget" />
+		<result property="finalGoalNote" column="finalGoalNote" />
+		<result property="finalGoalInputDate" column="finalGoalInputDate" />
+	</resultMap>
 
-   <insert id = "insertFinalGoal" parameterType="com.cafe24.suhajin07.FinalGoal.FinalGoal">
-      INSERT INTO
-         finalGoal(
-            finalGoalCode,
-            biggestGoalCode,
-            memberCode,
-            managerCode,
-            managerGradeCode,
-            finalGoalName,
-            finalGoalStart,
-            finalGoalEnd,
-            finalGoalDays,
-            finalGoalTimeADay,
-            finalGoalTotalTime,
-            finalGoalTotalBudget,
-            finalGoalNote,
-            finalGoalInputDate                  
-         ) VALUES (
-            #{finalGoalCode},
-            #{biggestGoalCode},
-            #{memberCode},
-            #{managerCode},
-            #{managerGradeCode},
-            #{finalGoalName},
-            #{finalGoalStart},
-            #{finalGoalEnd},
-            #{finalGoalDays},
-            #{finalGoalTimeADay},
-            #{finalGoalTotalTime},
-            #{finalGoalTotalBudget},
-            #{finalGoalNote}
-            ,now())
-   </insert>
+	<insert id="insertFinalGoal" parameterType="com.cafe24.suhajin07.FinalGoal.FinalGoal">
+		INSERT INTO
+		finalGoal(
+		finalGoalCode,
+		biggestGoalCode,
+		memberCode,
+		managerCode,
+		managerGradeCode,
+		finalGoalName,
+		finalGoalStart,
+		finalGoalEnd,
+		finalGoalDays,
+		finalGoalTimeADay,
+		finalGoalTotalTime,
+		finalGoalTotalBudget,
+		finalGoalNote,
+		finalGoalInputDate
+		) VALUES (
+		#{finalGoalCode},
+		#{biggestGoalCode},
+		#{memberCode},
+		#{managerCode},
+		#{managerGradeCode},
+		#{finalGoalName},
+		#{finalGoalStart},
+		#{finalGoalEnd},
+		#{finalGoalDays},
+		#{finalGoalTimeADay},
+		#{finalGoalTotalTime},
+		#{finalGoalTotalBudget},
+		#{finalGoalNote}
+		,now())
+	</insert>
 
-   <select id="selectFinalGoalList" parameterType="com.cafe24.suhajin07.FinalGoal.FinalGoal" resultMap="resultFinalGoal">
-		SELECT 
-			 memberId
-			,memberName
-			,biggestGoalName 
-			,finalGoalName
-			,finalGoalStart
-			,finalGoalEnd
-			,finalGoalDays
-			,finalGoalTimeADay
-			,finalGoalTotalTime
-			,finalGoalTotalBudget
-			,finalGoalNote
-			,finalGoalInputDate 
-		FROM finalGoal  join member join biggestGoal
+	<select id="selectFinalGoalList" parameterType="com.cafe24.suhajin07.FinalGoal.FinalGoal"
+		resultMap="resultFinalGoal">
+		SELECT
+		memberId
+		,finalGoalCode
+		,memberName
+		,biggestGoalName
+		,finalGoalName
+		,finalGoalStart
+		,finalGoalEnd
+		,finalGoalDays
+		,finalGoalTimeADay
+		,finalGoalTotalTime
+		,finalGoalTotalBudget
+		,finalGoalNote
+		,finalGoalInputDate
+		FROM finalGoal join member join biggestGoal
 		on
-			finalGoal.memberCode = member.memberCode 
-			and finalGoal.biggestGoalCode = biggestGoal.biggestGoalCode
+		finalGoal.memberCode = member.memberCode
+		and finalGoal.biggestGoalCode = biggestGoal.biggestGoalCode
 		WHERE memberId= #{memberId}
-   </select>
-   
-   <select id="selectFinalGoal" parameterType="com.cafe24.suhajin07.FinalGoal.FinalGoal" resultType="int">
+	</select>
+
+	<select id="selectFinalGoal" parameterType="com.cafe24.suhajin07.FinalGoal.FinalGoal"
+		resultType="int">
 		SELECT COUNT(0)
 		FROM finalGoal
 		WHERE memberCode= #{memberCode}
-   </select>
+	</select>
+
+	<update id="updateFinalGoal" parameterType="com.cafe24.suhajin07.FinalGoal.FinalGoal">
+		UPDATE finalGoal set
+			biggestGoalCode = #{biggestGoalCode},
+			memberCode = #{memberCode},
+			managerCode = #{managerCode},
+			managerGradeCode = #{managerGradeCode},
+			finalGoalName = #{finalGoalName},
+			finalGoalStart = #{finalGoalStart},
+			finalGoalEnd = #{finalGoalEnd},
+			finalGoalDays = #{finalGoalDays},
+			finalGoalTimeADay = #{finalGoalTimeADay},
+			finalGoalTotalTime = #{finalGoalTotalTime},
+			finalGoalTotalBudget = #{finalGoalTotalBudget},
+			finalGoalNote = #{finalGoalNote},
+			finalGoalDays = now()
+		WHERE
+			finalGoalCode = #{finalGoalCode}
+	</update>
+
 </mapper>
