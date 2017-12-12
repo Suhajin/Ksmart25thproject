@@ -9,10 +9,10 @@ public class EvaluationDao {
 	@Autowired
 	SqlSessionTemplate sqlSessionTemplate;
 	
-	private final String NS = "com.cafe24.suhajin07.Evaluation.EvaluationMapper";
+	private final String NS = "com.cafe24.suhajin07.Evaluation.EvaluationMapper.";
 	
-	public void EvaluationInsert(Evaluation evaluation) {
+	public void EvaluationInsert(Evaluation eva) {
 		System.out.println("EvaluationInsert Dao 성공");
-		sqlSessionTemplate.insert(NS + "EvaluationInsert", evaluation);
+		sqlSessionTemplate.insert(NS + "insertEvaluation", eva);
 	}
 }

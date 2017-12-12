@@ -126,18 +126,7 @@
 	  </form>
 	  </c:forEach>
 	</div>
-		<script>
-		$(document).ready(function(){
-			$('#form').submit(function() { 
-				var studycode = document.getElementById("detailGoalStart");
-				var a = detailGoalStart.options[detailGoalStart.selectedIndex].value;
-				if(a == ''){
-					alert("공부시작 시간을 선택하세요"); 
-					return false;
-				}
-			});
-		});
-		</script>
+	
 <!------------------------------------Hadan-------------------------------------->	
 	<div>
 		<c:import url="/WEB-INF/views/layout/Hadan.jsp">

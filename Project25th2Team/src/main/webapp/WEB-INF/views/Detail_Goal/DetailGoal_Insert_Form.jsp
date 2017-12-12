@@ -1,11 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page session="true"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>ëª©í‘œì„¤ì •</title>
+<title>¼¼ºÎ¸ñÇ¥¼³Á¤</title>
 <style>
 	input[type=text], select {
 	    width: 100%;
@@ -53,63 +53,63 @@
 <!------------------------------------main-------------------------------------->
 <br>
 <div class="container">
-	<h3 align="center">ì„¸ë¶€ëª©í‘œ ë“±ë¡</h3>
+	<h3 align="center">¼¼ºÎ¸ñÇ¥ µî·Ï</h3>
 <br>
 	
 	 <form action="/AddDetailGoal" method="post">
 	    <table>
 	   
 		<tr>
-		  	<td><input type="hidden" name="midGoalCode" value=${detailGoal.midGoalCode}></td>	
+		  	<td><input type="hidden" name="midGoalCode" value=${Member.memberCode}></td>	
 		</tr>
 		<tr>   
-		    <td><input type="hidden" name="memberCode" value=${detailGoal.memberCode}></td>
+		    <td><input type="hidden" name="memberCode" value=${Member.memberCode}></td>
 	    </tr>
 		<tr>	
-	    	<td><input type="hidden" name="biggestGoalCode" value=${detailGoal.biggestGoalCode}></td>
+	    	<td><input type="hidden" name="biggestGoalCode" value=${Member.memberCode}></td>
 	    </tr>
 	    <tr>	
-	    	<td><input type="hidden" name="goalTotalCode" value=${detailGoal.goalTotalCode}></td>
+	    	<td><input type="hidden" name="goalTotalCode" value=${Member.memberCode}></td>
 	    </tr>
 	    <tr>	
-	    	<td><input type="hidden" name="managerCode" value=${detailGoal.managerCode}></td>
+	    	<td><input type="hidden" name="managerCode" value=${Member.memberCode}></td>
 	    </tr>
 	    <tr>	
-	    	<td><input type="hidden" name="studyCode" value=${detailGoal.studyCode}></td>
+	    	<td><input type="hidden" name="studyCode" value=${Member.memberCode}></td>
 	    </tr>
 	    <tr>	
-	    	<td><input type="hidden" name="managerGradeCode" value=${detailGoal.managerGradeCode}></td>
+	    	<td><input type="hidden" name="managerGradeCode" value=${Member.memberCode}></td>
 	    </tr>
 	    <tr>	
-	    	<td><input type="hidden" name="lisenceListCode" value=${detailGoal.lisenceListCode}></td>
+	    	<td><input type="hidden" name="lisenceListCode" value=${Member.memberCode}></td>
 	    </tr>
 	    <tr>
-	    	<td align="center"><label for="detailGoalList">ì„¸ë¶€ëª©í‘œ ë¦¬ìŠ¤íŠ¸</label></td>
-	    	<td><input type="text" name="detailGoalList" placeholder="ex)ì˜ì–´ë‹¨ì–´30ê°œ ì™¸ìš°ê¸° "></td>
+	    	<td align="center"><label for="detailGoalList">¼¼ºÎ¸ñÇ¥ ¸®½ºÆ®</label></td>
+	    	<td><input type="text" name="detailGoalList" placeholder="ex)¿µ¾î´Ü¾î30°³ ¿Ü¿ì±â "></td>
 	    </tr>
 	    <tr>
-		    <td align="center"><label for="detailGoalDate">ì„¸ë¶€ëª©í‘œ ì‹œì‘ì¼</label></td>
+		    <td align="center"><label for="detailGoalDate">¼¼ºÎ¸ñÇ¥ ½ÃÀÛÀÏ</label></td>
 		    <td><input type="date" name="detailGoalDate" ></td>
 	    </tr>
 	    <tr>
-		    <td align="center"><label for="detailGoalStart">ì„¸ë¶€ëª©í‘œ ì‹œì‘ì‹œê°„</label></td>
+		    <td align="center"><label for="detailGoalStart">¼¼ºÎ¸ñÇ¥ ½ÃÀÛ½Ã°£</label></td>
 		    <td><input type="time" name="detailGoalStart" ></td>
 	    </tr>
 	     <tr>
-		    <td align="center"><label for="detailGoalEnd">ì„¸ë¶€ëª©í‘œ ì¢…ë£Œì‹œê°„</label></td>
+		    <td align="center"><label for="detailGoalEnd">¼¼ºÎ¸ñÇ¥ Á¾·á½Ã°£</label></td>
 		    <td><input type="time" name="detailGoalEnd" ></td>
 	    </tr>
 	    <tr>
-		    <td align="center"><label for="detailGoalTotal">ì„¸ë¶€ëª©í‘œ ì´ ì‹œê°„</label></td>
+		    <td align="center"><label for="detailGoalTotal">¼¼ºÎ¸ñÇ¥ ÃÑ ½Ã°£</label></td>
 		    <td><input type="text" name="detailGoalTotal" ></td>
 	    </tr>
 	    <tr>
-	    	<td align="center"><label for="detailGoalBudget">ì„¸ë¶€ëª©í‘œ ì˜ˆì‚°</label></td>
-	    	<td><input type="text" name="detailGoalBudget" placeholder="ex)5000ì› "></td>
+	    	<td align="center"><label for="detailGoalBudget">¼¼ºÎ¸ñÇ¥ ¿¹»ê</label></td>
+	    	<td><input type="text" name="detailGoalBudget" placeholder="ex)5000¿ø "></td>
 	    </tr>
 	    <tr>
-	    	<td align="center"><label for="detailGoalExplain">ì„¸ë¶€ëª©í‘œ ì„¤ëª…</label></td>
-	    	<td><input type="text" name="detailGoalExplain" placeholder="ex)ì˜ì–´ë‹¨ì–´ 10ê°œì”© 3ë²ˆ ì™¸ìš°ê¸°"></td>
+	    	<td align="center"><label for="detailGoalExplain">¼¼ºÎ¸ñÇ¥ ¼³¸í</label></td>
+	    	<td><input type="text" name="detailGoalExplain" placeholder="ex)¿µ¾î´Ü¾î 10°³¾¿ 3¹ø ¿Ü¿ì±â"></td>
 	    </tr>
 	   </table>
 	   	
@@ -118,10 +118,22 @@
 	  	</div>
 	  </form>
 	</div>
-<!------------------------------------Hadan-------------------------------------->	
+	<!------------------------------------Hadan-------------------------------------->	
 	<div>
 		<c:import url="/WEB-INF/views/layout/Hadan.jsp">
 		</c:import>
 	</div>
+	<!-- <script>
+		$(document).ready(function(){
+			$('#form').submit(function() { 
+				var detailGoalExplain = document.getElementById("detailGoalExplain");
+				var a = detailGoalExplain.options[detailGoalExplain.selectedIndex].value;
+				if(a == ''){
+					alert("°øºÎ¹æ¹ıÀ» ¼±ÅÃÇÏ¼¼¿ä"); 
+					return false;
+				}
+			});
+		});
+	</script> -->
 </body>
 </html>
