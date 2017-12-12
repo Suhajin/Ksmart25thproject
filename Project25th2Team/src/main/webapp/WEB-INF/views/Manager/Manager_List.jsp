@@ -207,10 +207,8 @@ html ul.tabs li.active, html ul.tabs li.active a:hover {
 							<th>회원 성명</th>
 							<th>회원 연락처</th>
 							<th>회원 Email</th>
-							<th>회원 우편번호</th>
-							<th>회원 주소</th>
-							<th>회원 상세주소</th>
-							<th>가입일</th>
+							<th>은행명</th>
+							<th>계좌번호</th>
 							<th>수정</th>
 							<th>삭제</th>
 						</tr>
@@ -221,10 +219,8 @@ html ul.tabs li.active, html ul.tabs li.active a:hover {
 								<td>${manager.memberName}</td>
 								<td>${manager.memberPhone}</td>
 								<td>${manager.memberEmail}</td>
-								<td>${manager.memberPostNum}</td>
-								<td>${manager.memberAddress}</td>
-								<td>${manager.memberDetailAddress}</td>
-								<td>${manager.memberDate}</td>
+								<td>${manager.bankName}</td>
+								<td>${manager.bankNum}</td>
 								<td><a
 									href="/ManagerUpdate?managerCode=${manager.managerCode}"
 									class="btn_add">수정</a></td>
@@ -251,10 +247,8 @@ html ul.tabs li.active, html ul.tabs li.active a:hover {
 							<th>회원 성명</th>
 							<th>회원 연락처</th>
 							<th>회원 Email</th>
-							<th>회원 우편번호</th>
-							<th>회원 주소</th>
-							<th>회원 상세주소</th>
-							<th>가입일</th>
+							<th>은행명</th>
+							<th>계좌번호</th>
 							<th>수정</th>
 							<th>삭제</th>
 						</tr>
@@ -265,10 +259,8 @@ html ul.tabs li.active, html ul.tabs li.active a:hover {
 								<td>${manager.memberName}</td>
 								<td>${manager.memberPhone}</td>
 								<td>${manager.memberEmail}</td>
-								<td>${manager.memberPostNum}</td>
-								<td>${manager.memberAddress}</td>
-								<td>${manager.memberDetailAddress}</td>
-								<td>${manager.memberDate}</td>
+								<td>${manager.bankName}</td>
+								<td>${manager.bankNum}</td>
 								<td><a
 									href="/ManagerUpdate?managerCode=${manager.managerCode}"
 									class="btn_add">수정</a></td>
@@ -295,10 +287,8 @@ html ul.tabs li.active, html ul.tabs li.active a:hover {
 							<th>회원 성명</th>
 							<th>회원 연락처</th>
 							<th>회원 Email</th>
-							<th>회원 우편번호</th>
-							<th>회원 주소</th>
-							<th>회원 상세주소</th>
-							<th>가입일</th>
+							<th>은행명</th>
+							<th>계좌번호</th>
 							<th>수정</th>
 							<th>삭제</th>
 						</tr>
@@ -309,10 +299,8 @@ html ul.tabs li.active, html ul.tabs li.active a:hover {
 								<td>${manager.memberName}</td>
 								<td>${manager.memberPhone}</td>
 								<td>${manager.memberEmail}</td>
-								<td>${manager.memberPostNum}</td>
-								<td>${manager.memberAddress}</td>
-								<td>${manager.memberDetailAddress}</td>
-								<td>${manager.memberDate}</td>
+								<td>${manager.bankName}</td>
+								<td>${manager.bankNum}</td>
 								<td><a
 									href="/ManagerUpdate?managerCode=${manager.managerCode}"
 									class="btn_add">수정</a></td>
@@ -339,10 +327,8 @@ html ul.tabs li.active, html ul.tabs li.active a:hover {
 							<th>회원 성명</th>
 							<th>회원 연락처</th>
 							<th>회원 Email</th>
-							<th>회원 우편번호</th>
-							<th>회원 주소</th>
-							<th>회원 상세주소</th>
-							<th>가입일</th>
+							<th>은행명</th>
+							<th>계좌번호</th>
 							<th>수정</th>
 							<th>삭제</th>
 						</tr>
@@ -353,10 +339,8 @@ html ul.tabs li.active, html ul.tabs li.active a:hover {
 								<td>${manager.memberName}</td>
 								<td>${manager.memberPhone}</td>
 								<td>${manager.memberEmail}</td>
-								<td>${manager.memberPostNum}</td>
-								<td>${manager.memberAddress}</td>
-								<td>${manager.memberDetailAddress}</td>
-								<td>${manager.memberDate}</td>
+								<td>${manager.bankName}</td>
+								<td>${manager.bankNum}</td>
 								<td><a
 									href="/ManagerUpdate?managerCode=${manager.managerCode}"
 									class="btn_add">수정</a></td>
@@ -386,10 +370,8 @@ html ul.tabs li.active, html ul.tabs li.active a:hover {
 							<th>회원 성명</th>
 							<th>회원 연락처</th>
 							<th>회원 Email</th>
-							<th>회원 우편번호</th>
-							<th>회원 주소</th>
-							<th>회원 상세주소</th>
-							<th>가입일</th>
+							<th>은행명</th>
+							<th>계좌번호</th>
 							<th>수정</th>
 							<th>삭제</th>
 						</tr>
@@ -400,10 +382,8 @@ html ul.tabs li.active, html ul.tabs li.active a:hover {
 								<td>${manager.memberName}</td>
 								<td>${manager.memberPhone}</td>
 								<td>${manager.memberEmail}</td>
-								<td>${manager.memberPostNum}</td>
-								<td>${manager.memberAddress}</td>
-								<td>${manager.memberDetailAddress}</td>
-								<td>${manager.memberDate}</td>
+								<td>${manager.bankName}</td>
+								<td>${manager.bankNum}</td>
 								<td><a
 									href="/ManagerUpdate?managerCode=${manager.managerCode}"
 									class="btn_add">수정</a></td>

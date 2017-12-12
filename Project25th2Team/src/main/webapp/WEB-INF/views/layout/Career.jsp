@@ -84,12 +84,6 @@
 			</tbody>
 		</table>
 
-
-
-
-
-
-
 		<!-- 경력등록 -->
 		<div class="section_top_area">
 			<h4>경력 등록</h4>

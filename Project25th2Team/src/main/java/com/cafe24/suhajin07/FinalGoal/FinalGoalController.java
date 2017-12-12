@@ -1,6 +1,5 @@
 package com.cafe24.suhajin07.FinalGoal;
 
-
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -14,15 +13,41 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.cafe24.suhajin07.Member.Member;
 
-
-
 @Controller
 public class FinalGoalController {
-
 
 	@Autowired
 	FinalGoalService fgService;
 	
+	//최종목표 수정
+	@RequestMapping(value="/UpdateActionFinalGoal", method=RequestMethod.POST)
+	public String updateActionFinalGoal(FinalGoal fg, HttpSession session) {
+		System.out.println("updateActionFinalGoal Controller");
+		System.out.println(fg);
+		fgService.updateFinalGoal(fg);
+		return "redirect:/Goal?memberId="+((Member)session.getAttribute("Member")).getMemberId();
+		
+	}
+
+	//최종목표 수정페이지
+	@RequestMapping(value="/UpdateFinalGoal", method=RequestMethod.GET)
+	public String updateFinalGoal(Model model, HttpSession session) {
+		Member member = (Member) session.getAttribute("Member");
+		System.out.println(member.getMemberId());
+		List<FinalGoal> list = fgService.listFinalGoal(member.getMemberId());
+		model.addAttribute("listFinalGoal", list);
+		return "Final_Goal/FinalGoal_Update_Form";
+		
+	}
+
+	//최종목표 등록
+	@RequestMapping(value="/AddFinalGoal", method=RequestMethod.POST)
+	public String addFinalGoal(HttpSession session,FinalGoal fg) {
+		System.out.println("FinalGoalController"+fg);
+		fgService.addFinalGoal(fg);
+		return "redirect:/Goal?memberId="+((Member)session.getAttribute("Member")).getMemberId();
+		
+	}
 	
 	// 메인화면에서 Head의 목표설정을 누르면 목표설정 페이지로 이동
 	@RequestMapping(value="/Goal", method=RequestMethod.GET)
@@ -39,15 +64,7 @@ public class FinalGoalController {
 			}
 			else {
 				return "Final_Goal/FinalGoal_Insert_Form";
-			}
+		}
 	}
 	
-	//최종목표 등록
-	@RequestMapping(value="/AddFinalGoal", method=RequestMethod.POST)
-	public String addFinalGoal(HttpSession session,FinalGoal fg) {
-		System.out.println("FinalGoalController"+fg);
-		fgService.addFinalGoal(fg);
-		return "redirect:/Goal?memberId="+((Member)session.getAttribute("Member")).getMemberId();
-		
-	}
 }
