@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.cafe24.suhajin07.Master.Master;
+import com.cafe24.suhajin07.Master.Goal;
 
 @Repository
 public class MasterDao {
@@ -28,6 +29,19 @@ public class MasterDao {
 		System.out.println(" All MemberList 성공");
 		return sql.selectList(NS + "memberAllList");
 	}
+	
+	// 최종골리스트(회원)
+	public List<Goal> memberFinalGoalList(){
+		System.out.println("memberFinalGoalList Dao");
+		return sql.selectList(NS+"memberFinalGoalList");
+		
+	}
+	// 중간골 리스트(회원)
+	public List<Goal> membermidGoalList(){
+		System.out.println("membermidGoalList Dao");
+		return sql.selectList(NS+"memberMidGoalList");
+	}
+	
 	
 	// 전체리스트(매니저)
 	public List<Master> AllManagerList(){

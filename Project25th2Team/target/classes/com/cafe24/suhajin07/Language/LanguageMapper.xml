@@ -52,7 +52,7 @@
 		order by memberId
 	</select>
 
-	<select id="languageListOne" parameterType="com.cafe24.suhajin07.Career.Career"
+	<select id="languageListOne" parameterType="com.cafe24.suhajin07.Language.Language"
 		resultMap="resultLanguage">
 		SELECT memberId, memberName, languageCode,
 		languageAcquire,languageScore,languageOrgan,
@@ -69,6 +69,31 @@
 		#{memberId}
 
 	</select>
+	
+	<select id="languageOneList" resultType="com.cafe24.suhajin07.Language.Language">
+		SELECT *
+		FROM language
+		WHERE languageCode = #{languageCode}
+	</select>
+	
+	<update id="languageUpdate" parameterType="com.cafe24.suhajin07.Language.Language">
+	UPDATE language
+	SET
+		  languageCode = #{languageCode}
+		, memberCode = #{memberCode}
+		, lisenceListCode = #{lisenceListCode}
+		, languageAcquire = #{languageAcquire}
+		, languageScore = #{languageScore}
+		, languageOrgan = #{languageOrgan}
+		, languageFile = #{languageFile}
+	WHERE languageCode = #{languageCode}
+	</update>
+	
+	<delete id="LanguageDelete" parameterType="com.cafe24.suhajin07.Language.Language">
+		DELETE
+		FROM language
+		WHERE languageCode = #{languageCode}
+	</delete>
 
 
 </mapper>

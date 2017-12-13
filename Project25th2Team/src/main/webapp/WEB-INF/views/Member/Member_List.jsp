@@ -7,6 +7,13 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>회원리스트</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<link rel="stylesheet" type="text/css"
+	href="<%=request.getContextPath()%>/resources/css/Career_common.css" />
+<link rel="stylesheet" type="text/css"
+	href="<%=request.getContextPath()%>/resources/css/Career_jquery-ui.css" />
+
 </head>
 <body>
 	<div>
@@ -28,7 +35,7 @@
 			<h1>전체 회원 리스트</h1>
 
 			<div align="center">
-				<table border="1" align="center">
+				<table border="1" style="text-align: center;">
 					<thead>
 						<tr>
 							<th>회원ID</th>

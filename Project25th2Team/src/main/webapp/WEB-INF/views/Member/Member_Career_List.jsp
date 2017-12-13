@@ -155,7 +155,7 @@ html ul.tabs li.active, html ul.tabs li.active a:hover {
 
 		<h1>Edu List</h1>
 		<div align="center">
-			<table class="list_tbl_01 mb70" border="1" align="center">
+			<table class="list_tbl_01 mb70" border="1" style="text-align: center;">
 				<thead>
 					<tr>
 						<th>ID</th>
@@ -196,7 +196,7 @@ html ul.tabs li.active, html ul.tabs li.active a:hover {
 		<!--Content-->
 		<h1>Career</h1>
 		<div align="center">
-			<table class="list_tbl_01 mb70" border="1" align="center">
+			<table class="list_tbl_01 mb70" border="1" style="text-align: center;">
 				<thead>
 					<tr>
 						<th>ID</th>
@@ -239,7 +239,7 @@ html ul.tabs li.active, html ul.tabs li.active a:hover {
 		<!--Content-->
 		<h1>License</h1>
 		<div align="center">
-			<table class="list_tbl_01 mb70" border="1" align="center">
+			<table class="list_tbl_01 mb70" border="1" style="text-align: center;">
 				<thead>
 					<tr>
 						<th>ID</th>
@@ -284,7 +284,7 @@ html ul.tabs li.active, html ul.tabs li.active a:hover {
 		<!--Content-->
 		<h1>Language</h1>
 		<div align="center">
-			<table class="list_tbl_01 mb70" border="1" align="center">
+			<table class="list_tbl_01 mb70" border="1" style="text-align: center;">
 				<thead>
 					<tr>
 						<th>ID</th>
@@ -328,7 +328,7 @@ html ul.tabs li.active, html ul.tabs li.active a:hover {
 		<!--Content-->
 		<h1>Completelist</h1>
 		<div align="center">
-			<table class="list_tbl_01 mb70" border="1" align="center">
+			<table class="list_tbl_01 mb70" border="1" style="text-align: center;">
 				<thead>
 					<tr>
 						<th>ID</th>
@@ -375,7 +375,7 @@ html ul.tabs li.active, html ul.tabs li.active a:hover {
 		<!--Content-->
 		<h1>Training</h1>
 		<div align="center">
-			<table class="list_tbl_01 mb70" border="1" align="center">
+			<table class="list_tbl_01 mb70" border="1" style="text-align: center;">
 				<thead>
 					<tr>
 						<th>ID</th>

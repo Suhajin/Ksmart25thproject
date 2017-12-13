@@ -99,7 +99,7 @@
                         <ul class="dropdown-menu">
                            <li><a href="/MemberList">회원리스트</a></li>
                            <li><a href="/MemberCareerList">회원경력리스트</a></li>
-                           <li><a href="#">회원컨설리스트</a></li>
+                           <li><a href="/MemberGoalList">회원컨설리스트</a></li>
                         </ul></li>
                      <li class="nav-item"><a class="nav-link" href="/Logout">로그아웃</a></li>
                   </c:when>
@@ -136,7 +136,7 @@
                         <ul class="dropdown-menu">
                            <li><a href="/MemberList">회원리스트</a></li>
                            <li><a href="/MemberCareerList">회원경력리스트</a></li>
-                           <li><a href="#">회원컨설리스트</a></li>
+                           <li><a href="/MemberGoalList">회원컨설리스트</a></li>
                         </ul></li>
                      <li class="nav-item"><a class="nav-link" href="/Logout">로그아웃</a></li>
                   </c:when>

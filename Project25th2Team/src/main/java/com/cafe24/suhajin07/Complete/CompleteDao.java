@@ -31,4 +31,20 @@ public class CompleteDao {
 		System.out.println("One CompleteList성공");
 		return sqlSessionTemplate.selectList(NS+"CompleteListOne", memberId);
 	}
+	
+	//수정폼으로 이동
+	public Complete completeUpdateForm(int complitionCode) {
+		return sqlSessionTemplate.selectOne(NS + "completeOneList", complitionCode);
+		
+	}
+	
+	//수정처리
+	public void completeUpdate(Complete complete) {
+		sqlSessionTemplate.update(NS+"completeUpdate",complete);
+	}
+	
+	//삭제처리
+	public void completeDelete(Complete complete) {
+		sqlSessionTemplate.delete(NS + "completeDelete", complete);
+	}
 }
