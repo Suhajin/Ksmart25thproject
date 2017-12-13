@@ -52,7 +52,7 @@
 				</div>
 			</div>
 			<table class="list_tbl_01 mb70" summary="중간목표 카테고리">
-			<c:forEach var="midGoal" items="${listMidGoal}">
+			
 				<caption>중간목표 카테고리</caption>
 				<colgroup>
 					<!-- 체크박스 -->
@@ -77,6 +77,7 @@
 					<col style="width: 7%" />
 				</colgroup>
 				<thead>
+				
 					<tr class="first"  align="center">
 						<th scope="col"></th>
 						<th scope="col">대분류목표명</th>
@@ -92,6 +93,7 @@
 				</thead>
 				
 				<tbody>
+				<c:forEach var="midGoal" items="${listMidGoal}">
 						<tr>
 							<td>
 								<input type="checkbox" name="check" class="midGoalCheckTarget"
@@ -111,9 +113,9 @@
 							<td>${midGoal.midGoalBudget}</td>
 							<td>${midGoal.midGoalDate}</td>
 						</tr>
-					
+					</c:forEach>
 				</tbody>
-				</c:forEach>
+				
 			</table>
 		</div>
 		

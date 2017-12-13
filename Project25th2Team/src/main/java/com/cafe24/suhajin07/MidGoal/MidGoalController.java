@@ -63,7 +63,8 @@ public class MidGoalController {
 	// 중간목표 등록
 	@RequestMapping(value = "/AddMidGoal", method = RequestMethod.POST)
 	public String addMidGoal(HttpSession session, MidGoal mg) {
-		System.out.println("MidGoalController 성공" + mg);
+		System.out.println("addMidGoal Controller 성공");
+		System.out.println(mg);
 		mgService.addMidGoal(mg);
 		return "redirect:/MidGoalList?memberId=" + ((Member) session.getAttribute("Member")).getMemberId();
 	}

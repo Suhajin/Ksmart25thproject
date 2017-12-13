@@ -59,8 +59,9 @@ th {
 	<div class="container">
 		<h3 align="center">중간목표 등록</h3>
 		<br>
-		<c:forEach var="FinalGoal" items="${listMidGoalForm}">
-			<form action="/AddMidGoal" method="post">
+
+		<form action="/AddMidGoal" method="post">
+			<c:forEach var="FinalGoal" items="${listMidGoalForm}">
 				<table>
 
 					<tr>
@@ -118,10 +119,12 @@ th {
 							value=${Member.memberCode}></td>
 					</tr>
 					<tr>
-						<td><input type="hidden" name="managerCode" value=""></td>
+						<td><input type="hidden" name="managerCode"
+							value=${Member.memberCode}></td>
 					</tr>
 					<tr>
-						<td><input type="hidden" name="managerGradeCode" value=""></td>
+						<td><input type="hidden" name="managerGradeCode"
+							value=${Member.memberCode}></td>
 					</tr>
 					<tr>
 						<td align="center"><label for="midGoalName">중간목표명</label></td>
@@ -163,13 +166,12 @@ th {
 					</tr>
 
 				</table>
-
-				<div align="center">
-					<input type="submit" value="submit"
-						class="form-control btn btn-primary">
-				</div>
-			</form>
-		</c:forEach>
+			</c:forEach>
+			<div align="center">
+				<input type="submit" value="submit"
+					class="form-control btn btn-primary">
+			</div>
+		</form>
 	</div>
 	<!------------------------------------Hadan-------------------------------------->
 	<div>
