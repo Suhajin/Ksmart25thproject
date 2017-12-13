@@ -68,6 +68,7 @@ public class MemberController {
 			return "Member/Member_Update";
 		}
 	}
+	
 }
 
 
