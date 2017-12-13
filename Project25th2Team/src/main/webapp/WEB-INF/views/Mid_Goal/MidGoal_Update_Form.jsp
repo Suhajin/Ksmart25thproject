@@ -107,11 +107,11 @@
 	    </tr>
 		<tr>
 		    <td align="center"><label for="midGoalStart">중간목표 시작일</label></td>
-		    <td><input type="date"  id="start" name="midGoalStart"></td>
+		    <td><input type="date"  id="start" name="midGoalStart" value="${MidGoal.midGoalStart}"></td>
 	    </tr>
 		<tr>
 	    	<td align="center"><label for="midGoalEnd">중간목표 종료일</label></td>
-	    	<td><input type="date" id="end" name="midGoalEnd" ></td>
+	    	<td><input type="date" id="end" name="midGoalEnd" value="${MidGoal.midGoalEnd}"></td>
 	    </tr>
 		<tr>
 		    <td align="center"><label for="midGoalBudget">중간목표 예산</label></td>

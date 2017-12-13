@@ -42,8 +42,14 @@
 		<div class="content" id="content">
 	
 			<div class="section_top_area">
-				<br><br>
-				<h4>중간목표 카테고리</h4>
+				<br>
+				<br>
+				<span>
+					<a href="/Goal" class="btn_add">대분류목표설정</a>
+				</span>
+				<br>
+				<br>
+				<h4>${Member.memberName}님의 중간 목표 설정</h4>
 			
 				<div class="sec_top_btn">
 					<a href="/InsertMidGoalForm?memberId=${Member.memberId}" class="btn_add">추가</a>
@@ -57,37 +63,40 @@
 				<colgroup>
 					<!-- 체크박스 -->
 					<col style="width: 2%" />
-					<!--  대분류목표명 -->
-					<col style="width: 5%" />
+					<!--  최종목표 -->
+					<col style="width: 7%" />
 					<!--  중간목표 -->
-					<col style="width: 5%" />
+					<col style="width: 7%" />
 					<!--  중간목표명 -->
-					<col style="width: 10%" />
+					<col style="width: 15%" />
 					<!--  공부방법 -->
+					<col style="width: 7%" />
+					<!--  자격증명 -->
 					<col style="width: 10%" />
 					<!--  중간계획 -->
 					<col style="width: 15%" />
 					<!-- 중간목표 시작일 -->
-					<col style="width: 7%" />
+					<col style="width: 10%" />
 					<!-- 중간목표 종료일 -->
-					<col style="width: 7%" />
+					<col style="width: 10%" />
 					<!-- 중간목표예산 -->
-					<col style="width: 7%" />
+					<col style="width: 10%" />
 					<!-- 등록일자 -->
-					<col style="width: 7%" />
+					<col style="width: 10%" />
 				</colgroup>
 				<thead>
 				
 					<tr class="first"  align="center">
 						<th scope="col"></th>
-						<th scope="col">대분류목표명</th>
-						<th scope="col">${midGoal.biggestGoalName}를위한 목표</th>
+						<th scope="col">최종목표</th>
+						<th scope="col">중간목표</th>
 						<th scope="col">중간목표명</th>
 						<th scope="col">공부방법</th>
+						<th scope="col">자격증명</th>
 						<th scope="col">중간계획</th>
-						<th scope="col">중간목표 시작일</th>
-						<th scope="col">중간목표 종료일</th>
-						<th scope="col">중간목표예산</th>
+						<th scope="col">중간목표<br>시작일</th>
+						<th scope="col">중간목표<br>종료일</th>
+						<th scope="col">중간목표<br>예산</th>
 						<th scope="col">등록일자</th>
 					</tr>
 				</thead>
@@ -107,6 +116,7 @@
 							<td>${midGoal.midGoalId}</td>
 							<td>${midGoal.midGoalName}</td>
 							<td>${midGoal.studyMethod}</td>
+							<td>${midGoal.lisenceListCode}</td>
 							<td>${midGoal.midGoalPlan}</td>
 							<td>${midGoal.midGoalStart}</td>
 							<td>${midGoal.midGoalEnd}</td>
@@ -118,8 +128,6 @@
 				
 			</table>
 		</div>
-		
-		
 		<script>
 
 			$(document).ready(function(){
@@ -152,6 +160,5 @@
 			});
 		 	
 		</script>
-		
 	</body>
 </html>

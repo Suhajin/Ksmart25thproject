@@ -60,7 +60,8 @@
 		
 	<select id="selectMidGoalList" parameterType="com.cafe24.suhajin07.MidGoal.MidGoal" resultMap="resultMidGoal"> 
 		SELECT midGoalName 
-			,studyMethod 
+			,studyMethod
+			,lisenceListCode 
 			,midGoalPlan 
 			,midGoalStart 
 			,midGoalEnd 
