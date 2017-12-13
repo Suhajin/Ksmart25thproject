@@ -50,6 +50,7 @@ public class LicenseController {
 		model.addAttribute("listone", licenseDao.LicenseSelectone(licenseCode));
 		return "Career_License/License_Update_Form";
 	}
+	//자격증 수정 처리
 	@RequestMapping(value = "/UpdateLicense", method = RequestMethod.POST)
 	public String UpdateLicense(HttpSession session, License license) {
 		System.out.println("UpdateLicense Controller");

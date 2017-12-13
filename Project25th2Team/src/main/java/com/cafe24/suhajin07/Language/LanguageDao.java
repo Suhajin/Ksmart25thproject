@@ -31,4 +31,22 @@ public class LanguageDao {
 		System.out.println("One CareerList성공");
 		return sqlSessionTemplate.selectList(NS+"languageListOne", memberId);
 	}
+	
+	//언어 수정폼 출력
+	public Language languageUpdateForm(int languageCode) {
+		System.out.println("languageUpdateForm <-- LanguageDao.java");
+		return sqlSessionTemplate.selectOne(NS + "languageOneList", languageCode);
+		
+	}
+	
+	//언어 수정 처리
+	public void updateLanguage(Language language) {
+		System.out.println("updateLanguage 성공");
+		sqlSessionTemplate.update(NS + "languageUpdate",language);
+	}
+	
+	//언어삭제처리
+	public void DeleteLanguage(Language language) {
+		sqlSessionTemplate.delete(NS + "LanguageDelete", language);
+	}
 }
