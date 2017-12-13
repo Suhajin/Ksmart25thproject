@@ -6,6 +6,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+
 @Repository
 public class FinalGoalDao {
 
@@ -14,6 +15,15 @@ public class FinalGoalDao {
 
 	private final String NS = "com.cafe24.suhajin07.FinalGoal.FinalGoalMapper.";
 	
+	//중간목표 입력폼
+	public List<FinalGoal> insertFormMidGoal(String memberId) {
+		System.out.println("insertFormMidGoal Dao 성공");
+		System.out.println(memberId);
+		List<FinalGoal> list =  sqlSessionTemplate.selectList(NS+"selectMidGoalInsert",memberId);
+		System.out.println(list);
+		return list;
+	}
+		
 	// 최종목표 수정
 	public void updateFinalGoal(FinalGoal fg) {
 		System.out.println("updateFinalGoal Dao 성공");

@@ -57,19 +57,23 @@
 			, #{midGoalBudget}
 			, now()) 
 	</insert>
-
+		
 	<select id="selectMidGoalList" parameterType="com.cafe24.suhajin07.MidGoal.MidGoal" resultMap="resultMidGoal"> 
-		select midGoalName 
+		SELECT midGoalName 
 			,studyMethod 
 			,midGoalPlan 
 			,midGoalStart 
 			,midGoalEnd 
 			,midGoalBudget 
-			,midGoalDate 
-		from midGoal join member join study 
-		on midGoal.memberCode = member.memberCode
-		and study.studyCode = midGoal.studyCode 
-		where memberId=#{memberId} 
+			,midGoalDate
+			,midGoalId
+			,biggestGoalName
+		FROM midGoal join member join study join goal join biggestGoal
+		ON midGoal.memberCode = member.memberCode
+			and midGoal.studyCode = study.studyCode
+			and midGoal.goalTotalCode = goal.goalTotalCode
+			and midGoal.biggestGoalCode = biggestGoal.biggestGoalCode
+		WHERE memberId = #{memberId} 
 	</select>
 
 	<select id="selectMidGoalUpdate" parameterType="com.cafe24.suhajin07.MidGoal.MidGoal" resultMap="resultMidGoal"> 

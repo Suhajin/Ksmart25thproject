@@ -43,4 +43,5 @@ public class MidGoalDao {
 		System.out.println(mg);
 		SST.insert(NS+"insertMidGoal",mg);
 	}
+	
 }
