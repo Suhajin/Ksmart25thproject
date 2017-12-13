@@ -182,10 +182,10 @@ html ul.tabs li.active, html ul.tabs li.active a:hover {
 								<td>${GoalList.finalGoalNote}</td>
 								<td><a
 									href="/FinalGoalUpdate?finalGoalCode=${GoalList.finalGoalCode}"
-									>수정</a></td>
+									class="btn btn-warning">수정</a></td>
 								<td><a
 									href="/FinalGoalDelete?finalGoalCode=${GoalList.finalGoalCode}"
-									>삭제</a></td>
+									class="btn btn-danger">삭제</a></td>
 							</tr>
 						</c:forEach>
 					</thead>
@@ -230,10 +230,10 @@ html ul.tabs li.active, html ul.tabs li.active a:hover {
 								<td>${midGoalList.midGoalBudget}</td>
 								<td><a
 									href="/MidGoalUpdate?midGoalCode=${midGoalList.midGoalCode}"
-									>수정</a></td>
+									class="btn btn-warning">수정</a></td>
 								<td><a
 									href="/MidGoalDelete?midGoalCode=${midGoalList.midGoalCode}"
-									>삭제</a></td>
+									class="btn btn-danger">삭제</a></td>
 							</tr>
 						</c:forEach>
 					</thead>
