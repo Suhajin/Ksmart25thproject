@@ -84,7 +84,7 @@ footer {
 								<thead>
 									<!-- 멤버 이름 -->
 									<tr>
-										<th>전은경</th>
+										<th style="text-align: center;">전은경</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -118,23 +118,23 @@ footer {
 								<thead>
 									<!-- 멤버 이름 -->
 									<tr>
-										<th>진세은</th>
+										<th style="text-align: center;">진세은</th>
 									</tr>
 								</thead>
 								<tbody>
 									<!-- 블로그주소 -->
 									<tr>
-										<td><a href="http://blog.naver.com/suhajin07"
+										<td><a href="#"
 											target="_blank" class="btn btn-info" role="button">블로그</a></td>
 									</tr>
 									<!-- 개인 GitHub 주소 -->
 									<tr>
-										<td><a href="https://github.com/Suhajin" target="_blank"
+										<td><a href="#" target="_blank"
 											class="btn btn-success" role="button">GitHub</a></td>
 									</tr>
 									<!-- 개인 호스팅 주소 -->
 									<tr>
-										<td><a href="https://suhajin07.cafe24.com"
+										<td><a href="#"
 											target="_blank" class="btn btn-warning" role="button">호스팅</a></td>
 									</tr>
 
@@ -152,7 +152,7 @@ footer {
 								<thead>
 									<!-- 멤버 이름 -->
 									<tr>
-										<th>조은희</th>
+										<th style="text-align: center;">조은희</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -188,7 +188,7 @@ footer {
 								<thead>
 									<!-- 멤버 이름 -->
 									<tr>
-										<th>서미나</th>
+										<th style="text-align: center;">서미나</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -222,7 +222,7 @@ footer {
 								<thead>
 									<!-- 멤버 이름 -->
 									<tr>
-										<th>한소연</th>
+										<th style="text-align: center;">한소연</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -244,7 +244,7 @@ footer {
 
 									<!-- 담당업무 안내 -->
 									<tr>
-										<td>레이아웃 설정<br>마이페이지 설정
+										<td >레이아웃 설정<br>마이페이지 설정
 										</td>
 									</tr>
 								</tbody>

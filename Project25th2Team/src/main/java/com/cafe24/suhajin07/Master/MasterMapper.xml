@@ -22,7 +22,38 @@
 		<result property="bankCode" column="bankCode" />
 		<result property="bankName" column="bankName" />
 		<result property="bankNum" column="bankNum" />
-
+	</resultMap>
+	<resultMap type="com.cafe24.suhajin07.Master.Goal" id="resultGoalMaster">
+		<result property="biggestGoalCode" column="biggestGoalCode" />
+		<result property="biggestGoalName" column="biggestGoalName" />
+		<result property="finalGoalCode" column="finalGoalCode" />
+		<result property="memberCode" column="memberCode" />
+		<result property="managerCode" column="managerCode" />
+		<result property="managerGradeCode" column="managerGradeCode" />
+		<result property="finalGoalName" column="finalGoalName" />
+		<result property="finalGoalStart" column="finalGoalStart" />
+		<result property="finalGoalEnd" column="finalGoalEnd" />
+		<result property="finalGoalDays" column="finalGoalDays" />
+		<result property="finalGoalTimeADay" column="finalGoalTimeADay" />
+		<result property="finalGoalTotalTime" column="finalGoalTotalTime" />
+		<result property="finalGoalTotalBudget" column="finalGoalTotalBudget" />
+		<result property="finalGoalNote" column="finalGoalNote" />
+		<result property="finalGoalInputDate" column="finalGoalInputDate" />
+		<result property="managerName" column="managerName" />
+		<result property="memberName" column="memberName" />
+		<result property="midGoalCode" column="midGoalCode" />
+		<result property="lisenceListCode" column="lisenceListCode" />
+		<result property="studyCode" column="studyCode" />
+		<result property="goalTotalCode" column="goalTotalCode" />
+		<result property="gradeName" column="gradeName" />
+		<result property="midGoalId" column="midGoalId" />
+		<result property="lisenceName" column="lisenceName" />
+		<result property="studyMethod" column="studyMethod" />
+		<result property="midGoalName" column="midGoalName" />
+		<result property="midGoalPlan" column="midGoalPlan" />
+		<result property="midGoalStart" column="midGoalStart" />
+		<result property="midGoalEnd" column="midGoalEnd" />
+		<result property="midGoalBudget" column="midGoalBudget" />
 	</resultMap>
 
 	<select id="memberAllList" parameterType="com.cafe24.suhajin07.Master.Master"
@@ -196,10 +227,46 @@
 
 	<delete id="ManagerDelete">
 		delete member,manager
-		from member left join manager on member.memberCode=manager.memberCode
-		where member.memberCode = #{memberCode}
+		from member left join manager on
+		member.memberCode=manager.memberCode
+		where member.memberCode =
+		#{memberCode}
 
 	</delete>
+
+
+	<select id="memberFinalGoalList" parameterType="com.cafe24.suhajin07.Master.Goal"
+		resultMap="resultGoalMaster">
+		SELECT
+		a.memberName,b.managerName,c.finalGoalCode,c.finalGoalName,
+		c.finalGoalStart,c.finalGoalEnd,c.finalGoalDays,c.finalGoalTimeADay,
+		c.finalGoalTotalTime,c.finalGoalTotalBudget,c.finalGoalNote,
+		d.biggestGoalName
+		from member a join manager b join finalGoal c join
+		biggestGoal d on
+		a.memberCode=c.memberCode and
+		b.managerCode=c.managerCode and
+		c.biggestGoalCode=d.biggestGoalCode
+		order by b.managerCode
+	</select>
+
+	<select id="memberMidGoalList" parameterType="com.cafe24.suhajin07.Master.Goal"
+		resultMap="resultGoalMaster">
+		SELECT a.midGoalCode, c.memberName, b.managerName,
+		d.gradeName,e.biggestGoalName,g.midGoalId, h.lisenceName
+		,f.studyMethod, a.midGoalName, a.midGoalPlan,
+		a.midGoalStart, a.midGoalEnd, a.midGoalBudget
+		from midGoal a
+		left join lisenceList h on (a.lisenceListCode=h.lisenceListCode)
+		left join manager b on(a.managerCode=b.managerCode)
+		left join member c on(a.memberCode=c.memberCode)
+		left join managerGrade d on(a.managerGradeCode=d.managerGradeCode)
+		left join biggestGoal e on(a.biggestGoalCode=e.biggestGoalCode)
+		left join study f on(a.studyCode=f.studyCode)
+		left join goal g on(a.goalTotalCode=g.goalTotalCode)
+		order by a.memberCode
+	</select>
+
 
 
 </mapper>

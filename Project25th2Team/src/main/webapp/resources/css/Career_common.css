@@ -67,15 +67,15 @@ a:hover, a:focus, a:active {color:#fa8300;#fa8300 text-decoration:none}
 .sec_top_btn {position:absolute; bottom:0; right:0; z-indez:10}
 
 /* 占쏙옙튼 */
-.btn_add {display:inline-block; background:#f7984b url(../images/common/icon_add.png) 12px 10px no-repeat; color:#fff !important; vertical-align:middle; line-height:1.2; padding:6px 12px 6px 28px; *zoom:1; *display:inline} /* 占쌩곤옙占쏙옙튼 */
+.btn_add {display:inline-block; background:#f7984b  12px 10px no-repeat; color:#fff !important; vertical-align:middle; line-height:1.2; padding:6px 12px 6px 28px; *zoom:1; *display:inline} /* 占쌩곤옙占쏙옙튼 */
 .btn_add:hover,
 .btn_add:focus,
-.btn_add:active {background:#292929 url(../images/common/icon_add.png) 12px 10px no-repeat}
+.btn_add:active {background:#292929 ) 12px 10px no-repeat}
 
-.btn_del {display:inline-block; background:#888 url(../images/common/icon_del.png) 12px 10px no-repeat; color:#fff !important; vertical-align:middle; line-height:1.2; padding:6px 12px 6px 28px; *zoom:1; *display:inline} /* 占쏙옙占쏙옙占쏙옙튼 */
+.btn_del {display:inline-block; background:#888  12px 10px no-repeat; color:#fff !important; vertical-align:middle; line-height:1.2; padding:6px 12px 6px 28px; *zoom:1; *display:inline} /* 占쏙옙占쏙옙占쏙옙튼 */
 .btn_del:hover,
 .btn_del:focus,
-.btn_del:active {background:#292929 url(../images/common/icon_del.png) 12px 10px no-repeat}
+.btn_del:active {background:#292929  12px 10px no-repeat}
 
 .btn_type02 {display:inline-block; font-size:13px; color:#666 !important; border:1px solid #b8b8b8; line-height:1.2; padding:7px 30px 7px 20px; text-align:right; vertical-align:middle; background:url(../images/common/icon_arrow01_base.png) right 8px no-repeat; *zoom:1; *display:inline} /* 占쏙옙占쏙옙화占쏙옙표 占쏙옙占쏙옙占쏙옙튼 */
 .btn_type02:hover,
