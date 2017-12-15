@@ -3,8 +3,7 @@
 
 <mapper namespace="com.cafe24.suhajin07.FinalGoal.FinalGoalMapper">
 
-	<resultMap type="com.cafe24.suhajin07.FinalGoal.FinalGoal"
-		id="resultFinalGoal">
+	<resultMap type="com.cafe24.suhajin07.FinalGoal.FinalGoal" id="resultFinalGoal">
 		<result property="finalGoalCode" column="finalGoalCode" />
 		<result property="biggestGoalCode" column="biggestGoalCode" />
 		<result property="memberCode" column="memberCode" />
@@ -21,65 +20,84 @@
 		<result property="finalGoalInputDate" column="finalGoalInputDate" />
 	</resultMap>
 
-	<insert id="insertFinalGoal" parameterType="com.cafe24.suhajin07.FinalGoal.FinalGoal">
-		INSERT INTO
-		finalGoal(
-		finalGoalCode,
-		biggestGoalCode,
-		memberCode,
-		managerCode,
-		managerGradeCode,
-		finalGoalName,
-		finalGoalStart,
-		finalGoalEnd,
-		finalGoalDays,
-		finalGoalTimeADay,
-		finalGoalTotalTime,
-		finalGoalTotalBudget,
-		finalGoalNote,
-		finalGoalInputDate
-		) VALUES (
-		#{finalGoalCode},
-		#{biggestGoalCode},
-		#{memberCode},
-		#{managerCode},
-		#{managerGradeCode},
-		#{finalGoalName},
-		#{finalGoalStart},
-		#{finalGoalEnd},
-		#{finalGoalDays},
-		#{finalGoalTimeADay},
-		#{finalGoalTotalTime},
-		#{finalGoalTotalBudget},
-		#{finalGoalNote}
-		,now())
-	</insert>
-
-	<select id="selectFinalGoalList" parameterType="com.cafe24.suhajin07.FinalGoal.FinalGoal"
-		resultMap="resultFinalGoal">
-		SELECT
-		memberId
-		,finalGoalCode
-		,memberName
-		,biggestGoalName
-		,finalGoalName
-		,finalGoalStart
-		,finalGoalEnd
-		,finalGoalDays
-		,finalGoalTimeADay
-		,finalGoalTotalTime
-		,finalGoalTotalBudget
-		,finalGoalNote
-		,finalGoalInputDate
-		FROM finalGoal join member join biggestGoal
-		on
-		finalGoal.memberCode = member.memberCode
-		and finalGoal.biggestGoalCode = biggestGoal.biggestGoalCode
+	<select id="selectMidGoalInsert" parameterType="com.cafe24.suhajin07.FinalGoal.FinalGoal" resultMap="resultFinalGoal"> 
+		SELECT 
+			finalGoalCode
+			,biggestGoalCode
+			,managerCode
+			,managerGradeCode
+			,finalGoalName
+			,finalGoalStart
+			,finalGoalEnd
+			,finalGoalDays
+			,finalGoalTimeADay
+			,finalGoalTotalTime
+			,finalGoalTotalBudget
+			,finalGoalNote
+			,finalGoalInputDate
+		FROM finalGoal join member
+		ON
+			finalGoal.memberCode = member.memberCode
 		WHERE memberId= #{memberId}
 	</select>
 
-	<select id="selectFinalGoal" parameterType="com.cafe24.suhajin07.FinalGoal.FinalGoal"
-		resultType="int">
+	<insert id="insertFinalGoal" parameterType="com.cafe24.suhajin07.FinalGoal.FinalGoal">
+		INSERT INTO
+			finalGoal(
+			finalGoalCode,
+			biggestGoalCode,
+			memberCode,
+			managerCode,
+			managerGradeCode,
+			finalGoalName,
+			finalGoalStart,
+			finalGoalEnd,
+			finalGoalDays,
+			finalGoalTimeADay,
+			finalGoalTotalTime,
+			finalGoalTotalBudget,
+			finalGoalNote,
+			finalGoalInputDate
+		) VALUES (
+			#{finalGoalCode},
+			#{biggestGoalCode},
+			#{memberCode},
+			#{managerCode},
+			#{managerGradeCode},
+			#{finalGoalName},
+			#{finalGoalStart},
+			#{finalGoalEnd},
+			#{finalGoalDays},
+			#{finalGoalTimeADay},
+			#{finalGoalTotalTime},
+			#{finalGoalTotalBudget},
+			#{finalGoalNote}
+			,now())
+	</insert>
+
+	<select id="selectFinalGoalList" parameterType="com.cafe24.suhajin07.FinalGoal.FinalGoal" resultMap="resultFinalGoal">
+		SELECT
+			memberId
+			,finalGoalCode
+			,memberName
+			,biggestGoalName
+			,finalGoalName
+			,finalGoalStart
+			,finalGoalEnd
+			,finalGoalDays
+			,finalGoalTimeADay
+			,finalGoalTotalTime
+			,finalGoalTotalBudget
+			,finalGoalNote
+			,finalGoalInputDate
+		FROM finalGoal join member join biggestGoal
+		ON
+			finalGoal.memberCode = member.memberCode
+			and finalGoal.biggestGoalCode = biggestGoal.biggestGoalCode
+		WHERE memberId= #{memberId}
+	</select>
+
+	<select id="selectFinalGoal" parameterType="com.cafe24.suhajin07.FinalGoal.FinalGoal" resultType="int">
 		SELECT COUNT(0)
 		FROM finalGoal
 		WHERE memberCode= #{memberCode}

@@ -31,4 +31,10 @@ public class TrainingDao {
 		System.out.println("One TrainingListOne성공");
 		return sqlSessionTemplate.selectList(NS+"TrainingListOne", memberId);
 	}
+	
+	//수정폼으로 이동
+	public Training trainingUpdateForm(int trainingCode) {
+		return sqlSessionTemplate.selectOne(NS+"TrainingOneList", trainingCode);
+		
+	}
 }

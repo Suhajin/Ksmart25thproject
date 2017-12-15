@@ -55,5 +55,11 @@
 		where memberId = #{memberId}
 
 	</select>
+	
+	<select id="TrainingOneList" parameterType="com.cafe24.suhajin07.Training.Training">
+		SELECT *
+		FROM training
+		WHERE trainingCode = #{trainingCode}
+	</select>
 
 </mapper>

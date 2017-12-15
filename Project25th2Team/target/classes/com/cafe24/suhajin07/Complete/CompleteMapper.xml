@@ -66,6 +66,33 @@
 		complete.memberCode = member.memberCode
 		where memberId = #{memberId}
 	</select>
+	
+	<select id="completeOneList" resultType="com.cafe24.suhajin07.Complete.Complete">
+		SELECT *
+		FROM complete
+		WHERE complitionCode = #{complitionCode}
+	</select>
+	
+	<update id="completeUpdate" parameterType="com.cafe24.suhajin07.Complete.Complete">
+		UPDATE complete
+	SET
+		  complitionCode = #{complitionCode}
+		, memberCode = #{memberCode}
+		, completeName = #{completeName}
+		, completeStart = #{completeStart}
+		, completeEnd = #{completeEnd}
+		, completeTime = #{completeTime}
+		, completeAcademyName = #{completeAcademyName}
+		, completeNo = #{completeNo}
+		, completeFile = #{completeFile}
+	WHERE complitionCode = #{complitionCode}
+	</update>
+	
+	<delete id="completeDelete" parameterType="com.cafe24.suhajin07.Complete.Complete">
+		DELETE
+		FROM complete
+		WHERE complitionCode = #{complitionCode}
+	</delete>
 
 
 </mapper>

@@ -9,7 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.cafe24.suhajin07.Member.Member;
 
@@ -18,6 +18,17 @@ public class FinalGoalController {
 
 	@Autowired
 	FinalGoalService fgService;
+	
+	
+	//중간목표 인서트 폼(대분류목표 list를 기반으로 중간목표 insert가 이루어진다)
+	@RequestMapping(value="/InsertMidGoalForm", method=RequestMethod.GET)
+	public String MidGoalInsertForm(Model model, @RequestParam("memberId") String memberId){
+		System.out.println("MidGoalInsertForm Contoller");
+		System.out.println(memberId);
+		List<FinalGoal> list = fgService.insertFormMidGoal(memberId);
+		model.addAttribute("listMidGoalForm", list);
+		return "Mid_Goal/MidGoal_Insert_Form";
+	}
 	
 	//최종목표 수정
 	@RequestMapping(value="/UpdateActionFinalGoal", method=RequestMethod.POST)
@@ -49,7 +60,7 @@ public class FinalGoalController {
 		
 	}
 	
-	// 메인화면에서 Head의 목표설정을 누르면 목표설정 페이지로 이동
+	// 메인화면에서 Head의 목표설정을 누르면 목표설정(대분류 목표) 페이지로 이동
 	@RequestMapping(value="/Goal", method=RequestMethod.GET)
 	public String FinalGoal(Model model,HttpSession session){
 			System.out.println("목표설정 페이지 요청");
@@ -66,5 +77,4 @@ public class FinalGoalController {
 				return "Final_Goal/FinalGoal_Insert_Form";
 		}
 	}
-	
 }

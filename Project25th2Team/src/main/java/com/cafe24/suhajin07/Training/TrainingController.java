@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class TrainingController {
@@ -37,5 +38,13 @@ public class TrainingController {
 		List<Training> list = trainingDao.selectTrainingList();
 		model.addAttribute("list", list);
 		return "Career_Training/Training_List";
+	}
+	
+	//연수봉사 수정폼으로 이동
+	@RequestMapping(value = "/TrainingUpdateOne", method = RequestMethod.GET)
+	public String trainingUpdateForm(Model model, @RequestParam("trainingCode") int trainingCode) {
+		model.addAttribute("training", trainingDao.trainingUpdateForm(trainingCode));
+		return "Career_Training/Training_Update";
+		
 	}
 }
