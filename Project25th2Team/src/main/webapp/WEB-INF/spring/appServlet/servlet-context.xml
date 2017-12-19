@@ -22,14 +22,18 @@
 	<context:component-scan base-package="com.cafe24.suhajin07" />
 	<!-- 커넥션풀 생성 -->
 
-	<!-- 컴퓨터에서 작업할때 사용해야하는 url : jdbc:mysql://suhajin07.cafe24.com:3306/suhajin07 -->
+	<!-- 컴퓨터에서 작업할때 사용해야하는 url :  -->
 	<!-- 홈페이지 Uplode 할때 사용되는 url : jdbc:mysql://localhost:3306/suhajin07 -->
 
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
-		<property name="url" value="jdbc:mysql://localhost:3306/suhajin07" />
+		<property name="url" value="jdbc:mysql://suhajin07.cafe24.com:3306/suhajin07" />
 		<property name="username" value="suhajin07" />
 		<property name="password" value="vmfhwprxm25rl2" />
+		<!-- 7200000ms마다 (2시간) 쿼리를 실행해서 connection을 유지시킴 -->
+ 		<property name="validationQuery" value="SELECT 1" />
+ 		<property name="testWhileIdle" value="true"/>
+        <property name="timeBetweenEvictionRunsMillis" value="7200000"/>
 	</bean>
 
 	<bean id="transactionManager"

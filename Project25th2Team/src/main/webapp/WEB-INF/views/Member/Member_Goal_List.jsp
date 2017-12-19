@@ -249,39 +249,40 @@ html ul.tabs li.active, html ul.tabs li.active a:hover {
 		<br><br><br>
 		<h3>회원별 상세 목표 설정</h3>
 		<div align="center">
-						<table class="list_tbl_01 mb70" border="1" style="text-align: center;">
+		<table border="1" style="text-align: center;" size="100%">
 				<thead>
 					<tr>
-						<th>ID</th>
-						<th>회원명</th>
-						<th>회사명</th>
-						<th>회사주소</th>
-						<th>입사일</th>
-						<th>퇴사일</th>
-						<th>재직여부</th>
-						<th>경력기간</th>
-						<th>직급</th>
-						<th>재직확인</th>
+						<th>이름</th>
+						<th>매니저</th>
+						<th>중간목표</th>
+						<th>상세목표</th>
+						<th>목표일자</th>
+						<th>시작시간</th>
+						<th>종료시간</th>
+						<th>총 시간</th>
+						<th>예산</th>
+						<th>비고</th>
 						<th>수정</th>
 						<th>삭제</th>
+
 					</tr>
-					<c:forEach var="career" items="${CareerList}">
+					<c:forEach var="detailgaolList" items="${detailgaolList}">
 						<tr>
-							<td>${career.memberId}</td>
-							<td>${career.memberName}</td>
-							<td>${career.careerName}</td>
-							<td>${career.careerAddress}</td>
-							<td>${career.careerEntrance}</td>
-							<td>${career.careerQuit}</td>
-							<td>${career.careerWorking}</td>
-							<td>${career.careerPeriod}</td>
-							<td>${career.careerPosition}</td>
-							<td>${career.careerApproval}</td>
+							<td>${detailgaolList.memberName}</td>
+							<td>${detailgaolList.managerName}</td>
+							<td>${detailgaolList.midGoalName}</td>
+							<td>${detailgaolList.detailGoalList}</td>
+							<td>${detailgaolList.detailGoalDate}</td>
+							<td>${detailgaolList.detailGoalStart}</td>
+							<td>${detailgaolList.detailGoalEnd}</td>
+							<td>${detailgaolList.detailGoalTotal}</td>
+							<td>${detailgaolList.detailGoalBudget}</td>
+							<td>${detailgaolList.detailGoalExplain}</td>
 							<td><a
-								href="/CareerUpdateOne?careerCode=${career.careerCode}"
-								class="btn_add">수정</a></td>
-							<td><a href="/CareerDelete?careerCode=${career.careerCode}"
-								class="btn_del">삭제</a></td>
+								href="/detailUpgrade?detailgaolList=${detailgaolList.detailGoalCode}"
+								class="btn btn-warning">수정</a></td>
+							<td><a href="/detailDelete?detailgaolList=${detailgaolList.detailGoalCode}"
+								class="btn btn-danger">삭제</a></td>
 						</tr>
 					</c:forEach>
 				</thead>

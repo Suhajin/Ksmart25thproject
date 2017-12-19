@@ -42,6 +42,12 @@ public class MasterDao {
 		return sql.selectList(NS+"memberMidGoalList");
 	}
 	
+	// 상세 리스트(회원)
+	public List<Goal> memberdetailGoalList(){
+		System.out.println("memberdetailGoalList Dao");
+		return sql.selectList(NS+"memberDetailList");
+	}
+	
 	
 	// 전체리스트(매니저)
 	public List<Master> AllManagerList(){

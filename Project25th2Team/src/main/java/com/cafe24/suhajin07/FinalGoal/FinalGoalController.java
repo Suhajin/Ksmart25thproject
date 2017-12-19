@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.cafe24.suhajin07.Member.Member;
+import com.cafe24.suhajin07.Master.Goal;
 
 @Controller
 public class FinalGoalController {
@@ -39,6 +40,14 @@ public class FinalGoalController {
 		return "redirect:/Goal?memberId="+((Member)session.getAttribute("Member")).getMemberId();
 		
 	}
+	// Master 한개의 객체 수정하기 위해서 불러오는 화면
+	@RequestMapping(value="/FinalGoalUpdate", method=RequestMethod.GET)
+	public String FinalGoalUpdate(FinalGoal fg, HttpSession session) {
+		
+		return "Final_Goal/FinalGoalMember_Update_Form";
+		
+	} 
+	
 
 	//최종목표 수정페이지
 	@RequestMapping(value="/UpdateFinalGoal", method=RequestMethod.GET)

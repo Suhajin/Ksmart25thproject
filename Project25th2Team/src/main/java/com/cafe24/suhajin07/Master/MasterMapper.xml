@@ -54,6 +54,14 @@
 		<result property="midGoalStart" column="midGoalStart" />
 		<result property="midGoalEnd" column="midGoalEnd" />
 		<result property="midGoalBudget" column="midGoalBudget" />
+		<result property="detailGoalCode" column="detailGoalCode" />
+		<result property="detailGoalList" column="detailGoalList" />
+		<result property="detailGoalDate" column="detailGoalDate" />
+		<result property="detailGoalStart" column="detailGoalStart" />
+		<result property="detailGoalEnd" column="detailGoalEnd" />
+		<result property="detailGoalBudget" column="detailGoalBudget" />
+		<result property="detailGoalTotal" column="detailGoalTotal" />
+		<result property="detailGoalExplain" column="detailGoalExplain" />	
 	</resultMap>
 
 	<select id="memberAllList" parameterType="com.cafe24.suhajin07.Master.Master"
@@ -255,18 +263,42 @@
 		SELECT a.midGoalCode, c.memberName, b.managerName,
 		d.gradeName,e.biggestGoalName,g.midGoalId, h.lisenceName
 		,f.studyMethod, a.midGoalName, a.midGoalPlan,
-		a.midGoalStart, a.midGoalEnd, a.midGoalBudget
+		a.midGoalStart,
+		a.midGoalEnd, a.midGoalBudget
 		from midGoal a
-		left join lisenceList h on (a.lisenceListCode=h.lisenceListCode)
-		left join manager b on(a.managerCode=b.managerCode)
-		left join member c on(a.memberCode=c.memberCode)
-		left join managerGrade d on(a.managerGradeCode=d.managerGradeCode)
-		left join biggestGoal e on(a.biggestGoalCode=e.biggestGoalCode)
-		left join study f on(a.studyCode=f.studyCode)
-		left join goal g on(a.goalTotalCode=g.goalTotalCode)
+		left join lisenceList h on
+		(a.lisenceListCode=h.lisenceListCode)
+		left join manager b
+		on(a.managerCode=b.managerCode)
+		left join member c
+		on(a.memberCode=c.memberCode)
+		left join managerGrade d
+		on(a.managerGradeCode=d.managerGradeCode)
+		left join biggestGoal e
+		on(a.biggestGoalCode=e.biggestGoalCode)
+		left join study f
+		on(a.studyCode=f.studyCode)
+		left join goal g
+		on(a.goalTotalCode=g.goalTotalCode)
 		order by a.memberCode
 	</select>
-
+	<select id="memberDetailList" parameterType="com.cafe24.suhajin07.Master.Goal"
+		resultMap="resultGoalMaster">
+		SELECT a.detailGoalCode, a.detailGoalList, a.detailGoalDate,
+		a.detailGoalStart, a.detailGoalEnd,
+		a.detailGoalTotal,
+		a.detailGoalBudget, a.detailGoalExplain, b.memberName, c.midGoalName,
+		d.managerName
+		from detailGoal a
+		left join member b on
+		(a.memberCode=b.memberCode)
+		left join midGoal c
+		on(a.midGoalCode=c.midGoalCode)
+		left join manager d
+		on(a.managerCode=d.managerCode)
+		order by a.memberCode and
+		a.detailGoalCode
+	</select>
 
 
 </mapper>

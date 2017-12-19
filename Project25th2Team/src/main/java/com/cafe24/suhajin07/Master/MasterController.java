@@ -161,6 +161,7 @@ public class MasterController {
 		System.out.println("MemberGoalList Controller");
 		model.addAttribute("GoalList", masterdao.memberFinalGoalList());
 		model.addAttribute("midGoalList", masterdao.membermidGoalList());
+		model.addAttribute("detailgaolList", masterdao.memberdetailGoalList());
 		return "Member/Member_Goal_List";
 	}
 }

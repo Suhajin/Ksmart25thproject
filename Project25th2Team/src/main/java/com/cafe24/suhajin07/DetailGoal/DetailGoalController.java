@@ -65,6 +65,14 @@ public class DetailGoalController {
 		return "Detail_Goal/DetailGoal_Update_Form";
 	}
 	
+	// Master,Manager 세부목표 수정 폼
+	
+	
+	@RequestMapping(value="/detailUpgrade", method=RequestMethod.GET)
+	public String detailUpgrade() {
+		return "Detail_Goal/DetailGoalMember_Update_Form";
+	}
+	
 	//세부목표 리스트
 	@RequestMapping(value="/DetailGoalList", method=RequestMethod.GET)
 	public String DetailGoal(Model md, @RequestParam("memberId") String memberId) {

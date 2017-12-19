@@ -34,7 +34,14 @@ public class Goal {
 	private String midGoalEnd;
 	private String midGoalBudget;
 	
-	
+	private int detailGoalCode;
+	private String detailGoalList;
+	private String detailGoalDate;
+	private String detailGoalStart;
+	private String detailGoalEnd;
+	private String detailGoalTotal;
+	private String detailGoalBudget;
+	private String detailGoalExplain;
 	
 	
 	public int getBiggestGoalCode() {
@@ -217,6 +224,54 @@ public class Goal {
 	public void setMidGoalBudget(String midGoalBudget) {
 		this.midGoalBudget = midGoalBudget;
 	}
+	public int getDetailGoalCode() {
+		return detailGoalCode;
+	}
+	public void setDetailGoalCode(int detailGoalCode) {
+		this.detailGoalCode = detailGoalCode;
+	}
+	public String getDetailGoalList() {
+		return detailGoalList;
+	}
+	public void setDetailGoalList(String detailGoalList) {
+		this.detailGoalList = detailGoalList;
+	}
+	public String getDetailGoalDate() {
+		return detailGoalDate;
+	}
+	public void setDetailGoalDate(String detailGoalDate) {
+		this.detailGoalDate = detailGoalDate;
+	}
+	public String getDetailGoalStart() {
+		return detailGoalStart;
+	}
+	public void setDetailGoalStart(String detailGoalStart) {
+		this.detailGoalStart = detailGoalStart;
+	}
+	public String getDetailGoalEnd() {
+		return detailGoalEnd;
+	}
+	public void setDetailGoalEnd(String detailGoalEnd) {
+		this.detailGoalEnd = detailGoalEnd;
+	}
+	public String getDetailGoalTotal() {
+		return detailGoalTotal;
+	}
+	public void setDetailGoalTotal(String detailGoalTotal) {
+		this.detailGoalTotal = detailGoalTotal;
+	}
+	public String getDetailGoalBudget() {
+		return detailGoalBudget;
+	}
+	public void setDetailGoalBudget(String detailGoalBudget) {
+		this.detailGoalBudget = detailGoalBudget;
+	}
+	public String getDetailGoalExplain() {
+		return detailGoalExplain;
+	}
+	public void setDetailGoalExplain(String detailGoalExplain) {
+		this.detailGoalExplain = detailGoalExplain;
+	}
 	@Override
 	public String toString() {
 		return "Goal [biggestGoalCode=" + biggestGoalCode + ", biggestGoalName=" + biggestGoalName + ", finalGoalCode="
@@ -230,14 +285,16 @@ public class Goal {
 				+ goalTotalCode + ", gradeName=" + gradeName + ", midGoalId=" + midGoalId + ", lisenceName="
 				+ lisenceName + ", studyMethod=" + studyMethod + ", midGoalName=" + midGoalName + ", midGoalPlan="
 				+ midGoalPlan + ", midGoalStart=" + midGoalStart + ", midGoalEnd=" + midGoalEnd + ", midGoalBudget="
-				+ midGoalBudget + "]";
+				+ midGoalBudget + ", detailGoalCode=" + detailGoalCode + ", detailGoalList=" + detailGoalList
+				+ ", detailGoalDate=" + detailGoalDate + ", detailGoalStart=" + detailGoalStart + ", detailGoalEnd="
+				+ detailGoalEnd + ", detailGoalTotal=" + detailGoalTotal + ", detailGoalBudget=" + detailGoalBudget
+				+ ", detailGoalExplain=" + detailGoalExplain + "]";
 	}
 	
-	
-	
-	
-	
-	
 
+	
+	
 
 }
+	
+	
