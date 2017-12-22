@@ -23,7 +23,7 @@
 		</header>
 		<br><br>
 		<br><br><br>
-		<h1> Master/Manager권한에서 중간목표 설정 수정화면</h1>
+		<h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Master/Manager권한에서 중간목표 설정 수정화면</h1>
 
 <br><br><br><br>
 		<div>

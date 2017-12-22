@@ -23,7 +23,7 @@
 		</header>
 		<br><br>
 		<br><br><br>
-		<h3> 매니져가 개인정보 확인 / 수정가능 페이지</h3>
+		<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 매니져가 개인정보 확인 / 수정가능 페이지</h3>
 
 <br><br><br><br>
 		<div>

@@ -23,7 +23,7 @@
 		</header>
 		<br><br>
 		<br><br><br>
-		<h3> 매니저가 담당하고 있는 사용자들을 관리하고 수정하는 화면(사용자들 개인정보관련)</h3>
+		 <h3> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;매니저가 담당하고 있는 사용자들을 관리하고 수정하는 화면(사용자들 개인정보관련)</h3>
 
 <br><br><br><br>
 		<div>

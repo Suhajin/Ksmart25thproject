@@ -23,7 +23,7 @@
 		</header>
 		<br><br>
 		<br><br><br>
-		<h3> 매니져가 월별 담당하고 있는 사용자들의 평가점수(사용자정보 확인x), 실천률, 등록률 등 확인가능 화면</h3>
+		<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 매니져가 월별 담당하고 있는 사용자들의 평가점수(사용자정보 확인x), 실천률, 등록률 등 확인가능 화면</h3>
 
 <br><br><br><br>
 		<div>

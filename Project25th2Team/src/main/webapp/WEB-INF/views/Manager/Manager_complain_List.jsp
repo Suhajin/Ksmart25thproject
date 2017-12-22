@@ -23,7 +23,7 @@
 		</header>
 		<br><br>
 		<br><br><br>
-		<h3> 매니저가 월별 상벌(실적에 따른 인센티브, 컴플레인에 따른 컴플레인점수) 확인가능한 화면</h3>
+		<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 매니저가 월별 상벌(실적에 따른 인센티브, 컴플레인에 따른 컴플레인점수) 확인가능한 화면</h3>
 
 <br><br><br><br>
 		<div>

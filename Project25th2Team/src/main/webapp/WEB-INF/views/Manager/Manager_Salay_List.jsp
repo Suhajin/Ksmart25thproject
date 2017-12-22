@@ -23,7 +23,7 @@
 		</header>
 		<br><br>
 		<br><br><br>
-		<h3> Master권한에서 Manager 급여 리스트 화면</h3>
+		<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Master권한에서 Manager 급여 리스트 화면</h3>
 
 <br><br><br><br>
 		<div>

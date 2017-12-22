@@ -23,7 +23,7 @@
 		</header>
 		<br><br>
 		<br><br><br>
-		<h3> 매니저가 월별 급여내역 확인가능한 화면</h3>
+		<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 매니저가 월별 급여내역 확인가능한 화면</h3>
 
 <br><br><br><br>
 		<div>
