@@ -22,7 +22,7 @@
 	<context:component-scan base-package="com.cafe24.suhajin07" />
 	<!-- 커넥션풀 생성 -->
 
-	<!-- 컴퓨터에서 작업할때 사용해야하는 url :  -->
+	<!-- 컴퓨터에서 작업할때 사용해야하는 url : jdbc:mysql://suhajin07.cafe24.com:3306/suhajin07 -->
 	<!-- 홈페이지 Uplode 할때 사용되는 url : jdbc:mysql://localhost:3306/suhajin07 -->
 
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">

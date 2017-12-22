@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cafe24.suhajin07.Manager.Manager">
+	<resultMap type="com.cafe24.suhajin07.Manager.Manager" id="resultManager">
+		<result property="evaluationCode" column="evaluationCode" />
+		<result property="managerCode" column="managerCode" />
+		<result property="managerGradeCode" column="managerGradeCode" />
+		<result property="memberCode" column="memberCode" />
+		<result property="managerName" column="managerName" />
+		<result property="gradeName" column="gradeName" />
+		<result property="managerDepartment" column="managerDepartment" />
+		<result property="memberName" column="memberName" />
+		<result property="evaluation1" column="evaluation1" />
+		<result property="evaluation2" column="evaluation2" />
+		<result property="evaluation3" column="evaluation3" />
+		<result property="evaluation4" column="evaluation4" />
+		<result property="evaluationGrade" column="evaluationGrade" />
+		<result property="evaluationMemo" column="evaluationMemo" />
+	</resultMap>
+	<select id="ManagerBonusList" parameterType="com.cafe24.suhajin07.Manager.Manager"
+		resultMap="resultManager">
+		select a.evaluationCode,a.managerCode, b.managerName,
+		c.gradeName, b.managerDepartment, d.memberName, a.evaluation1,
+		a.evaluation2
+		, a.evaluation3, a.evaluation4, a.evaluationGrade, a.evaluationMemo
+		from evaluation a
+		left join manager b on (a.managerCode=b.managerCode)
+		left join managerGrade c on(a.managerGradeCode=c.managerGradeCode)
+		left join member d on (a.memberCode=d.memberCode)
+		order by a.managerCode
+	</select>
+</mapper>
