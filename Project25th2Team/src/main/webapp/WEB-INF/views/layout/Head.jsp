@@ -68,15 +68,15 @@
                      </a></li>
                      <li class="nav-item"><a class="nav-link" href="/Information">회사안내</a></li>
                      <li class="nav-item"><a class="nav-link" href="/Notice">공지사항</a></li>
-                     <li class="nav-item"><a class="nav-link" href="#">회원관리</a></li>
-                     <li class="nav-item"><a class="nav-link" href="#">스케줄관리</a></li>
+                     <li class="nav-item"><a class="nav-link" href="/MemberManagement">회원관리</a></li>
+                     <li class="nav-item"><a class="nav-link" href="/ScheduleManagement">스케줄관리</a></li>
                      <li class="dropdown"><a class="nav-link"
                         data-toggle="dropdown" href="#">개인관리 <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                           <li><a href="#">개인정보</a></li>
-                           <li><a href="#">실적내역</a></li>
-                           <li><a href="#">상벌내역</a></li>
-                           <li><a href="#">급여내역</a></li>
+                           <li><a href="/ManagerPage">개인정보</a></li>
+                           <li><a href="/ManagerInsentive">실적내역</a></li>
+                           <li><a href="/Managercomplain">상벌내역</a></li>
+                           <li><a href="/ManagerSalay">급여내역</a></li>
                         </ul></li>
                      <li class="nav-item"><a class="nav-link" href="/Logout">로그아웃</a></li>
                   </c:when>
@@ -92,7 +92,7 @@
                            <li><a href="/ManagerInsert">매니저등록</a></li>
                            <li><a href="/ManagerList">매니저관리</a></li>
                            <li><a href="/ManagerBonus">매니저실적관리</a></li>
-                           <li><a href="/ManagerSalay">급여관리</a></li>
+                           <li><a href="/MasterManagerSalay">급여관리</a></li>
                         </ul></li>
                      <li class="dropdown">
                         <a class="nav-link" data-toggle="dropdown">회원관리 <span class="caret"></span></a>
@@ -113,15 +113,15 @@
                      <li class="nav-item"><a class="nav-link" href="/Scheduler">스케줄등록</a></li>
                      <li class="nav-item"><a class="nav-link"
                         href="/MyPage">마이페이지</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">회원관리</a></li>
-                     <li class="nav-item"><a class="nav-link" href="#">스케줄관리</a></li>
+                       <li class="nav-item"><a class="nav-link" href="/MemberManagement">회원관리</a></li>
+                     <li class="nav-item"><a class="nav-link" href="/ScheduleManagement">스케줄관리</a></li>
                      <li class="dropdown"><a class="nav-link"
                         data-toggle="dropdown" href="#">개인관리 <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                           <li><a href="#">개인정보</a></li>
-                           <li><a href="#">실적내역</a></li>
-                           <li><a href="#">상벌내역</a></li>
-                           <li><a href="#">급여내역</a></li>
+                           <li><a href="/ManagerPage">개인정보</a></li>
+                           <li><a href="/ManagerInsentive">실적내역</a></li>
+                           <li><a href="/Managercomplain">상벌내역</a></li>
+                           <li><a href="/ManagerSalay">급여내역</a></li>
                         </ul></li>
                      <li class="dropdown">
                         <a class="nav-link" data-toggle="dropdown" href="#">매니저 <span class="caret"></span></a>
@@ -129,7 +129,7 @@
                            <li><a href="/ManagerInsert">매니저등록</a></li>
                            <li><a href="/ManagerList">매니저관리</a></li>
                            <li><a href="/ManagerBonus">매니저실적관리</a></li>
-                           <li><a href="/ManagerSalay">급여관리</a></li>
+                           <li><a href="/MasterManagerSalay">급여관리</a></li>
                         </ul></li>
                      <li class="dropdown">
                         <a class="nav-link" data-toggle="dropdown">회원관리 <span class="caret"></span></a>
