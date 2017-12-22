@@ -4,7 +4,7 @@ public class Manager {
 
 	private int evaluationCode;
 	private int managerCode;
-	private int managerGradeCode;
+	private String managerGradeCode;
 	private int memberCode;
 		
 	private String managerName;
@@ -29,10 +29,10 @@ public class Manager {
 	public void setManagerCode(int managerCode) {
 		this.managerCode = managerCode;
 	}
-	public int getManagerGradeCode() {
+	public String getManagerGradeCode() {
 		return managerGradeCode;
 	}
-	public void setManagerGradeCode(int managerGradeCode) {
+	public void setManagerGradeCode(String managerGradeCode) {
 		this.managerGradeCode = managerGradeCode;
 	}
 	public int getMemberCode() {
@@ -110,9 +110,7 @@ public class Manager {
 				+ ", evaluation4=" + evaluation4 + ", evaluationGrade=" + evaluationGrade + ", evaluationMemo="
 				+ evaluationMemo + "]";
 	}
-	
-	
-	
-	
- 
+
+
+
 }

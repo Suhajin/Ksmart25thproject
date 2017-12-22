@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page session="true"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -131,14 +132,164 @@ html ul.tabs li.active, html ul.tabs li.active a:hover {
 		</div>
 	</div>
 	</header>
-		<br><br>
-		<br><br><br>
-		<h1> Master권한에서 Manager 인센티브 조회화면</h1>
+	<br>
+	<br>
+	<h2>매니저 평가 리스트</h2><br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="/ManagerInsentiveInsert"	class="btn btn-info">매니저 실적 등록</a>
+	<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1. 관리자 권한으로만 확인할 수 있음 
+	<br>
+	<br>
+	<br>
 
-<br><br><br><br>
-		<div>
-			<c:import url="/WEB-INF/views/layout/Hadan.jsp">
-			</c:import>
+	<!--탭 메뉴 영역 -->
+	<ul class="tabs">
+		<li><a href="#tab1">고객평가List</a></li>
+		<li><a href="#tab2">월간 관리List</a></li>
+		<li><a href="#tab3">인센티브 List</a></li>
+	</ul>
+
+	<!--탭 콘텐츠 영역 -->
+	<div id="tab1" class="tab_content">
+		<br> <br>
+		<h1>고객평가 List</h1>
+
+		<!--Content-->
+		<div align="center">
+			<br> <br>
+			<table class="list_tbl_01 mb70" border="1" align="center">
+				<thead>
+					<tr>
+						<th>매니저명</th>
+						<th>직급</th>
+						<th>담당부서</th>
+						<th>담당회원명</th>
+						<th>평가1</th>
+						<th>평가2</th>
+						<th>평가3</th>
+						<th>평가4</th>
+						<th>총점</th>
+						<th>기타메모</th>
+					</tr>
+					<c:forEach var="ManagerEvaluationList" items="${ManagerEvaluationList}">
+						<tr>
+							<td>${ManagerEvaluationList.managerName}</td>
+							<td>${ManagerEvaluationList.gradeName}</td>
+							<td>${ManagerEvaluationList.managerDepartment}</td>
+							<td>${ManagerEvaluationList.memberName}</td>
+							<td>${ManagerEvaluationList.evaluation1}</td>
+							<td>${ManagerEvaluationList.evaluation2}</td>
+							<td>${ManagerEvaluationList.evaluation3}</td>
+							<td>${ManagerEvaluationList.evaluation4}</td>
+							<td>${ManagerEvaluationList.evaluationGrade}</td>
+							<td>${ManagerEvaluationList.evaluationMemo}</td>
+						</tr>
+					</c:forEach>
+				</thead>
+			</table>
 		</div>
+	</div>
+
+	<div id="tab2" class="tab_content">
+		<br> <br>
+		<h1>월간 관리List</h1>
+		<br> <br>
+		< 월간 관리 List 화면 구현 >
+
+		<!--Content-->
+		<!-- 
+		<div align="center">
+			<table class="list_tbl_01 mb70" border="1" align="center">
+				<thead>
+					<tr>
+						<th>등급</th>
+						<th>담당부서</th>
+						<th>회원 성명</th>
+						<th>회원 연락처</th>
+						<th>회원 Email</th>
+						<th>은행명</th>
+						<th>계좌번호</th>
+						<th>수정</th>
+						<th>삭제</th>
+					</tr>
+					<c:forEach var="manager" items="${ma1List}">
+						<tr>
+							<td>${manager.gradeName}</td>
+							<td>${manager.managerDepartment}</td>
+							<td>${manager.memberName}</td>
+							<td>${manager.memberPhone}</td>
+							<td>${manager.memberEmail}</td>
+							<td>${manager.bankName}</td>
+							<td>${manager.bankNum}</td>
+							<td><a
+								href="/ManagerUpdate?managerCode=${manager.managerCode}"
+								class="btn_add">수정</a></td>
+							<td><a
+								href="/ManagerDelete?memberCode=${manager.memberCode}"
+								class="btn_del">삭제</a></td>
+						</tr>
+					</c:forEach>
+				</thead>
+			</table>
+		</div>
+
+ -->
+ </div>
+ 
+ <br><br>
+ 
+	<div id="tab3" class="tab_content">
+		<br> <br>
+		<h1>인센티브 List</h1>
+		<br> <br>
+		< 인센티브 List 내역 ><br>
+		<!--Content-->
+		<!-- 
+		<div align="center">
+			<table class="list_tbl_01 mb70" border="1" align="center">
+				<thead>
+					<tr>
+						<th>등급</th>
+						<th>담당부서</th>
+						<th>회원 성명</th>
+						<th>회원 연락처</th>
+						<th>회원 Email</th>
+						<th>은행명</th>
+						<th>계좌번호</th>
+						<th>수정</th>
+						<th>삭제</th>
+					</tr>
+					<c:forEach var="manager" items="${ma2List}">
+						<tr>
+							<td>${manager.gradeName}</td>
+							<td>${manager.managerDepartment}</td>
+							<td>${manager.memberName}</td>
+							<td>${manager.memberPhone}</td>
+							<td>${manager.memberEmail}</td>
+							<td>${manager.bankName}</td>
+							<td>${manager.bankNum}</td>
+							<td><a
+								href="/ManagerUpdate?managerCode=${manager.managerCode}"
+								class="btn_add">수정</a></td>
+							<td><a
+								href="/ManagerDelete?memberCode=${manager.memberCode}"
+								class="btn_del">삭제</a></td>
+						</tr>
+					</c:forEach>
+				</thead>
+			</table>
+		</div>
+
+ -->
+	</div>
+	
+
+	<br>
+	<br>
+	<br>
+	<br>
+	<div>
+		<c:import url="/WEB-INF/views/layout/Hadan.jsp">
+		</c:import>
+	</div>
 </body>
 </html>

@@ -50,7 +50,8 @@ public class MasterController {
 
 	// 마이페이지 - 내 경력보기
 	@RequestMapping(value = "/MyCareer", method = RequestMethod.GET)
-	public String CareerInsert(Model model, Model model2, Model model3, Model model4, Model model5, Model model6,
+	public String CareerInsert(Model model, Model model2, Model model3, Model model4,
+			Model model5, Model model6,
 			@RequestParam("memberId") String memberId) {
 		System.out.println("경력등록 Form 요청");
 		model.addAttribute("listmember", careerdao.OneCareerList(memberId));
