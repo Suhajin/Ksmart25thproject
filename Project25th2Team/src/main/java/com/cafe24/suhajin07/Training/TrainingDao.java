@@ -37,4 +37,14 @@ public class TrainingDao {
 		return sqlSessionTemplate.selectOne(NS+"TrainingOneList", trainingCode);
 		
 	}
+	
+	//수정처리
+	public void updateTraining(Training training) {
+		sqlSessionTemplate.update(NS + "TrainingUpdate", training);
+	}
+	
+	//삭제처리
+	public void deleteTraining(Training training) {
+		sqlSessionTemplate.delete(NS + "TrainingDelete", training);
+	}
 }

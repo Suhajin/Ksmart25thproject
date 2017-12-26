@@ -4,15 +4,6 @@
 <%@ page session="true"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<body>
-
-</body>
-</html><%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page session="false"%>
-
-<html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>자격증수정</title>
@@ -32,7 +23,7 @@
 		</div>
 		</header>
 		<h4 align="center">자격증수정</h4>
-		<form align="center" action="./UpdateLicense" method="post">
+		<form align="center" action="/UpdateTraining" method="post">
 			<input type="hidden" name="trainingCode"
 				value="${training.trainingCode}">
 			<table align="center" border="1">
